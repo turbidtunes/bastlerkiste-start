@@ -1,0 +1,88 @@
+CHEZ FABST — MAURITIAN CORNER RESTAURANT
+Use: modest family corner restaurant, run by a couple who occupy the separate one-bedroom apartment upstairs.
+Furniture style: creole_poor.
+LOD0 only: 132,950 triangles total, 13 independent closed door leaves, 79 furniture placeholder boxes.
+Units metres; glTF +Y up, front +Z. Source facade -Y with Z up. Origin at ground, centre of the complete building footprint including covered porch and own entrance landings.
+Main body 9.60 x 9.60 m; covered front terrace 9.60 x 2.80 m; left covered return 2.40 m wide. Overall foundation/landings bounding rectangle 13.40 x 13.80 m.
+Ground floor +0.15 m, upper floor +3.35 m, roof soffit +6.33 m, roof slab 0.22 m, roof parapet +6.90 m; extractor cowl +7.26 m. Foundations -0.20 m.
+Outer walls 0.30 m, partitions 0.12 m; storey height 3.20 m; enclosed clear height 2.98 m. Rear private U staircase: 18 risers at 0.17778 m, tread 0.29 m, 1.20 m clear between rails, landings at least 1.40 m clear.
+Flat main roof has rearward fall, actual soffit, closed edges, gutter/scuppers, swan-neck downpipes and wall clips. It is maintenance-only, not an accessible roof terrace.
+Roof canopy panels have closed 55 mm insulated sections with red profiled tops and ivory metal soffits; this thickness makes the roof a complete solid.
+Red corrugated metal roofs cover the front and left restaurant terraces; a scalloped blue canvas awning covers the long side frontage.
+Covered-terrace tables have two chairs on each long side, leaving a rear cross-aisle at least 1.20 m clear past the window sills to the private side approach.
+Public route: open terrace entry -> closed glazed double entrance -> dining/bar -> kitchen or customer WC. Separate side entrance -> private stairs -> upper hall -> living/kitchen, bedroom and full bathroom.
+Capacity placeholders: one indoor four-seat table, two covered-terrace four-seat tables and two bar stools (14 seats). Left covered return remains an access passage.
+
+SIGN:
+Exact requested wording: Chez Fabst / RESTAURANT. Three irregular solid timber boards with separate, genuine raised timber strokes tracing the reference lettering, small nails, iron straps, braided suspension ropes and a fixed overhead support.
+Sign approx 2.80 x 1.42 m, mounted prominently over the front access, lower edge +2.83 m (2.68 m above terrace floor). Upper lettering 32 mm relief, lower lettering 21 mm relief. Letter strokes and board edges are bevelled geometry.
+Unique material sign_chez_fabst uses one embedded 1254 x 1254 px bare wood image; UV0 is within 0-1. No lettering, plank gaps or relief shadows are painted into that image.
+
+DOORS (clear opening width x height; every leaf closed, 50 mm thick before small panel recesses, 7 mm nominal frame gap):
+DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: dining -> bar; 1.80 x 2.10 m.
+DoorLeaf_02_R_in: side_landing -> bar; 1.20 x 2.10 m.
+DoorLeaf_03_L_in: bar -> kitchen; 1.00 x 2.10 m.
+DoorLeaf_04_L_in: kitchen -> store; 0.90 x 2.10 m.
+DoorLeaf_05_R_in: bar -> bathroom; 0.90 x 2.10 m.
+DoorLeaf_06_L_in: hall2 -> hall; 1.00 x 2.10 m.
+DoorLeaf_07_R_in: hall -> hall3; 0.90 x 2.10 m.
+DoorLeaf_08_L_in: hall3 -> living; 0.90 x 2.10 m.
+DoorLeaf_09_R_in: living -> kitchen2; 0.90 x 2.10 m.
+DoorLeaf_10_L_in: hall3 -> bedroom; 0.90 x 2.10 m.
+DoorLeaf_11_R_in: hall3 -> bathroom2; 0.90 x 2.10 m.
+DoorLeaf_12_R_in: rear_landing -> kitchen; 1.00 x 2.10 m.
+Each leaf has its own hinge origin; fixed frames remain part of the building. DoorLeaf_01a/01b are the two leaves of the 1.80 m entrance.
+Game hinge axis: glTF local Y (source local Z). L opens -90 degrees; R +90 degrees, viewed from the opening side. No animation clips or collision meshes are included.
+
+ROOMS AND PLACEHOLDERS:
+bar — Restaurant indoor dining and service bar: bar_counter, bar_stool x2, drinks_cooler, cafe_table, dining_chair x4, ceiling_fan x2.
+kitchen — Restaurant preparation and cooking kitchen: kitchen_run x2, cooker, fridge, chest_freezer, kitchen_table, kitchen_chair x2, wall_shelf x2, extractor_hood, ceiling_lamp x2.
+store — Restaurant dry-food store: storage_rack x3, pantry, ceiling_lamp.
+bathroom — Restaurant customer WC and handwashing: wc, basin, mirror, towel_rail, ceiling_lamp.
+hall — Separate two-storey private U stairwell: ceiling_lamp x2.
+dining — Covered front restaurant dining terrace: dining_table x2, dining_chair x8, ceiling_fan x2.
+hall2 — Covered side approach to private stair entrance: ceiling_lamp.
+living — Owners living room: sofa, armchair, coffee_table, tv_unit, sideboard, ceiling_fan.
+kitchen2 — Owners eat-in kitchen: kitchen_run, cooker, fridge, kitchen_table, kitchen_chair x2, wall_shelf, ceiling_lamp.
+bedroom — Owners double bedroom: bed_double, bedside x2, wardrobe, dresser, ceiling_fan.
+bathroom2 — Owners bathroom and laundry: wc, basin, mirror, shower, washing_machine, laundry_basket, bath_cabinet, towel_rail, ceiling_lamp.
+hall3 — Upper private distribution hall: ceiling_lamp.
+Each item is a plain closed box with its real outer size, named Ph_<room>_<role>_<nn>, material placeholder. There is no modelled loose furniture.
+Floor-box origins are on the floor at footprint centre; wall-box origins are on the wall face at hanging height; ceiling-box origins are at the ceiling/support soffit. Only rotation about the vertical axis. Furniture front: source local -Y / glTF local +Z.
+
+MATERIALS:
+aluminium_weathered, ceramic_glazed_white, concrete_cast, floor_tiles, galvanized_steel, glass, lamp_glass, new_awning_canvas_blue, new_bicycle_saddle_vinyl_black, new_bunting_cotton_blue, new_bunting_cotton_green, new_bunting_cotton_red, new_bunting_cotton_yellow, new_cement_grout_lightgrey, new_ceramic_glaze_ochre, new_metal_paint_cobalt_blue, new_metal_paint_warm_ivory, new_plaster_burgundy, new_plaster_dusty_rose, new_plaster_pale_yellow, new_roof_membrane_grey, new_roof_steel_red, paint_clean, placeholder, plaster_cream_warm, plaster_white, plastic_weathered, rubber_black, sign_chez_fabst, stainless_brushed, steel_bare_rusty, steel_painted_worn, textile_cotton, white_peeling_timber, wood_mahogany_varnished.
+Library materials retain exact engine lookup names and metric UV0 (1 UV unit = 1 m); no copies of library photo textures are bundled. glass and lamp_glass are untextured, as specified. placeholder is untextured.
+
+NEW MATERIALS AND EXTERNAL TEXTURE TILES:
+new_plaster_pale_yellow.png = 2.00 x 2.00 m; 1254 x 1254 px. Pale yellow weathered facade render.
+new_plaster_dusty_rose.png = 2.00 x 2.00 m; 1254 x 1254 px. Dusty rose mauve exterior render.
+new_plaster_burgundy.png = 2.00 x 2.00 m; 1254 x 1254 px. Weathered burgundy red render.
+new_metal_paint_cobalt_blue.png = 2.00 x 2.00 m; 1254 x 1254 px. Worn cobalt-blue enamel on steel.
+new_metal_paint_warm_ivory.png = 2.00 x 2.00 m; 1254 x 1254 px. Warm ivory enamel on steel.
+new_roof_steel_red.png = 2.00 x 2.00 m; 1254 x 1254 px. Aged oxide-red paint on steel roofing.
+new_roof_membrane_grey.png = 2.00 x 2.00 m; 1254 x 1254 px. Grey mineral-surfaced roof waterproofing membrane.
+new_awning_canvas_blue.png = 1.00 x 1.00 m; 1254 x 1254 px. Sun-faded blue woven canvas.
+new_bunting_cotton_red.png = 1.00 x 1.00 m; 1254 x 1254 px. Sun-faded red woven cotton.
+new_bunting_cotton_yellow.png = 1.00 x 1.00 m; 1254 x 1254 px. Sun-faded yellow woven cotton.
+new_bunting_cotton_green.png = 1.00 x 1.00 m; 1254 x 1254 px. Sun-faded green woven cotton.
+new_bunting_cotton_blue.png = 1.00 x 1.00 m; 1254 x 1254 px. Sun-faded blue woven cotton.
+new_bicycle_saddle_vinyl_black.png = 1.00 x 1.00 m; 1254 x 1254 px. Fine black grained bicycle saddle vinyl.
+new_cement_grout_lightgrey.png = 1.00 x 1.00 m; 1254 x 1254 px. Light grey mineral cement grout.
+new_ceramic_glaze_ochre.png = 1.00 x 1.00 m; 1254 x 1254 px. Aged ochre yellow ceramic glaze without joints.
+New-material PNGs are external tile images; the GLB references them by filename and scales metric UVs by each tile size. Keep the GLB with its PNGs. Only the unique sign image is embedded.
+
+DEVIATIONS AND INFERRED DETAILS:
+Dimensions and unseen facades/interior are inferred. Added a complete usable restaurant kitchen, store and customer WC, plus a full private apartment with its own kitchen, bathroom and bedroom.
+The rear-left private stairwell and full upper-floor stair opening are invented to provide legal-sized landings and headroom. Private side and kitchen rear doors receive only their own small foundation landings.
+Windows are added on side/rear facades for daylight and cross ventilation. The internal customer WC uses fixed mechanical extract grilles instead of an invented window through an adjacent room.
+Room proportions, doorway sizes, wall/slab depths, terrace guards and stair dimensions are regularized for player access. Indoor seating is reduced to one four-seat table plus stools to preserve circulation and complete door sweeps.
+The main roof is a closed sloping waterproofed slab behind the reference burgundy fascia. Back drainage and a supported kitchen extractor duct/cowl are added. No occupied roof or balcony is invented.
+The Chez Fabst wooden relief sign replaces the photographed commercial sign by the latest explicit instruction. Its exact wording is the sole exception to the generic blank-sign rule. Other menu/sign boards stay blank.
+The detailed bicycle is the explicitly requested exception to the generic no-vehicle/no-loose-exterior-prop rule. It is a single static city bicycle, including spokes, hubs, tyres, frame, fork, handlebars, grips, brakes/cables, saddle, cranks, pedals, chain, toothed chainrings, mudguards and supports; leaned toward the integrated front terrace railing.
+Blue/ivory patterned terrace railings belong to the covered restaurant porch; no detached boundary fence or garden is included. Pennants are fixed, thick closed cloth meshes. Tables, chairs and interior furnishings remain individual replacement boxes.
+People, plants, neighbouring buildings, pavement/roads, terrain, dishes, food, bottles, branded posters, power poles and street wiring are omitted.
+
+CHECKS:
+Closed combined fixed geometry, independent door/placeholder topology, nonzero triangles, floor/ceiling normals, real openings, stair headroom, metric UVs, placeholder placement and full door sweeps checked. glTF validated and reimported.
+No UE5 executable is available in this session; these are geometry and glTF checks, not an Unreal Engine runtime test.
