@@ -1,0 +1,64 @@
+CREOLE FAMILY HOUSE H09 | slot port_sarcelle_H09 | Port Sarcelle
+Use: a substantial Creole family home, with three bedrooms, living and dining rooms, kitchen and two bathrooms.
+Furniture style: creole_noble. All 68 furniture pieces are plain closed box placeholders; the main bedroom includes Ph_bedroom_gun_cabinet_01.
+LOD0 only | 144,444 triangles including door leaves and placeholders | metres | glTF Y-up.
+Main facade: +Z in glTF (-Y in authoring coordinates). Origin: centre of the footprint envelope including the veranda and own entrance steps/landings, at ground level.
+Enclosed body 9.0 x 10.2 m. Front veranda 2.2 m deep; side verandas 1.65 m. Footprint including steps/landings 12.3 x 15.24 m; roof width 12.9 m. Fits the 13 x 17 m buildable area.
+Two occupied storeys. Floors at 0.30 and 3.45 m; 3.15 m floor-to-floor; slabs 0.22 m; clear room height 2.93 m. Exterior walls 0.30 m; partitions 0.12 m. Foundations reach -0.20 m.
+Hipped corrugated steel roof, central cross gable and two vent dormers. Overall height including finials approximately 8.82 m. The modelled roof void is unoccupied maintenance space, not a third storey or roof terrace.
+Stair: two flights with 1.20 m clear width; nine 175mm risers and eight 280mm goings per flight; 1.40 m intermediate and end landings. Main entrance hall is widened to 1.80 m; furniture leaves at least 1.40 m clear on hall routes.
+Covered side balconies reached directly from the main bedroom and bedroom2. Each is approximately 1.65 x 3.20 m with continuous guards at least 1.0 m high. Exterior loose furniture and vegetation are omitted.
+Front entrance has three 100mm rises. Rear entrance has a 1.45 x 1.40 m landing with two 150mm rises from ground.
+
+DOORS | clear width x height in metres | each leaf is closed, solid and independently pivoted.
+DoorLeaf_01_L_in | veranda -> hall | 1.15 x 2.10 m
+DoorLeaf_02_L_in | rear landing -> kitchen | 1.00 x 2.10 m
+DoorLeaf_03_L_in | hall -> living | 0.90 x 2.10 m
+DoorLeaf_04_R_in | hall -> dining | 0.90 x 2.10 m
+DoorLeaf_05_R_in | hall -> kitchen | 0.90 x 2.10 m
+DoorLeaf_06_L_in | hall -> bathroom | 0.90 x 2.10 m
+DoorLeaf_07_L_in | hall2 -> bedroom | 0.90 x 2.10 m
+DoorLeaf_08_L_in | hall2 -> bedroom2 | 0.90 x 2.10 m
+DoorLeaf_09_L_in | hall2 -> bedroom3 | 0.90 x 2.10 m
+DoorLeaf_10_L_in | hall2 -> bathroom2 | 0.90 x 2.10 m
+DoorLeaf_11_R_in | left balcony -> bedroom | 1.00 x 2.10 m
+DoorLeaf_12_L_in | right balcony -> bedroom2 | 1.00 x 2.10 m
+DoorLeaf_13_L_in | hall2 ceiling -> maintenance roof void | 0.90 x 0.60 m horizontal hatch; 50mm thick; authoring +Y / glTF -Z hinge axis.
+Vertical door leaf hinge axis is authoring local +Z / glTF local +Y. Nominal leaf thickness 52mm with 40mm inset panels and 7mm frame clearances. Frames remain architecture.
+
+ROOMS AND PLACEHOLDER ROLES
+Ground: living, dining, kitchen, bathroom/laundry, entry/cross hall and stair hall.
+Upper: main bedroom (bedroom), bedroom2, twin bedroom (bedroom3), bathroom2, hall2 and stair landing.
+living: sofa, armchair x2, coffee_table, display_cabinet, side_table, ceiling_fan
+dining: dining_table, sideboard, ceiling_lamp, dining_chair x6
+kitchen: kitchen_run, cooker, fridge, kitchen_table, wall_shelf, pantry, ceiling_lamp, kitchen_chair x2
+hall: coat_rack, shoe_cabinet, bench, console, ceiling_lamp x3
+bedroom: bed_double, bedside x2, wardrobe, dresser, gun_cabinet, ceiling_fan
+bedroom2: bed_double, bedside x2, wardrobe, ceiling_fan
+bedroom3: bed_single x2, bedside, wardrobe, ceiling_fan
+hall2: console, bench, ceiling_lamp x2
+bathroom: wc, shower, basin, mirror, bath_cabinet, ceiling_lamp, washing_machine, laundry_basket
+bathroom2: wc, shower, basin, mirror, bath_cabinet, ceiling_lamp, towel_rail
+Placeholder standing origins are at floor level and footprint centre; mounted pieces use the actual wall face or ceiling. Local fronts are authoring -Y / glTF +Z, with orientation stored in node rotation only.
+
+MATERIALS
+new_brown_stained_timber, glass, brass_tarnished, steel_painted_worn, white_peeling_timber, placeholder, galvanized_steel, plaster_white, basalt_dressed, painted_timber_warmgrey, new_faded_red_roof_steel, oak_honey, new_faded_teal_painted_timber, plaster_cream_warm, basalt_masonry, concrete_cast, floor_tiles, ceramic_glazed_white, paint_clean, lamp_glass
+Architecture UV0 is metric: 1 UV unit = 1 metre. List materials are named photo-texture slots for the game; no copies of list textures are supplied. Glass and lamp_glass use their specified optical materials; placeholder is untextured.
+The GLB embeds no images. The three new surfaces reference the supplied external PNGs, with a 2m repeat through KHR_texture_transform while preserving metric UV0.
+
+NEW SURFACE TILES | 2048 x 2048 px | straight-on seamless surface content
+new_faded_teal_painted_timber.png | 2.0 x 2.0 m | Muted blue-green painted timber with fine chalking and local paint wear.
+new_faded_red_roof_steel.png | 2.0 x 2.0 m | Faded terracotta-red coated steel with fine chalking and light oxidation; corrugations are geometry.
+new_brown_stained_timber.png | 2.0 x 2.0 m | Medium brown stained timber with weathered varnish and fine grain.
+
+DEVIATIONS / FUNCTIONAL INTERPRETATION
+1. Invent the unseen family interior and rear stair to suit the reference home. Add real rear/side windows, a kitchen service door, two bathrooms and complete bedroom accommodation.
+2. Widen doors to the stated clear sizes and provide a 1.80m entrance passage and recessed rear hall furniture. Front and rear landing/step dimensions enlarge the preliminary footprint to 15.24m deep, still within the plot.
+3. Make the upper side galleries accessible covered balconies, with level slabs and continuous guards; detail the lower veranda roof around these slabs.
+4. Keep the dormers as louvred vents into a real roof void, respecting the two-storey limit. Provide a separate closed ceiling hatch and a fixed ladder in a widened upper landing.
+5. Deliver doors, sashes and fitted shutters closed, whereas several reference shutters are open.
+6. Use the required substantial slabs and wall thicknesses while retaining the cream render, white weatherboards, brown veranda timber, teal shutters, red corrugated roofs and pierced timber ornament.
+7. Omit the preliminary twin-bedroom desk and chair to preserve the clear route between the two beds, wardrobe and door; all required bedroom placeholders remain.
+8. Omit the garden, boundary wall, gate, address marker, trees, plants, bicycle, loose veranda furniture, neighbouring structures, paving and road.
+
+Delivery: one GLB, three new PNG tiles, this note. No LODs, collision meshes, proxies, furniture models, terrain, previews or reports.
