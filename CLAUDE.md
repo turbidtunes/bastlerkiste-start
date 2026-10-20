@@ -14,7 +14,7 @@ prompts are English.
 ```bash
 git clone --filter=blob:none --no-checkout https://github.com/turbidtunes/bastlerkiste /home/claude/bastlerkiste
 cd /home/claude/bastlerkiste
-git sparse-checkout set --no-cone '/*.md' '/pipeline/' '/steer/' '/claims/'
+git sparse-checkout set --no-cone '/*.md' '/pipeline/' '/steer/' '/claims/' '/inbox/'
 git checkout main
 ```
 
