@@ -1,0 +1,71 @@
+mauritius_grillhouse_block — Unreal Engine 5 LOD0
+Nutzung: zweigeschossiger mauritischer Ladenblock; Erdgeschoss Surf Shop und Grillhouse Blutung, oben zwei getrennte Wohnungen mit je einem Schlafzimmer.
+Möbelstil: creole_poor. Alle 97 Einrichtungsstücke sind Platzhalter mit Material placeholder; keine Möbelgeometrie.
+Möbelset-Anfrage an das Spiel: surfboard_rack, grill_station und extractor_hood als neue Stücke ergänzen.
+Maße: Hauptkörper 25,0 x 9,8 m, vordere Balkone 1,5 m tief; Geschosshöhe 3,15 m; Fundament bis z=-0,20 m. Hauptfassade -Y in Z-up / +Z in glTF.
+GLB: mauritius_grillhouse_block.glb; 13.514 Dreiecke; keine LODs, Kollisionen oder Proxys.
+Druckschilder: sign_surf_shop und sign_grillhouse_blutung, jeweils als einzigartige eingebettete 4096 x 512 px Grafik auf geschlossener Schildtafel mit 0..1-UV. Die zwei Quelldateien sind nicht zusätzlich im Paket.
+
+TÜREN — Name: von -> nach; Breite in m (bei Doppeltüren Blattbreite, Gesamtdurchgang 1,60 m):
+DoorLeaf_01a_L_in: outside -> shop; 0.80 m
+DoorLeaf_01b_R_in: outside -> shop; 0.80 m
+DoorLeaf_02_L_in: outside -> hall; 1.24 m
+DoorLeaf_03a_L_in: outside -> bar; 0.80 m
+DoorLeaf_03b_R_in: outside -> bar; 0.80 m
+DoorLeaf_04_L_in: outside -> store1; 1.05 m
+DoorLeaf_05_L_in: outside -> kitchen; 1.10 m
+DoorLeaf_06_L_in: balcony1 -> living1; 1.20 m
+DoorLeaf_07_L_in: balcony2 -> living2; 1.20 m
+DoorLeaf_08_L_in: hall -> kitchen1; 1.20 m
+DoorLeaf_09_L_in: hall -> kitchen2; 1.20 m
+DoorLeaf_10_L_in: shop -> store1; 1.00 m
+DoorLeaf_11_L_in: shop -> bathroom1; 1.00 m
+DoorLeaf_12_L_in: bar -> kitchen; 1.00 m
+DoorLeaf_13_L_in: bar -> store2; 1.00 m
+DoorLeaf_14_L_in: store2 -> bathroom2; 1.00 m
+DoorLeaf_15_L_in: kitchen1 -> living1; 1.00 m
+DoorLeaf_16_L_in: living1 -> bedroom1; 1.00 m
+DoorLeaf_17_L_in: kitchen1 -> bathroom3; 1.00 m
+DoorLeaf_18_L_in: kitchen2 -> living2; 1.00 m
+DoorLeaf_19_L_in: living2 -> bedroom2; 1.00 m
+DoorLeaf_20_L_in: kitchen2 -> bathroom4; 1.00 m
+DoorRoll_21: shop frontage -> shop; 2.15 m
+DoorRoll_22: shop frontage -> shop; 4.40 m
+DoorLeaf_23_L_out: hall -> maintenance roof; 1.10 m
+
+RÄUME UND PLATZHALTER — Rollen mit Anzahl:
+EG Surfshop-Verkauf [shop]: shop_counter (1), shop_shelf (3), drinks_cooler (1), surfboard_rack (2), ceiling_fan (1)
+EG Surfshop-Lager [store1]: storage_rack (3), ceiling_lamp (1)
+EG Surfshop-WC [bathroom1]: wc (1), basin (1), mirror (1), ceiling_lamp (1)
+EG Grillhouse-Gastraum/Bar [bar]: bar_counter (1), bar_stool (3), cafe_table (4), dining_chair (8), drinks_cooler (1), ceiling_fan (1)
+EG Grillhouse-Küche [kitchen]: kitchen_run (1), cooker (1), fridge (1), kitchen_table (1), kitchen_chair (2), wall_shelf (1), grill_station (1), extractor_hood (1), ceiling_fan (1)
+EG Grillhouse-Lager [store2]: storage_rack (2), ceiling_lamp (1)
+EG Grillhouse-Gäste-WC [bathroom2]: wc (1), basin (1), mirror (1), ceiling_lamp (1)
+EG/OG gemeinsames Treppenhaus [hall]: ceiling_lamp (2)
+OG Wohnung links Wohnraum [living1]: sofa (1), armchair (1), coffee_table (1), display_cabinet (1), ceiling_fan (1)
+OG Wohnung links Küche [kitchen1]: kitchen_run (1), cooker (1), fridge (1), kitchen_table (1), kitchen_chair (2), wall_shelf (1), ceiling_fan (1)
+OG Wohnung links Schlafzimmer [bedroom1]: bed_double (1), bedside (1), wardrobe (1), ceiling_lamp (1)
+OG Wohnung links Bad [bathroom3]: wc (1), basin (1), shower (1), mirror (1), ceiling_lamp (1)
+OG Wohnung rechts Wohnraum [living2]: sofa (1), armchair (1), coffee_table (1), display_cabinet (1), ceiling_fan (1)
+OG Wohnung rechts Küche [kitchen2]: kitchen_run (1), cooker (1), fridge (1), kitchen_table (1), kitchen_chair (2), wall_shelf (1), ceiling_fan (1)
+OG Wohnung rechts Schlafzimmer [bedroom2]: bed_double (1), bedside (1), wardrobe (1), ceiling_lamp (1)
+OG Wohnung rechts Bad [bathroom4]: wc (1), basin (1), shower (1), mirror (1), ceiling_lamp (1)
+
+MATERIALIEN IM GLB:
+aluminium_weathered, concrete_cast, floor_tiles, galvanized_steel, glass, lamp_glass, new_bluegrey_aggregate_render, new_faded_red_canvas, new_grey_bitumen_roof, new_lime_shutter_paint, new_oxblood_paint, paint_clean, painted_timber_warmgrey, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, plastic_weathered, shutter_paint, sign_grillhouse_blutung, sign_surf_shop, stainless_brushed, steel_painted_worn
+
+NEUE KACHELTEXTUREN (separat geliefert; keine anderen externen Texturen):
+new_bluegrey_aggregate_render.png — grobkörniger blaugrauer, verwitterter Balkonputz; 2 m x 2 m
+new_grey_bitumen_roof.png — graue, leicht verwitterte Bitumen-Dachabdichtung; 2 m x 2 m
+new_lime_shutter_paint.png — ausgeblichener gelbgrüner Lack auf Metallrollläden; 1 m x 1 m
+new_oxblood_paint.png — abgenutzter dunkelroter Lack an Ladenfront und Schildkante; 1 m x 1 m
+new_faded_red_canvas.png — verblichenes rotes Markisentuch an Pergola und Schirmen; 1 m x 1 m
+
+ABWEICHUNGEN VOM REFERENZFOTO:
+- Eigenes mittiges Treppenhaus und Wohnungstüren ergänzt, da der Zugang im Foto verdeckt ist.
+- Rückwärtige Fenster und zwei Servicetüren ergänzt; die sichtbaren Schaufenster führen in modellierte Räume.
+- Balkonbrüstung auf 1,0 m Schutzkante ergänzt; Balkone durch Türen der jeweiligen Wohnung erreichbar.
+- Zwei fest verankerte Schirme, rote Pergola und Eingangsveranda am Grillhouse; Außenstufen auch an Rückausgängen ergänzt.
+- Flachdach als geschlossenes Betondach mit Bitumenbahn, Wartungsluke und fester Leiter gebaut; kein Aufenthaltsdach.
+- Nur die beiden vom Nutzer ausdrücklich gewünschten Ladenbezeichnungen sind als Schrift vorhanden. Weitere Tafeln bleiben ohne Text.
+- Autos, Roller, Vegetation, Straßenbelag und lose Aufsteller des Fotos weggelassen.
