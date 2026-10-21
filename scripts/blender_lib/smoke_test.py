@@ -37,7 +37,7 @@ door = k.door_leaf(
 )
 assert door.name == "DoorLeaf_01_L_in"
 assert abs(door.location.x - 2.01) < 0.00001
-assert all(abs(c) < 1e-8 for c in door.data.vertices[0].co[1:2])
+assert abs(min(v.co.x for v in door.data.vertices)) < 1e-8
 
 window = k.window("KitTest_Window", (4.65, 0, 1.55), 1.3, 1.3)
 assert len(window) == 2
