@@ -30,7 +30,7 @@ Obergeschoss, Boden z=3,42, lichte Höhe 2,80 m:
 Der Prüfbericht listet 49 Placeholder-Nodes, alle mit Material placeholder. Das passt zu den Rollen oben. Kein zweites Schlafzimmer, weil die Raumbreiten dafür nicht reichen (<2,40 m).
 
 4. TÜREN
-Alle Blätter öffnen nach innen (_in), laut Plan in den Zielraum. Namen laut Prüfbericht, von/nach und lichte Breite laut Plan.
+Alle Blätter sind als nach innen öffnend (_in) benannt; die Balkontür öffnet dabei in den Wohnraum. Namen und Scharnier-Pivots aus dem gelieferten GLB geprüft, Raumverbindungen und lichte Breiten laut Plan. Eine Türanimation in UE5 wurde nicht getestet.
 - DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: außen → Garage (Bootstor), 3,20 m lichte Breite, Höhe 2,50 m bis Kämpfer, Scheitel 2,70 m (Segmentbogen)
 - DoorLeaf_02_R_in: außen → Flur (Haustür), 1,00 m
 - DoorLeaf_03_R_in: Flur → Garage, 0,90 m
@@ -43,18 +43,18 @@ Alle Blätter öffnen nach innen (_in), laut Plan in den Zielraum. Namen laut Pr
 - DoorLeaf_10_R_in: Flur OG → Schlafzimmer, 0,90 m
 - DoorLeaf_11_R_in: Wohnraum → Küche, 0,90 m
 
-Hinweis: Bei den Blättern 03–05 und 07–11 weicht der L/R-Buchstabe im Modell vom Plan ab. Im Plan war es jeweils der andere Buchstabe. Die tatsächliche Scharnierlage ist im Prüfbericht nicht gesondert belegt und sollte im Modell kontrolliert werden. Die Treppe verbindet Flur und Flur OG als einzigen internen Zugang zur Wohnung (Plan: ein gerader Lauf, 1,20 m breit, 20 Steigungen, ohne Zwischenpodest).
+Hinweis: Bei den Blättern 03–05 und 07–11 weicht der L/R-Buchstabe im Modell vom Plan ab. Die Node-Origins und lokalen Blattgrenzen des gelieferten GLB wurden zusätzlich kontrolliert: Die Pivots liegen an den Scharnierkanten, und die gelieferten L/R-Namen stimmen aus der jeweiligen Öffnungsseite betrachtet mit diesen Kanten überein. Die ursprünglichen L/R-Angaben im Plan waren insoweit vertauscht. Die Treppe verbindet Flur und Flur OG als einzigen internen Zugang zur Wohnung (Plan: ein gerader Lauf, 1,20 m breit, 20 Steigungen, ohne Zwischenpodest).
 
 5. MATERIALIEN (laut Prüfbericht, 20 Stück)
 ceramic_glazed_white, concrete_cast, floor_tiles, galvanized_steel, glass, limestone_flag, limewash, new_limestone_dressed_ochre, new_limestone_rubble_ochre, new_teal_weathered_planks, oak_honey, paint_clean, painted_timber_warmgrey, placeholder, plaster_cream_warm, plaster_white, roof_terracotta, shutter_paint, steel_painted_worn, terracotta.
 Nicht im Modell enthalten: lamp_glass, obwohl im Plan vorgesehen.
 
 new_*-Oberflächen (Kachelgröße laut Plan, UV0 metrisch, 1 UV = 1 m):
-- new_limestone_rubble_ochre: ockerbeiges Kalkstein-Bruchmauerwerk mit Mörtelfugen (EG-Wand, Fundament). Kachel 2,0 × 2,0 m.
+- new_limestone_rubble_ochre: raue ockerbeige Kalkstein-Oberfläche (EG-Wand, Fundament). Die Fotokachel zeigt nur die Steinoberfläche; Mauerwerksfugen sind kein aufgemalter Texturbestandteil. Kachel 2,0 × 2,0 m.
 - new_limestone_dressed_ochre: behauener ockerfarbener Kalkstein mit feinen Werkzeugspuren (Einfassungen, Eckquader, Gesims, Balkonplatte). Kachel 1,6 × 1,6 m.
-- new_teal_weathered_planks: gealterte blaugrüne Holzbretter (ca. 0,15 m breit) mit abblätternder Farbe (Bootstor, Haustür). Kachel 1,2 × 1,2 m.
-- Die PNGs liegen im Ordner (inbox/les_calanques_fischerhaus/new_*.png). Vorgabe: 1254 × 1254 px, PNG, ohne Upscaling. Pixelmaß, Nahtlosigkeit und reale Abdeckung der Dateien sind hier nicht belegt. Die Kachelmaße oben sind Planwerte und müssen mit dem Manifest abgeglichen werden.
-- Fotos sind nicht im GLB eingebettet vorgesehen. Die Engine ersetzt sie nach Materialnamen. Ob das GLB tatsächlich keine Bilder enthält, nennt der Prüfbericht nicht ausdrücklich.
+- new_teal_weathered_planks: gealterte blaugrüne Holzfarbe mit feiner Maserung und kleinen Abplatzungen (Bootstor, Haustür). Die Fotokachel enthält keine Brettfugen; diese gehören zur Geometrie. Kachel 1,2 × 1,2 m.
+- Die drei PNGs liegen unter inbox/les_calanques_fischerhaus/ und wurden von Codex geprüft: exakt native 1254 × 1254 px, PNG, ohne Upscaling und unverändert gegenüber den erzeugten Dateien. Die GitHub-Dateien stimmen mit diesen Quelldateien überein. Alle drei wurden als 3×3-Wiederholung visuell beurteilt; keine auffälligen Kachelgrenzen festgestellt. Physische Kachelgrößen sind die vereinbarten Materialmaßstäbe aus Plan und Manifest, keine Messungen an einem real fotografierten Objekt.
+- Das tatsächlich gelieferte GLB wurde zusätzlich strukturell geprüft: glTF 2.0, 61.822 Dreiecke, 13 separate Türblatt-Nodes, 49 Placeholder einschließlich Ph_bedroom_gun_cabinet_01, Normals und UV0 an allen Primitives, Materialzuweisung an allen Primitives und keine eingebetteten Bilder oder Texturen. Die Engine ordnet die Fototexturen nach Materialnamen zu. Vorhandene UV0 wurde bestätigt; metrische Skalierung und sämtliche baulichen Freiräume wurden nicht unabhängig flächendeckend nachgemessen.
 
 6. ABWEICHUNGEN ZUR REFERENZ (laut Plan)
 - Ebenerdige Eingangsschwelle statt Stufe (Gelände = z=0).
