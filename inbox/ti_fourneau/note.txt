@@ -1,0 +1,81 @@
+TI FOURNEAU — PORT SARCELLE H10
+Use: street-food snack house on ground floor; independent one-bedroom owner flat above.
+Furniture style: creole_poor.
+LOD0: 134,818 triangles including 12 closed door leaves and 73 furniture placeholders.
+Envelope: 11.700 m wide x 9.980 m deep; height 7.020 m. Enclosed body 11.4 x 8.2 m; two storeys.
+Ground FFL +0.24 m; upper FFL +3.44 m; floor-to-floor 3.2 m. Slabs 0.24 m; exterior walls 0.30 m; partitions 0.15 m; minimum clear interior height 2.96 m.
+Foundation reaches -0.20 m. Front entrance landings are 1.5 x 1.4 m, reached from the side via 0.12 m risers and 0.30 m treads.
+Dogleg stair: 18 x 0.17778 m risers, 0.28 m treads; 1.25 m structural flights provide at least 1.20 m clear beside rails; landings at least 1.40 m clear.
+Balcony: 1.5 m projection, at least 1.40 m clear, continuous 1.0 m rail, entered from living room.
+Flat concrete roof has tapered falls to rear gutter; roof is for maintenance, not an occupied player terrace.
+Metres; glTF Y-up; main facade +Z in glTF (= -Y in design Z-up). Origin is the full footprint centre on ground datum.
+Door origins are at hinges; all leaves closed, 50 mm bodies with up to 60 mm panel relief and separate integral handles; 7 mm frame gaps. Frame/lining is static building geometry.
+Furniture is only plain closed placeholder boxes. Floor-box origins are at footprint centres on floor. Wall-box origins are on wall face at hanging height; ceiling-box origins on ceiling. All placement is in node transforms; local -Y is front in design Z-up coordinates.
+No LODs, collision/proxy meshes, terrain, paving beyond own entrance landings, vegetation, exterior loose props, vehicles or people.
+Static meshes/primitives use exact material names. UV0 uses true physical metres, including sloped surfaces. New-tile sampling scales by the sizes below.
+Only sign_ti_fourneau has an embedded image (1536 x 2048 px). New surface PNGs are external adjacent files referenced by GLB. Bind list materials to your own photo library by exact material name; no copies of those photos are delivered.
+
+DOORS — clear widths; all pedestrian openings 2.10 m high:
+DoorLeaf_01_L_in | street landing -> stair hall | 1.10 m
+DoorLeaf_02_R_in | street landing -> shop | 1.10 m
+DoorLeaf_03_L_in | shop -> commercial kitchen | 1.00 m
+DoorLeaf_04_R_in | commercial kitchen -> store | 0.90 m
+DoorLeaf_05_R_in | WC lobby -> ground WC | 0.90 m
+DoorLeaf_06_L_in | commercial kitchen -> WC lobby | 1.00 m
+DoorLeaf_07_L_in | upper landing -> living | 1.00 m
+DoorLeaf_08_R_in | living -> domestic kitchen | 0.90 m
+DoorLeaf_09_L_in | living -> bedroom | 0.90 m
+DoorLeaf_10_R_in | upper bathroom lobby -> upper bathroom | 0.90 m
+DoorLeaf_11_R_in | bedroom -> household store | 0.90 m
+DoorLeaf_12_R_in | balcony -> living | 1.00 m
+
+ROOMS / COMPLETE PLACEHOLDER ROLES — counts expand to individual Ph_<room>_<role>_<nn> nodes:
+hall (ground owner entrance/stairs): coat_rack, shoe_cabinet, ceiling_lamp
+shop (snack counter and customer seating): shop_counter, 2 x shop_shelf, fridge, 2 x cafe_table, 4 x chair, 2 x ceiling_fan
+kitchen (commercial food preparation): 2 x kitchen_run, cooker, fridge, kitchen_table, 2 x kitchen_chair, 2 x wall_shelf, 2 x ceiling_lamp
+store (food store): 2 x storage_rack, chest_freezer, ceiling_lamp
+hall2 (ground WC lobby): ceiling_lamp
+bathroom (ground WC): wc, basin, mirror, towel_rail, ceiling_lamp
+hall3 (upper stair landing): notice_board, ceiling_lamp
+living (owner living room): sofa, armchair, coffee_table, sideboard, curtains, ceiling_fan
+kitchen2 (owner kitchen/dining): kitchen_run, cooker, fridge, kitchen_table, 2 x kitchen_chair, wall_shelf, ceiling_lamp
+bedroom (owner main bedroom): bed_double, 2 x bedside, wardrobe, dresser, gun_cabinet, curtains, ceiling_fan
+hall4 (upper bathroom lobby): ceiling_lamp
+bathroom2 (owner bathroom/laundry): shower, wc, basin, mirror, towel_rail, bath_cabinet, washing_machine, laundry_basket, ceiling_lamp
+store2 (household store): 2 x storage_rack, ceiling_lamp
+
+MATERIALS USED:
+aluminium_weathered, brass_tarnished, ceramic_glazed_white, concrete_cast, floor_tiles, galvanized_steel, glass, lamp_glass, limewash, new_bamboo_blind, new_corrugated_green_coating, new_render_blue_faded, new_render_yellow_faded, new_roof_waterproof_grey, new_timber_magenta, new_timber_turquoise, painted_timber_warmgrey, placeholder, render_spalled_old, sign_ti_fourneau, stainless_brushed, steel_bare_rusty, steel_painted_worn, white_peeling_timber
+
+NEW TEXTURES — each PNG is 1254 x 1254 px:
+new_render_yellow_faded.png | 2 m x 2 m | Faded ochre-yellow cement render with fine pores and small paint wear.
+new_render_blue_faded.png | 2 m x 2 m | Weathered turquoise-blue painted cement render.
+new_timber_turquoise.png | 1 m x 1 m | Turquoise-painted timber with fine grain and small paint wear; board joints are geometry.
+new_timber_magenta.png | 1 m x 1 m | Faded magenta-painted timber with fine grain and restrained paint wear.
+new_corrugated_green_coating.png | 2 m x 2 m | Weathered muted green coating on corrugated steel; corrugation is geometry.
+new_bamboo_blind.png | 1 m x 1 m | Tan split-bamboo blind with fine natural fibre and binding threads.
+new_roof_waterproof_grey.png | 2 m x 2 m | Aged grey mineral waterproof roof coating with fine aggregate.
+
+SURFACE ALLOCATION:
+new_render_yellow_faded: upper ground-floor exterior render. new_render_blue_faded: lower blue exterior render.
+new_timber_turquoise: upper external boarding; joints/reveals are geometry. new_timber_magenta: doors, balcony posts/rails/beams, window trim, raised sign lettering.
+new_corrugated_green_coating: solid corrugated front awning. new_bamboo_blind: front kitchen blind. new_roof_waterproof_grey: roof top coating.
+limewash: dry interior walls/ceilings. floor_tiles: dry floors, stairs and balcony. ceramic_glazed_white: bathroom floors/walls.
+concrete_cast: foundation, plinth, entrance landings/steps. render_spalled_old: exposed pale slab fascias and lower window sills.
+white_peeling_timber: window frames/sashes. painted_timber_warmgrey: closed louvre blades.
+steel_painted_worn: diamond grilles, awning brackets, stair guards/handrails, maintenance ladder and exterior lamp housings.
+steel_bare_rusty: capped roof reinforcement stubs. galvanized_steel: gutters, downpipes, clips, flashings and roof cover.
+aluminium_weathered: fixed extraction grille. stainless_brushed: fixed serving ledge and extraction hood. brass_tarnished: door handles.
+glass: 8 mm solid panes. lamp_glass: fixed lamp diffusers. sign_ti_fourneau: fictional sign/menu boards. placeholder: furniture boxes only.
+
+DEVIATIONS FROM REFERENCE / APPROVED PLAN:
+The building is dimensioned to fit the 12 x 10 m buildable envelope and contains complete walkable rooms, compliant stair and closed door leaves.
+A separate customer entrance is added beside the serving window; the original front-left entrance independently serves the owner stair.
+The service rear exit from the plan is omitted to preserve full plot clearance. Door 06 instead connects the kitchen to the WC lobby. All rooms remain reachable through the two front entrances.
+Front steps become side-entry supported landings, giving 1.4 m landing depth while staying inside the full envelope.
+Living-room dining uses the owner kitchen table; the separate living-room dining set is omitted to keep door swings and circulation clear. The upper hall console becomes a wall notice board.
+Side/rear windows are added or adjusted for real rooms and cross ventilation. Shelf/mirror positions avoid windows. Balcony projection is sized for a clear walking route.
+The serving aperture has closed glazed sashes; louvres and grilles are real geometry. The corrugated lean-to, exterior bottle cage and all loose outdoor items are omitted.
+Roof is a closed concrete assembly with falls, service cover and proper drainage. Short capped rusty reinforcement stubs retain the reference silhouette.
+Downpipes follow walls, with swan-neck gutter connections and clips. Signage is fictional TI FOURNEAU.
+Texture output is native 1254 px square, exceeding the required 1024 minimum; 2048 px was preferred in the plan.
