@@ -24,7 +24,6 @@ SLUG = os.environ.get("BUILDING_NAME", "").strip()
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5").strip()
 BRIEF_PATH = os.environ.get("BRIEF_PATH", "briefs/grand_fond_parish_church.md").strip()
 REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
-MAX_SPEND = float(os.environ.get("MAX_API_USD", "20"))
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "1"))
 STAGES = ["shell", "architecture", "details"]
 RATE = {"claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
@@ -33,8 +32,8 @@ if not re.fullmatch(r"[a-z][a-z0-9_]{2,55}", SLUG):
     sys.exit("building_name: 3–56 Zeichen, nur lower_snake_case")
 if MODEL not in RATE:
     sys.exit("Nicht unterstütztes Claude-Modell")
-if not 1 <= MAX_SPEND <= 250 or not 0 <= REVIEW_FIXES <= 2:
-    sys.exit("max_api_usd muss 1–250, review_fixes 0–2 sein")
+if not 0 <= REVIEW_FIXES <= 2:
+    sys.exit("review_fixes muss 0–2 sein")
 if not os.environ.get("ANTHROPIC_API_KEY"):
     sys.exit("GitHub Secret ANTHROPIC_API_KEY fehlt")
 
@@ -79,14 +78,15 @@ for root in texture_roots:
     for file in root.rglob("*.png"):
         texture_index.setdefault(file.stem, file)
 
-client = Anthropic(timeout=360.0, max_retries=2)
+client = Anthropic(timeout=900.0, max_retries=2)
+# Die Anthropic-API verlangt pro Anfrage max_tokens.
+# Wir nutzen das Maximum laut Models API und setzen ggf. automatisch fort.
+MODEL_MAX_TOKENS = int(client.models.retrieve(model_id=MODEL).max_tokens)
 usage = []
 
 
 def check_budget():
     spent = sum((u["input_tokens"] * RATE[MODEL][0] + u["output_tokens"] * RATE[MODEL][1]) / 1e6 for u in usage)
-    if spent >= MAX_SPEND:
-        raise RuntimeError(f"Geschätztes API-Budget erreicht ({spent:.2f} / {MAX_SPEND:.2f} USD). Kein Commit.")
     return spent
 
 
@@ -101,26 +101,72 @@ def ref_blocks():
     return [image_block(path, media) for _, path, media in images]
 
 
-def ask(label: str, prompt: str, visual=None, max_tokens=9000) -> str:
-    check_budget()
+def ask(label: str, prompt: str, visual=None) -> str:
+    """Streaming bis zum natürlichen Abschluss; kein eigenes Gesamt-Token- oder Budgetlimit.
+
+    max_tokens ist ein Pflichtparameter der API und wird aus der Modell-API ermittelt.
+    Wenn er erreicht wird, schreibt Claude automatisch in Folgeturns weiter.
+    """
     print(f"CLAUDE {label}, bisher geschätzt ${check_budget():.2f}", flush=True)
     content = [{"type": "text", "text": prompt}]
-    # Place images after the introductory instruction.
     content.extend(visual or [])
-    response = client.messages.create(
-        model=MODEL, max_tokens=max_tokens,
-        system=master,
-        messages=[{"role": "user", "content": content}],
-    )
-    usage.append({
-        "label": label, "input_tokens": response.usage.input_tokens,
-        "output_tokens": response.usage.output_tokens,
-    })
-    text = "\n".join(item.text for item in response.content if item.type == "text").strip()
-    if response.stop_reason == "max_tokens" or not text:
-        raise RuntimeError(f"Claude-Ausgabe unvollständig bei {label}; keine unvollständigen Skripte ausführen")
-    (work / "usage.json").write_text(json.dumps({"calls": usage, "estimate_usd": check_budget()}, indent=2), encoding="utf-8")
-    return text
+    messages = [{"role": "user", "content": content}]
+    chunks = []
+    empty_count = 0
+
+    while True:
+        with client.messages.stream(
+            model=MODEL,
+            max_tokens=MODEL_MAX_TOKENS,
+            system=master,
+            messages=messages,
+        ) as stream:
+            response = stream.get_final_message()
+
+        part = "".join(block.text for block in response.content if block.type == "text")
+        usage.append({
+            "label": label,
+            "part": len(usage) + 1,
+            "stop_reason": response.stop_reason,
+            "input_tokens": response.usage.input_tokens,
+            "output_tokens": response.usage.output_tokens,
+        })
+        if part:
+            chunks.append(part)
+            empty_count = 0
+        else:
+            empty_count += 1
+        (work / "usage.json").write_text(json.dumps({
+            "calls": usage, "estimate_usd": check_budget()
+        }, indent=2), encoding="utf-8")
+        print(f"CLAUDE {label}: stop={response.stop_reason}, "
+              f"Tokens={response.usage.output_tokens}, "
+              f"gesamt geschätzt USD={check_budget():.2f}", flush=True)
+
+        if response.stop_reason == "end_turn":
+            complete = "".join(chunks).strip()
+            if not complete:
+                raise RuntimeError(f"Claude lieferte keinen Text bei {label}")
+            return complete
+        if response.stop_reason not in ("max_tokens", "pause_turn"):
+            raise RuntimeError(f"Claude stoppte bei {label}: {response.stop_reason}")
+        if empty_count >= 3:
+            raise RuntimeError(f"Claude produziert bei {label} keinen Textfortschritt")
+
+        messages.append({
+            "role": "assistant",
+            "content": [block.model_dump(exclude_none=True) for block in response.content],
+        })
+        messages.append({
+            "role": "user",
+            "content": (
+                "Fahre exakt an der unterbrochenen Stelle fort. "
+                "Gib ausschließlich den fehlenden Rest aus, "
+                "ohne Wiederholung, ohne Einleitung und ohne neue Code-Fences. "
+                "Schließe den ursprünglichen Auftrag vollständig ab."
+            ),
+        })
+        print(f"CLAUDE {label}: automatisch fortsetzen...", flush=True)
 
 
 def code_clean(text: str) -> str:
@@ -176,9 +222,9 @@ def run_code(label: str, prev: Path | None, prompt: str):
             "gebe aber wieder den vollständigen ausführbaren Stufencode aus. "
             "Vorstufen liegen schon als .blend vor.\n" +
             "BLENDER-TRACEBACK:\n" + failure[-10000:] +
-            "\nVORHERIGER STUFENCODE:\n" + last_code[:38000]
+            "\nVORHERIGER STUFENCODE:\n" + last_code
         )
-        answer = ask(f"{label}_code_{retry}", task, max_tokens=19000)
+        answer = ask(f"{label}_code_{retry}", task)
         try:
             last_code = code_clean(answer)
         except (SyntaxError, ValueError) as exc:
@@ -212,9 +258,9 @@ def review_stage(stage: str, report: dict, planned: str):
         "Gib ausschließlich JSON zurück: {\"needs_fix\": true/false, \"issues\": [\"...\"], "
         "\"comparison_possible\": true/false}. Keine erfundenen Prüfungen.\n"
         f"STUFE: {stage}\nBERICHT:\n{json.dumps(report, ensure_ascii=False)[:12000]}\n"
-        f"PLAN:\n{planned[:23000]}"
+        f"PLAN:\n{planned}"
     )
-    answer = ask(stage + "_vision_review", prompt, visuals, max_tokens=2200)
+    answer = ask(stage + "_vision_review", prompt, visuals)
     raw = re.sub(r"^```(?:json)?\s*\n|\n```$", "", answer.strip())
     try:
         parsed = json.loads(raw)
@@ -238,7 +284,7 @@ plan_prompt = (
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
     f"VORHANDENE ECHTE TEXTUREN (max 120): {', '.join(list(texture_index)[:120]) or 'KEINE'}"
 )
-plan = ask("plan", plan_prompt, refs, max_tokens=10000)
+plan = ask("plan", plan_prompt, refs)
 (work / "plan.md").write_text(plan, encoding="utf-8")
 max_match = re.search(r"MAX_TRIS\s*[:=]\s*(\d{4,7})", plan)
 max_tris = int(max_match.group(1)) if max_match else 150000
@@ -266,8 +312,8 @@ for idx, stage in enumerate(STAGES, start=1):
         "Die Materialnamen müssen aus der Systemliste stammen oder deklarierte new_* sein. "
         "Nach Blender Code wird NICHT manuell auf Go gewartet.\n"
         f"STUFE: {stage}\nAUFGABE: {purpose}\n"
-        f"GEBÄUDE-BRIEF:\n{brief[:12000]}\n"
-        f"VERBINDLICHER PLAN:\n{plan[:34000]}\n"
+        f"GEBÄUDE-BRIEF:\n{brief}\n"
+        f"VERBINDLICHER PLAN:\n{plan}\n"
         f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False)[:9000] if idx>1 else 'Keine'}\n"
         f"Verfügbare Fototextur-Namen: {', '.join(list(texture_index)[:120])}"
     )
@@ -285,7 +331,7 @@ for idx, stage in enumerate(STAGES, start=1):
             "Benenne neue Teile ordentlich und repariere vorhandene Meshes statt zusätzliche "
             "deckungslose Fassadenflächen darüberzulegen. Keine Bilderzeugung.\n"
             f"STUFE {stage}, KORREKTUR {correction}\nPROBLEME:\n{issues}\n"
-            f"PLAN:\n{plan[:28000]}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)[:9000]}"
+            f"PLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)[:9000]}"
         )
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
         stage_results[stage] = report
@@ -317,14 +363,14 @@ note_prompt = (
     "Raumliste/Placeholder, Türen mit von/nach und Breiten aus dem Plan, exakte Materialliste, "
     "new_* Oberfläche mit real-world Tile-Maßen sofern BEKANNT; sonst unbekannt markieren. "
     "Die folgenden validierten Zahlen verwenden, nichts erfinden. Gib nur Text aus.\n"
-    f"PLAN:\n{plan[:18000]}\n"
-    f"PRÜFBERICHT:\n{json.dumps(result, ensure_ascii=False)[:16000]}\n"
+    f"PLAN:\n{plan}\n"
+    f"PRÜFBERICHT:\n{json.dumps(result, ensure_ascii=False)}\n"
     f"REFERENZFOTOS vorhanden: {'JA' if images else 'NEIN'}\n"
     f"NEW_MATERIAL_FILES: {[str(p.relative_to(REPO)) for p in new_textures]}\n"
     "Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern, keine "
     "Garantie für Fotorealismus/Spielbarkeit oder eine automatisch durchgeführte UE5-Prüfung."
 )
-note = ask("note", note_prompt, max_tokens=5000)
+note = ask("note", note_prompt)
 note += (
     "\n\n=== Maschinenvalidierte Daten (Blender) ===\n"
     f"Meshes: {result['meshes']}\nTriangles: {result['triangles']}\n"
