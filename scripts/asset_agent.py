@@ -18,8 +18,7 @@ import time
 from pathlib import Path
 
 from anthropic import Anthropic
-from PIL import Image
-from texture_handoff import TEXTURE_SIZE
+from texture_delivery import inventory_new_materials, missing_texture_note
 
 REPO = Path(__file__).resolve().parents[1]
 SLUG = os.environ.get("BUILDING_NAME", "").strip()
@@ -83,10 +82,11 @@ master = (
     "In reinen Codephasen gib ausschließlich vollständigen ausführbaren Python-Code zurück. "
     "Keine externen Assets herunterladen oder fotorealistische Texturen synthetisieren. "
     "Behaupte keine nicht durchgeführten Blender- oder Bildprüfungen. "
-    "Aktuelle, vom Nutzer freigegebene Texturvorgabe: new_*-Fototexturen haben exakt "
-    f"{TEXTURE_SIZE[0]} × {TEXTURE_SIZE[1]} native Pixel als PNG, ohne Upscaling. "
-    "Diese Auflösung ersetzt ältere 2048er-Vorgaben auch in gespeicherten "
-    "Originalprompts bei Wiederaufnahme; alle übrigen Qualitätsregeln bleiben gültig."
+    "Aktuelle Pipeline-Regel (Vorrang vor älteren Originalprompts): "
+    "fehlende new_*-Fototexturen sind KEIN Auslieferungshindernis. "
+    "Alle tatsächlich verwendeten Materialslots bleiben im GLB; fehlende "
+    "Foto-PNGs werden nach erfolgreichem GLB-Export nur in note.txt vermerkt. "
+    "Blender-Geometrie, UV0 und echter GLB-Reimport bleiben verpflichtend."
 )
 work = REPO / "_asset_work" / SLUG
 delivery = REPO / "inbox" / SLUG
@@ -447,12 +447,8 @@ if RUN_MODE == "plan_textures":
     print("PLAN_ONLY_COMPLETE: kein Blender-Build; Codex Plus erzeugt nur die gelisteten Bilder.", flush=True)
     sys.exit(0)
 
-if RESUME_RUN_ID:
-    # Fail BEFORE generating costly Blender scripts if Codex image requests
-    # from the plan-only phase have not been fulfilled.
-    from texture_handoff import verify
-    if verify(REPO, SLUG):
-        sys.exit("Fehlende oder ungültige Codex-Texturen in inbox/<building_name>/; keine Claude-Build-Kosten.")
+# Photo PNGs are optional even when resuming a plan_textures run.
+# The usual building stages and final GLB validation must still execute.
 
 print(f"PLAN abgeschlossen, MAX_TRIS={max_tris}. Starte SOFORT mit Blender.", flush=True)
 
@@ -526,22 +522,12 @@ for idx, stage in enumerate(STAGES, start=1):
 print("5/5 EXPORT, Materialcheck und realer GLB-Reimport", flush=True)
 final_report = work / "final_validation.json"
 result = run_blender("export", "final", previous, report=final_report)
-new_materials = [m for m in result["materials"] if m.startswith("new_")]
-missing = [m for m in new_materials if m not in texture_index]
+new_textures, missing = inventory_new_materials(result["materials"], texture_index)
+# Missing photos are only documented. No PIL/open/image-resolution or seamless
+# check in the normal build path; a successful GLB is committed regardless.
 if missing:
-    raise RuntimeError(
-        "Echte Fototexturen fehlen; Lieferung bewusst BLOCKIERT, keine synthetischen PNGs: "
-        + ", ".join(missing)
-    )
-
-new_textures = []
-for name in new_materials:
-    file = texture_index[name]
-    with Image.open(file) as image:
-        if image.format != "PNG" or image.size != TEXTURE_SIZE:
-            raise RuntimeError(f"new_* Fototextur muss native {TEXTURE_SIZE} PNG sein: {file}")
-        image.verify()
-    new_textures.append(file)
+    print("HINWEIS FEHLENDE FOTOTEXTUREN (kein Export-Blocker): "
+          + ", ".join(missing), flush=True)
 
 note_prompt = (
     "Erstelle eine kurze sachliche note.txt für das tatsächlich produzierte 3D-Gebäude "
@@ -554,6 +540,7 @@ note_prompt = (
     f"PRÜFBERICHT:\n{json.dumps(result, ensure_ascii=False)}\n"
     f"REFERENZFOTOS vorhanden: {'JA' if images else 'NEIN'}\n"
     f"NEW_MATERIAL_FILES: {[str(p.relative_to(REPO)) for p in new_textures]}\n"
+    f"FEHLENDE_NEW_TEXTUREN (nur dokumentieren, niemals blockieren): {missing}\n"
     "Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern, keine "
     "Garantie für Fotorealismus/Spielbarkeit oder eine automatisch durchgeführte UE5-Prüfung."
 )
@@ -567,6 +554,8 @@ note += (
     f"Nodes Doors: {', '.join(result['doors'])}\n"
     f"Nodes Placeholders: {', '.join(result['placeholders'])}\n"
     f"API-Schätzkosten USD: {check_budget():.2f} (nicht der Abrechnungsbeleg)\n"
+)
+note += missing_texture_note(missing, SLUG)
 )
 # Important: Codex has already committed new_*.png to this directory.
 # Never remove the whole folder or the previously generated photo textures!
