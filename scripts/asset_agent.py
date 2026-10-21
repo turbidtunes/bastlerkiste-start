@@ -87,6 +87,14 @@ work.mkdir(parents=True, exist_ok=True)
 (work / "views").mkdir(exist_ok=True)
 if RESUME_RUN_ID and not (work / "plan.md").is_file():
     sys.exit("Fortsetzung blockiert: vorheriger Actions-Artefakt-Download enthält keinen Architekturplan; kein neuer Claude-Aufruf")
+if RESUME_RUN_ID:
+    # Preserve the original building instructions even if the repository prompt
+    # was edited after the failed run. Checkpoint fingerprints guard this copy.
+    original = work / "input_prompt.md"
+    if not original.is_file() or len(original.read_text(encoding="utf-8").strip()) < 25:
+        sys.exit("Fortsetzung blockiert: originales input_prompt.md fehlt im Artefakt")
+    brief = original.read_text(encoding="utf-8")
+    print("WIEDERAUFNAHME: ursprünglichen unveränderten Gebäude-Prompt aus dem Checkpoint geladen", flush=True)
 images = []
 for rel in [s.strip() for s in REFERENCES.split(",") if s.strip()]:
     src = repo_file(rel)
@@ -222,13 +230,19 @@ def run_blender(mode: str, stage_name: str, previous: Path | None, code_file=Non
     env = dict(os.environ)
     for secret in ("ANTHROPIC_API_KEY", "GH_TOKEN", "GITHUB_TOKEN", "ACTIONS_RUNTIME_TOKEN"):
         env.pop(secret, None)
+    # actions/setup-python adds an incompatible Python library search environment.
+    # The apt-installed Blender must use its own system libraries. In particular
+    # NumPy lives in /usr/lib/python3/dist-packages, not hostedtoolcache Python.
+    for key in ("LD_LIBRARY_PATH", "PYTHONHOME", "PYTHONUSERBASE", "VIRTUAL_ENV", "PYTHONNOUSERSITE"):
+        env.pop(key, None)
+    env["PYTHONPATH"] = "/usr/lib/python3/dist-packages"
     env.update({
         "WORKER_MODE": mode, "ASSET_WORK": str(work), "STAGE_NAME": stage_name,
         "STAGE_CODE": str(code_file or ""), "STAGE_OUT_BLEND": str(output_blend or ""),
         "STAGE_REPORT": str(report or ""),
         "GLB_PATH": str(work / f"{SLUG}.glb"), "MAX_TRIS": str(max_tris),
     })
-    cmd = ["blender", "--background", "--factory-startup"]
+    cmd = ["blender", "--background", "--factory-startup", "--python-exit-code", "37"]
     if previous is not None:
         cmd.append(str(previous))
     cmd += ["--python", str(REPO / "scripts" / "blender_worker.py")]
