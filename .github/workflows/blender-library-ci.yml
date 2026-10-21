@@ -19,6 +19,11 @@ jobs:
     steps:
       - name: Quellcode holen
         uses: actions/checkout@v4
+      # Deliberately reproduce production's separate hosted Python setup.
+      - name: Hosted Python 3.12 aktivieren (reproduziert Production-Umgebung)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Headless Blender und Python NumPy installieren
         run: |
           sudo apt-get update -qq
@@ -26,9 +31,16 @@ jobs:
       - name: Blender-Version, Bibliothek und Blender-Python prüfen
         run: |
           blender --version | head -n 1 | grep -E 'Blender 4\.'
-          blender --background --factory-startup --python-expr 'import bpy, numpy; print("BLENDER_NUMPY_OK", numpy.__version__)'
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            blender --background --factory-startup --python-exit-code 37 \
+            --python-expr 'import bpy, numpy; print("BLENDER_NUMPY_OK", numpy.__version__)'
           python3 -m py_compile scripts/blender_lib/building_kit.py scripts/blender_lib/smoke_test.py
       - name: Echte Geometrie, metrische UVs und GLB-Roundtrip ohne Claude testen
         run: |
-          timeout 180s blender --background --factory-startup --python scripts/blender_lib/smoke_test.py | tee /tmp/building-kit-test.log
+          set -o pipefail
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            --python scripts/blender_lib/smoke_test.py | tee /tmp/building-kit-test.log
           grep -F BUILDING_KIT_SMOKE_OK /tmp/building-kit-test.log
