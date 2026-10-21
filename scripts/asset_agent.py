@@ -295,15 +295,15 @@ for attempt in range(1, 4):
             "Repariere die Struktur des folgenden Compiler-Vertrags. "
             "Übernimm alle Anforderungen aus dem vollständigen ORIGINALPROMPT, "
             "verwende exakt die verlangten Überschriften. Warte nicht auf Go. "
-            "Gib den gesamten korrigierten Vertrag aus.\\n"
-            + str(error) + "\\nVORHERIGER VERTRAG:\\n" + compiled
-            + "\\nORIGINALPROMPT:\\n" + brief,
+            "Gib den gesamten korrigierten Vertrag aus.\n"
+            + str(error) + "\nVORHERIGER VERTRAG:\n" + compiled
+            + "\nORIGINALPROMPT:\n" + brief,
             refs,
         )
 building_contract = contract_context(brief, compiled, brief_source)
 (work / "compiled_contract.md").write_text(
-    "# Automatisch verschmolzener Gebäudeauftrag\\n\\n"
-    + f"Original: {brief_source}\\nSHA256: {sha256_text(brief)}\\n\\n"
+    "# Automatisch verschmolzener Gebäudeauftrag\n\n"
+    + f"Original: {brief_source}\nSHA256: {sha256_text(brief)}\n\n"
     + building_contract, encoding="utf-8",
 )
 print("1/6 PLAN – Vertrag geprüft; BUILD folgt ohne Go", flush=True)
