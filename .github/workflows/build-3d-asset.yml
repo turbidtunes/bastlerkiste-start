@@ -149,6 +149,19 @@ jobs:
             | tee /tmp/blender-roundtrip-check.log
           grep -F BUILDING_KIT_SMOKE_OK /tmp/blender-roundtrip-check.log
 
+          # Exercise the REAL production worker, not only the example exporter.
+          # Fail before paid Claude calls if worker import/GLB export/reimport fails.
+          mkdir -p "$RUNNER_TEMP/worker-preflight"
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            WORKER_MODE=export ASSET_WORK="$RUNNER_TEMP/worker-preflight" \
+            GLB_PATH="$RUNNER_TEMP/worker-preflight/test.glb" \
+            STAGE_REPORT="$RUNNER_TEMP/worker-preflight/report.json" MAX_TRIS=150000 \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            "$RUNNER_TEMP/building-kit-worker-source.blend" \
+            --python scripts/blender_worker.py | tee /tmp/production-worker-preflight.log
+          grep -F EXPORT_REIMPORT_OK /tmp/production-worker-preflight.log
+
 
       - name: Automatisch planen, bauen, prüfen und exportieren (kein Go)
         env:
