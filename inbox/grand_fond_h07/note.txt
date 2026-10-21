@@ -1,0 +1,76 @@
+note.txt – masjid_an_nur
+
+GEBÄUDE
+- Name: masjid_an_nur (Grand-Fond, Slot grand_fond_H07, Mauritius)
+- Nutzung: kleine Nachbarschaftsmoschee mit Gebetshalle, Portikus, Imam-Büro, WC, überdachtem Waschhof (Wudu) und Minarett mit Innentreppe zum Balkon.
+- furniture_style: authority
+- Footprint laut Plan 17,0 × 17,0 m, Höhe bis ca. 23 m, Flachdach mit Kuppel und Minarett.
+- Gemessene Grenzen im Prüfbericht: X −8,655…8,57 m, Y −8,5…8,5 m, Z −0,2…22,999 m (17,225 × 17,0 × 23,199 m).
+- Die Ausdehnung in X liegt damit etwas über den geplanten ±8,5 m. Das Baufenster (18 × 19 m) bleibt eingehalten, der Seitenabstand beträgt ca. 1,85 m.
+
+STAND DER PRÜFUNG
+- Der Prüfbericht meldet 0 Verstöße. Der GLB-Reimport enthält 91 Meshes.
+- Dreiecke: 54 559 (Budget laut Plan 110 000). GLB-Größe: 3 695 104 Bytes. Blender 4.0.2.
+- Maßhaltigkeit und Bildtreue zum Referenzfoto sind nicht im Einzelnen belegt. Die visuelle Analyse ist eine KI-Einschätzung aus Workbench-Bildern, keine Garantie für Fotorealismus, Spielbarkeit oder eine UE5-Prüfung.
+
+TÜREN
+Alle Türblätter sind 0,05 m dick und geschlossen modelliert.
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: Portikus (R02) → Gebetshalle (R01). Öffnung 2,0 × 2,9 m, je Blatt 0,97 × 2,88 m.
+- DoorLeaf_02_L_in: Waschhof (R06) → Gebetshalle (R01). Breite 1,0 m, Höhe 2,4 m.
+- DoorLeaf_03_L_in: außen → Minarett (R03). Breite 1,0 m.
+- DoorLeaf_04_L_out: Minarett (R03, z 5,30) → Hallendach (R08). Breite 1,0 m.
+- DoorLeaf_05_R_out: Minarett (R03, z 15,0) → Balkon (R07). Breite 1,0 m.
+- DoorLeaf_06_R_in: außen → Imam-Büro (R04). Breite 1,0 m.
+- DoorLeaf_07_L_in: Waschhof (R06) → WC (R05). Breite 1,0 m.
+
+RÄUME UND PLATZHALTER (54 Ph-Nodes laut Prüfbericht)
+- R01 Gebetshalle (chapel): rug ×7, minbar, lectern, bookcase ×2, ceiling_fan ×4, ceiling_lamp ×2, wall_lamp ×4.
+- R02 Portikus (hall): shoe_cabinet ×2, wall_lamp ×2, notice_board.
+- R03 Minarett-Treppenhaus (hall2): wall_lamp ×4, ceiling_lamp.
+- Laterne (hall3): ceiling_lamp.
+- R04 Imam-Büro (office): office_desk, office_chair, visitor_chair ×2, filing_cabinet, file_shelf, ceiling_fan.
+- R05 WC (bathroom): wc ×2, basin ×2, mirror ×2, ceiling_lamp.
+- R06 Waschhof (bathroom2): wash_stool ×6, ceiling_lamp ×2.
+- R07 Muezzin-Balkon und R08 Dachterrasse Halle: begehbare Flächen ohne Platzhalter.
+- minbar und wash_stool sind eigene Rollennamen.
+
+MATERIALIEN (laut Prüfbericht im GLB)
+aluminium_weathered, basalt_dressed, brass_tarnished, concrete_cast, copper_patina, flagstone, floor_tiles, galvanized_steel, glass, new_paint_green_metal, new_paint_green_timber, placeholder, plaster_cream_warm, plaster_white, sign_masjid_an_nur, steel_painted_worn.
+
+NEUE MATERIALIEN (new_*)
+- new_paint_green_timber: dunkelgrün gestrichenes Holz, leicht verwittert, feine Risse. Verwendung: Fenster- und Türrahmen sowie Türblätter. Kachelgröße laut Plan 1,0 m × 1,0 m (1254 × 1254 px).
+- new_paint_green_metal: dunkelgrün gestrichener Stahl, kreidig, vereinzelt Rostpunkte. Verwendung: Stützen, Dachträger, Wellblech, Balkongeländer. Kachelgröße laut Plan 1,0 m × 1,0 m (1254 × 1254 px).
+- Die PNG-Dateien new_paint_green_timber.png und new_paint_green_metal.png liegen nicht vor (NEW_MATERIAL_FILES leer). Sie fehlen in der Lieferung, die Materialslots bleiben im GLB.
+- sign_masjid_an_nur: Schriftfeld „MASJID AN-NUR / GRAND-FOND“. Laut Plan eigene Textur 2048 × 512 px, eingebettet, UV 0–1. Die Einbettung wurde im Prüfbericht nicht gesondert ausgewiesen.
+
+ABWEICHUNGEN ZUM REFERENZFOTO (laut Plan)
+- Minarett 3,4 m breit statt schlank, wegen der Innentreppe (Wendeltreppe mit Winderstufen, mind. 1,2 m breit). Die Gitterschlitze dienen als Licht.
+- Balkon 1,1 m breit, damit die Balkontür aufschwingen kann.
+- Laterne so breit wie der Schaft, kein schlankerer Aufsatz.
+- Die Dachtür DoorLeaf_04 öffnet nach außen aufs Dach (Podest nur 1,2 m breit).
+- Halle 12,8 m tief gemäß Seitenansicht.
+- Mihrab-Nische an der Nordwand ergänzt, im Foto nicht sichtbar.
+- Gitterfelder unter den Fenstern nur als Nische mit Zierwerk, kein offener Durchblick.
+- Waschdach schließt an die Hallen-Ostwand an. Der Gitterschirm steht nur zwischen den Dachstützen, ohne Grundstücksmauer.
+- Algen- und Feuchteflecken nur über Listenmaterialien, nicht als Geometrie.
+- Im Plan war für die WC-Wandfliesen ceramic_glazed_white vorgesehen. Dieses Material steht nicht in der Materialliste des Prüfberichts, die Umsetzung ist nicht belegt.
+
+OFFEN / UNBEKANNT
+- Genaue Abweichung der Maße zur Referenz: unbekannt.
+- Tile-Maße der Listenmaterialien: nicht relevant, da die Engine eigene Fotos per Materialname einsetzt. UV0 in Metern laut Vorgabe, im Prüfbericht nicht einzeln ausgewiesen.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 91
+Triangles: 54559
+Reimport Meshes: 91
+Bounds m: [17.225, 17.0, 23.199]
+Materials: aluminium_weathered, basalt_dressed, brass_tarnished, concrete_cast, copper_patina, flagstone, floor_tiles, galvanized_steel, glass, new_paint_green_metal, new_paint_green_timber, placeholder, plaster_cream_warm, plaster_white, sign_masjid_an_nur, steel_painted_worn
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_L_in, DoorLeaf_03_L_in, DoorLeaf_04_L_out, DoorLeaf_05_R_out, DoorLeaf_06_R_in, DoorLeaf_07_L_in
+Nodes Placeholders: Ph_bathroom2_ceiling_lamp_01, Ph_bathroom2_ceiling_lamp_02, Ph_bathroom2_wash_stool_01, Ph_bathroom2_wash_stool_02, Ph_bathroom2_wash_stool_03, Ph_bathroom2_wash_stool_04, Ph_bathroom2_wash_stool_05, Ph_bathroom2_wash_stool_06, Ph_bathroom_basin_01, Ph_bathroom_basin_02, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_mirror_02, Ph_bathroom_wc_01, Ph_bathroom_wc_02, Ph_chapel_bookcase_01, Ph_chapel_bookcase_02, Ph_chapel_ceiling_fan_01, Ph_chapel_ceiling_fan_02, Ph_chapel_ceiling_fan_03, Ph_chapel_ceiling_fan_04, Ph_chapel_ceiling_lamp_01, Ph_chapel_ceiling_lamp_02, Ph_chapel_lectern_01, Ph_chapel_minbar_01, Ph_chapel_rug_01, Ph_chapel_rug_02, Ph_chapel_rug_03, Ph_chapel_rug_04, Ph_chapel_rug_05, Ph_chapel_rug_06, Ph_chapel_rug_07, Ph_chapel_wall_lamp_01, Ph_chapel_wall_lamp_02, Ph_chapel_wall_lamp_03, Ph_chapel_wall_lamp_04, Ph_hall2_ceiling_lamp_01, Ph_hall2_wall_lamp_01, Ph_hall2_wall_lamp_02, Ph_hall2_wall_lamp_03, Ph_hall2_wall_lamp_04, Ph_hall3_ceiling_lamp_01, Ph_hall_notice_board_01, Ph_hall_shoe_cabinet_01, Ph_hall_shoe_cabinet_02, Ph_hall_wall_lamp_01, Ph_hall_wall_lamp_02, Ph_office_ceiling_fan_01, Ph_office_file_shelf_01, Ph_office_filing_cabinet_01, Ph_office_office_chair_01, Ph_office_office_desk_01, Ph_office_visitor_chair_01, Ph_office_visitor_chair_02
+API-Schätzkosten USD: 0.07 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_paint_green_metal: inbox/grand_fond_h07/new_paint_green_metal.png (FEHLT)
+- new_paint_green_timber: inbox/grand_fond_h07/new_paint_green_timber.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
