@@ -58,16 +58,19 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Python installieren
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      # Ubuntu 24.04 Python 3.12 is already present. setup-python must NOT
+      # modify the global runtime: Blender may then pick up hostedtoolcache
+      # ctypes binaries incompatible with its embedded interpreter.
+      - name: Ubuntu-Python pruefen (ohne globales setup-python)
+        run: |
+          /usr/bin/python3 --version
+          /usr/bin/python3 -c 'import sys; assert sys.version_info[:2] == (3, 12)'
 
       - name: Fertigen Prompt-Pfad vor kostenpflichtigem Build pruefen
         env:
           PROMPT_PATH: ${{ inputs.prompt_path }}
         run: |
-          python - <<'PY'
+          /usr/bin/python3 - <<'PY'
           import os
           from pathlib import Path
           p = Path(os.environ["PROMPT_PATH"]).resolve()
@@ -87,7 +90,7 @@ jobs:
         env:
           RESUME_ID_INPUT: ${{ inputs.resume_run_id }}
         run: |
-          python - <<'PY'
+          /usr/bin/python3 - <<'PY'
           import os
           import re
           from pathlib import Path
@@ -122,10 +125,11 @@ jobs:
         run: |
           sudo apt-get update -qq
           # Blender 4.x aus Ubuntu benötigt auf headless Runnern EGL- und GL-Bibliotheken.
-          sudo apt-get install -y blender python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
-          python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
+          sudo apt-get install -y blender python3-numpy python3-venv libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          /usr/bin/python3 -m venv .agent_venv
+          .agent_venv/bin/python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
           blender --version | head -n 2
-          python -m py_compile scripts/asset_agent.py scripts/blender_worker.py
+          .agent_venv/bin/python -m py_compile scripts/asset_agent.py scripts/blender_worker.py
           blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
           # Kein Claude-Aufruf, bevor Blender wirklich in headless gestartet werden kann.
           ldconfig -p | grep 'libEGL.so.1'
@@ -155,7 +159,7 @@ jobs:
           CLAUDE_MODEL: ${{ inputs.model }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
           RESUME_RUN_ID: ${{ steps.resume_guard.outputs.run_id }}
-        run: python -u scripts/asset_agent.py
+        run: .agent_venv/bin/python -u scripts/asset_agent.py
 
       - name: Automatischen Plan im Actions-Protokoll zusammenfassen
         if: always()
