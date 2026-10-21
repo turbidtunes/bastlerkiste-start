@@ -5,6 +5,18 @@ im Verzeichnis `prompts/` des GitHub-Repositories
 `turbidtunes/bastlerkiste-start`. Es gibt **keinen Prompt-Compiler** und
 **kein langes Texteingabefeld** im GitHub-Actions-Startformular.
 
+## Direkt mit einem ursprünglichen Gebäude-Prompt bauen (Standard)
+
+Ein bisheriger, vollständiger Gebäude-Prompt kann **unverändert** als
+`.md` unter `prompts/` liegen. Es muss kein Codex-Prompt-Compiler, keine
+separate Plan-Texturphase und kein Bildgenerierungsauftrag laufen.
+Starte GitHub Actions mit `run_mode=build` (Standard), `resume_run_id` leer,
+dem richtigen Referenzbild und `review_fixes=2`. Nach der Modellierung
+wird die GLB bei bestandener geometrischer Validierung samt `note.txt`
+nach `inbox/<building_name>/` geliefert, **auch wenn einzelne
+`new_*.png` fehlen**. Die Dateien können später neben der GLB ergänzt
+werden, ohne das Gebäude neu modellieren zu lassen.
+
 ## Für jedes neue Gebäude
 
 1. Lass den vollständigen Gebäude-Prompt mit den nötigen Blender-/UE5-Regeln
@@ -69,7 +81,12 @@ Eine zusätzliche Vorprüfung kontrolliert den Prompt-Pfad und den Dateiinhalt
 
 Es gibt keine eigene Gesamt-Tokenobergrenze oder Dollar-Softgrenze.
 Technische Grenzen der Anthropic-API und von GitHub gelten weiterhin.
-Fehlende Fototexturen dürfen nicht durch synthetische Bilder ersetzt werden.
+Fehlende `new_*.png`-Fototexturen sind **kein Abbruchgrund mehr**: Der GLB-Export
+und die Validierung laufen normal; unvollständige Fototexturen werden
+in `note.txt` namentlich als offene Aufgaben vermerkt. Es findet beim
+regulären `run_mode=build` **kein Bildinhalt-/Auflösungs-/Nahtlosigkeitscheck**
+statt. Vorhandene PNGs bleiben im Gebäudeordner erhalten. Künstliche
+oder prozedurale Ersatz-Fototexturen werden weiterhin nicht erzeugt.
 Die Prompt-Datei und QA-Berichte erscheinen bei Bedarf in den
 Diagnose-Artefakten, nicht im fertigen `inbox/`-Ordner.
 
@@ -136,7 +153,10 @@ Das separate GitHub-Workflow
 `ANTHROPIC_API_KEY` und ohne Claude-API-Kosten die Blender-Bibliothek
 inklusive tatsächlichem GLB-Roundtrip. Ausführung über GitHub Actions.
 
-## Codex mit ChatGPT Plus: Planung → echte Fototexturen → Gebäude (neu)
+## Optional: Codex mit ChatGPT Plus – Planung → Fototexturen → Gebäude
+
+Dieser mehrstufige Ablauf ist optional. Er ist **nicht nötig**, um
+einen vorhandenen Originalprompt erfolgreich als GLB zu liefern.
 
 Codex liest automatisch die Anweisung in
 [AGENTS.md](../AGENTS.md), wenn du ihm einen neuen Gebäudeauftrag gibst.
@@ -170,11 +190,11 @@ Die ausführliche Einmal-Anweisung steht dort einschließlich der
    `python3 scripts/texture_handoff.py verify --repo . --slug <building_name>`
    PNG-Dateinamen, Dateiformat und 1254×1254-Auflösung. Das Prüfen der
    echten optischen Nahtlosigkeit bleibt eine zusätzliche visuelle Aufgabe.
-7. Danach neuer **`run_mode=build`**-Lauf mit derselben Referenz und
+7. Danach optional neuer **`run_mode=build`**-Lauf mit derselben Referenz und
    **`resume_run_id` = ID des abgeschlossenen plan_textures-Laufs**.
-   Die Pipeline lädt den Originalplan, verifiziert die Texturen,
-   spart eine zweite Planungsrechnung und baut anschließend wie bisher
-   mit standardmäßig **2** visuellen Korrekturrunden pro Stufe.
+   Die Pipeline lädt den Originalplan und spart eine zweite Planungsrechnung;
+   **fehlende Bilder sperren den Build nicht mehr**. Es folgen wie bisher
+   standardmäßig **2** visuelle Korrekturrunden pro Stufe.
    Am Ende liegen `<building_name>.glb`, `note.txt` und alle für das
    konkrete Gebäude verwendeten `new_*.png` zusammen im selben
    `inbox/<building_name>/`-Ordner.
