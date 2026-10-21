@@ -1,0 +1,87 @@
+note.txt
+
+GEBÄUDE: riviere_noire_h06_campement
+Ort/Plot: Rivière-Noire, Mauritius, Plot riviere_noire_H06 (12 x 19 m, Straße bei -Y)
+
+NUTZUNG / STIL
+- Nutzung: Strand-Campement, Wochenendhaus einer Stadtfamilie. Veranda, Wohnraum, Küche, Bad, 2 Schlafzimmer, Außendusche.
+- furniture_style: creole_poor
+- Eingeschossig (1 Geschoss), keine Innentreppe, keine Balkone, keine begehbaren Dachflächen.
+
+MASSE (Planwerte; Ist-Werte aus Blender-Prüfbericht)
+- Plan: Footprint inkl. Dächer, Stufen und Dusche 8,70 x 12,86 m. Wände X ±3,45, Y -2,50..+5,90 (6,90 x 8,40 m). Firsthöhe 5,36 m. Lichte Höhe innen 2,80 m, OK Fertigboden z 0,45.
+- Prüfbericht (Bounds): X -4,28..4,45, Y -6,40..6,46, Z -0,20..5,376. Das sind 8,73 x 12,86 x 5,576 m.
+- Der Ist-Wert weicht damit leicht vom Plan ab: West -4,28 statt -4,25, Firsthöhe 5,376 statt 5,36 m. Die Ursache wurde nicht untersucht.
+- Plot-Abstände (aus den Bounds berechnet): West 1,72 m, Ost 1,55 m, Straße 3,10 m, Rückseite 3,04 m. Alle liegen innerhalb der Vorgaben (1,5 / 3 m).
+- Die Maße wurden nur gegen diese Bounds geprüft. Ein weiterer Maßnachweis liegt nicht vor.
+
+RÄUME UND PLACEHOLDER (Ist laut Prüfbericht)
+- R01 Veranda (Präfix dining): dining_table 1, dining_chair 4, ceiling_lamp 1; dazu Ph_hall_bench_01 (bench).
+- R02 Wohnraum (living): sofa 1, armchair 2, coffee_table 1, tv_unit 1, display_cabinet 1, sideboard 1, side_table 1, ceiling_fan 1.
+- R03 Flur (hall, 1,40 m breit): coat_rack 1, ceiling_lamp 1.
+- R04 Schlafzimmer 1 / Haupt (bedroom): bed_double 1, wardrobe 1, gun_cabinet 1 (Ph_bedroom_gun_cabinet_01), ceiling_fan 1.
+- R05 Schlafzimmer 2 (bedroom2): bunk_bed 1, bedside 1, wardrobe 1, ceiling_fan 1.
+- R06 Küche (kitchen): kitchen_run 1, cooker 1, fridge 1, kitchen_table 1, kitchen_chair 2, wall_shelf 1, ceiling_lamp 1.
+- R07 Bad (bathroom): wc 1, basin 1, mirror 1, shower 1, ceiling_lamp 1.
+- R08 Außendusche (außen): nur von außen zugänglich, Bodenplatte, Mauerwände und Schirm.
+- Insgesamt 39 Placeholder (Material "placeholder"). Im Plan waren 40 vorgesehen.
+- Ph_bedroom_bedside_01 fehlt im Prüfbericht. Der Plan sah für Platzkonflikte im Hauptschlafzimmer ausdrücklich den Wegfall des Nachttischs vor. Ob das der Grund war, ist nicht belegt.
+
+TÜREN (Blätter geschlossen, 45 mm dick, 8 mm Spalt laut Plan)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: R01 Veranda -> R02 Wohnraum, Doppeltür, lichte Breite 1,40 m (je Blatt 0,70 m).
+- DoorLeaf_02_R_in: R03 Flur -> außen (Rückausgang), 1,00 m.
+- DoorLeaf_03_L_in: R02 Wohnraum -> R03 Flur, 0,90 m.
+- DoorLeaf_04_R_in: R03 Flur -> R04 Schlafzimmer 1, 0,90 m.
+- DoorLeaf_05_R_in: R03 Flur -> R05 Schlafzimmer 2, 0,90 m.
+- DoorLeaf_06_L_in: R03 Flur -> R06 Küche, 0,90 m.
+- DoorLeaf_07_R_in: R03 Flur -> R07 Bad, 0,90 m.
+- Alle Türhöhen laut Plan: 2,15 m. Alle Türblätter sind im Prüfbericht vorhanden.
+
+MATERIALIEN (laut Prüfbericht im GLB)
+ceramic_glazed_white, concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, new_paint_red_oxide_peeling, new_plaster_sage_green_weathered, paint_clean, painted_timber_warmgrey, placeholder, plaster_white, render_spalled_old, sign_famille_lavoisier, steel_painted_worn, thatch_palm, wood_weathered.
+- paint_clean steht im Prüfbericht, kommt aber in der Materialtabelle des Plans nicht vor. Wofür es verwendet wurde, ist nicht belegt.
+
+NEW_*-OBERFLÄCHEN (Foto-PNGs FEHLEN, nicht mitgeliefert)
+- new_plaster_sage_green_weathered: salbeigrüner Kalkputz, kreidig, fleckig. Reale Kachelgröße laut Plan 2 m x 2 m.
+- new_paint_red_oxide_peeling: rotbraune Ölfarbe, abblätternd. Reale Kachelgröße laut Plan 2 m x 2 m.
+- Die Materialslots bleiben im GLB. Die Dateien new_plaster_sage_green_weathered.png und new_paint_red_oxide_peeling.png sind nicht vorhanden und müssen nachgeliefert werden. Bis dahin ist das Aussehen dieser Flächen nur eine Platzhalterdarstellung.
+- sign_famille_lavoisier: Schild "FAMILLE LAVOISIER", Plan: 1024 px, UV 0–1. Eingebettete Textur und Lesbarkeit wurden im Prüfbericht nicht gesondert belegt.
+
+GEOMETRIE-/EXPORTSTAND (Prüfbericht, Blender 4.0.2)
+- 65 Meshes, 22.906 Dreiecke (Budget laut Plan 90.000).
+- GLB-Größe 1.484.340 Bytes. Reimport 65 Meshes, übereinstimmend mit dem Export.
+- violations: keine gemeldet.
+- UV0, Normalen und Winding sind im Bericht nicht einzeln aufgeführt und hier nicht als geprüft behauptet.
+- Die visuelle Analyse ist nur eine KI-Einschätzung aus Blender-Workbench-Bildern. Sie ist keine Garantie für Fotorealismus oder Spielbarkeit und keine UE5-Prüfung.
+
+ENTSCHEIDUNGEN / ABWEICHUNGEN ZUM REFERENZFOTO
+- Das Referenzfoto zeigt nur 1 Außentür. Ergänzt wurde die Rücktür D02 (1,00 m, mit 2 Stufen) für Querlüftung und Flucht.
+- Die Veranda hat hinten keinen Wandschluss wie im Foto. Das Verandadach läuft als Walm an die Hauswand mit 10 mm Fuge und bleibt unter dem Hauptdach.
+- Die Pfostenzahl wurde für die Tragfunktion ergänzt (6 Rundpfosten).
+- Die Außendusche ist an die Badwand gebunden. Im Foto ist sie ein freistehender Schirm. Der Grund ist die plausible Wasserführung.
+- Das Haus ist bewusst 8,40 m tief wegen der Baufläche. Das Hauptdach im Foto wirkt länger.
+- Das Innere ist im Foto nicht sichtbar. Raumprogramm, Grundriss und Möblierung sind plausibel erfunden.
+- Das Dachraumvolumen über der Decke ist geschlossen und unzugänglich. Die Giebel haben keine Lüftungsöffnungen.
+- Die Raumtiefen im Hauptschlafzimmer (ca. 2,40 x 2,575 m) sind knapp für Doppelbett, Schrank und Waffenschrank.
+- Die Bildtreue des Ergebnisses gegenüber dem Referenzfoto (Proportionen, Farben, Details) ist nicht quantitativ belegt.
+
+LIEFERUMFANG
+- riviere_noire_h06_campement.glb
+- note.txt
+- new_*.png: fehlen (siehe oben)
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 65
+Triangles: 22906
+Reimport Meshes: 65
+Bounds m: [8.73, 12.86, 5.576]
+Materials: ceramic_glazed_white, concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, new_paint_red_oxide_peeling, new_plaster_sage_green_weathered, paint_clean, painted_timber_warmgrey, placeholder, plaster_white, render_spalled_old, sign_famille_lavoisier, steel_painted_worn, thatch_palm, wood_weathered
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_R_in, DoorLeaf_03_L_in, DoorLeaf_04_R_in, DoorLeaf_05_R_in, DoorLeaf_06_L_in, DoorLeaf_07_R_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_wc_01, Ph_bedroom2_bedside_01, Ph_bedroom2_bunk_bed_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_ceiling_fan_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_dining_ceiling_lamp_01, Ph_dining_dining_chair_01, Ph_dining_dining_chair_02, Ph_dining_dining_chair_03, Ph_dining_dining_chair_04, Ph_dining_dining_table_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_coat_rack_01, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_wall_shelf_01, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_side_table_01, Ph_living_sideboard_01, Ph_living_sofa_01, Ph_living_tv_unit_01
+API-Schätzkosten USD: 2.86 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_paint_red_oxide_peeling: inbox/riviere_noire_h06/new_paint_red_oxide_peeling.png (FEHLT)
+- new_plaster_sage_green_weathered: inbox/riviere_noire_h06/new_plaster_sage_green_weathered.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
