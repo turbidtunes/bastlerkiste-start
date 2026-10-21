@@ -72,6 +72,8 @@ master = (
     "Der Ablauf ist stets automatisch: zuerst gründlich planen, danach ohne Go "
     "Schritt für Schritt Blender-Code erstellen, Renderbilder überprüfen, "
     "Fehler gezielt korrigieren und GLB validieren. "
+    "In der PLAN-Phase antworte AUSSCHLIESSLICH als kompakte, maßhaltige Bauspezifikation, "
+    "nicht als Essay, Tutorial, Wiederholung des Prompts oder Python-Code. "
     "In reinen Codephasen gib ausschließlich vollständigen ausführbaren Python-Code zurück. "
     "Keine externen Assets herunterladen oder fotorealistische Texturen synthetisieren. "
     "Behaupte keine nicht durchgeführten Blender- oder Bildprüfungen."
@@ -184,14 +186,20 @@ def ask(label: str, prompt: str, visual=None) -> str:
             "role": "assistant",
             "content": [block.model_dump(exclude_none=True) for block in response.content],
         })
+        continuation = (
+            "Vervollständige jetzt ausschließlich die NOCH FEHLENDEN Pflichtfelder "
+            "der kompakten Bauspezifikation. Keine neuen Erklärungen, keine Beispiele, "
+            "keine Wiederholung bereits ausgegebener Daten. "
+            "Schließe mit der alleinstehenden Zeile PLAN_COMPLETE ab und beende die Antwort."
+            if label == "plan" else
+            "Fahre exakt an der unterbrochenen Stelle fort. "
+            "Gib ausschließlich den fehlenden Rest aus, "
+            "ohne Wiederholung, ohne Einleitung und ohne neue Code-Fences. "
+            "Schließe den ursprünglichen Auftrag vollständig ab."
+        )
         messages.append({
             "role": "user",
-            "content": (
-                "Fahre exakt an der unterbrochenen Stelle fort. "
-                "Gib ausschließlich den fehlenden Rest aus, "
-                "ohne Wiederholung, ohne Einleitung und ohne neue Code-Fences. "
-                "Schließe den ursprünglichen Auftrag vollständig ab."
-            ),
+            "content": continuation,
         })
         print(f"CLAUDE {label}: automatisch fortsetzen...", flush=True)
 
@@ -346,16 +354,53 @@ print("1/5 PLAN – anschließend automatisch BUILD, kein GO nötig", flush=True
 refs = ref_blocks()
 (work / "input_prompt.md").write_text(brief, encoding="utf-8")
 plan_prompt = (
-    "Erstelle JETZT den vollständigen maßhaltigen Architektur- und Materialplan anhand des "
-    "konkreten Briefings und aller verfügbaren echten Referenzen. Das ist die erste interne "
-    "Stufe eines automatisch fortgesetzten Auftrags: WARTEN AUF GO IST VERBOTEN. "
-    "Keine Blender-Codeausgabe in dieser Stufe. Plane auch alle Funktionswege, Möbelboxen, "
-    "geplante Türen und die nötigen echten Fototexturen. "
-    "Exaktes MAX_TRIS als einzelne Zeile 'MAX_TRIS: 150000' oder kleiner. "
-    "Nenne alle bekannten Abweichungen.\n\n"
-    f"VOLLSTÄNDIGER MANUELL ZUSAMMENGEFÜHRTER EINGABEPROMPT:\n{brief}\n"
+    "JETZT NUR DIE BAUSPEZIFIKATION ERSTELLEN. "
+    "Dies ist die erste automatisch fortgesetzte Phase; KEIN WARTEN AUF GO. "
+    "Die Bauqualität wird im späteren Blender-Code und in der visuellen QA erzielt. "
+    "In dieser Phase brauchst du nur die entscheidenden GEOMETRISCHEN DATEN und "
+    "Entscheidungen, nicht den Bau selbst und nicht dessen verbale Simulation.\n\n"
+
+    "HARTES AUSGABEFORMAT AUF PROMPTEBENE – KOMPAKTE BAUSPEZIFIKATION:\n"
+    "- Für kleine Gebäude etwa 900–1.500 Wörter; für komplexe Gebäude bis etwa 2.200 Wörter. "
+    "Das ist ein AUSGABEZIEL, keine Reduktion des geometrischen Detailgrads.\n"
+    "- Schreibe ausschließlich folgende knappen Abschnitte als nummerierte Zeilen bzw. "
+    "kompakte Tabellen. Nenne Angaben EINMAL, an ihrem richtigen Ort:\n"
+    "1. IDENTITÄT: Name, Ort, Nutzung, furniture_style, echte Bildbeobachtungen (maximal 5).\n"
+    "2. GRUNDSTÜCK: X/Y, Straße -Y, Abstände, konkreter Footprint (min/max X/Y), z=0, "
+    "Gesamtmaße, numerische Prüfung der Grenzabstände.\n"
+    "3. GESCHOSSE/ROHBAU: pro Etage Z-Unterkante/Oberkante, Wand- und Deckenstärken, "
+    "tragende Raster, ggf. doppelhohe Räume.\n"
+    "4. RÄUME: JE Raum genau eine Zeile: Raum-ID | Geschoss | XY-Grenzen | Z/lichte Höhe | "
+    "Nutzung | verbunden mit. Kein ausgeschmückter Fließtext.\n"
+    "5. ERSCHLIESSUNG: Eingangswege, Treppen mit Start/Ziel, Breite, Antritt, Steigung, "
+    "Auftritt, Podesten; Balkone/Türme nur wenn nötig.\n"
+    "6. TÜREN: JE Öffnung eine Datenzeile mit Name(n), von/nach, Ort, lichter Breite/Höhe "
+    "und Scharnier-/Öffnungsrichtung. Doppeltüren als ein Datensatz mit beiden Namen.\n"
+    "7. FENSTER/FASSADEN: Pro Facade/Geschoss die Fenstergruppen mit Anzahl, Achsenpositionen "
+    "oder Raster, B/H/Brüstung, Rahmenmaterial; gleiche Fenster nicht einzeln beschreiben.\n"
+    "8. DACH & SONDERBAUTEN: Dachtyp, Firstachse, Neigung, eaves/ridge-Z, Traufe, Giebel; "
+    "nur bild-/nutzungsrelevante Sonderteile mit Maßen.\n"
+    "9. MATERIALIEN: Tabelle Bauteilgruppe -> EXAKTER Materialslot; nur tatsächlich verwendete "
+    "Slots, keine Wiedergabe der gesamten MATERIAL LIST; fehlende new_* in einer kompakten Zeile.\n"
+    "10. PH-PLACEHOLDER: Raum-ID -> Rollen und Stückzahlen sowie erforderliche Abstände; "
+    "NICHT jede Bank/jeden Stuhl als ausgeschriebene Einzelbeschreibung.\n"
+    "11. REFERENZABWEICHUNGEN & RISIKEN: nur echte Konflikte mit je einer kurzen Lösung. "
+    "Fehlt ein Referenzbild, ausdrücklich kennzeichnen, keine Bildtreue behaupten.\n"
+    "12. BAUPHASEN: SHELL, ARCHITECTURE, DETAILS jeweils ein knapper Satz zu den "
+    "individuellen Arbeiten; normale Standards durch die vorhandene building_kit-API.\n"
+    "13. MAX_TRIS: <Ganzzahl zwischen 10000 und 150000>.\n"
+    "Danach als ABSCHLUSS eine eigene Zeile: PLAN_COMPLETE\n\n"
+    "STOPPREGEL: Nach PLAN_COMPLETE sofort beenden; keine zweite Version, "
+    "kein Revisionsprotokoll, keine Alternativentwürfe, keine Kontrollrechnungen außer "
+    "der Grenzabstandsprüfung, keine umfangreichen Material- oder Rollenlisten, "
+    "kein Blender-Python, keine Prosa-Einleitung, keine Wiederholung des Bauauftrags, "
+    "keine technischen Tutorials, keine Selbstkommentare über die Denkarbeit.\n"
+    "Bei vielen identischen Bauteilen parametrische Raster/Anzahl statt Einzelaufzählung. "
+    "Entscheide realistisch und eindeutig statt zahlreiche Möglichkeiten zu diskutieren.\n\n"
+    f"VERBINDLICHER GEBÄUDE-PROMPT (nur AUSWERTEN, NICHT wiederholen):\n{brief}\n"
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
-    f"VORHANDENE ECHTE TEXTUREN (alle vorhandenen): {', '.join(list(texture_index)) or 'KEINE'}"
+    f"VORHANDENE ECHTE TEXTUREN: {', '.join(list(texture_index)) or 'KEINE'}\n\n"
+    "ERINNERUNG: AUSGABE NUR nummerierte Bauspezifikation 1–13, MAX_TRIS und PLAN_COMPLETE."
 )
 if RESUME_RUN_ID:
     plan = (work / "plan.md").read_text(encoding="utf-8")
