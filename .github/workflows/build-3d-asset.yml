@@ -18,7 +18,7 @@ on:
         type: string
         default: "prompts/grand_fond_parish_church.md"
       run_mode:
-        description: "build = normaler Build; plan_textures = nur Plan und Codex-Auftrag fuer fehlende new_ PNGs"
+        description: "build = GLB direkt auch ohne Fotos; plan_textures = optionaler Codex-Fotoauftrag"
         required: true
         type: choice
         default: build
