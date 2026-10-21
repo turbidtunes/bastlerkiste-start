@@ -1,4 +1,14 @@
-# Codex-Orchestrierung: komplette UE5-Gebäude mit Fototexturen
+# Codex-Orchestrierung: komplette UE5-Gebäude mit optionalen Fototexturen
+
+**AKTUELLE PRODUKTIONSREGEL:** Ein normaler Bauauftrag kann direkt mit seinem
+unveränderten Originalprompt unter `prompts/<building_name>.md` gestartet
+werden: `run_mode=build`, `review_fixes=2`. `plan_textures` ist nur
+optional, wenn der Benutzer ausdrücklich vor dem Bau neue Fototexturen durch
+Codex erzeugen lassen möchte. **Fehlende `new_*.png` dürfen einen
+erfolgreich validierten GLB-Export niemals blockieren.** Die fehlenden
+Dateinamen kommen in `note.txt`, und vorhandene PNGs bleiben im
+`inbox/<building_name>/` erhalten. Keine Foto-Auflösungs-,
+Bildinhalts- oder Seamless-Pflichtprüfung im normalen Build.
 
 Diese Repository-Anweisung gilt, wenn der Benutzer Codex einen neuen Gebäudeauftrag
 übergeben und ausdrücklich die vollständige GitHub-Produktion beauftragt hat.
@@ -110,9 +120,11 @@ OpenAI- noch sonstige Bilderzeugungs-API-Schlüssel stillschweigend einsetzen.
     Referenzfingerprints oder Plan für eine neue Planung zu verändern.
     Die neue Action muss aus dem GitHub-Artefakt den exakten Originalprompt,
     die Referenzbildfingerprints und den gespeicherten Plan übernehmen.
-    Vor neuen Claude-Build-API-Aufrufen muss das Manifest erfolgreich
-    geprüft werden. Bei Fehlern Diagnose-Artefakte verwenden, keinen
-    vollständigen Neubau starten.
+    Das Manifest darf weiterhin geprüft werden, ist aber **keine
+    Pflichtvoraussetzung** mehr, um einen GLB-Build zu starten oder
+    erfolgreich abzuschließen. Fehlende Fotos werden im abschließenden
+    `note.txt` dokumentiert. Bei Modellierungsfehlern Diagnose-Artefakte
+    verwenden, keinen vollständigen Neubau starten.
 11. Erfolg NUR melden, wenn der Workflow GLB-Export, Blender-Reimport und
     Commit nach inbox/<building_name>/ erfolgreich abgeschlossen hat.
     Dort nur <building_name>.glb, note.txt und relevante new_*.png.
