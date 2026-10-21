@@ -275,8 +275,28 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste": "6fa3fb5695b3c929bc9a736866503010e2fb71d3"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "280a385828726e8eff1e6d2bef52f9379d56145fdf43bf47dba3a157d82ab1f1",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "int_plastic",
