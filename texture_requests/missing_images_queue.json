@@ -847,7 +847,17 @@
         1254,
         836
       ],
-      "failure_reason": "Required user-approved 1254-width landscape output. Available image_gen landscape size probe (coast_guard_flag) returned native 1536x1024 despite explicit 1254x836 request. Awaiting user choice to accept native 1536x1024 or explicitly allow downsampling; this motif not generated yet."
+      "failure_reason": "Native 1536x1024 source generated and technically/visually verified. Requested 1254-width delivery cannot be generated natively by available tool. Awaiting user choice: accept native 1536x1024 or explicitly allow downsampling. No destination upload.",
+      "validation": {
+        "native_size_px": [
+          1536,
+          1024
+        ],
+        "png_verified": true,
+        "sha256": "0a1dba57eefe065e128b29db56596356cb5290982c282bad2fe1e4fd9db6154b",
+        "visual_content": "passed",
+        "delivery_pending": true
+      }
     },
     {
       "id": "end_why_one",
