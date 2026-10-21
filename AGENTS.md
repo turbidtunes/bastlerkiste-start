@@ -3,6 +3,19 @@
 Diese Repository-Anweisung gilt, wenn der Benutzer Codex einen neuen Gebäudeauftrag
 übergeben und ausdrücklich die vollständige GitHub-Produktion beauftragt hat.
 
+## Kommunikation und Monitoring – sparsamer Standard für weitere Aufträge
+
+- Nur wichtige abgeschlossene Meilensteine, unerwartete Fehler und erforderliche
+  Entscheidungen kurz mitteilen. Keine laufenden Kommentare zu Dateioperationen,
+  Git-Befehlen, normalen Prüfungen oder unveränderten Laufzuständen.
+- Keine umfangreichen Logs ausgeben; bei Fehlern nur Ursache, Run-ID und relevante
+  Diagnose nennen.
+- Laufende GitHub-Actions-Jobs nur alle **5 Minuten** abfragen. Keine zusätzlichen
+  `gh run watch`-Schleifen, Statusabfragen oder Log-Abfragen zwischen diesen
+  Intervallen, solange kein konkreter Fehler oder Abschluss bekannt geworden ist.
+- Ansonsten selbstständig bis zum Ergebnis weiterarbeiten. Das Warten ist kein
+  Anlass für eine Bestätigung oder einen weiteren kostenpflichtigen Lauf.
+
 ## Ziel
 
 Ein eigenständiger, geprüfter Bauauftrag in prompts/<building_name>.md, dessen
