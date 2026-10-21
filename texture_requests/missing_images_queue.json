@@ -636,8 +636,28 @@
       "physical_tile_m": null,
       "additional_rules": "Transparent background; clean fictional flat emblem",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "done",
+      "priority": "medium",
+      "commit": {
+        "turbidtunes/bastlerkiste": "3cf2fe1e3b19f98f45d7be6e40f2fcaf88eaabda"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "c086e4cf665747ae99a78e17e3b0ec73315c06d2763bc20dad7dcc756dfa27d8",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_content": "passed"
+      }
     },
     {
       "id": "coast_guard_flag",
