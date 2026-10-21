@@ -33,7 +33,7 @@ on:
         description: "Maximale visuelle Korrekturrunden je Modellstufe"
         required: true
         type: choice
-        default: "1"
+        default: "2"
         options:
           - "0"
           - "1"
