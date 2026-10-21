@@ -1,0 +1,78 @@
+NOTE.TXT – la_pointe_h01_lighthouse_keeper
+
+GEBÄUDE
+- Name: la_pointe_h01_lighthouse_keeper, Slot la_pointe_H01, La Pointe (Mauritius, kreolisch).
+- Nutzung: Leuchtturmwärter-Wohnhaus mit Küche, Bad und 2 Schlafzimmern, dazu ein Funkraum-Anbau.
+- furniture_style: authority.
+- Eingeschossig, Walmdach aus Wellblech, Anbau mit Flachdach und Parapet.
+- Hauptentrée im Süden (-Y) über eine Veranda mit Mitteltreppe.
+- Das Hauptgebäude hat laut Plan 0,30 m dicke Außenwände und 0,12 m dicke Innenwände.
+
+MASSE (aus dem Prüfbericht, Blender 4.0.2)
+- Bounding Box: X -6,53..6,35, Y -7,35..7,41, Z -0,20..11,50 m.
+- Abmessungen: 12,88 x 14,76 x 11,70 m. Die Höhe wird vom Antennenmast bestimmt (Z 11,5).
+- Der Plan sah einen Footprint von 12,7 x 14,7 m vor. Das gebaute Modell ist in X etwa 0,18 m und in Y etwa 0,06 m größer.
+- Eine Ursache dafür ist im Bericht nicht angegeben.
+- Das Modell liegt weiterhin innerhalb der bebaubaren Fläche von 14,0 x 15,0 m (Plot-Mitte 0/0, +-7,0 x +-7,5 m).
+- Dreiecke: 46.482 (Planlimit 70.000). Meshes: 93, beim GLB-Reimport ebenfalls 93.
+- Der Bericht meldet keine Verstöße (violations: leer). GLB-Größe: 2.255.784 Bytes.
+- Die Maßhaltigkeit im Einzelnen und die Bildtreue sind nicht als perfekt belegt. Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern, keine Garantie für Fotorealismus oder Spielbarkeit und keine UE5-Prüfung.
+
+RÄUME UND PLATZHALTER (Boden z 0,60; Rollen laut Prüfbericht)
+- R01 Diele (hall): coat_rack, shoe_cabinet, bench, ceiling_lamp x2. Kein Fenster; Ersatz sind 2 Deckenlampen.
+- R02 Wohnzimmer (living): sofa, armchair x2, coffee_table, tv_unit, display_cabinet, bookcase, side_table, floor_lamp, rug, ceiling_fan.
+- R03 Küche mit Essplatz (kitchen): kitchen_run, cooker, fridge, pantry, kitchen_table, kitchen_chair x4, wall_shelf x2, ceiling_fan.
+- R04 Hauptschlafzimmer (bedroom): bed_double, bedside x2, wardrobe, dresser, chair, gun_cabinet (Ph_bedroom_gun_cabinet_01), ceiling_fan.
+- R05 Schlafzimmer 2 (bedroom2): bed_single x2, bedside, wardrobe, desk, chair, ceiling_fan.
+- R06 Bad (bathroom): wc, basin, shower, mirror, towel_rail, washing_machine, bath_cabinet, laundry_basket, ceiling_lamp.
+- R07 Funkraum (office): office_desk x2, office_chair x2, filing_cabinet x2, file_shelf, safe, locker, visitor_chair, notice_board, radio_console, ceiling_lamp x2.
+- R08 Veranda: keine Möbel.
+- Gesamt: 66 Platzhalter mit Material "placeholder".
+
+TÜREN (Namen und Breiten aus dem Plan; die Namen sind im Prüfbericht bestätigt)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: Veranda -> R01 (Diele), 1,40 m lichte Breite (je Flügel 0,70), 2,40 m hoch.
+- DoorLeaf_02_L_in: R01 -> R02, 0,90 m.
+- DoorLeaf_03_R_in: R01 -> R04, 0,90 m.
+- DoorLeaf_04_L_in: R01 -> R05, 0,90 m.
+- DoorLeaf_05_R_in: R01 -> R03, 0,90 m.
+- DoorLeaf_06_L_in: R01 -> R06, 0,90 m.
+- DoorLeaf_07_L_in: R03 -> R07, 0,90 m.
+- DoorLeaf_08_R_in: R07 -> außen Ost, 1,00 m, 2,20 m hoch.
+- Blattdicke laut Plan 50 mm, geschlossen, 8 mm Fuge.
+
+MATERIALIEN (im Prüfbericht gelistet)
+aluminium_weathered, basalt_dressed, basalt_masonry, brass_tarnished, ceramic_glazed_white, concrete_cast, flagstone, floor_tiles, galvanized_steel, glass, new_timber_black_paint, painted_timber_warmgrey, placeholder, plaster_white, render_spalled_old, roof_steel_bluegrey, sign_datestone_1887, steel_painted_worn, terracotta, white_peeling_timber.
+
+NEUE OBERFLÄCHE
+- new_timber_black_paint: schwarz gestrichenes, verwittertes Holz, leicht kreidig, feine Risse. Reale Kachelgröße laut Plan 2 m x 2 m.
+- Verwendung: Haustür, Außentür, Läden, Türfutter außen.
+- Die Datei new_timber_black_paint.png liegt NICHT vor (NEW_MATERIAL_FILES: leer). Es existiert kein Foto der Kachel. Der Materialslot bleibt im GLB erhalten. Das Foto muss nachgeliefert oder vom Engine-Team ergänzt werden.
+- sign_datestone_1887 (Datumstein "1887") ist als Material im GLB vorhanden. Die Einbettung, die Auflösung von mindestens 1024 px und das 0-1-UV-Layout sind im Prüfbericht nicht gesondert bestätigt.
+
+ABWEICHUNGEN ZUM REFERENZFOTO (laut Plan)
+- Der Anbau ist ein Flachdachkörper mit Parapet, ohne das Pultdach-Zwischenstück. Er enthält Bad und Funkraum (Wohnhaus-Regel: eigenes Bad).
+- Der Walm überspannt die Veranda und ist mit 35° steiler als die Längsseiten (22°), damit der First lang genug bleibt.
+- Die Haustür ist breiter (1,40 m statt ca. 1,0 m). Der Sockel hat 4 Steigungen à 0,15 m, wegen der Steigungsgrenze von 18 cm.
+- Die Läden sind fest an die Wand angeklappt, wie im Bild. Sie sind keine Türknoten und nicht schließbar.
+- Die schwarzen Holzteile sind new_timber_black_paint, da shutter_paint in der Farbe unbestimmt ist.
+- Die Zisterne ist ein festes Bauteil am Haus. Der Anschluss läuft über das Fallrohr D1.
+- Die Rück- und Westseite sind im Referenzbild nicht sichtbar. Das Fensterlayout dort ist erfunden; Bildtreue wird nicht behauptet.
+
+HINWEISE
+- Maße zu Räumen, Fenstern, Treppen und Details stammen aus dem Plan. Im Prüfbericht sind sie nur über Bounding Box, Meshanzahl, Materialien, Türnamen und Platzhalter belegt.
+- Eine Einzelprüfung gegen den Plan ist nicht ausgewiesen.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 93
+Triangles: 46482
+Reimport Meshes: 93
+Bounds m: [12.88, 14.76, 11.7]
+Materials: aluminium_weathered, basalt_dressed, basalt_masonry, brass_tarnished, ceramic_glazed_white, concrete_cast, flagstone, floor_tiles, galvanized_steel, glass, new_timber_black_paint, painted_timber_warmgrey, placeholder, plaster_white, render_spalled_old, roof_steel_bluegrey, sign_datestone_1887, steel_painted_worn, terracotta, white_peeling_timber
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_L_in, DoorLeaf_03_R_in, DoorLeaf_04_L_in, DoorLeaf_05_R_in, DoorLeaf_06_L_in, DoorLeaf_07_L_in, DoorLeaf_08_R_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_bath_cabinet_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_laundry_basket_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_bedside_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_chair_01, Ph_bedroom2_desk_01, Ph_bedroom2_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_chair_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_ceiling_lamp_02, Ph_hall_coat_rack_01, Ph_hall_shoe_cabinet_01, Ph_kitchen_ceiling_fan_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_chair_04, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_bookcase_01, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_floor_lamp_01, Ph_living_rug_01, Ph_living_side_table_01, Ph_living_sofa_01, Ph_living_tv_unit_01, Ph_office_ceiling_lamp_01, Ph_office_ceiling_lamp_02, Ph_office_file_shelf_01, Ph_office_filing_cabinet_01, Ph_office_filing_cabinet_02, Ph_office_locker_01, Ph_office_notice_board_01, Ph_office_office_chair_01, Ph_office_office_chair_02, Ph_office_office_desk_01, Ph_office_office_desk_02, Ph_office_radio_console_01, Ph_office_safe_01, Ph_office_visitor_chair_01
+API-Schätzkosten USD: 3.91 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_timber_black_paint: inbox/pointe_h01/new_timber_black_paint.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
