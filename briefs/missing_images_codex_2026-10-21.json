@@ -1,0 +1,1192 @@
+{
+  "schema_version": "1.0",
+  "created_date": "2026-10-21",
+  "title": "Fehlende und zu vergleichende Bildassets – bastlerkiste + bastlerkiste-start/inbox",
+  "repositories": {
+    "legacy_project": "turbidtunes/bastlerkiste",
+    "building_deliveries": "turbidtunes/bastlerkiste-start"
+  },
+  "audit": {
+    "origin_legacy": "AUFTRAG_BILDER_GPT.json mit 29 Bildanforderungen im grossen Projekt; am deklarierten Ort 29 fehlend; 9 funktionale HUD-Alternativen in game/hud/icons/png schon vorhanden.",
+    "origin_building": "Bereits ausgelieferte Gebäude-GLBs und note.txt in bastlerkiste-start/inbox. Es fehlen 13 PNG-Zieldateien fuer 12 verschiedene neue Oberflaechen.",
+    "actual_input_folder": "Kein Verzeichnis 'Input' im Projekt-Repository; interpretiert als die existierenden 'inbox'-Ordner der beiden Repositories.",
+    "no_automatic_rename": "Id, Quellbeschreibung, konkrete Zielpfade und existierende Aliasdateien getrennt; keine bestehenden Dateien oder GLB-Namen umbenennen.",
+    "source_original": "turbidtunes/bastlerkiste/AUFTRAG_BILDER_GPT.json",
+    "date_scope": "Bestandsaufnahme main 2026-10-21; vor jeder Erzeugung im Zielrepo neu pruefen, da sich Dateien geaendert haben koennen."
+  },
+  "generation_rules": {
+    "sequential_only": true,
+    "one_image_generation_at_a_time": true,
+    "commit_after_each_success": true,
+    "do_not_call_paid_image_api": true,
+    "require_real_codex_image_tool": true,
+    "no_upscaling": true,
+    "no_procedural_phototextures": true,
+    "tile_check": "Bei seamless_tile im 3x3-Raster visuell auf Übergänge, Flächenhelligkeit, Symmetrie und sich wiederholende Einzelfeatures prüfen. Native Auflösung einhalten; wenn das Tool diese nicht erzeugen kann, statt künstlich hochzuskalieren abbrechen und melden.",
+    "save_exact_repo_and_path": true,
+    "existing_asset_policy": "Vor jedem Bild beide Repositories und destination prüfen. Falls vorhanden: Inhalt/Format plausibilisieren, nicht überschreiben; Aliasdateien nicht umbenennen.",
+    "quality_note": "Die vorhandenen 9 HUD-Icons sind bereits PNGs unter produktiven Unreal-Namen. Die 3 verwandten T_Card-Assets sind nicht automatisch in Motiv und Abmessung identisch."
+  },
+  "counts": {
+    "original_legacy_jobs": 29,
+    "existing_functional_hud_aliases": 9,
+    "legacy_open_or_review": 20,
+    "building_unique_motifs": 12,
+    "building_missing_target_files": 13,
+    "unique_pending_or_review_motifs": 32,
+    "all_pending_destination_files": 33,
+    "image_jobs_requiring_initial_alias_review": 3
+  },
+  "existing_aliases_to_skip": [
+    {
+      "source_id": "icon_private_ground",
+      "legacy_requested_path": "game/hud/icons/icon_private_ground.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_Private.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_guarded",
+      "legacy_requested_path": "game/hud/icons/icon_guarded.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_Guarded.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_seen",
+      "legacy_requested_path": "game/hud/icons/icon_seen.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_Seen.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_theft",
+      "legacy_requested_path": "game/hud/icons/icon_theft.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_Theft.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_assembly_point",
+      "legacy_requested_path": "game/hud/icons/icon_assembly_point.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_AssemblyPoint.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_boat_departs",
+      "legacy_requested_path": "game/hud/icons/icon_boat_departs.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_BoatLeaving.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_dealer_closing",
+      "legacy_requested_path": "game/hud/icons/icon_dealer_closing.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_DealerClosing.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_seat_free",
+      "legacy_requested_path": "game/hud/icons/icon_seat_free.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_SeatFree.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    },
+    {
+      "source_id": "icon_seat_taken",
+      "legacy_requested_path": "game/hud/icons/icon_seat_taken.png",
+      "actual_existing_path": "game/hud/icons/png/T_Icon_SeatTaken.png",
+      "repository": "turbidtunes/bastlerkiste",
+      "reason": "Funktionsgleiches HUD-Symbol bereits vorhanden; nicht aufgrund des Namensunterschieds neu erzeugen"
+    }
+  ],
+  "jobs": [
+    {
+      "order": 1,
+      "id": "bk_int_veneer",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_veneer.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_veneer.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Seamless tile texture of a plain wood furniture board: mid-brown hardwood veneer with a straight, even grain running horizontally across the whole image, subtle pores and fine figure, satin oil finish, no knots, no plank joints, no edges, neutral medium brown (it is tinted in the game). Real size of the image: 1 m x 1 m. File: int_veneer.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_veneer",
+        "declared_target": "map/textures/gpt/int_veneer.png -> T_Int_Veneer (ersetzt den itex.py-Platzhalter)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 2,
+      "id": "bk_int_fabric",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_fabric.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_fabric.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.25,
+      "prompt": "Seamless tile texture of plain-weave upholstery fabric, close-up, near-white natural cotton-linen blend with visible slubby threads, slight irregularity of the weave, matte, no pattern, no seams, no stains. Real size of the image: 25 cm x 25 cm. File: int_fabric.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_fabric",
+        "declared_target": "map/textures/gpt/int_fabric.png -> T_Int_Fabric"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 3,
+      "id": "bk_int_cloth",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_cloth.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_cloth.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.2,
+      "prompt": "Seamless tile texture of fine plain-woven white cotton bed-sheet fabric, close-up, very fine even threads, soft matte surface, a few tiny natural irregularities, no wrinkles, no folds, no pattern, no seams. Real size of the image: 20 cm x 20 cm. File: int_cloth.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_cloth",
+        "declared_target": "map/textures/gpt/int_cloth.png -> T_Int_Cloth"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 4,
+      "id": "bk_int_floral",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_floral.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_floral.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.5,
+      "prompt": "Seamless tile texture of a printed cotton fabric with a small all-over tropical floral pattern (hibiscus and frangipani flowers with leaves) in medium grey tones on a white ground, as printed on Creole curtains and bedspreads, slightly faded, fabric weave visible, flat, no folds, no seams. Greyscale-ish on purpose: the game tints it. Real size of the image: 50 cm x 50 cm. File: int_floral.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_floral",
+        "declared_target": "map/textures/gpt/int_floral.png -> T_Int_Floral"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 5,
+      "id": "bk_int_crochet",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_crochet.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_crochet.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.3,
+      "prompt": "Seamless tile texture of white cotton crochet lace (doily-style pattern of small flowers and open mesh), lying flat on a PURE BLACK background so that every hole of the lace shows black, straight-on top view, even light, sharp threads, no shadows. Real size of the image: 30 cm x 30 cm. File: int_crochet.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_crochet",
+        "declared_target": "map/textures/gpt/int_crochet.png -> T_Int_Crochet (Alpha = Löcher, aus der Helligkeit)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 6,
+      "id": "bk_int_formica",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_formica.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_formica.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.6,
+      "prompt": "Seamless tile texture of a pale off-white speckled laminate (formica) worktop surface from the 1970s, fine grey and beige speckles, very slightly glossy, faint fine scratches from use, no edges, no pattern repeats visible. Real size of the image: 60 cm x 60 cm. File: int_formica.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_formica",
+        "declared_target": "map/textures/gpt/int_formica.png -> T_Int_Formica"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 7,
+      "id": "bk_int_plastic",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_plastic.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_plastic.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.2,
+      "prompt": "Seamless tile texture of matte white moulded polypropylene plastic with a fine sand-blasted texture, as on garden monobloc chairs and buckets, faint scuffs and very fine scratches, no edges, no ribs. Real size of the image: 20 cm x 20 cm. File: int_plastic.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_plastic",
+        "declared_target": "map/textures/gpt/int_plastic.png -> T_Int_Plastic"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 8,
+      "id": "bk_int_rattan",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_rattan.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_rattan.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.3,
+      "prompt": "Seamless tile texture of hand-woven rattan cane webbing in the classic open hexagonal (Vienna straw) pattern, honey-coloured natural cane strands, small open holes showing a dark brown background, close-up, sharp, even light. Real size of the image: 30 cm x 30 cm. File: int_rattan.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_rattan",
+        "declared_target": "map/textures/gpt/int_rattan.png -> T_Int_Rattan"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 9,
+      "id": "bk_int_net",
+      "category": "Innenraum-Texturen",
+      "kind": "seamless_tile",
+      "filename": "int_net.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/int_net.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.05,
+      "prompt": "Seamless tile texture of white polyester mosquito netting, macro close-up of the fine square mesh (about 1.5 mm openings), stretched flat on a PURE BLACK background so every opening shows black, straight-on, even light, sharp threads. Real size of the image: 5 cm x 5 cm. File: int_net.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "int_net",
+        "declared_target": "map/textures/gpt/int_net.png -> T_Int_Net (Alpha = Maschen, aus der Helligkeit)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 10,
+      "id": "bk_hedge_bark",
+      "category": "Vegetation (Lücken unplatzierter Assets)",
+      "kind": "seamless_tile",
+      "filename": "hedge_bark.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/hedge_bark.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.5,
+      "prompt": "Seamless tile texture of the bark of an old hibiscus shrub stem (Hibiscus rosa-sinensis) used as a clipped garden hedge: smooth grey-brown bark with fine lighter lenticels, faint longitudinal fissures, a few tiny lichen spots, grain running vertically. Real size of the image: 50 cm x 50 cm. File: hedge_bark.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "hedge_bark",
+        "declared_target": "map/textures/gpt/hedge_bark.png -> T_Hedge_Bark"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 11,
+      "id": "bk_pitto_bark",
+      "category": "Vegetation (Lücken unplatzierter Assets)",
+      "kind": "seamless_tile",
+      "filename": "pitto_bark.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/pitto_bark.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.6,
+      "prompt": "Seamless tile texture of Japanese cheesewood bark (Pittosporum tobira) on an old trunk: smooth to finely scaly grey bark with darker grey-brown patches and small horizontal lenticels, a little green algae in places, grain running vertically. Real size of the image: 60 cm x 60 cm. File: pitto_bark.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "pitto_bark",
+        "declared_target": "map/textures/gpt/pitto_bark.png -> T_Pitto_Bark"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 12,
+      "id": "bk_rescue_foil",
+      "category": "Evakuierung (geplante Assets, AUFTRAG_BEDARF_EVAKUIERUNG.md)",
+      "kind": "seamless_tile",
+      "filename": "rescue_foil.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/rescue_foil.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.5,
+      "prompt": "Seamless tile texture of a crumpled emergency rescue blanket (thin metallised PET foil), gold side up, many small sharp crinkles and folds with bright specular highlights and darker creases, no edges. Real size of the image: 50 cm x 50 cm. File: rescue_foil.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "rescue_foil",
+        "declared_target": "map/textures/gpt/rescue_foil.png -> T_RescueFoil"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 13,
+      "id": "bk_chicken_wire",
+      "category": "Evakuierung (geplante Assets)",
+      "kind": "seamless_tile",
+      "filename": "chicken_wire.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/chicken_wire.png"
+        }
+      ],
+      "target_resolution_px": [
+        2048,
+        2048
+      ],
+      "photo_tile_size_m": 0.3,
+      "prompt": "Seamless tile texture of galvanised hexagonal chicken wire mesh (25 mm openings, twisted wire joints), flat and straight-on in front of a PURE BLACK background so every opening shows black, dull zinc grey wire with a few small rust spots, sharp, even light. Real size of the image: 30 cm x 30 cm. File: chicken_wire.png",
+      "group_instruction": "You make photo-real seamless tile textures for a realistic tropical-island game. Seamless by its content: no blurred or darker cross-fade band along the edges, no mirrored halves – 2 x 2 copies side by side must show no cross or seam. Straight-on orthographic view, even overcast daylight, no shadows, no perspective, no vignette, no lettering, no logos, no watermarks. Square 2048 x 2048 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "chicken_wire",
+        "declared_target": "map/textures/gpt/chicken_wire.png -> T_ChickenWire (Alpha aus der Helligkeit)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 14,
+      "id": "bk_coast_guard_emblem",
+      "category": "Evakuierung (geplante Assets)",
+      "kind": "emblem",
+      "filename": "coast_guard_emblem.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/coast_guard_emblem.png"
+        }
+      ],
+      "target_resolution_px": [
+        1024,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Flat vector-style emblem of the coast guard of a fictional small Indian Ocean island state: a circular badge, navy blue ring around a white field, in the centre a stylised teal duck in flight above three wavy turquoise lines, a small gold anchor behind it, two thin gold laurel branches along the lower ring. Clean flat colours (navy #1F3A5F, turquoise #2BA3A8, teal #1E7F86, gold #C9A24A, white), crisp edges, no text, no letters, no numbers, no real country symbols. Centred on a fully transparent background, 1024 x 1024 px PNG. File: coast_guard_emblem.png",
+      "group_instruction": "Flat graphical emblem on transparent background; preserve exact design details from prompt.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "coast_guard_emblem",
+        "declared_target": "map/textures/gpt/coast_guard_emblem.png (Fahne, Bootsrumpf, Uniform-Abzeichen)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 15,
+      "id": "bk_coast_guard_flag",
+      "category": "Evakuierung (geplante Assets)",
+      "kind": "printed_flag",
+      "filename": "coast_guard_flag.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "map/textures/gpt/coast_guard_flag.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Flat front view of a rectangular coast guard ensign of a fictional island state, proportion 3:2 filling the whole image edge to edge: white field, a broad diagonal turquoise stripe with a thin navy stripe beside it running from the lower hoist corner to the upper fly side, and in the upper left of the white field a circular navy-and-white badge with a stylised teal duck in flight over three wavy lines. Flat printed colours, a faint fabric weave visible, no folds, no pole, no text, no letters, no real country symbols. 1536 x 1024 px PNG. File: coast_guard_flag.png",
+      "group_instruction": "Crisp front-on printed flag with correct proportions, no added text.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "coast_guard_flag",
+        "declared_target": "map/textures/gpt/coast_guard_flag.png (Fahnentuch, UV 0–1)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 16,
+      "id": "bk_loading_evacuation",
+      "category": "Bildschirm-Bilder",
+      "kind": "cinematic_image",
+      "filename": "loading_evacuation.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "game/hud/images/loading_evacuation.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Late afternoon on a small tropical island: at the end of a wooden jetty in a turquoise lagoon, adult islanders with bundles, plastic jerrycans and a wooden chicken cage wait in line to board two colourful wooden fishing pirogues with outboard motors. A coast guard officer in a white shirt with shoulder boards and a clipboard stands at a rope barrier across the jetty. Behind them, over green basalt hills and sugar cane fields, thick grey-brown smoke columns from several wildfires rise into a hazy sky. Far out beyond the reef a grey coast guard patrol vessel waits. On the beach in the foreground, slightly out of focus, a lone shipwreck survivor in torn clothes watches from outside the rope. File: loading_evacuation.png",
+      "group_instruction": "You make still images for a realistic survival shooter set on a fictional Mauritius-like tropical island (Creole villages, sugar cane, basalt hills, turquoise lagoon) during an island-wide fire. Photo-real cinematic look, natural colours, 35 mm lens feel. Only adults (no children anywhere), no real brands, no logos, no readable text or lettering anywhere, no weapons pointed at the viewer. Landscape 1536 x 1024 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "loading_evacuation",
+        "declared_target": "game/hud/images/loading_evacuation.png (Ladebildschirm, Zuschnitt 16:9)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 17,
+      "id": "bk_loading_private_guns",
+      "category": "Bildschirm-Bilder",
+      "kind": "cinematic_image",
+      "filename": "loading_private_guns.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "game/hud/images/loading_private_guns.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Dusk in a Creole village on a tropical island: a modest timber house with a corrugated roof and a lit veranda lamp, a radio on the veranda table, a moped parked by the gate and a dog on a chain barking at the fence. In the open doorway a grey-haired adult islander stands calmly, holding a double-barrelled shotgun lowered across the body, watching the path. Warm lamplight inside, deep blue sky, a faint orange glow of a distant fire on the hills. File: loading_private_guns.png",
+      "group_instruction": "You make still images for a realistic survival shooter set on a fictional Mauritius-like tropical island (Creole villages, sugar cane, basalt hills, turquoise lagoon) during an island-wide fire. Photo-real cinematic look, natural colours, 35 mm lens feel. Only adults (no children anywhere), no real brands, no logos, no readable text or lettering anywhere, no weapons pointed at the viewer. Landscape 1536 x 1024 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "loading_private_guns",
+        "declared_target": "game/hud/images/loading_private_guns.png (Ladebildschirm)"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 18,
+      "id": "bk_mode_card_solo",
+      "category": "Bildschirm-Bilder",
+      "kind": "cinematic_image",
+      "filename": "mode_card_solo.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "game/hud/images/mode_card_solo.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Interior of a rescue helicopter cabin seen from the open side door: two rear seats side by side. In the left seat sits an exhausted, wet adult survivor wrapped in a gold foil rescue blanket with a neck brace; the right seat is empty with its harness hanging loose. A crew member in a flight suit and helmet kneels at the door with one hand on the empty seat. Outside: blue sea and a smoky island coast far below. File: mode_card_solo.png",
+      "group_instruction": "You make still images for a realistic survival shooter set on a fictional Mauritius-like tropical island (Creole villages, sugar cane, basalt hills, turquoise lagoon) during an island-wide fire. Photo-real cinematic look, natural colours, 35 mm lens feel. Only adults (no children anywhere), no real brands, no logos, no readable text or lettering anywhere, no weapons pointed at the viewer. Landscape 1536 x 1024 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "mode_card_solo",
+        "declared_target": "game/hud/images/mode_card_solo.png (Lobby-Moduskarte BR Solo)"
+      },
+      "state": "compare_existing_first",
+      "related_existing_asset": {
+        "repository": "turbidtunes/bastlerkiste",
+        "path": "game/hud/icons/png/T_Card_ModeSolo.png",
+        "note": "Ähnliche bestehende Kartenillustration; zunächst visuellen Inhalt und Formatanforderungen vergleichen, nicht allein aufgrund des Namens duplizieren"
+      },
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 19,
+      "id": "bk_mode_card_duo",
+      "category": "Bildschirm-Bilder",
+      "kind": "cinematic_image",
+      "filename": "mode_card_duo.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "game/hud/images/mode_card_duo.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "Interior of a rescue helicopter cabin seen from the open side door: two empty rear seats side by side with their harnesses hanging loose, a crew member in a flight suit and helmet kneeling at the door, waving someone in. Outside: a smoky tropical island coast with a turquoise lagoon below. File: mode_card_duo.png",
+      "group_instruction": "You make still images for a realistic survival shooter set on a fictional Mauritius-like tropical island (Creole villages, sugar cane, basalt hills, turquoise lagoon) during an island-wide fire. Photo-real cinematic look, natural colours, 35 mm lens feel. Only adults (no children anywhere), no real brands, no logos, no readable text or lettering anywhere, no weapons pointed at the viewer. Landscape 1536 x 1024 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "mode_card_duo",
+        "declared_target": "game/hud/images/mode_card_duo.png (Lobby-Moduskarte BR Duo)"
+      },
+      "state": "compare_existing_first",
+      "related_existing_asset": {
+        "repository": "turbidtunes/bastlerkiste",
+        "path": "game/hud/icons/png/T_Card_ModeDuo.png",
+        "note": "Ähnliche bestehende Kartenillustration; zunächst visuellen Inhalt und Formatanforderungen vergleichen, nicht allein aufgrund des Namens duplizieren"
+      },
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 20,
+      "id": "bk_end_why_one",
+      "category": "Bildschirm-Bilder",
+      "kind": "cinematic_image",
+      "filename": "end_why_one.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste",
+          "path": "game/hud/images/end_why_one.png"
+        }
+      ],
+      "target_resolution_px": [
+        1536,
+        1024
+      ],
+      "photo_tile_size_m": null,
+      "prompt": "A rescue helicopter lifting off from a small clearing on a coastal headland and turning out to sea, its side door closing. Below it the tropical island is wrapped in dense wildfire smoke, sugar cane fields burnt black, the evacuation boats already far away at the patrol vessel beyond the reef. Seen from a distance at golden hour, the helicopter small against a huge smoke column. File: end_why_one.png",
+      "group_instruction": "You make still images for a realistic survival shooter set on a fictional Mauritius-like tropical island (Creole villages, sugar cane, basalt hills, turquoise lagoon) during an island-wide fire. Photo-real cinematic look, natural colours, 35 mm lens feel. Only adults (no children anywhere), no real brands, no logos, no readable text or lettering anywhere, no weapons pointed at the viewer. Landscape 1536 x 1024 px PNG. The file name I give is exact.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste",
+        "file": "AUFTRAG_BILDER_GPT.json",
+        "id": "end_why_one",
+        "declared_target": "game/hud/images/end_why_one.png (Endbildschirm, Tafel END.Rescue.Why*)"
+      },
+      "state": "compare_existing_first",
+      "related_existing_asset": {
+        "repository": "turbidtunes/bastlerkiste",
+        "path": "game/hud/icons/png/T_Card_WhySolo.png",
+        "note": "Ähnliche bestehende Kartenillustration; zunächst visuellen Inhalt und Formatanforderungen vergleichen, nicht allein aufgrund des Namens duplizieren"
+      },
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 21,
+      "id": "building_new_roof_corrugated_red",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_roof_corrugated_red.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/bel_air_h01/new_roof_corrugated_red.png"
+        },
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/cite_moulin_h04/new_roof_corrugated_red.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless square material photograph of weathered red-painted corrugated steel roof sheet on a traditional Mauritian house. Real galvanized metal ridges, dull faded red coating, subtle rusty wear at edges and crests, natural scratches, realistic 1 metre coverage, entire frame filled with the same sheet. Camera precisely perpendicular to the sheet, flat even overcast lighting, no cast shadows or perspective, no mirroring or artificial repeat. Corrugation runs vertically through the frame; the repeat must be seamless across all four borders.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/bel_air_h01/note.txt",
+          "inbox/cite_moulin_h04/note.txt"
+        ],
+        "id": "new_roof_corrugated_red"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 22,
+      "id": "building_new_timber_oxblood_red",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_timber_oxblood_red.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/cite_carriere_h01/new_timber_oxblood_red.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless front-on material photograph of old oxblood-red painted timber: deep brownish burgundy coating, chalky weathering, peeling patches revealing aged wood beneath, visible fine wood grain, irregular wear without repeating motifs, no boards or joints unless physically in the original material. Even diffuse daylight, no shadows, no perspective.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/cite_carriere_h01/note.txt"
+        ],
+        "id": "new_timber_oxblood_red"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 23,
+      "id": "building_new_plaster_pink",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_plaster_pink.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/cite_moulin_h04/new_plaster_pink.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 2,
+      "prompt": "Photorealistic seamless wall material photograph of old softly faded pink exterior plaster on a modest Mauritian Creole house: fine granular sand/cement render, uneven aged dusty rose pigment, slight mineral weathering and subtle stains, no brick joints, no windows or structural edges, diffuse even light.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/cite_moulin_h04/note.txt"
+        ],
+        "id": "new_plaster_pink"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 24,
+      "id": "building_new_paint_green_metal",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_paint_green_metal.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/grand_fond_h07/new_paint_green_metal.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless close frontal photograph of dark green painted steel surface on an island mosque: aged green paint on smooth metal, faint chalking, occasional tiny rust freckles and scratched spots, realistic opaque enamel coating and fine metal imperfections, no visible edges or seams, uniform matte diffuse light.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/grand_fond_h07/note.txt"
+        ],
+        "id": "new_paint_green_metal"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 25,
+      "id": "building_new_paint_green_timber",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_paint_green_timber.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/grand_fond_h07/new_paint_green_timber.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless close frontal photograph of dark green painted timber used for mosque window frames and door leaves: subtle linear wood grain under deep green opaque paint, small age cracks and fine worn paint, modest chalking, no door outline or panel geometry, grain running vertically, even diffuse lighting.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/grand_fond_h07/note.txt"
+        ],
+        "id": "new_paint_green_timber"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 26,
+      "id": "building_new_bamboo_pole",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_bamboo_pole.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/moulin_h05/new_bamboo_pole.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless straight-on macro material of a real yellowish-brown aged bamboo culm used in tropical building details. Slight vertical bamboo fibres, warm straw/tan colouring, natural node band imperfections and tiny dark irregular speckles, entirely fills the tile, no perspective, no dramatic highlights or shadows. Preserve convincing physical bamboo scale and a seamlessly repeating surface without prominent duplicated node patterns.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/moulin_h05/note.txt"
+        ],
+        "id": "new_bamboo_pole"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 27,
+      "id": "building_new_flag_cloth_red",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_flag_cloth_red.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/moulin_h05/new_flag_cloth_red.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 0.5,
+      "prompt": "Photorealistic seamless straight-on macro photograph of loosely woven red dyed cotton flag cloth, slightly sun faded on a Mauritian community building: visible real cotton warp and weft threads and slight natural colour variation, matte texture, no folds or creases, no printed symbols, no lettering, perfectly even diffuse light.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/moulin_h05/note.txt"
+        ],
+        "id": "new_flag_cloth_red"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 28,
+      "id": "building_new_plaster_lavender",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_plaster_lavender.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/moulin_h05/new_plaster_lavender.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 2,
+      "prompt": "Photorealistic seamless wall material photograph of old slightly chalky and weathered lilac / lavender-violet exterior plaster on a Mauritian community hall. Fine rough render grain, mild uneven pigment fading and restrained age marks, no structural joints or window details, parallel camera, neutral even diffuse daylight.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/moulin_h05/note.txt"
+        ],
+        "id": "new_plaster_lavender"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 29,
+      "id": "building_new_door_teal",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_door_teal.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/weiler_h01/new_door_teal.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless material photo of teal turquoise enamel-painted steel door surface: gently worn satin paint with fine scratches, small worn spots and slight age-related chalking, no handles, windows, hinges or panel geometry. Straight-on full-frame material swatch, soft diffuse light.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/weiler_h01/note.txt"
+        ],
+        "id": "new_door_teal"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 30,
+      "id": "building_new_render_teal",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_render_teal.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/weiler_h01/new_render_teal.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 2,
+      "prompt": "Photorealistic seamless wall material photo of rough turquoise teal painted external render for a hotel staff building's facade band: cement/plaster aggregate visible, slightly weathered matte teal tone, subtle variations without baked lighting or decorative motifs; straight-on, even diffuse daylight.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/weiler_h01/note.txt"
+        ],
+        "id": "new_render_teal"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 31,
+      "id": "building_new_roof_membrane_grey",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_roof_membrane_grey.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/weiler_h01/new_roof_membrane_grey.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 2,
+      "prompt": "Photorealistic seamless straight-on photograph of aged grey bituminous waterproofing membrane on a flat roof: fine mineral granules and subtle non-repeating mottled weathering, uniform matte grey tone, no raised seam lines, pipes or roof objects, no shadows or reflections, physically plausible scale.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/weiler_h01/note.txt"
+        ],
+        "id": "new_roof_membrane_grey"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    },
+    {
+      "order": 32,
+      "id": "building_new_solar_collector_panel",
+      "category": "Gebäude-Fototexturen",
+      "kind": "seamless_tile",
+      "filename": "new_solar_collector_panel.png",
+      "destinations": [
+        {
+          "repository": "turbidtunes/bastlerkiste-start",
+          "path": "inbox/weiler_h01/new_solar_collector_panel.png"
+        }
+      ],
+      "target_resolution_px": [
+        1254,
+        1254
+      ],
+      "photo_tile_size_m": 1,
+      "prompt": "Photorealistic seamless straight-on material detail of a dark navy-blue solar thermal collector panel absorber surface: dark slightly textured blue coating with subtle fine manufacturing grain, no whole panel frame, no glare, no reflections, no photovoltaic cell grids unless genuinely required, evenly cross-polarised daylight, texture fills frame edge to edge.",
+      "group_instruction": "Real photographic seamless tile of exactly this surface; front-on parallel camera, matte cross-polarised uniform light, no 3D render, no procedural/grain-noise substitution, no blur-edge crossfade, no symmetry or mirroring, no visible pattern cross at 3x3 repetition; absolutely no upscaling. Geometry such as door handles or full panels is not part of the material swatch.",
+      "source": {
+        "repository": "turbidtunes/bastlerkiste-start",
+        "file": [
+          "inbox/weiler_h01/note.txt"
+        ],
+        "id": "new_solar_collector_panel"
+      },
+      "state": "needs_generation",
+      "related_existing_asset": null,
+      "generation_policy": {
+        "native_resolution_only": true,
+        "no_upscaling": true,
+        "replace_existing": false
+      }
+    }
+  ]
+}
