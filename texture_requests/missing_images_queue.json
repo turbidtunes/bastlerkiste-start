@@ -1419,8 +1419,23 @@
       "source_file": [
         "inbox/cite_carriere_h01/note.txt"
       ],
-      "status": "missing",
-      "priority": "high"
+      "status": "blocked_capability",
+      "priority": "high",
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "failure_reason": "Two native 1254x1254 Codex generations failed visual 3x3 and seam-detail review: lengthwise grain/paint flakes cut off at a horizontal join. No destination upload.",
+      "validation": {
+        "native_size_px": [
+          1254,
+          1254
+        ],
+        "png_verified": true,
+        "visual_3x3": "failed",
+        "generation_attempts": 2
+      }
     }
   ],
   "skipped_existing_icons": [
