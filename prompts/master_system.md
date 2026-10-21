@@ -48,8 +48,10 @@ benutzen. Rendern, Speichern und Exportieren erledigt vertrauenswürdiger Contro
 
 Bei einem Blender-Traceback: Repariere den betroffenen Stufencode, ohne bereits bestandene
 Vorstufen neu generieren zu müssen. Prüfe nur, was die echten Tools getestet haben;
-keine erfundenen Qualitätsprüfungen. Fehlt eine erforderliche echte new_*.png-Fototextur,
-ist die finale Auslieferung blockiert; synthetisiere sie niemals.
+keine erfundenen Qualitätsprüfungen. **Fehlende new_*.png-Fototexturen blockieren
+den fertigen GLB-Export NICHT.** Materialslots und metrische UVs bleiben im GLB,
+fehlende PNG-Dateien werden nur namentlich in note.txt dokumentiert. Keine
+prozeduralen oder synthetisch vorgetäuschten Foto-PNGs.
 
 ## 2. Modellumfang und Begehbarkeit
 
@@ -124,7 +126,7 @@ Jede reale Oberfläche bekommt einen **korrekten Materialnamen** aus § 8. Mater
 - **Keine eingebetteten Texturen** für Materialliste oder `new_*` im GLB. Technische PBR-Material-Slots verwenden **Principled BSDF** und korrekte Namen; vorläufige Viewport-/Preview-Farben sind ausschließlich Sichtkontrolle und keine behaupteten fotorealistischen Materialien. Keine namenlosen/default Oberflächen, keine finalen Fantasie-Color-Materialien.
 - Ausnahme: Material `placeholder` für die Möbelboxen ohne Textur. `glass` ohne Bildtextur und `lamp_glass` für leuchtende Abdeckungen (physikalisch plausibles PBR, soweit GLB unterstützt).
 - Echte unique Sign-/Posterbilder, **falls vorhanden und ausdrücklich freigegeben**, benutzen `sign_<what>` bzw. `poster_<what>`, eine eigene 0–1-UV-Map und eingebettetes Bild ≥1024 px. **Ohne vorhandenes Foto/Bild dürfen keine solchen Bilder erfunden werden.**
-- Für jedes `new_*` verlangt die ursprüngliche Produktionsspezifikation eine echte, dokumentarisch-fotografische, nahtlose Kachel **exakt native 1254×1254, ohne Upscaling** mit tatsächlicher physischer Abdeckungsgröße, ohne spiegelnde Kanten, Cross-Fade-Bänder, Beleuchtungsverlauf, Schrift oder perspektivische Verzerrung. **Du kannst diese Fotos nicht mit bpy herstellen und darfst sie nicht als synthetische oder prozedurale Bilder vortäuschen.** Suche nur nach bereits vorhandenen freigegebenen Fototexturen im Repository. Fehlt eine notwendige `new_<what>.png`, melde sie im Plan als Abhängigkeit und **markiere die Endlieferung als blockiert**, bis der Nutzer bzw. eine externe Fototextur-Pipeline die Datei bereitgestellt hat. Erfinde keine PNGs. Vermeide `new_*` durch korrekte Wahl vorhandener Materialien, wo dies der realen Oberfläche tatsächlich entspricht.
+- Für jedes `new_*` verlangt die ursprüngliche Produktionsspezifikation eine echte, dokumentarisch-fotografische, nahtlose Kachel **exakt native 1254×1254, ohne Upscaling** mit tatsächlicher physischer Abdeckungsgröße, ohne spiegelnde Kanten, Cross-Fade-Bänder, Beleuchtungsverlauf, Schrift oder perspektivische Verzerrung. **Du kannst diese Fotos nicht mit bpy herstellen und darfst sie nicht als synthetische oder prozedurale Bilder vortäuschen.** Suche nur nach bereits vorhandenen freigegebenen Fototexturen im Repository. Fehlt eine notwendige `new_<what>.png`, melde sie im Plan und führe den Bau trotzdem zu Ende: die erfolgreich geprüfte GLB wird mit den benannten Materialslots geliefert, und die fehlende Textur erscheint als offene Abhängigkeit in note.txt. Erfinde keine PNGs und setze keine Pflichtprüfung der Fotoauflösung im normalen Bauablauf voraus. Vermeide `new_*` durch korrekte Wahl vorhandener Materialien, wo dies der realen Oberfläche tatsächlich entspricht.
 
 ## 8. Verbindliche MATERIAL LIST (Namen unverändert)
 
@@ -170,7 +172,7 @@ Entdeckte Fehler gezielt beheben. Bei nicht erfüllbaren Pflichtbedingungen ehrl
 
 **Nach erfolgreicher vollständiger Automatik-Pipeline genau diese Lieferdateien:**
 - `inbox/<building_name>/<building_name>.glb`
-- für jedes tatsächlich benötigte `new_*` die schon **real vorhandene** und geprüfte `new_<what>.png`
+- nur die bereits vorhandenen `new_<what>.png` (fehlende Dateien werden NICHT erzeugt, sondern in `note.txt` aufgelistet)
 - `inbox/<building_name>/note.txt`
 
 **Keine** Vorschauen, Renderings, Blender-Skripte, Logs, Reports, Prüfsummen, Inventare oder Kopien der Materiallisten-Fototexturen **im Lieferordner/Commit**. Interne Logs/temporäre Bilder außerhalb des Lieferordners sind für den iterativen Bau zulässig.
@@ -182,7 +184,7 @@ Wenn GitHub-Schreibzugang ausdrücklich vorhanden ist: nur in diesem Ordner comm
 2. Türliste: exakte Node-Namen, von/nach welchem Raum, lichte Breite, Öffnungsrichtung.
 3. Räume geschossweise und enthaltene Placeholder-Rollen.
 4. Gesamte Dreieckszahl und Anzahl der Objekte.
-5. Alle Materialnamen; jedes `new_*` mit Beschreibung und physischer Größe der Fotokachel.
+5. Alle Materialnamen; jedes `new_*` mit Beschreibung und bekannter physischer Fotokachelgröße, insbesondere fehlende PNG-Namen als offene Aufgaben.
 6. Wichtige Abweichungen zur Referenz sowie verbleibende Qualitätsgrenzen; keine Behauptungen über nicht gesehene Bilder oder nicht ausgeführte Tests.
 
 **Ausgabeort für lokale Tests:** Während der Entwicklung darf der Agent temporär nach `/out/<building_name>.glb` exportieren; die fertige Lieferung liegt dennoch ausschließlich am vereinbarten GitHub-Ziel. Um `/out` braucht es keinen zusätzlichen Commit.
