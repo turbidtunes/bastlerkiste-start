@@ -1,5 +1,12 @@
 # FERTIG ZUSAMMENGEFÜHRTER PRODUKTIONSPROMPT — LES CALANQUES H06 · ERMITA
 
+## OUTPUT-CONTRACT / PLANPHASE – GELD UND TOKENS SPAREN (VERBINDLICH)
+
+Der Architekturplan in Phase **1/5 PLAN ist ausschließlich eine kompakte, ausführbare BAUSPEZIFIKATION**, kein Essay und keine Probe-Modellierung. **Richtwert für kleine Gebäude: 900–1.500 Wörter, für komplexe Gebäude: höchstens ca. 2.200 Wörter.** Das betrifft NUR die Textausgabe der Planphase, niemals den LOD0-Detailgrad oder die späteren Blender-Codephasen. Der Controller fordert die Felder IDENTITÄT, GRUNDSTÜCK, GESCHOSSE, RÄUME (ein Datensatz pro Raum), ERSCHLIESSUNG, TÜREN (ein Datensatz pro Öffnung), FENSTER/FASSADEN (gleiche Fenster als Raster), DACH/SONDERBAUTEN, MATERIALSLOTS (nur genutzte), PH-PLACEHOLDER (Rollen und Anzahlen), REFERENZABWEICHUNGEN, BAUPHASEN und `MAX_TRIS` an. **Ein Datensatz statt eines Absatzes.** Parameter, Maße, Koordinaten, Namen, Nutzbarkeit und Material-IDs dürfen NICHT fehlen.
+
+**Stoppregel:** Plan genau **einmal** schreiben und am Ende `PLAN_COMPLETE` ausgeben, danach **sofort die Ausgabe beenden**. Keine Wiederholung der Aufgabenstellung oder Materialliste, keine alternativen Varianten, keine ausführlichen Überlegungen, keine Architekturgeschichte, keine Schritt-für-Schritt-Tutorials, keine einzeln beschriebenen 50 identischen Fenstern oder Bänke, kein Python-Code und keine zweite Planfassung. Unklare Kleinigkeiten konsistent entscheiden und in einer Zeile kennzeichnen, statt endlos Möglichkeiten gegeneinander abzuwägen. **Vollständige Modellierung erfolgt danach automatisch**, ohne Go, im selben Workflow.
+
+
 **GitHub-Actions-Eingaben:** `building_name`: `les_calanques_ermita`, `prompt_path`: `prompts/les_calanques_ermita.md`, `reference_images`: `referenzbilder/ref_les_calanques_H06_g_ermita.png`.
 
 # A. VERBINDLICHER KONKRETER BAUAUFTRAG — LES CALANQUES H06 (MALLORCA)
@@ -76,7 +83,7 @@ Jedes Möbelstück, das der Spieler später mit echten Game-Requisiten ersetzt, 
 
 Die ursprünglichen allgemeinen Worte „work in two steps; wait for go“ gelten hier **nicht**. Das Modell erstellt zwar zuerst einen detaillierten, numerischen Plan, aber der Controller setzt unmittelbar danach automatisch die Modellierung fort.
 
-**1/5 PLAN:** Ausführlich und qualitativ hochwertig planen: Footprint, alle numerischen Höhen, Fassaden und Dachdetails, Grundrisse, Türliste, Spielerwege, Raumgrößen, Fensterraster, Materialien, UV-Konzept, Platzhalter, Kirchhofmauer, Veränderungen gegenüber Bild, `MAX_TRIS` zwischen 10.000 und 150.000, Risiken. **Keinen Blender-Code im Planungsschritt**.
+**1/5 PLAN:** Kompakte und maßhaltige Bauspezifikation, ohne Wiederholung oder ausufernde Beschreibung: Footprint, alle numerischen Höhen, Fassaden und Dachdetails, Grundrisse, Türliste, Spielerwege, Raumgrößen, Fensterraster, Materialien, UV-Konzept, Platzhalter, Kirchhofmauer, Veränderungen gegenüber Bild, `MAX_TRIS` zwischen 10.000 und 150.000, Risiken. **Keinen Blender-Code im Planungsschritt**.
 **2/5 SHELL:** Fundament, Außen-/Innenwände, real offene Tür-/Fensteröffnungen und echte Raumvolumina.
 **3/5 ARCHITECTURE:** Vorhandene Dachform, Glockengiebel/Kleinturm nach Referenz, reale Treppen und Türblätter, Fenster, Geländer, zugelassene Einfassungsmauer.
 **4/5 DETAILS:** Sichtbare Details, geeignete Materialslots, metrische UVs, sämtliche Furniture-Placeholder.
@@ -120,7 +127,7 @@ explizit. **Sobald der Plan fertig ist, beginnt die Modellierung im selben GitHu
 sofort automatisch. Niemals auf „go“, Genehmigung oder interaktive Bestätigung warten.**
 
 Der ausführende Controller übernimmt die Phasensteuerung:
-1. PLAN: Analysiere die echten Referenzfotos und schreibe einen konkreten Bauplan.
+1. PLAN: Analysiere die echten Referenzfotos und schreibe genau eine kompakte, numerisch vollständige Bauspezifikation nach OUTPUT-CONTRACT; keine Essays oder Blender-Code.
 2. SHELL: Baue maßhaltiges Fundament, Decken, Hauptwände, Raumvolumen und echte Öffnungen.
 3. ARCHITECTURE: Ergänze Dach, den nach Bild vorhandenen Glockengiebel oder kleinen Turm, erforderliche echte Treppen, geschlossene Fenster- und Türgeometrie.
 4. DETAILS: Ergänze architektonische Details, Materialnamen, UV0 und Möbel-Placeholder.
@@ -282,4 +289,4 @@ Wenn GitHub-Schreibzugang ausdrücklich vorhanden ist: nur in diesem Ordner comm
 
 ## Abschließende projektspezifische Vorrangregel
 
-Bei Konflikten mit generischen Beispielen im technischen Systemauftrag gelten die konkreten Projektangaben aus Abschnitt A: Mallorca, Les Calanques, Grundstück 21 × 25 m, bebaubar höchstens 18 × 19 m, mindestens die angegebenen Grenzabstände, höchstens 3 Geschosse, traditionelle **einschiffige** Ermita mit Sakristei, Glockengiebel ODER kleiner Turm gemäß tatsächlicher Referenz, zugehörige eng begrenzte Kirchhofmauer, furniture_style `authority`, Auslieferung nach `inbox/les_calanques_ermita/`. Keine zusätzliche Prompt-Zusammenführung. Der Plan ist ausführlich; nach seinem Abschluss direkt ohne Go in den Build wechseln.
+Bei Konflikten mit generischen Beispielen im technischen Systemauftrag gelten die konkreten Projektangaben aus Abschnitt A: Mallorca, Les Calanques, Grundstück 21 × 25 m, bebaubar höchstens 18 × 19 m, mindestens die angegebenen Grenzabstände, höchstens 3 Geschosse, traditionelle **einschiffige** Ermita mit Sakristei, Glockengiebel ODER kleiner Turm gemäß tatsächlicher Referenz, zugehörige eng begrenzte Kirchhofmauer, furniture_style `authority`, Auslieferung nach `inbox/les_calanques_ermita/`. Keine zusätzliche Prompt-Zusammenführung. Der Plan ist kompakt, vollständig in Messdaten und endet mit PLAN_COMPLETE; nach seinem Abschluss direkt ohne Go in den Build wechseln.
