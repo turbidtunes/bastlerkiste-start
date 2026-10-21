@@ -1,81 +1,75 @@
-# Universelle Blender-Gebäude-Pipeline: Originalprompts unverändert verwenden
+# Claude Blender AutoBuild – Prompt direkt vom Smartphone starten
 
-## Ziel
+## Einmalige Einrichtung
 
-Bestehende, lange Gebäude-Prompts müssen NICHT manuell in eine neue Vorlage übertragen
-oder gekürzt werden. Der Prompt-Compiler liest den ganzen Originalprompt und die
-Referenzbilder, gleicht ihn mit `prompts/master_system.md` ab und schreibt einen
-strukturierten Bauvertrag. Der **unveränderte Originalprompt** bleibt in den
-folgenden Plan-, Modellier-, Korrektur- und Abschlussstufen zusätzlich erhalten.
+Die GitHub-Actions-Pipeline ist bereits im Repository angelegt. Stelle sicher,
+dass das GitHub Actions Secret `ANTHROPIC_API_KEY` gesetzt ist. Der zugehörige
+Workspace muss API-Abrechnung erlauben.
 
-Es gibt **keine Go-Pause**. Das Verfahren baut unmittelbar nach dem Plan weiter.
+## Jeden neuen Bauauftrag starten
 
-## Starten vom Smartphone
+1. Öffne https://github.com/turbidtunes/bastlerkiste-start/actions
+2. Öffne **Claude Blender Gebaeude automatisch bauen** → **Run workflow**
+3. Wähle den Branch **main**.
+4. `building_name`: eindeutiger Name in `lower_snake_case`
+   (z. B. `creole_bakery_01`).
+5. `building_prompt`: **den ganzen fertig zusammengeführten Prompt**
+   direkt hineinkopieren. Du kannst ihn vorher mit ChatGPT individuell
+   verschmelzen lassen. Die Pipeline führt **keinen Prompt-Compiler mehr aus**
+   und hängt den alten `prompts/master_system.md`-Prompt nicht erneut an.
+6. `reference_images`: Bildpfade im Repository, mit Komma getrennt
+   (z. B. `referenzbilder/bakery_01.png` oder `references/bakery_01.png`).
+   Lass dieses Feld leer, wenn kein Bild vorhanden ist.
+7. Modell auswählen und bei `review_fixes` die Anzahl erlaubter visueller
+   Korrekturrunden auswählen. Mit **Run workflow** starten.
 
-1. Öffne `https://github.com/turbidtunes/bastlerkiste-start/actions`.
-2. Wähle `Claude Blender Gebaeude automatisch bauen` und `Run workflow`.
-3. Stelle als Branch `main` ein.
-4. Trage bei `building_name` eine neue eindeutige Kennung in lower_snake_case ein.
-5. **Entweder** bei `brief_path` den Pfad zu deinem vollen Originalprompt,
-   z. B. `briefs/spanish_villa_02.md`, **oder** bei `building_prompt` den
-   ganzen Text direkt einfügen. Ein direkt eingefügter Text hat Vorrang.
-6. Bei `reference_images` die vorhandenen Bildpfade durch Kommas getrennt
-   eintragen, z. B. `referenzbilder/villa_front.png,referenzbilder/villa_side.png`.
-   Zulässige Ordner: `references/` und `referenzbilder/`.
-7. Modell und Zahl der optionalen Bildkorrekturen wählen, dann starten.
+**Wichtig:** GitHub Actions begrenzt alle `workflow_dispatch`-Eingaben
+zusammen auf **65.535 Zeichen**. Das ist ein Plattformlimit, kein
+künstliches Claude-Tokenlimit. Wenn ein von ChatGPT zusammengeführter Prompt
+größer ist, passt er nicht vollständig in dieses Actions-Formular. Bitte
+nicht einfach abschneiden, sondern dafür einen anderen Eingabeweg verwenden.
 
-Bei sehr langen Prompts ist **eine Markdown-Datei unter `briefs/` empfohlen**:
-GitHub begrenzt die Gesamtgröße aller `workflow_dispatch`-Eingaben auf
-etwa 65.535 Zeichen. Die Markdown-Datei ist nicht auf dieses Formularlimit
-beschränkt (es gelten weiterhin Repository- und API-Grenzen).
+Die Eingabe wird als `_asset_work/<building_name>/input_prompt.md`
+im temporären Arbeitsverzeichnis protokolliert und bei der Diagnose als
+Actions-Artefakt bereitgestellt (nicht als Datei in `inbox/` committed).
 
-## Beispiele
+## Ablauf (ohne Go und ohne Compiler)
 
-### Kirchgebäude (bereits vorhanden)
+1. **1/5 PLAN:** Claude liest deinen eingegebenen Prompt und die verfügbaren
+   Referenzbilder und erstellt den ausführlichen Architekturplan.
+2. **2/5 SHELL:** Blender modelliert Fundament, Geschossplatten und Hauptwände.
+3. **3/5 ARCHITECTURE:** Gebäudeabhängige Architektur, Dächer, Fenster, Türen.
+4. **4/5 DETAILS:** Geometrie-Details, Materialnamen, UVs und Platzhalter.
+5. **5/5 EXPORT:** GLB technisch prüfen, exportieren und wieder importieren.
 
-- `building_name`: `grand_fond_parish_church`
-- `brief_path`: `briefs/grand_fond_parish_church.md`
-- `building_prompt`: LEER
-- `reference_images`: `references/ref_grand_fond_H04_g_church_creole.png`
+Nach jeder der drei Bauphasen werden Blender-Kontrollrenderings erstellt;
+Claude kann anhand dieser Aufnahmen Änderungen beauftragen. Nach erfolgreicher
+Validierung committet der GitHub Actions Bot die endgültigen Dateien nach
+`inbox/<building_name>/`.
 
-### Spanische Villa
+## Was unverändert bleibt
 
-- Vollständigen alten Bauprompt unverändert als
-  `briefs/spanish_villa_02.md` hochladen.
-- Referenzfoto unter `referenzbilder/spanish_villa_02.png` hochladen.
-- `building_name`: `spanish_villa_02`
-- `brief_path`: `briefs/spanish_villa_02.md`
-- `building_prompt`: LEER
-- `reference_images`: `referenzbilder/spanish_villa_02.png`
+- Kein künstliches Gesamt-Tokenlimit und keine eigene API-Dollargrenze.
+  Die Anthropic-API setzt weiterhin ein technisches Limit je Anfrage; der
+  Agent setzt Ausgaben beim Erreichen des Modelllimits automatisch fort.
+- Keine generierten Fototexturen als Ersatz für echte Fotos.
+- Fehlende erforderliche `new_*.png`-Dateien blockieren weiter die Lieferung.
+- QA-Renderings, Fehlerprotokolle, Zwischenstände und ursprünglicher Prompt
+  landen **nicht** in der fertigen `inbox/`-Lieferung.
+- GitHub-/Anthropic-Kontingente und technische Laufzeitgrenzen bleiben gültig.
 
-## Reihenfolge
+## Bestehende Workflows
 
-1. Originalprompt laden und in `_asset_work/<name>/original_prompt.md` protokollieren.
-2. Compiler ruft Claude mit dem Originalprompt und den echten Referenzbildern auf.
-3. Compiler erstellt `_asset_work/<name>/compiled_contract.md`. Fehlende
-   Pflichtabschnitte führen zu Reparaturversuchen und gegebenenfalls zum Abbruch.
-4. Claude erstellt einen Plan; dann folgen `shell`, `architecture`, `details`,
-   vier Blender-Kontrollbilder je Stufe und eventuelle Korrekturskripte.
-5. Nach technischer Validierung und GLB-Reimport gehen **nur** GLB, `note.txt`
-   und ggf. vorhandene echte neue Fototexturen nach `inbox/<name>/`.
+Nur **neue** GitHub-Actions-Durchläufe auf dem aktualisierten Branch `main`
+verwenden die direkte Prompteingabe. Ein bereits gestarteter Lauf arbeitet mit
+dem Commit, von dem er gestartet wurde, und führt gegebenenfalls noch den
+alten Compiler aus. Starte neue Läufe über **Run workflow**, nicht über
+**Re-run failed jobs** für einen alten Durchlauf.
 
-Der Compiler ist **additiv**, nicht destruktiv: Seine Auslegung ersetzt den
-Originalprompt nicht. Er dokumentiert Konflikte in `CONFLICT_RESOLUTIONS`.
-Die Systemregeln haben Vorrang, u. a. bei „warte auf Go“ und Verbot synthetischer
-Fototexturen. Unklare oder fehlende Angaben sind als Annahme zu kennzeichnen.
+## Fehlerdiagnose
 
-Die komplette Diagnose findest du bei GitHub Actions im Artefakt `diagnose-...`,
-**nicht** im fertigen `inbox/`-Ordner. Das Artefakt beinhaltet auch Plan,
-Prompt, Compiler-Vertrag und Kontrollrenderings, sofern erstellt.
-
-## Qualitätsgrenzen
-
-- Die GitHub-Syntax-, Compiler-Struktur- und Offline-Fixturetests (Kirche/Bäckerei)
-  beweisen noch keine vollständige semantische Übernahme jeder Anforderung.
-  Der Originalprompt bleibt daher bei jedem relevanten KI-Schritt zusätzlich sichtbar.
-- Die automatische Bildkontrolle ist keine Garantie für ein professionell
-  optimiertes oder vollständig UE5-kompatibles Game-Asset.
-- `new_*.png` darf nicht synthetisiert werden. Falls entsprechende echte Fotos
-  fehlen, blockiert die Lieferung wie bisher.
-- API- und GitHub-Laufzeitgrenzen bleiben bestehen. Eine eigene Token- oder
-  API-Dollarobergrenze setzt diese Pipeline derzeit nicht.
+Wenn der Run fehlschlägt, öffne den roten Schritt unter GitHub **Actions**
+und lies die letzten Logzeilen. Die Diagnose-Dateien und Kontrollbilder
+liegen bei **Artifacts** des jeweiligen Durchlaufs. Bei fehlenden Blender-
+Systembibliotheken beendet der Workflow den Lauf vor der kostenpflichtigen
+Claude-Arbeit.
