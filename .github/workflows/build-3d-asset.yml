@@ -65,12 +65,16 @@ jobs:
       - name: Blender und SDK installieren
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y blender
+          # Blender 4.x aus Ubuntu benötigt auf headless Runnern EGL- und GL-Bibliotheken.
+          sudo apt-get install -y blender libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
           python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
           blender --version | head -n 2
           python -m py_compile scripts/asset_agent.py scripts/blender_worker.py scripts/prompt_contract.py
           python -m unittest discover -s tests -p 'test_prompt_contract.py' -v
           blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
+          # Kein Claude-Aufruf, bevor Blender wirklich in headless gestartet werden kann.
+          ldconfig -p | grep 'libEGL.so.1'
+          timeout 90s blender --background --factory-startup --python-expr 'import bpy; print("BLENDER_HEADLESS_OK")'
 
       - name: Automatisch planen, bauen, prüfen und exportieren (kein Go)
         env:
