@@ -27,6 +27,7 @@ REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
 PROMPT_PATH = os.environ.get("PROMPT_PATH", "").strip()
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "2"))
 RESUME_RUN_ID = os.environ.get("RESUME_RUN_ID", "").strip()
+RUN_MODE = os.environ.get("RUN_MODE", "build").strip()
 STAGES = ["shell", "architecture", "details"]
 RATE = {"claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
 
@@ -36,6 +37,10 @@ if MODEL not in RATE:
     sys.exit("Nicht unterstütztes Claude-Modell")
 if not 0 <= REVIEW_FIXES <= 2:
     sys.exit("review_fixes muss 0–2 sein")
+if RUN_MODE not in ("build", "plan_textures"):
+    sys.exit("RUN_MODE muss build oder plan_textures sein")
+if RUN_MODE == "plan_textures" and RESUME_RUN_ID:
+    sys.exit("plan_textures darf nicht mit resume_run_id kombiniert werden")
 if not os.environ.get("ANTHROPIC_API_KEY"):
     sys.exit("GitHub Secret ANTHROPIC_API_KEY fehlt")
 
@@ -109,7 +114,7 @@ for rel in [s.strip() for s in REFERENCES.split(",") if s.strip()]:
     images.append((rel, src, media))
 
 # These image files are used for real material dependencies only, never generated.
-texture_roots = [p for p in (REPO / "textures", REPO / "assets" / "textures") if p.is_dir()]
+texture_roots = [p for p in (delivery, REPO / "textures", REPO / "assets" / "textures") if p.is_dir()]
 texture_index = {}
 for root in texture_roots:
     for file in root.rglob("*.png"):
@@ -426,6 +431,24 @@ max_match = re.search(r"MAX_TRIS\s*[:=]\s*(\d{4,7})", plan)
 max_tris = int(max_match.group(1)) if max_match else 150000
 if max_tris > 150000 or max_tris < 10000:
     raise RuntimeError(f"Plan MAX_TRIS außerhalb erlaubtem Bereich: {max_tris}")
+if RUN_MODE == "plan_textures":
+    # A bounded plan-only paid API stage followed by Codex Plus image generation.
+    # This phase creates NO Blender GLB; the next build can resume from this plan.
+    from texture_handoff import prepare
+    manifest = prepare(REPO, SLUG, work / "plan.md", [rel for rel, _, _ in images])
+    checkpoint_path.write_text(json.dumps(checkpoints, indent=2), encoding="utf-8")
+    print(f"CODEX_TEXTURE_HANDOFF_READY: {len(manifest['missing_textures'])} missing new_* texture(s)", flush=True)
+    print(f"CODEX_TASK: texture_requests/{SLUG}/CODEX_TASK.md", flush=True)
+    print("PLAN_ONLY_COMPLETE: kein Blender-Build; Codex Plus erzeugt nur die gelisteten Bilder.", flush=True)
+    sys.exit(0)
+
+if RESUME_RUN_ID:
+    # Fail BEFORE generating costly Blender scripts if Codex image requests
+    # from the plan-only phase have not been fulfilled.
+    from texture_handoff import verify
+    if verify(REPO, SLUG):
+        sys.exit("Fehlende oder ungültige Codex-Texturen in inbox/<building_name>/; keine Claude-Build-Kosten.")
+
 print(f"PLAN abgeschlossen, MAX_TRIS={max_tris}. Starte SOFORT mit Blender.", flush=True)
 
 previous = None
@@ -539,14 +562,15 @@ note += (
     f"Nodes Placeholders: {', '.join(result['placeholders'])}\n"
     f"API-Schätzkosten USD: {check_budget():.2f} (nicht der Abrechnungsbeleg)\n"
 )
-if delivery.exists():
-    # Only the declared target directory may be replaced; Git commit is separately path-scoped.
-    shutil.rmtree(delivery)
-delivery.mkdir(parents=True)
+# Important: Codex has already committed new_*.png to this directory.
+# Never remove the whole folder or the previously generated photo textures!
+delivery.mkdir(parents=True, exist_ok=True)
 shutil.copy2(work / f"{SLUG}.glb", delivery / f"{SLUG}.glb")
 (delivery / "note.txt").write_text(note, encoding="utf-8")
 for texture in new_textures:
-    shutil.copy2(texture, delivery / texture.name)
+    dest = delivery / texture.name
+    if texture.resolve() != dest.resolve():
+        shutil.copy2(texture, dest)
 if not (delivery / f"{SLUG}.glb").is_file():
     raise RuntimeError("Final GLB fehlt")
 print(f"ERFOLG {delivery.relative_to(REPO)}: {result['triangles']} tris; {check_budget():.2f} USD geschätzt", flush=True)
