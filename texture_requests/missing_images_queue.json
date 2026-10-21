@@ -48,8 +48,9 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "high"
+      "status": "blocked_native_resolution",
+      "priority": "high",
+      "failure_reason": "Codex image_gen generated a PNG at 1254x1254 despite the full prompt requesting native 2048x2048; Pillow verified actual pixels. No resize/upscale or destination upload performed. 3x3 preview inspected separately."
     },
     {
       "id": "int_fabric",
