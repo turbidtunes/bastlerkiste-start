@@ -1,0 +1,103 @@
+note.txt
+
+GEBÄUDE: creole_shingle_house_h12 (Grand-Fond, Slot grand_fond_H12, Hochland Mauritius)
+
+NUTZUNG / STIL
+- Nutzung: Familienwohnhaus (maison en bardeaux) mit Veranda, Wohnraum, Esszimmer, Küche, Bad und 4 Schlafzimmern im Dachgeschoss.
+- furniture_style: creole_poor.
+- Ein Waffenschrank ist vorhanden: Ph_bedroom_gun_cabinet_01 im Elternschlafzimmer F02.
+
+STAND DER PRÜFUNG (nur automatischer Prüfbericht)
+- Blender 4.0.2, 105 Meshes, 42 456 Dreiecke (Budget MAX_TRIS 125 000).
+- GLB: 2 965 500 Bytes. Der Reimport ergab 105 Meshes. Der Bericht meldet keine Verstöße (violations leer).
+- Bounds (m): min X −5,11 / Y −4,92 / Z −0,20; max X 5,70 / Y 5,06 / Z 9,42. Abmessungen 10,81 × 9,98 × 9,62.
+- Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern. Sie ist keine Garantie für Maßhaltigkeit, Bildtreue, Spielbarkeit oder eine UE5-Prüfung.
+- UV0 in Metern war Bauvorgabe. Der Bericht weist es nicht separat aus.
+- Alle anderen Maße unten sind Planwerte und nicht einzeln am fertigen Modell nachgemessen.
+
+GRUNDSTÜCK / MASSE
+- Plan: Footprint X −5,03…5,75, Y −4,92…4,98. Gebaut laut Bounds: X −5,11…5,70, Y −4,92…5,06.
+- Abweichung zum Plan: Die Bounds liegen links um 0,08 m weiter außen und hinten um 0,08 m weiter hinten.
+- Bei der angenommenen, um den Ursprung zentrierten Parzelle (Y ±8,0) liegt die Rückseite bei Y 5,06. Der Abstand nach hinten beträgt dann ca. 2,94 m und unterschreitet die geforderten 3,0 m um ca. 0,06 m. Die Bebauungsgrenze Y ±5,0 wird um ca. 0,06 m überschritten.
+- Die Tiefe von 9,98 m liegt knapp unter dem Limit von 10,0 m.
+- Der tatsächliche Parzellenbezug (Lage der Parzelle) ist unbekannt und beruht auf der Annahme der zentrierten Parzelle.
+- Höhe: Walmdach 45°, First laut Plan Z 8,975. Mit Finals gesamt 9,42 m.
+- Geschosse: EG Boden OK Z 0,90, Decke 3,56…3,78, Dachgeschoss als OG.
+- Wände außen 0,30 m, innen 0,12 m laut Plan.
+
+RAUMLISTE MIT PLATZHALTERN (74 Ph_-Boxen laut Prüfbericht)
+Der Plan nannte 70 Platzhalter. Der Bericht listet 74.
+- EG
+  - R00 Veranda (hall2): bench 1, side_table 1, rocking_chair 2.
+  - R01 Diele + Treppe (hall): coat_rack, shoe_cabinet, bench, console, ceiling_lamp.
+  - R02 Wohnzimmer (living): sofa, armchair 2, coffee_table, tv_unit, display_cabinet, side_table, rug, ceiling_fan, curtains.
+  - R03 Esszimmer (dining): dining_table, dining_chair 4, sideboard, ceiling_fan, curtains.
+  - R04 Küche (kitchen): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair 3, wall_shelf 2, pantry, ceiling_lamp.
+  - R05 Bad (bathroom): wc, basin, mirror, shower, towel_rail, bath_cabinet, washing_machine, laundry_basket, ceiling_lamp.
+- OG
+  - F01 Obere Diele (hall3): console, ceiling_lamp.
+  - F02 Elternschlafzimmer (bedroom): bed_double, bedside 2, wardrobe, dresser, gun_cabinet, ceiling_fan, curtains.
+  - F03 Schlafzimmer 2 (bedroom2): bed_single 2, bedside, wardrobe, desk, chair, ceiling_fan.
+  - F04 Schlafzimmer 3 (bedroom3): bed_double, bedside 2, wardrobe, ceiling_fan.
+  - F05 Kinderzimmer (bedroom4): bunk_bed, wardrobe, desk, chair, ceiling_lamp.
+- Erschließung
+  - Straße → Außentreppe → Veranda → D01 → Diele R01.
+  - Treppe T1 (Lauf in R01, 1,20 m breit, 16 Steigungen à 0,18 m) führt ins OG zu F01.
+  - Seitenstoop rechts zur Küchentür D06.
+  - F05 ist nur durch F03 erreichbar.
+
+TÜREN (lichte Breite × Höhe laut Plan, alle geschlossen modelliert)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: Veranda → R01 Diele, 1,30 × 2,10 m (Doppeltür, festes Oberlicht 1,30 × 0,35 m).
+- DoorLeaf_02_L_in: R01 → R02 Wohnzimmer, 0,9 × 2,1 m.
+- DoorLeaf_03_R_in: R01 → R03 Esszimmer, 0,9 × 2,1 m.
+- DoorLeaf_04_L_in: R03 → R04 Küche, 0,9 × 2,1 m.
+- DoorLeaf_05_L_in: R01 → R05 Bad, 0,9 × 2,1 m.
+- DoorLeaf_06_R_in: Seitenstoop (außen) → R04 Küche, 1,0 × 2,1 m.
+- DoorLeaf_07_L_in: F01 → F02 Elternschlafzimmer, 0,9 × 2,1 m.
+- DoorLeaf_08_R_in: F01 → F03 Schlafzimmer 2, 0,9 × 2,1 m.
+- DoorLeaf_09_L_in: F01 → F04 Schlafzimmer 3, 0,9 × 2,1 m.
+- DoorLeaf_10_L_in: F03 → F05 Kinderzimmer, 0,9 × 2,1 m.
+- Die Maße sind Planwerte. Die tatsächlichen Blattmaße wurden nicht separat nachgewiesen.
+
+MATERIALIEN IM GLB (16 laut Prüfbericht)
+- Wand und Sockel: wood_weathered (Außenwandschindeln, Verandadeck), basalt_dressed (Sockel, Außentreppe, Wangen, Stoop-Podest), limewash (Innenwände).
+- Dach: new_roof_shingle_dark_moss.
+- Holzbauteile: white_peeling_timber (Pfosten, Fries, Konsolen, Geländer, Fensterrahmen, Läden, Fascia, Windbretter, Zargen außen, Verandauntersicht, Finals).
+- Türen: new_paint_bluegrey_peeling (D01, D06), paint_clean (Innentüren, Innenzargen, Decken, Dachschrägen, Treppenverkleidung).
+- Böden und Treppe: floor_tiles (EG-Böden), oak_honey (OG-Boden, Treppe T1), ceramic_glazed_white (Bad-Wandfliesen bis 1,5 m).
+- Metall: steel_painted_worn (Rinnen, Fallrohre, Laternenkörper), galvanized_steel (Anschlussbleche), brass_tarnished (Beschläge, Türdrücker).
+- Glas und Platzhalter: glass, lamp_glass, placeholder.
+- Keine sign_/poster_-Materialien, keine eingebetteten Texturen.
+
+NEW_*-MATERIALIEN
+- new_roof_shingle_dark_moss: dunkelgraue, bemooste Holzschindeln. Geplante Tile-Größe 2 m × 2 m.
+- new_paint_bluegrey_peeling: hellblau-graue, abblätternde Holzfarbe. Geplante Tile-Größe 2 m × 2 m.
+- Die PNG-Dateien liegen nicht vor (NEW_MATERIAL_FILES leer). Beide Materialslots bleiben im GLB. Bis zur Lieferung der Texturen werden sie ohne Fototextur dargestellt.
+- Die 2-m-Tilemaße sind Planwerte und nicht an einer erzeugten Textur belegt.
+
+ABWEICHUNGEN ZUM REFERENZFOTO / RISIKEN
+- Das Foto zeigt 2,5 Geschosse, erlaubt sind 2. Das Dachgeschoss wurde als OG mit Dachschräge umgesetzt. Die Gauben-Sohlen (Z 6,40) liegen dadurch als hohes Oberlicht. Die Räume haben zusätzliche Fenster in den Seiten- und Rückwänden.
+- Die Läden sind fest offen und flach an der Wand modelliert (Gebäudeteil, keine Türknoten), wie im Foto. Sie sind nicht beweglich.
+- Küche, Bad, Seitenstoop mit D06 und Treppe T1 sind im Foto nicht sichtbar und funktional ergänzt, im Schindel-/Sockelstil.
+- Einzelschindeln sind aus Budgetgründen als gestufte Reihen modelliert.
+- Die Veranda-Pfostenhöhe von 2,40 m liegt unter den geforderten 2,6 m (offener Außenraum).
+- Der freie EG-Flur neben der Treppe ist 1,35 m breit (unter 1,4 m, über 1,1 m).
+- F05 ist ein Durchgangszimmer (nur über F03).
+- Die Footprint-Abweichung zum Plan und der mögliche Grenzabstand-Verstoß hinten stehen oben unter GROSSTÜCK/MASSE.
+- Farbe, Proportionen und Details des Fotos wurden nicht quantitativ gegen das Modell geprüft.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 105
+Triangles: 42456
+Reimport Meshes: 105
+Bounds m: [10.81, 9.98, 9.62]
+Materials: basalt_dressed, brass_tarnished, ceramic_glazed_white, floor_tiles, galvanized_steel, glass, lamp_glass, limewash, new_paint_bluegrey_peeling, new_roof_shingle_dark_moss, oak_honey, paint_clean, placeholder, steel_painted_worn, white_peeling_timber, wood_weathered
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_L_in, DoorLeaf_03_R_in, DoorLeaf_04_L_in, DoorLeaf_05_L_in, DoorLeaf_06_R_in, DoorLeaf_07_L_in, DoorLeaf_08_R_in, DoorLeaf_09_L_in, DoorLeaf_10_L_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_bath_cabinet_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_laundry_basket_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_bedside_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_chair_01, Ph_bedroom2_desk_01, Ph_bedroom2_wardrobe_01, Ph_bedroom3_bed_double_01, Ph_bedroom3_bedside_01, Ph_bedroom3_bedside_02, Ph_bedroom3_ceiling_fan_01, Ph_bedroom3_wardrobe_01, Ph_bedroom4_bunk_bed_01, Ph_bedroom4_ceiling_lamp_01, Ph_bedroom4_chair_01, Ph_bedroom4_desk_01, Ph_bedroom4_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_curtains_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_dining_ceiling_fan_01, Ph_dining_curtains_01, Ph_dining_dining_chair_01, Ph_dining_dining_chair_02, Ph_dining_dining_chair_03, Ph_dining_dining_chair_04, Ph_dining_dining_table_01, Ph_dining_sideboard_01, Ph_hall2_bench_01, Ph_hall2_rocking_chair_01, Ph_hall2_rocking_chair_02, Ph_hall2_side_table_01, Ph_hall3_ceiling_lamp_01, Ph_hall3_console_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_coat_rack_01, Ph_hall_console_01, Ph_hall_shoe_cabinet_01, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_curtains_01, Ph_living_display_cabinet_01, Ph_living_rug_01, Ph_living_side_table_01, Ph_living_sofa_01, Ph_living_tv_unit_01
+API-Schätzkosten USD: 5.24 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_paint_bluegrey_peeling: inbox/fond_h12/new_paint_bluegrey_peeling.png (FEHLT)
+- new_roof_shingle_dark_moss: inbox/fond_h12/new_roof_shingle_dark_moss.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
