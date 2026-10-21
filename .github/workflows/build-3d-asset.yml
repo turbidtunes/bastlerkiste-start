@@ -8,14 +8,9 @@ on:
         required: true
         type: string
         default: "grand_fond_parish_church"
-      brief_path:
-        description: "Pfad zum vollstaendigen Originalprompt unter briefs/ (falls nicht direkt eingegeben)"
-        required: false
-        type: string
-        default: "briefs/grand_fond_parish_church.md"
       building_prompt:
-        description: "Alternativ: vollstaendigen Originalprompt hier einfuegen; ueberschreibt brief_path"
-        required: false
+        description: "Vollstaendigen manuell zusammengefuehrten Bauprompt hier einfuegen"
+        required: true
         type: string
       reference_images:
         description: "Bildpfade aus references/ oder referenzbilder/, Komma-getrennt"
@@ -69,8 +64,7 @@ jobs:
           sudo apt-get install -y blender libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
           python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
           blender --version | head -n 2
-          python -m py_compile scripts/asset_agent.py scripts/blender_worker.py scripts/prompt_contract.py
-          python -m unittest discover -s tests -p 'test_prompt_contract.py' -v
+          python -m py_compile scripts/asset_agent.py scripts/blender_worker.py
           blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
           # Kein Claude-Aufruf, bevor Blender wirklich in headless gestartet werden kann.
           ldconfig -p | grep 'libEGL.so.1'
@@ -80,7 +74,6 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUILDING_NAME: ${{ inputs.building_name }}
-          BRIEF_PATH: ${{ inputs.brief_path }}
           BUILDING_PROMPT: ${{ inputs.building_prompt }}
           REFERENCE_IMAGES: ${{ inputs.reference_images }}
           CLAUDE_MODEL: ${{ inputs.model }}
@@ -104,8 +97,7 @@ jobs:
           name: diagnose-${{ inputs.building_name }}-${{ github.run_number }}
           path: |
             _asset_work/${{ inputs.building_name }}/plan.md
-            _asset_work/${{ inputs.building_name }}/original_prompt.md
-            _asset_work/${{ inputs.building_name }}/compiled_contract.md
+            _asset_work/${{ inputs.building_name }}/input_prompt.md
             _asset_work/${{ inputs.building_name }}/usage.json
             _asset_work/${{ inputs.building_name }}/final_validation.json
             _asset_work/${{ inputs.building_name }}/stages/*.log
