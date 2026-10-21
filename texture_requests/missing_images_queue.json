@@ -1119,8 +1119,28 @@
       "source_file": [
         "inbox/moulin_h05/note.txt"
       ],
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste-start": "8e603b470ee915b65733fc3f2080a1a1207a3cd9"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "1bafca907e5e67480de56b414a9a3209b9293679ced6d294f5aaf35e4f57cd74",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "new_plaster_pink",
