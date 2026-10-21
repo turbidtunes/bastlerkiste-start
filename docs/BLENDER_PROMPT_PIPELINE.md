@@ -25,7 +25,7 @@ im Verzeichnis `prompts/` des GitHub-Repositories
    | `prompt_path` | `prompts/creole_bakery_01.md` |
    | `reference_images` | `references/bakery_front.png` |
    | `model` | `claude-sonnet-5-5` |
-   | `review_fixes` | `1` |
+   | `review_fixes` | `2` (Standard, maximal zwei Korrekturrunden) |
 
    Referenzbilder können in `references/` oder `referenzbilder/`
    liegen. Mehrere Pfade mit Kommas trennen. Ohne Bild das Feld leer lassen.
