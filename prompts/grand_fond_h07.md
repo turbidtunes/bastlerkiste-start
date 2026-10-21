@@ -1,6 +1,6 @@
 You are building one building as a production game asset for Unreal Engine 5 (LOD0 only). Work in two steps.
 
-STEP 1 – PLAN (answer with this first, then wait for "go")
+STEP 1 – PLAN
 - Footprint and storeys with dimensions in metres, storey height, roof form.
 - Furniture style of the building – exactly one of: creole_poor (a traditional, modest Creole household), creole_noble
   (a wealthy Creole / colonial house), spanish_trad (a traditional Spanish house), spanish_modern (modern Spanish: hotel,
@@ -19,7 +19,7 @@ STEP 1 – PLAN (answer with this first, then wait for "go")
   what you change and why. Function wins; keep the look – proportions, style, colours, materials, characteristic
   details – as close to the reference as possible.
 
-STEP 2 – MODEL (after "go")
+STEP 2 – MODEL
 
 SCOPE
 - Only the building itself: no vegetation (no trees, plants, planters with plants, climbing plants), no people or
