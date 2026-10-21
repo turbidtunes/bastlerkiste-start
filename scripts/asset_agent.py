@@ -250,7 +250,10 @@ def run_blender(mode: str, stage_name: str, previous: Path | None, code_file=Non
             )
         raise RuntimeError(log[-15000:])
     if report is None or not report.is_file():
-        raise RuntimeError("Blender-Report fehlt")
+        raise RuntimeError(
+            "Blender-Report fehlt: Blender-Skript/GLB-Export vermutlich abgebrochen "
+            "oder intern fehlgeschlagen. Laufzeitlog:\n" + log[-7500:]
+        )
     return json.loads(report.read_text(encoding="utf-8"))
 
 
