@@ -43,10 +43,13 @@ def prepare(repo, name, plan_path, refs):
         raise ValueError("Empty plan")
     folder = repo / "texture_requests" / name
     folder.mkdir(parents=True, exist_ok=True)
-    missing = requested(plan, [repo / "textures", repo / "assets" / "textures"])
+    missing = requested(plan, [
+        repo / "inbox" / name, repo / "textures", repo / "assets" / "textures"
+    ])
     data = {
         "version": 1, "building_name": name, "reference_images": refs,
         "plan_file": "texture_requests/" + name + "/plan.md",
+        "texture_directory": "inbox/" + name,
         "missing_textures": missing,
         "requirements": "Photorealistic seamless photo-like image; no procedural or rendered look; exact 2048x2048 PNG; matte diffuse even lighting; perpendicular camera; 3x3 repeat check",
     }
@@ -70,11 +73,14 @@ synthetische Foto-Texturen vortaeuschen.
    Kanten, Schatten, Glanz, Verfahrenstricks oder Pseudo-Fotos.
    Kein Mirroring, kein Ghosting, keine vignettierten Raender.
 5. Korrekte, wirklich nahtlose 2048x2048-PNG mit Dateinamen
-   aus manifest.json unter textures/ speichern. KEIN Upscaling.
+   aus manifest.json unter inbox/""" + name + """/ direkt neben der
+   spaeteren GLB und note.txt speichern. KEIN Upscaling.
 6. Wiederholung als 3x3-Kacheln auch VISUELL pruefen. Physische
    Abdeckung in Metern dokumentieren und manifest.json aktualisieren.
 7. Fuehre aus: python3 scripts/texture_handoff.py verify --repo . --slug """ + name + """
-8. Committe und pushe PNG-Dateien und aktualisiertes Manifest nach main.
+8. Committe und pushe die neuen PNG-Dateien unter inbox/""" + name + """/
+   und das aktualisierte Manifest nach main. Die spaetere Actions-Buildstufe
+   darf diese PNGs NICHT beim Aufraeumen des Ausgabeordners loeschen.
 9. Starte den teuren Claude-Build nicht von selbst. Gib dem Benutzer
    die urspruengliche GitHub-Plan-Run-ID als resume_run_id fuer die
    separate Fortsetzung mit identischem Prompt/Referenzbild.
@@ -102,7 +108,8 @@ def verify(repo, name):
         material = item["material"]
         if not RX.fullmatch(material):
             raise ValueError("Invalid material name")
-        file = next((p for p in (repo / "textures" / (material + ".png"),
+        file = next((p for p in (repo / "inbox" / name / (material + ".png"),
+                                 repo / "textures" / (material + ".png"),
                                  repo / "assets" / "textures" / (material + ".png"))
                      if p.is_file()), None)
         if file is None:
