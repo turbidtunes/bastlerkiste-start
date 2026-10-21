@@ -71,6 +71,14 @@ assert k.CALLS.get("wall") == 1
 assert k.CALLS.get("door_leaf") == 1
 assert k.CALLS.get("gable_roof") == 1
 
+# Keep an independent pre-export .blend, so CI can run the ACTUAL production
+# blender_worker.py exporter/reimport checks without any Claude API calls.
+import os
+worker_source = Path(os.environ.get("RUNNER_TEMP", "/tmp")) / "building-kit-worker-source.blend"
+bpy.ops.wm.save_as_mainfile(filepath=str(worker_source))
+assert worker_source.is_file() and worker_source.stat().st_size > 1000
+print("BUILDING_KIT_WORKER_SOURCE_OK", worker_source)
+
 with tempfile.TemporaryDirectory(prefix="building_kit_test_") as tmp:
     out = Path(tmp) / "smoketest.glb"
     bpy.ops.export_scene.gltf(
