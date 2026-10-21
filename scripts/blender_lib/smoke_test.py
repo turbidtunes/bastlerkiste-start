@@ -76,7 +76,8 @@ with tempfile.TemporaryDirectory(prefix="building_kit_test_") as tmp:
     bpy.ops.object.delete(use_global=False)
     bpy.ops.import_scene.gltf(filepath=str(out))
     names = {o.name for o in bpy.context.scene.objects if o.type == "MESH"}
-    assert door.name in names or "DoorLeaf_01_L_in" in names
+    # 'door' was deleted before the import: Blender object references are invalidated.
+    assert "DoorLeaf_01_L_in" in names
     assert "Ph_chapel_pew_01" in names
     assert any(o.data.uv_layers for o in bpy.context.scene.objects if o.type == "MESH")
 
