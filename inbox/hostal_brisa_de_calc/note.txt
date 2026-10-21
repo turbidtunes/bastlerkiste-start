@@ -1,0 +1,118 @@
+HOSTAL BRISA DE CALÇ — les_calanques_H10
+Use: small Mallorcan hostal; reception/lounge, breakfast room and service rooms on the ground floor; eight en-suite guest rooms on two upper floors; shared walkable roof terrace.
+Furniture style: spanish_modern.
+LOD0 only. Units metres. glTF Y-up, main facade +Z (source -Y). Footprint-centre origin at ground level; foundation extends to -0.20 m.
+Enclosed body 16.80 x 13.60 m; full architectural envelope 17.80 x 16.40 m, within the permitted 20 x 18 m. Three occupied storeys; floor levels 0.00 / 3.40 / 6.50 m; roof terrace 9.60 m. Maximum roof-cap height about 13.17 m. Roof enclosure is stair access only.
+Slabs 0.20 m at ground and 0.22 m above; external walls 0.30 m and internal walls 0.15 m. Ground clear height 3.18 m; upper rooms 2.88 m. Hallways 1.60 m clear. U-stair treads 0.29 m; flights 1.25 m structurally, at least 1.20 m clear of rails; landings at least 1.40 m. Ground rise: 20 x 0.17 m; subsequent rises: 18 x 0.17222 m. Guards 1.0 m high.
+Triangles: 136,704 total, including doors and furniture placeholders. Static shell: 120,580 triangles. 44 door leaves in 43 openings; 249 furniture placeholders. No LODs, collision, proxies, terrain, plants or loose exterior props.
+Roof: flat limestone-paved terrace behind turned stone balustrades, terracotta eaves apron and hipped terracotta roof over the stair enclosure. Every balcony has its own access door; four front balconies per guest floor and two rear balconies per guest floor. Roof access is by the main stair and a full-size doorway.
+
+DOORS — exact node names; widths in metres
+All leaves delivered CLOSED. Body 45 mm, raised panels up to 60 mm overall excluding handles; 7 mm gaps to frames. Origins are hinge points at floor level. All swing into the named destination. Single-leaf widths are clear opening minus 0.014 m; main double leaves are 0.7895 m each with 1.600 m combined clear opening.
+Node | From -> to | Clear opening width | Leaf width | Clear height
+DoorLeaf_01a_L_in | street -> reception | 1.600 | 0.790 | 2.30
+DoorLeaf_01b_R_in | street -> reception | 1.600 | 0.790 | 2.30
+DoorLeaf_02_R_in | rear landing -> pantry (store); kitchen beyond | 1.050 | 1.036 | 2.15
+DoorLeaf_03_R_in | balcony -> hotelroom 101 | 1.050 | 1.036 | 2.15
+DoorLeaf_04_R_in | balcony -> hotelroom 101 | 1.050 | 1.036 | 2.15
+DoorLeaf_05_R_in | balcony -> hotelroom 102 | 1.050 | 1.036 | 2.15
+DoorLeaf_06_R_in | balcony -> hotelroom 102 | 1.050 | 1.036 | 2.15
+DoorLeaf_07_R_in | balcony -> hotelroom 103 | 1.050 | 1.036 | 2.15
+DoorLeaf_08_R_in | balcony -> hotelroom 104 | 1.050 | 1.036 | 2.15
+DoorLeaf_09_R_in | balcony -> hotelroom 201 | 1.050 | 1.036 | 2.15
+DoorLeaf_10_R_in | balcony -> hotelroom 201 | 1.050 | 1.036 | 2.15
+DoorLeaf_11_R_in | balcony -> hotelroom 202 | 1.050 | 1.036 | 2.15
+DoorLeaf_12_R_in | balcony -> hotelroom 202 | 1.050 | 1.036 | 2.15
+DoorLeaf_13_R_in | balcony -> hotelroom 203 | 1.050 | 1.036 | 2.15
+DoorLeaf_14_R_in | balcony -> hotelroom 204 | 1.050 | 1.036 | 2.15
+DoorLeaf_15_R_in | ground hall -> breakfast | 0.950 | 0.936 | 2.10
+DoorLeaf_16_R_in | ground hall -> reception | 0.950 | 0.936 | 2.10
+DoorLeaf_17_R_in | reception -> breakfast | 0.950 | 0.936 | 2.10
+DoorLeaf_18_R_in | ground hall -> kitchen | 0.950 | 0.936 | 2.10
+DoorLeaf_19_R_in | ground hall -> office | 0.950 | 0.936 | 2.10
+DoorLeaf_20_R_in | ground hall -> public WC (bathroom) | 0.900 | 0.886 | 2.10
+DoorLeaf_21_R_in | ground hall -> stairwell | 1.400 | 1.386 | 2.10
+DoorLeaf_22_R_in | kitchen -> store | 0.950 | 0.936 | 2.10
+DoorLeaf_23_R_in | kitchen -> laundry | 0.950 | 0.936 | 2.10
+DoorLeaf_24_R_in | office -> linen/cleaning store (store2) | 0.950 | 0.936 | 2.10
+DoorLeaf_25_R_in | first-floor hall -> 101 | 0.950 | 0.936 | 2.10
+DoorLeaf_26_R_in | first-floor hall -> 102 | 0.950 | 0.936 | 2.10
+DoorLeaf_27_R_in | first-floor hall -> 103 | 0.950 | 0.936 | 2.10
+DoorLeaf_28_R_in | first-floor hall -> 104 | 0.950 | 0.936 | 2.10
+DoorLeaf_29_R_in | first-floor hall -> stairwell | 1.400 | 1.386 | 2.10
+DoorLeaf_30_R_in | hotelroom 101 -> bathroom3 | 0.900 | 0.886 | 2.10
+DoorLeaf_31_R_in | hotelroom 102 -> bathroom4 | 0.900 | 0.886 | 2.10
+DoorLeaf_32_R_in | hotelroom 103 -> bathroom5 | 0.900 | 0.886 | 2.10
+DoorLeaf_33_R_in | hotelroom 104 -> bathroom6 | 0.900 | 0.886 | 2.10
+DoorLeaf_34_R_in | second-floor hall -> 201 | 0.950 | 0.936 | 2.10
+DoorLeaf_35_R_in | second-floor hall -> 202 | 0.950 | 0.936 | 2.10
+DoorLeaf_36_R_in | second-floor hall -> 203 | 0.950 | 0.936 | 2.10
+DoorLeaf_37_R_in | second-floor hall -> 204 | 0.950 | 0.936 | 2.10
+DoorLeaf_38_R_in | second-floor hall -> stairwell | 1.400 | 1.386 | 2.10
+DoorLeaf_39_R_in | hotelroom 201 -> bathroom7 | 0.900 | 0.886 | 2.10
+DoorLeaf_40_R_in | hotelroom 202 -> bathroom8 | 0.900 | 0.886 | 2.10
+DoorLeaf_41_R_in | hotelroom 203 -> bathroom9 | 0.900 | 0.886 | 2.10
+DoorLeaf_42_R_in | hotelroom 204 -> bathroom10 | 0.900 | 0.886 | 2.10
+DoorLeaf_43_R_in | terrace -> roof stair enclosure | 1.050 | 1.036 | 2.15
+
+ROOMS AND PLACEHOLDERS
+Every piece is a separate closed box, material placeholder, named Ph_<room>_<role>_<nn>. Dimensions are local X width / Y depth / Z height; node rotation carries orientation. Origins are floor-centred, or at wall/ceiling mounting positions; local -Y faces the user. Wall boxes project from the wall face. Ceiling boxes hang below their ceiling origins. Curtains are separate narrow side panels, leaving doors clear.
+Room identifiers: lobby = reception/lounge; dining = breakfast; store = pantry; bathroom = public WC; bathroom2 = laundry; store2 = linen/cleaning store.
+hotelroom / hotelroom2 / hotelroom3 / hotelroom4 = 101 / 102 / 103 / 104; hotelroom5 / hotelroom6 / hotelroom7 / hotelroom8 = 201 / 202 / 203 / 204. Front rooms are doubles; rear rooms are twins.
+bathroom3–6 serve 101–104; bathroom7–10 serve 201–204. Each en-suite is approximately 2.15 x 2.55 m clear, with shower, WC and basin. Front guest suites are approximately 8.0 x 5.55 m overall; rear suites 6.3 x 5.55 m overall, including their bathrooms.
+hall = ground hall; hall2 = first-floor hall; hall3 = second-floor hall; hall4 = continuous stairwell with landing lamps; hall5 = roof-access head of that stairwell, with ceiling lamp.
+Ground programme: reception and breakfast about 8.0 x 5.55 m each; kitchen 6.3 x 2.95 m; pantry and laundry about 3.0 x 2.45 m; office 3.75 x 5.55 m; public WC about 2.4 x 2.68 m and linen store about 2.4 x 2.73 m.
+Role counts by room:
+lobby: reception_counter x1, office_chair x1, filing_cabinet x1, lobby_sofa x1, lounge_chair x2, coffee_table x1, luggage_rack x1, notice_board x1, ceiling_lamp x2
+dining: dining_table x4, dining_chair x16, sideboard x1, ceiling_fan x2
+kitchen: kitchen_run x1, cooker x1, fridge x1, kitchen_table x1, kitchen_chair x2, wall_shelf x2, ceiling_lamp x1
+store: pantry x2, storage_rack x1, ceiling_lamp x1
+bathroom2: washing_machine x1, basin x1, wall_shelf x1, laundry_basket x1, ceiling_lamp x1
+office: office_desk x1, office_chair x1, visitor_chair x2, filing_cabinet x1, safe x1, ceiling_lamp x1
+bathroom: wc x1, basin x1, mirror x1, towel_rail x1, ceiling_lamp x1
+store2: storage_rack x2, locker x1, ceiling_lamp x1
+hall: bench x1, notice_board x1, ceiling_lamp x3
+hotelroom: bed_double x1, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x2, side_table x1, curtains x4, ceiling_fan x1
+bathroom3: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom2: bed_double x1, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x2, side_table x1, curtains x4, ceiling_fan x1
+bathroom4: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom3: bed_single x2, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x1, curtains x2, ceiling_fan x1
+bathroom5: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom4: bed_single x2, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x1, curtains x2, ceiling_fan x1
+bathroom6: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hall2: console x1, ceiling_lamp x3
+hotelroom5: bed_double x1, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x2, side_table x1, curtains x4, ceiling_fan x1
+bathroom7: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom6: bed_double x1, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x2, side_table x1, curtains x4, ceiling_fan x1
+bathroom8: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom7: bed_single x2, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x1, curtains x2, ceiling_fan x1
+bathroom9: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hotelroom8: bed_single x2, bedside x2, wardrobe x1, desk x1, chair x1, luggage_rack x1, lounge_chair x1, curtains x2, ceiling_fan x1
+bathroom10: shower x1, wc x1, basin x1, mirror x1, bath_cabinet x1, towel_rail x1, ceiling_lamp x1
+hall3: console x1, ceiling_lamp x3
+hall4: wall_lamp x3
+hall5: ceiling_lamp x1
+
+MATERIALS
+plaster_white, plaster_cream_warm, new_render_ochre, new_mallorcan_limestone, concrete_cast, floor_tiles, limestone_flag, ceramic_glazed_white, painted_timber_warmgrey, shutter_paint, wood_mahogany_varnished, oak_honey, steel_painted_worn, brass_tarnished, roof_terracotta, terracotta, galvanized_steel, glass, lamp_glass, sign_hostal_brisa_de_calc, placeholder
+plaster_white: exterior render; plaster_cream_warm: interior plaster and soffits; new_render_ochre: ochre bands and surrounds; new_mallorcan_limestone: arches, quoins, plinth, cornices, sills, corbels, balustrade and finials; concrete_cast: exposed foundation and structural edges; floor_tiles: indoor floors/stairs; limestone_flag: balconies, terrace and entrance landings; ceramic_glazed_white: bathroom partition/wet-area surfaces.
+painted_timber_warmgrey: window frames, balcony/service/roof doors and eaves timber; shutter_paint: blue-grey louvres; wood_mahogany_varnished: main door; oak_honey: interior doors/linings; steel_painted_worn: black rails/lantern bodies; brass_tarnished: door hardware; roof_terracotta: field tiles; terracotta: ridge/hip caps and chimney terminal; galvanized_steel: gutters, wall-mounted downpipes, clips, vents and roof terminals; glass: closed 8 mm panes; lamp_glass: emissive lantern covers; sign_hostal_brisa_de_calc: decorated ceramic sign and raised blue lettering; placeholder: furniture boxes only.
+List materials intentionally contain no embedded photo textures: bind the engine library by exact material name. UV0 uses 1 unit = 1 metre. New tiles are external PNG references, not embedded. Only the unique 2048 x 1024 sign decoration is embedded; raised lettering is geometry. Glass and lamp_glass have no textures.
+
+NEW TEXTURE TILES — both seamless RGB PNG, 2048 x 2048 px
+new_render_ochre.png = 2 m x 2 m — faded golden-ochre mineral lime render with fine sandy grain and restrained natural weathering. UV0 stays in metres; the glTF texture transform scales UVs by 0.5 for this 2 m tile.
+new_mallorcan_limestone.png = 1 m x 1 m — pale warm-beige lightly honed Mallorcan limestone with fine pores and subtle mineral variation; no block or mortar joints. UV texture scale 1.0.
+
+DEVIATIONS FROM REFERENCE / APPROVED PLAN
+1. Resolve the inconsistent collage as the wider four-bay front elevation. Enlarge the depth to fit real rooms and circulation within the plot.
+2. Invent the unseen rear, service rooms, bathrooms and internal circulation. The rear kitchen service route enters through the pantry, then the kitchen; this keeps the service and guest routes separate.
+3. Provide a full U-stair, slabs, wall thicknesses, reveals, continuous guards, and a complete closed terrace/eaves roof. The roof head is larger and placed at the rear to enclose the real stair.
+4. Deepen the shallow reference balconies to approximately 1.3 m clear, with continuous 1 m guards and real door access. Rear balconies are provided at the outer room bays to keep beds and door swings clear.
+5. Keep ordinary window shutters closed as required; balcony doors use fixed blue-grey louvred side panels so shutters cannot block access.
+6. Move the fictional sign between the entrance arch and the right-hand arch: the reference position conflicts with the low balcony slab at the chosen storey height. Raised text reads HOSTAL / BRISA DE CALÇ; no real company, brand or address.
+7. Add functional gutters, swan-necks, clipped wall downpipes and concealed bathroom ventilation risers with three fixed roof terminals. Move the chimney sufficiently away from the stair enclosure to keep the terrace passage at least 1.2 m wide.
+8. Adjust service-room partitions, beds, dining-table spacing, chairs, curtain side panels and wardrobes to preserve door swings, windows and circulation. No furniture is modelled beyond the required boxes. Roof and balconies have no loose furniture.
+9. Exclude the reference vegetation, external chairs/tables, boundary walls and surrounding paving/landscape.
+
+DELIVERY
+Exactly four files: hostal_brisa_de_calc.glb, new_render_ochre.png, new_mallorcan_limestone.png, note.txt. No source scripts, previews, inventories or validation files are included.
