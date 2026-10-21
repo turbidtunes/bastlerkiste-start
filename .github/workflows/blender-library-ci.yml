@@ -19,17 +19,17 @@ jobs:
     steps:
       - name: Quellcode holen
         uses: actions/checkout@v4
-      # Deliberately reproduce production's separate hosted Python setup.
-      - name: Hosted Python 3.12 aktivieren (reproduziert Production-Umgebung)
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - name: Ubuntu Python 3.12 benutzen, wie in der Production-Pipeline
+        run: |
+          /usr/bin/python3 -c 'import sys; assert sys.version_info[:2] == (3,12)'
       - name: Headless Blender und Python NumPy installieren
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y blender python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          sudo apt-get install -y blender python3-numpy python3-venv libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
       - name: Blender-Version, Bibliothek und Blender-Python prüfen
         run: |
+          /usr/bin/python3 -m venv .agent_venv
+          .agent_venv/bin/python -c 'import sys; assert sys.prefix != sys.base_prefix'
           blender --version | head -n 1 | grep -E 'Blender 4\.'
           env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
             PYTHONPATH=/usr/lib/python3/dist-packages \
