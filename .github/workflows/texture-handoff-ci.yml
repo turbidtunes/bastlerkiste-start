@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'scripts/texture_handoff.py'
+      - 'scripts/texture_delivery.py'
+      - 'scripts/asset_agent.py'
+      - 'scripts/tests/test_texture_delivery.py'
       - 'scripts/tests/test_texture_handoff.py'
       - '.github/workflows/texture-handoff-ci.yml'
   workflow_dispatch:
@@ -23,9 +26,12 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y python3-pil
-          python3 -m py_compile scripts/texture_handoff.py scripts/tests/test_texture_handoff.py
+          python3 -m py_compile scripts/texture_handoff.py scripts/texture_delivery.py scripts/asset_agent.py scripts/tests/test_texture_handoff.py scripts/tests/test_texture_delivery.py
       - name: Codex-Bildablage direkt neben GLB und Validierung pruefen
         run: |
           set -euo pipefail
           python3 scripts/tests/test_texture_handoff.py | tee /tmp/codex-texture-smoke.log
           grep -F CODEX_TEXTURE_HANDOFF_SMOKE_OK /tmp/codex-texture-smoke.log
+      - name: GLB ohne fehlende Fotos freigeben und note.txt-Meldungen testen
+        run: |
+          python3 scripts/tests/test_texture_delivery.py
