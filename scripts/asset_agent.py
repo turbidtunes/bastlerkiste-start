@@ -186,6 +186,10 @@ def code_clean(text: str) -> str:
     return text + "\n"
 
 
+class BlenderEnvironmentError(RuntimeError):
+    """Blender cannot start because the runner lacks a runtime library."""
+
+
 def run_blender(mode: str, stage_name: str, previous: Path | None, code_file=None, output_blend=None, report=None):
     env = dict(os.environ)
     for secret in ("ANTHROPIC_API_KEY", "GH_TOKEN", "GITHUB_TOKEN", "ACTIONS_RUNTIME_TOKEN"):
@@ -213,6 +217,17 @@ def run_blender(mode: str, stage_name: str, previous: Path | None, code_file=Non
     log_file.write_text(log, encoding="utf-8")
     print(f"BLENDER {stage_name} rc={status}\n{log[-1800:]}", flush=True)
     if status:
+        lower_log = log.lower()
+        if any(marker in lower_log for marker in (
+            "libegl.so.1",
+            "error while loading shared libraries",
+            "cannot open shared object file",
+        )):
+            raise BlenderEnvironmentError(
+                "BLENDER-RUNNER-FEHLER: Systembibliothek fehlt. "
+                "Erneute Claude-Codegenerierung kann das nicht beheben. "
+                "Pruefe die GitHub-Actions-Installation.\n" + log[-15000:]
+            )
         raise RuntimeError(log[-15000:])
     if report is None or not report.is_file():
         raise RuntimeError("Blender-Report fehlt")
@@ -244,6 +259,9 @@ def run_code(label: str, prev: Path | None, prompt: str):
         try:
             result = run_blender("stage", label, prev, stage_code, candidate, report)
             return candidate, result
+        except BlenderEnvironmentError:
+            # Environment defects are not generated-code defects; don't waste API tokens.
+            raise
         except RuntimeError as exc:
             failure = str(exc)
     raise RuntimeError(f"Blender-Stufe '{label}' nach 3 Versuchen gescheitert: {failure[-2000:]}")
