@@ -1,0 +1,79 @@
+note.txt
+
+GEBÄUDE: le_souffleur_h05_storm_cottage (Le Souffleur, Mauritius), Slot le_souffleur_H05
+Ordner: inbox/le_souffleur_h05_storm_cottage/
+Lieferumfang: GLB und diese note.txt. Eine PNG für new_plaster_pink_spalled fehlt (siehe Abschnitt Neue Materialien).
+
+NUTZUNG / STIL
+- Wohnhaus eines Fischers (Wohnraum, Flur, Schlafzimmer, Küche, Bad), eingeschossig, kein Obergeschoss, keine Balkone, kein begehbares Dach.
+- furniture_style: creole_poor.
+- Hauptbau aus Basalt mit Walmdach aus Wellblech, dazu ein höherer Anbau mit Flachdach und rosa Putz (Küche und Bad).
+
+PRÜFWERTE (aus dem Prüfbericht, Blender 4.0.2)
+- 69 Meshes, 16.092 Dreiecke (Budget 85.000), GLB 1.112.760 Bytes.
+- Reimport des GLB: 69 Meshes. Der Prüfbericht meldet keine Verstöße.
+- Gemessene Außenmaße: 9,225 × 10,0 × 4,976 m (X × Y × Z).
+- Bounds X −4,605…4,62, Y −5,0…5,0, Z −0,2…4,776.
+- Die visuelle Analyse ist eine KI-Einschätzung aus Workbench-Bildern, keine Garantie für Spielbarkeit oder Fotorealismus. Eine UE5-Prüfung wurde nicht durchgeführt.
+
+ABWEICHUNG VOM PLAN (gemessen)
+- Der Plan gibt 9,0 m Breite an (X ±4,5). Gemessen sind 9,225 m, also etwa 0,2 m mehr als das Baufeld von 9,0 m.
+- Dadurch liegt der Abstand zu den Nachbargrenzen bei etwa 1,38 m (Ost) und 1,40 m (West), nicht bei den geforderten 1,5 m. Die Ursache ist nicht untersucht; vermutlich ragen Dachüberstand oder Anbauteile über.
+- Die Tiefe von 10,0 m liegt im Baufeld von 13,0 m.
+- Das Material brass_tarnished kommt im GLB vor, steht aber nicht in der Materialtabelle des Plans. Die Zuordnung zu einem Bauteil ist nicht dokumentiert.
+- Ob alle Einzelmaße (Räume, Türen, Fenster, Treppen) exakt dem Plan entsprechen, ist durch die Prüfwerte nicht belegt. Die Angaben unten sind Planwerte.
+
+RÄUME (Planwerte)
+- R01 Wohnraum, X −3,80…1,15, Y −3,25…−0,55, lichte Höhe 2,70 m.
+- R02 Schlafzimmer, X −3,80…−0,90, Y −0,43…2,45, lichte Höhe 2,70 m.
+- R03 Flur, Breite 1,93 m, lichte Höhe 2,70 m.
+- R04 Küche, X 1,50…4,25, Y −0,75…2,50, lichte Höhe 3,10 m.
+- R05 Bad, 2,75 × 2,13 m, lichte Höhe 3,10 m.
+- Das Bad ist nur über die Küche erreichbar. Mit 2,13 m liegt eine Seite knapp unter dem Richtwert von 2,2 m (Mindestmaß 1,6 m ist eingehalten).
+- Die Innenaufteilung und der Hintereingang sind gegenüber dem Referenzfoto erfunden, Funktion vor Bildtreue.
+
+TÜREN (Name | von → nach | lichte Breite laut Plan)
+- DoorLeaf_01_R_in | außen → R01 (Front) | 1,00 m
+- DoorLeaf_02_L_in | R01 → R03 | 0,90 m
+- DoorLeaf_03_L_in | R03 → R02 | 0,90 m
+- DoorLeaf_04_L_in | R03 → R04 | 0,90 m
+- DoorLeaf_05_L_in | R04 → R05 | 0,90 m
+- DoorLeaf_06_L_in | R03 → außen (Rückwand) | 1,00 m
+- Alle Türblätter sind laut Plan 50 mm dick und geschlossen. Die Namen sind im Prüfbericht vorhanden.
+
+PLATZHALTER (37 Stück, Material "placeholder", Maße nicht einzeln geprüft)
+- Wohnraum (living): sofa 1, armchair 2, coffee_table, tv_unit, display_cabinet, sideboard, side_table, ceiling_fan, ceiling_lamp.
+- Schlafzimmer (bedroom): bed_double, bedside 2, wardrobe, gun_cabinet (Ph_bedroom_gun_cabinet_01), ceiling_fan, ceiling_lamp.
+- Flur (hall): shoe_cabinet, coat_rack, ceiling_lamp.
+- Küche (kitchen): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair 2, wall_shelf, pantry, ceiling_fan, ceiling_lamp.
+- Bad (bathroom): wc, basin, shower, mirror, towel_rail, washing_machine, ceiling_lamp.
+
+MATERIALIEN IM GLB (21)
+basalt_masonry, brass_tarnished, ceramic_glazed_white, concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, limestone_flag, limewash, mixed_fieldstone, new_plaster_pink_spalled, placeholder, plaster_white, sandstone_ashlar, shutter_paint, steel_bare_rusty, steel_painted_worn, white_peeling_timber, wood_weathered.
+
+NEUE MATERIALIEN
+- new_plaster_pink_spalled: rosa, abblätternder Putz (Anbau außen). Reale Kachelgröße laut Plan: 2 m × 2 m.
+- Die Datei new_plaster_pink_spalled.png fehlt und ist nicht im Lieferumfang. Das Material bleibt im GLB.
+- Weitere new_*-Materialien: keine.
+
+ABWEICHUNGEN ZUM REFERENZFOTO (laut Plan)
+- Die langen niedrigen Vorhofmauern entfallen, weil Grundstücksmauern außerhalb des Scopes liegen. Es bleiben nur Treppenwangen mit Pfeilern.
+- Seil, Haken und Ringschmuck am Eingang entfallen, weil es lose Props wären.
+- Die Haustür ist ein einflügeliges Blatt (1,0 × 2,10 m), obwohl das Bild evtl. eine schmale Zweiflügeltür zeigt.
+- Der Türkiston von shutter_paint ist unbekannt und kann vom Foto abweichen. Farbtreue wird nicht behauptet.
+- Das Dach schließt an die Brandwand (X 1,15) ohne Überstand an, mit eigenem Anschlussblech.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 69
+Triangles: 16092
+Reimport Meshes: 69
+Bounds m: [9.225, 10.0, 4.976]
+Materials: basalt_masonry, brass_tarnished, ceramic_glazed_white, concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, limestone_flag, limewash, mixed_fieldstone, new_plaster_pink_spalled, placeholder, plaster_white, sandstone_ashlar, shutter_paint, steel_bare_rusty, steel_painted_worn, white_peeling_timber, wood_weathered
+Nodes Doors: DoorLeaf_01_R_in, DoorLeaf_02_L_in, DoorLeaf_03_L_in, DoorLeaf_04_L_in, DoorLeaf_05_L_in, DoorLeaf_06_L_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_ceiling_lamp_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_hall_ceiling_lamp_01, Ph_hall_coat_rack_01, Ph_hall_shoe_cabinet_01, Ph_kitchen_ceiling_fan_01, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_ceiling_lamp_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_side_table_01, Ph_living_sideboard_01, Ph_living_sofa_01, Ph_living_tv_unit_01
+API-Schätzkosten USD: 2.49 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_plaster_pink_spalled: inbox/souffleur_h05/new_plaster_pink_spalled.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
