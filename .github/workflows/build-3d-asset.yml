@@ -17,6 +17,14 @@ on:
         required: true
         type: string
         default: "prompts/grand_fond_parish_church.md"
+      run_mode:
+        description: "build = normaler Build; plan_textures = nur Plan und Codex-Auftrag fuer fehlende new_ PNGs"
+        required: true
+        type: choice
+        default: build
+        options:
+          - build
+          - plan_textures
       reference_images:
         description: "Bildpfade aus references/ oder referenzbilder/, Komma-getrennt"
         required: false
@@ -129,7 +137,7 @@ jobs:
           /usr/bin/python3 -m venv .agent_venv
           .agent_venv/bin/python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
           blender --version | head -n 2
-          .agent_venv/bin/python -m py_compile scripts/asset_agent.py scripts/blender_worker.py
+          .agent_venv/bin/python -m py_compile scripts/asset_agent.py scripts/blender_worker.py scripts/texture_handoff.py
           blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
           # Kein Claude-Aufruf, bevor Blender wirklich in headless gestartet werden kann.
           ldconfig -p | grep 'libEGL.so.1'
@@ -172,6 +180,7 @@ jobs:
           CLAUDE_MODEL: ${{ inputs.model }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
           RESUME_RUN_ID: ${{ steps.resume_guard.outputs.run_id }}
+          RUN_MODE: ${{ inputs.run_mode }}
         run: .agent_venv/bin/python -u scripts/asset_agent.py
 
       - name: Automatischen Plan im Actions-Protokoll zusammenfassen
@@ -205,7 +214,30 @@ jobs:
           retention-days: 7
           compression-level: 0
 
+      - name: Codex-Texturauftrag nach plan_textures in GitHub einchecken
+        if: ${{ inputs.run_mode == 'plan_textures' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUILDING_NAME: ${{ inputs.building_name }}
+        run: |
+          set -euo pipefail
+          test -s "texture_requests/${BUILDING_NAME}/manifest.json"
+          test -s "texture_requests/${BUILDING_NAME}/plan.md"
+          test -s "texture_requests/${BUILDING_NAME}/CODEX_TASK.md"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- "texture_requests/${BUILDING_NAME}/"
+          if git diff --cached --quiet; then
+            echo 'Codex-Auftrag unveraendert.'
+            exit 0
+          fi
+          git commit -m "Plan Codex photo texture requests for ${BUILDING_NAME}"
+          HEADER="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c http.extraheader="$HEADER" pull --rebase origin main
+          git -c http.extraheader="$HEADER" push origin HEAD:main
+
       - name: Ausschliesslich fertige Dateien nach inbox committen
+        if: ${{ inputs.run_mode == 'build' }}
         env:
           GH_TOKEN: ${{ github.token }}
           BUILDING_NAME: ${{ inputs.building_name }}
