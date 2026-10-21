@@ -1,0 +1,94 @@
+note.txt – cite_moulin_H04_sirdar_house
+
+GEBÄUDE
+- Name: cite_moulin_H04_sirdar_house (Slot H04, Cité Moulin, Mauritius)
+- Nutzung: Wohnhaus des Zuckerrohr-Aufsehers (Sirdar) mit Veranda, Bürowinkel und Familienräumen
+- furniture_style: creole_poor
+- 1 Geschoss, kein Obergeschoss, keine Balkone, keine begehbare Dachfläche
+- Hauptdach: Walmdach, Wellblech, 30°. Davor ein flacheres Veranda-Schleppdach (12,4° vorn, 24,6° an den Endwalmen). Anbau hinten mit Flachdach und Attika.
+
+MASSE (laut Prüfbericht)
+- Gemessene Bounding Box: 13,54 × 14,18 × 7,385 m (x ±6,77; y −7,0…+7,18; z −0,20…+7,185)
+- Das liegt leicht über dem Planmaß der Grundfläche (13,2 × 14,0 m). Die Ursache der Differenz ist nicht untersucht.
+- Die gemessene Box liegt innerhalb des Baufensters (x ±7,0, y ±7,5) und hält damit die Grenzabstände (1,5 m seitlich, 3 m Straße und Rückseite) ein.
+- Die Einzelmaße im Gebäude (Räume, Wandstärken, Höhen) stammen aus dem Plan. Sie wurden nicht einzeln nachgemessen. Eine Maß- oder Bildtreue zum Referenzfoto wird nicht behauptet.
+
+PRÜFUNG
+- Blender 4.0.2, 93 Meshes, 80.160 Dreiecke (Limit 90.000)
+- Der GLB-Reimport ergab 93 Meshes. Der Prüfbericht meldet keine Verletzungen.
+- GLB-Größe: 4.986.612 Byte
+- Die visuelle Analyse der Workbench-Renderbilder ist eine KI-Einschätzung. Sie ist keine Garantie für Fotorealismus oder Spielbarkeit und keine UE5-Prüfung.
+- Nicht gesondert belegt: UV0-Maßstab in Metern, Normalen und Wandöffnungen. Sie sind Teil der Bauvorgabe, der Prüfbericht weist sie nicht einzeln aus.
+
+RÄUME (Plan)
+- V01 Veranda (Platzhalter-Raum „hall“)
+- R01 Büro
+- R02 Wohnzimmer
+- R03 Schlafzimmer 2 (Kinder)
+- R04 Hauptschlafzimmer
+- R05 Esszimmer / Verteiler
+- R06 Küche
+- R07 Bad (1,65 × 2,75 m)
+- R08 Vorrat / Hintereingang
+- P01 ist ein Durchgang ohne Türblatt zwischen R02 und R05.
+- Treppen: S01 Vordertreppe (Breite 1,8 m, 6 Steigungen à 0,15 m) zur Veranda. S02 Hintertreppe (Breite 1,2 m, 6 Steigungen à 0,15 m) am Hintereingang.
+- Wege: Straße → S01 → Veranda → D01 → Wohnzimmer → P01 → Esszimmer → Schlafzimmer / Küche / Bad. Hinterausgang: Küche → Vorrat → D08 → S02.
+
+TÜREN (von → nach, lichte Breite × Höhe; alle geschlossen, Blattdicke 45 mm laut Plan)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in (D01): Veranda → Wohnzimmer R02, 1,30 × 2,10 m, Doppeltür mit festem Oberlicht
+- DoorLeaf_02_L_in (D02): R02 → Büro R01, 0,9 × 2,1 m
+- DoorLeaf_03_R_in (D03): R02 → Schlafzimmer 2 R03, 0,9 × 2,1 m
+- DoorLeaf_04_R_in (D04): R05 → Hauptschlafzimmer R04, 0,9 × 2,1 m
+- DoorLeaf_05_L_in (D05): R05 → Küche R06, 0,9 × 2,1 m
+- DoorLeaf_06_R_in (D06): R05 → Bad R07, 0,9 × 2,1 m
+- DoorLeaf_07_L_in (D07): Küche R06 → Vorrat R08, 0,9 × 2,1 m
+- DoorLeaf_08_L_in (D08): Vorrat R08 → außen / S02, 1,0 × 2,1 m
+
+PLATZHALTER (Material „placeholder“, laut Prüfbericht vorhanden)
+- Veranda (hall): rocking_chair ×2, bench, side_table, wall_lamp ×2, ceiling_lamp ×2
+- Büro (office): office_desk, office_chair, visitor_chair ×2, filing_cabinet, file_shelf, safe, ceiling_fan
+- Wohnzimmer (living): sofa, armchair ×2, coffee_table, display_cabinet, sideboard, side_table, ceiling_fan
+- Schlafzimmer 2 (bedroom2): bed_single ×2, bedside, wardrobe, dresser, ceiling_fan
+- Hauptschlafzimmer (bedroom): bed_double, bedside ×2, wardrobe, dresser, gun_cabinet (Ph_bedroom_gun_cabinet_01), ceiling_fan
+- Esszimmer (dining): dining_table, dining_chair ×6, sideboard, ceiling_fan
+- Küche (kitchen): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair ×4, wall_shelf ×2, pantry, ceiling_lamp
+- Bad (bathroom): wc, basin, shower, mirror, towel_rail, washing_machine, ceiling_lamp
+- Vorrat (store): storage_rack ×2, ceiling_lamp
+- Die Rolle „rocking_chair“ steht nicht in der Rollenliste und ist ein frei benannter englischer Rollenname.
+
+MATERIALIEN IM GLB (laut Prüfbericht, 18)
+aluminium_weathered, basalt_masonry, brass_tarnished, concrete_cast, floor_tiles, galvanized_steel, glass, limewash, new_plaster_pink, new_roof_corrugated_red, paint_clean, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, shutter_paint, sign_house_number_27, steel_painted_worn
+
+NEUE MATERIALIEN (new_*)
+- new_plaster_pink: rosa, leicht verblasster, feinkörniger Putz (Außenwände Haus, Anbau, Attika). Reale Kachelgröße laut Plan 2 m × 2 m.
+- new_roof_corrugated_red: rot lackiertes Wellblech, matt, leicht verwittert (Dachhaut, First- und Gratkappen). Reale Kachelgröße laut Plan 1 m × 1 m.
+- Die Dateien new_plaster_pink.png und new_roof_corrugated_red.png fehlen und sind nicht Teil der Lieferung (NEW_MATERIAL_FILES leer). Beide Slots bleiben im GLB erhalten. Die Fototexturen müssen nachgeliefert werden.
+- sign_house_number_27 (Hausnummernschild „27“, 1024 px, UV 0–1) wurde im Plan als eigenes Schild-Material mit eigener Textur vorgesehen. Ob die Textur eingebettet ist, wird vom Prüfbericht nicht ausgewiesen.
+
+ABWEICHUNGEN ZUM REFERENZFOTO / PLAN
+- Fahnenmast mit Sockel entfällt (loses Außenteil, nicht im Umfang).
+- Sockel im Bild ca. 1,2 m hoch, im Modell 0,90 m (6 × 0,15 m), damit Veranda-Höhe und Treppenlauf passen.
+- Treppe im Foto seitlich, im Modell mittig vor der Tür.
+- Dach im Foto mit weicher Glockenform, im Modell zwei Neigungen (30° und 12,4°) mit Knick.
+- Wohnzimmer ohne eigenes Fenster (wie die Front im Foto). Licht kommt über die verglaste Doppeltür und den Durchgang zum Esszimmer.
+- Seitenfassade im Foto mit 3 Fenstern, im Modell 2 je Seite plus Lüftungsgitter und Hintertür (Raumprogramm hat Vorrang).
+- Bad im Anbau, betreten vom Esszimmer aus. Der Anbau wurde dafür 4,5 m breit angesetzt.
+- Fensterläden bleiben offen und flach an der Wand, wie im Foto.
+- Wandfliesen der Duschnische (ceramic_glazed_white) waren im Plan vorgesehen, sind aber nicht in der validierten Materialliste des GLB. Die Duschnischen-Fliesen sind daher nicht als eigenes Material enthalten.
+- Maße und Raumaufteilung sind aus dem Foto abgeleitet und nicht belegt.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 93
+Triangles: 80160
+Reimport Meshes: 93
+Bounds m: [13.54, 14.18, 7.385]
+Materials: aluminium_weathered, basalt_masonry, brass_tarnished, concrete_cast, floor_tiles, galvanized_steel, glass, limewash, new_plaster_pink, new_roof_corrugated_red, paint_clean, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, shutter_paint, sign_house_number_27, steel_painted_worn
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_L_in, DoorLeaf_03_R_in, DoorLeaf_04_R_in, DoorLeaf_05_L_in, DoorLeaf_06_R_in, DoorLeaf_07_L_in, DoorLeaf_08_L_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_bedside_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_dresser_01, Ph_bedroom2_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_dining_ceiling_fan_01, Ph_dining_dining_chair_01, Ph_dining_dining_chair_02, Ph_dining_dining_chair_03, Ph_dining_dining_chair_04, Ph_dining_dining_chair_05, Ph_dining_dining_chair_06, Ph_dining_dining_table_01, Ph_dining_sideboard_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_ceiling_lamp_02, Ph_hall_rocking_chair_01, Ph_hall_rocking_chair_02, Ph_hall_side_table_01, Ph_hall_wall_lamp_01, Ph_hall_wall_lamp_02, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_chair_04, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_side_table_01, Ph_living_sideboard_01, Ph_living_sofa_01, Ph_office_ceiling_fan_01, Ph_office_file_shelf_01, Ph_office_filing_cabinet_01, Ph_office_office_chair_01, Ph_office_office_desk_01, Ph_office_safe_01, Ph_office_visitor_chair_01, Ph_office_visitor_chair_02, Ph_store_ceiling_lamp_01, Ph_store_storage_rack_01, Ph_store_storage_rack_02
+API-Schätzkosten USD: 4.34 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_plaster_pink: inbox/cite_moulin_h04/new_plaster_pink.png (FEHLT)
+- new_roof_corrugated_red: inbox/cite_moulin_h04/new_roof_corrugated_red.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
