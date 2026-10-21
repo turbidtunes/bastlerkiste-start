@@ -129,9 +129,21 @@ jobs:
           blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
           # Kein Claude-Aufruf, bevor Blender wirklich in headless gestartet werden kann.
           ldconfig -p | grep 'libEGL.so.1'
-          timeout 90s blender --background --factory-startup --python-expr 'import bpy, numpy; print("BLENDER_HEADLESS_NUMPY_OK", numpy.__version__)'
-          # A real glTF round-trip also tests the bundled glTF exporter and NumPy.
-          timeout 180s blender --background --factory-startup --python scripts/blender_lib/smoke_test.py
+          # Run under the SAME system-Python isolation as the production worker.
+          # --python-exit-code avoids Blender returning rc=0 despite a Python traceback.
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            timeout 90s blender --background --factory-startup --python-exit-code 37 \
+            --python-expr 'import bpy, numpy; print("BLENDER_HEADLESS_NUMPY_OK", numpy.__version__)' \
+            | tee /tmp/blender-import-check.log
+          grep -F BLENDER_HEADLESS_NUMPY_OK /tmp/blender-import-check.log
+          # A real GLB round-trip also tests the actual glTF importer/exporter.
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            --python scripts/blender_lib/smoke_test.py \
+            | tee /tmp/blender-roundtrip-check.log
+          grep -F BUILDING_KIT_SMOKE_OK /tmp/blender-roundtrip-check.log
 
 
       - name: Automatisch planen, bauen, prüfen und exportieren (kein Go)
