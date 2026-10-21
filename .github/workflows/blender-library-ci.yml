@@ -44,3 +44,16 @@ jobs:
             timeout 180s blender --background --factory-startup --python-exit-code 37 \
             --python scripts/blender_lib/smoke_test.py | tee /tmp/building-kit-test.log
           grep -F BUILDING_KIT_SMOKE_OK /tmp/building-kit-test.log
+      - name: Echten Produktionsworker exportieren und reimportieren lassen
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/worker-test"
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            WORKER_MODE=export ASSET_WORK="$RUNNER_TEMP/worker-test" \
+            GLB_PATH="$RUNNER_TEMP/worker-test/test.glb" \
+            STAGE_REPORT="$RUNNER_TEMP/worker-test/report.json" MAX_TRIS=150000 \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            "$RUNNER_TEMP/building-kit-worker-source.blend" \
+            --python scripts/blender_worker.py | tee /tmp/production-worker-test.log
+          grep -F EXPORT_REIMPORT_OK /tmp/production-worker-test.log
