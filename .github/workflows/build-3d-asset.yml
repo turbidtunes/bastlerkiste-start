@@ -58,6 +58,25 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Fertigen Prompt-Pfad vor kostenpflichtigem Build pruefen
+        env:
+          PROMPT_PATH: ${{ inputs.prompt_path }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          p = Path(os.environ["PROMPT_PATH"]).resolve()
+          allowed = Path("prompts").resolve()
+          if not p.is_relative_to(allowed) or p.suffix.lower() != ".md" or not p.is_file():
+              raise SystemExit(f"PROMPT_PATH nicht gefunden oder nicht unter prompts/: {os.environ['PROMPT_PATH']}")
+          if p.name == "master_system.md":
+              raise SystemExit("Bitte einen fertigen Gebaeudeprompt angeben, nicht master_system.md")
+          txt = p.read_text(encoding="utf-8-sig")
+          if len(txt.strip()) < 25:
+              raise SystemExit(f"Prompt-Datei leer oder zu kurz: {p}")
+          print(f"PROMPT_OK: {os.environ['PROMPT_PATH']} ({len(txt)} Zeichen)")
+          PY
+
       - name: Blender und SDK installieren
         run: |
           sudo apt-get update -qq
