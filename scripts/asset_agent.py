@@ -7,6 +7,7 @@ No 'go' or second workflow is required.
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
 import re
@@ -25,6 +26,7 @@ MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5").strip()
 REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
 PROMPT_PATH = os.environ.get("PROMPT_PATH", "").strip()
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "1"))
+RESUME_RUN_ID = os.environ.get("RESUME_RUN_ID", "").strip()
 STAGES = ["shell", "architecture", "details"]
 RATE = {"claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
 
@@ -76,11 +78,13 @@ master = (
 )
 work = REPO / "_asset_work" / SLUG
 delivery = REPO / "inbox" / SLUG
-if work.exists():
+if work.exists() and not RESUME_RUN_ID:
     shutil.rmtree(work)
-work.mkdir(parents=True)
-(work / "stages").mkdir()
-(work / "views").mkdir()
+work.mkdir(parents=True, exist_ok=True)
+(work / "stages").mkdir(exist_ok=True)
+(work / "views").mkdir(exist_ok=True)
+if RESUME_RUN_ID and not (work / "plan.md").is_file():
+    sys.exit("Fortsetzung blockiert: vorheriger Actions-Artefakt-Download enthält keinen Architekturplan; kein neuer Claude-Aufruf")
 images = []
 for rel in [s.strip() for s in REFERENCES.split(",") if s.strip()]:
     src = repo_file(rel)
@@ -311,6 +315,27 @@ def review_stage(stage: str, report: dict, planned: str):
     return parsed
 
 
+# A resumed run must match the original instructions and reference images exactly.
+# A changed prompt or different reference may require rebuilding from the start.
+source_digest = hashlib.sha256()
+source_digest.update(brief.encode("utf-8"))
+for ref_name, ref_file, _ in images:
+    source_digest.update(ref_name.encode("utf-8"))
+    source_digest.update(ref_file.read_bytes())
+fingerprint = source_digest.hexdigest()
+fingerprint_path = work / "source_fingerprint.txt"
+checkpoint_path = work / "stage_checkpoints.json"
+if RESUME_RUN_ID:
+    if not fingerprint_path.is_file() or fingerprint_path.read_text().strip() != fingerprint:
+        sys.exit("Fortsetzung blockiert: Prompt oder Referenzfoto ist anders als beim gespeicherten Build; kein Claude-Aufruf")
+    if not checkpoint_path.is_file():
+        sys.exit("Fortsetzung blockiert: keine fertigen Stufen-Checkpoints im gewählten Lauf; kein Claude-Aufruf")
+    checkpoints = json.loads(checkpoint_path.read_text(encoding="utf-8"))
+    print(f"FORTSETZUNG AUS GITHUB-RUN {RESUME_RUN_ID}: {', '.join(checkpoints) or 'nur Plan'}", flush=True)
+else:
+    fingerprint_path.write_text(fingerprint + "\n", encoding="utf-8")
+    checkpoints = {}
+
 # Reuse pre-validated building primitives instead of re-generating boilerplate bpy.
 KIT_GUIDE = (REPO / "scripts" / "blender_lib" / "API.md").read_text(encoding="utf-8")
 print("BUILDING_KIT aktiv: bewährte Bauteile und Blueprint-API geladen", flush=True)
@@ -329,8 +354,12 @@ plan_prompt = (
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
     f"VORHANDENE ECHTE TEXTUREN (alle vorhandenen): {', '.join(list(texture_index)) or 'KEINE'}"
 )
-plan = ask("plan", plan_prompt, refs)
-(work / "plan.md").write_text(plan, encoding="utf-8")
+if RESUME_RUN_ID:
+    plan = (work / "plan.md").read_text(encoding="utf-8")
+    print("PLAN aus vorherigem Lauf geladen: keine erneuten Plan-Tokens", flush=True)
+else:
+    plan = ask("plan", plan_prompt, refs)
+    (work / "plan.md").write_text(plan, encoding="utf-8")
 max_match = re.search(r"MAX_TRIS\s*[:=]\s*(\d{4,7})", plan)
 max_tris = int(max_match.group(1)) if max_match else 150000
 if max_tris > 150000 or max_tris < 10000:
@@ -341,6 +370,17 @@ previous = None
 stage_results = {}
 for idx, stage in enumerate(STAGES, start=1):
     print(f"{idx+1}/5 BUILD STUFE: {stage}", flush=True)
+    if stage in checkpoints:
+        if any(previous_stage not in checkpoints for previous_stage in STAGES[:idx-1]):
+            raise RuntimeError(f"Ungültige Checkpoint-Reihenfolge: {stage}")
+        prior = checkpoints[stage]
+        previous = (work / "stages" / prior["blend_file"]).resolve()
+        if not previous.is_relative_to((work / "stages").resolve()) or not previous.is_file():
+            raise RuntimeError(f"Gesicherter Blender-Checkpoint fehlt: {previous}")
+        report = prior["report"]
+        stage_results[stage] = report
+        print(f"STUFE {stage} AUS CHECKPOINT: {previous.name}, keine Claude-Neugenerierung", flush=True)
+        continue
     purpose = {
         "shell": "Fundamente, Geschossplatten, echte dicke Wände mit realen Öffnungen, Raumvolumen, präzise Hauptsilhouette. Verteile die Teile in benannten Meshes. KEINE falsche Fassaden-Plane hinter Fenstern.",
         "architecture": "Auf bestehender shell-Szene: geplante Dachform und gebäudespezifische Sonderbauten (nur falls laut Auftrag), echte Treppen und Podeste, Fenster mit Laibungen, getrennte geschlossene Türblatt-Meshes samt Pivot, Geländer, Fassadenordnung gemäß Plan.",
@@ -387,6 +427,11 @@ for idx, stage in enumerate(STAGES, start=1):
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
         stage_results[stage] = report
         verdict = review_stage(f"{stage}_fix{correction}", report, plan)
+
+    # Persist the last visually checked .blend before continuing to the next stage.
+    checkpoints[stage] = {"blend_file": previous.name, "report": report}
+    checkpoint_path.write_text(json.dumps(checkpoints, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"CHECKPOINT_GESICHERT {stage}: {previous.name}", flush=True)
 
 print("5/5 EXPORT, Materialcheck und realer GLB-Reimport", flush=True)
 final_report = work / "final_validation.json"
