@@ -135,3 +135,55 @@ Das separate GitHub-Workflow
 `Blender-Bauteilbibliothek kostenlos pruefen` prüft ohne
 `ANTHROPIC_API_KEY` und ohne Claude-API-Kosten die Blender-Bibliothek
 inklusive tatsächlichem GLB-Roundtrip. Ausführung über GitHub Actions.
+
+## Codex mit ChatGPT Plus: Planung → echte Fototexturen → Gebäude (neu)
+
+Codex liest automatisch die Anweisung in
+[AGENTS.md](../AGENTS.md), wenn du ihm einen neuen Gebäudeauftrag gibst.
+Die ausführliche Einmal-Anweisung steht dort einschließlich der
+`gh workflow run`-Befehle.
+
+1. Codex erstellt unter `prompts/<building_name>.md` den vollständigen
+   Einzelprompt, findet das echte Referenzbild und committet den Prompt.
+2. Codex startet die GitHub Action mit **`run_mode=plan_textures`**.
+   Claude erstellt eine einzige kompakte Bauspezifikation, aber **noch
+   keine** kostenpflichtigen Blender-Stufenskripte.
+3. Die Action committed
+   `texture_requests/<building_name>/plan.md`,
+   `manifest.json` und `CODEX_TASK.md` nach GitHub. Das Manifest enthält
+   nur die tatsächlich fehlenden `new_*`-Fototexturen. Die Plan-Diagnose
+   wird 7 Tage als GitHub-Actions-Artefakt aufbewahrt.
+4. **Codex (ChatGPT Plus) erzeugt die Bilder**, soweit seine konkrete
+   Codex-Sitzung Bildgenerierung unterstützt. Die Dateien müssen exakt
+   `2048 × 2048` Pixel groß sein, als PNG echte fotorealistische,
+   nahtlose Materialkacheln ergeben und die visuelle 3×3-Kontrolle
+   bestehen. Kein Upscaling, keine prozeduralen Pseudotexturen.
+5. Neue Texturen werden **NICHT** in einem globalen Ordner gespeichert,
+   sondern **direkt neben die endgültige GLB**:
+
+   `inbox/<building_name>/new_<what>.png`
+
+   Beispiel: `inbox/les_calanques_finca/new_finca_plaster.png`.
+   Diese PNGs werden vor dem Modell-Build von Codex committed und vom
+   Blender-Agent ausdrücklich **nicht mehr gelöscht**.
+6. Codex kontrolliert mit
+   `python3 scripts/texture_handoff.py verify --repo . --slug <building_name>`
+   PNG-Dateinamen, Dateiformat und 2048×2048-Auflösung. Das Prüfen der
+   echten optischen Nahtlosigkeit bleibt eine zusätzliche visuelle Aufgabe.
+7. Danach neuer **`run_mode=build`**-Lauf mit derselben Referenz und
+   **`resume_run_id` = ID des abgeschlossenen plan_textures-Laufs**.
+   Die Pipeline lädt den Originalplan, verifiziert die Texturen,
+   spart eine zweite Planungsrechnung und baut anschließend wie bisher
+   mit standardmäßig **2** visuellen Korrekturrunden pro Stufe.
+   Am Ende liegen `<building_name>.glb`, `note.txt` und alle für das
+   konkrete Gebäude verwendeten `new_*.png` zusammen im selben
+   `inbox/<building_name>/`-Ordner.
+
+**Wichtige Grenze:** GitHub Actions kann nicht automatisch Codex über
+dein Plus-Abo aufrufen. Ein aktiver Codex-Task kann die GitHub-Action
+verfolgen und den nächsten Schritt ausführen, sofern er Zugriff auf
+GitHub Actions, Bildgenerierung und Git-Push hat. Andernfalls ist die
+`CODEX_TASK.md`-Datei die Übergabe zur nächsten Codex-Sitzung.
+Es wird **keine kostenpflichtige OpenAI-Bilderzeugungs-API** stillschweigend
+verwendet. Die Claude-Actions-Aufrufe werden weiterhin über dein
+Anthropic-API-Guthaben abgerechnet.
