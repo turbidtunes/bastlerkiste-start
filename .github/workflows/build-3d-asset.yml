@@ -8,6 +8,10 @@ on:
         required: true
         type: string
         default: "grand_fond_parish_church"
+      resume_run_id:
+        description: "Optional: GitHub-Actions-Run-ID eines fehlgeschlagenen Builds mit Checkpoints (spart Claude-Tokens)"
+        required: false
+        type: string
       prompt_path:
         description: "Pfad zum fertig zusammengefuehrten .md-Prompt im Ordner prompts/"
         required: true
@@ -37,6 +41,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: claude-blender-${{ inputs.building_name }}
@@ -77,6 +82,17 @@ jobs:
           print(f"PROMPT_OK: {os.environ['PROMPT_PATH']} ({len(txt)} Zeichen)")
           PY
 
+      - name: Frühere Blender-Zwischenstände laden (optional, vor API-Aufrufen)
+        if: ${{ inputs.resume_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.resume_run_id }}
+          pattern: diagnose-${{ inputs.building_name }}-*
+          merge-multiple: true
+          path: _asset_work/${{ inputs.building_name }}
+
       - name: Blender und SDK installieren
         run: |
           sudo apt-get update -qq
@@ -101,6 +117,7 @@ jobs:
           REFERENCE_IMAGES: ${{ inputs.reference_images }}
           CLAUDE_MODEL: ${{ inputs.model }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
+          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
         run: python -u scripts/asset_agent.py
 
       - name: Automatischen Plan im Actions-Protokoll zusammenfassen
@@ -121,6 +138,8 @@ jobs:
           path: |
             _asset_work/${{ inputs.building_name }}/plan.md
             _asset_work/${{ inputs.building_name }}/input_prompt.md
+            _asset_work/${{ inputs.building_name }}/source_fingerprint.txt
+            _asset_work/${{ inputs.building_name }}/stage_checkpoints.json
             _asset_work/${{ inputs.building_name }}/usage.json
             _asset_work/${{ inputs.building_name }}/final_validation.json
             _asset_work/${{ inputs.building_name }}/stages/*.log
@@ -130,6 +149,7 @@ jobs:
             _asset_work/${{ inputs.building_name }}/views/*.png
           if-no-files-found: ignore
           retention-days: 7
+          compression-level: 0
 
       - name: Ausschliesslich fertige Dateien nach inbox committen
         env:
