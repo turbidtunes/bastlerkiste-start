@@ -681,8 +681,21 @@
       "physical_tile_m": null,
       "additional_rules": "Flag flat front view, exact 3:2 aspect, no fabric folds",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "blocked_native_resolution",
+      "priority": "medium",
+      "approved_size_px": [
+        1254,
+        836
+      ],
+      "failure_reason": "Tool generated native 1536x1024 despite requested 1254x836; Pillow verified actual pixels. Original native PNG retained locally. Awaiting user choice: accept native landscape dimensions or explicitly authorize downsampling. No destination upload.",
+      "validation": {
+        "native_size_px": [
+          1536,
+          1024
+        ],
+        "png_verified": true,
+        "visual_content": "passed"
+      }
     },
     {
       "id": "loading_evacuation",
