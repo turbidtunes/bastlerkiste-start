@@ -1169,8 +1169,28 @@
       "source_file": [
         "inbox/cite_moulin_h04/note.txt"
       ],
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste-start": "33d6234a57aa0cd454c91b5e9821f1fd2b84bb52"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "a1a55fa30a6729a7bc2ace70e0f42650dcd9500e176076865ec1f05ef03b1e68",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "new_render_teal",
