@@ -23,7 +23,7 @@ REPO = Path(__file__).resolve().parents[1]
 SLUG = os.environ.get("BUILDING_NAME", "").strip()
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5").strip()
 REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
-DIRECT_PROMPT = os.environ.get("BUILDING_PROMPT", "")
+PROMPT_PATH = os.environ.get("PROMPT_PATH", "").strip()
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "1"))
 STAGES = ["shell", "architecture", "details"]
 RATE = {"claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
@@ -47,11 +47,22 @@ def repo_file(rel: str, allowed_root: str | None = None) -> Path:
     return path
 
 
-# Im Actions-Formular wird der bereits manuell kombinierte Prompt eingegeben.
-# Kein Vorverarbeitungsaufruf, kein automatisches Anhängen des alten Masterprompts.
-brief = DIRECT_PROMPT.strip()
-if len(brief) < 25:
-    sys.exit("building_prompt fehlt oder ist zu kurz: vollstaendigen Bauauftrag im Actions-Eingabefeld einfuegen")
+# Der vollständige, bereits kombinierte Prompt liegt unter prompts/ im Repository.
+# Kein Compiler und keine zusätzliche master_system.md in den Modellkontext laden.
+if not PROMPT_PATH:
+    sys.exit("prompt_path fehlt: Dateipfad unter prompts/ angeben")
+try:
+    prompt_file = repo_file(PROMPT_PATH, "prompts")
+except ValueError as exc:
+    sys.exit(str(exc))
+if prompt_file.suffix.lower() != ".md" or not prompt_file.is_file():
+    sys.exit(f"Prompt-Datei nicht gefunden oder keine Markdown-Datei: {PROMPT_PATH}")
+if prompt_file.name == "master_system.md":
+    sys.exit("master_system.md ist nur ein allgemeiner Alt-Prompt; bitte eine vollständig kombinierte Gebäude-Datei wählen")
+brief = prompt_file.read_text(encoding="utf-8-sig")
+if len(brief.strip()) < 25:
+    sys.exit(f"Prompt-Datei ist leer oder zu kurz: {PROMPT_PATH}")
+print(f"VOLLSTAENDIGEN PROMPT LADEN: {PROMPT_PATH} ({len(brief)} Zeichen)", flush=True)
 master = (
     "Du bist ein erfahrener Blender-4.x-bpy- und UE5-3D-Asset-Agent. "
     "Der vollständige Bauauftrag ist vom Nutzer bereits manuell zusammengeführt; "
