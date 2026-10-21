@@ -1,0 +1,108 @@
+NOTE – creole_timber_house_h04
+
+STAND DER PRÜFUNG
+- Grundlage: Prüfbericht des Blender-Laufs (Blender 4.0.2) und GLB-Reimport. Der Bericht meldet 105 Meshes beim Export und 105 beim Reimport, keine Violations.
+- Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern. Sie ist keine Garantie für Fotorealismus oder Spielbarkeit und keine UE5-Prüfung.
+- Eine automatische UE5-Prüfung wurde nicht durchgeführt.
+- Maßangaben unter "Plan" sind Planvorgaben. Nachgemessen sind nur die Gesamt-Bounds und die Dreieckszahl.
+
+GEBÄUDE
+- Slot: riviere_noire_H04, Rivière-Noire (Mauritius).
+- Nutzung: Familienwohnhaus, 1 Geschoss, kreolisches Holzhaus mit Lambrequins und Frontveranda.
+- furniture_style: creole_poor.
+- Dach: rotes Wellblech-Walmdach mit separatem, geknicktem Verandadach.
+- Hauptfassade zeigt nach -Y.
+
+GEMESSENE WERTE (GLB-Prüfbericht)
+- Dreiecke: 55.756 (Plan-Limit 110.000).
+- GLB-Größe: 3.389.016 Bytes.
+- Bounds min: X -6,329, Y -7,225, Z -0,200 m.
+- Bounds max: X 6,600, Y 6,329, Z 7,500 m.
+- Abmessungen: 12,929 x 13,554 x 7,7 m (inkl. Sockel 0,20 m unter Gelände).
+- Der Plan nannte 13,2 x 13,4 m inkl. Eingangstreppen. Gemessen ist die Länge in Y etwas größer und die Breite in X kleiner. Der Footprint ist asymmetrisch (X -6,329..+6,600).
+- Abstände aus den gemessenen Bounds und der Plot-Lage (Ursprung bei 8,5 | 10,4):
+  - Straße: 3,18 m.
+  - Hinten: 4,27 m.
+  - Seiten: 2,17 m und 1,90 m.
+  - Alle liegen innerhalb der geforderten Abstände (3 / 3 / 1,5 m).
+- Die Zahlen sind aus den Bounds abgeleitet. Eine separate Plot-Prüfung liegt nicht vor.
+
+RÄUME (EG, Boden z = 0,80 m, lichte Höhe laut Plan 3,10 m)
+- R01 Veranda (hall): bench 1, rocking_chair 2, ceiling_lamp 2.
+- R02 Salon (living): sofa, armchair 2, coffee_table, tv_unit, display_cabinet, side_table, floor_lamp, rug, ceiling_fan, curtains 2.
+- R03 Schlafzimmer 1, Haupt (bedroom): bed_double, bedside 2, wardrobe, dresser, gun_cabinet (Ph_bedroom_gun_cabinet_01), ceiling_fan, curtains 2.
+- R04 Schlafzimmer 2 (bedroom2): bed_single 2, bedside, wardrobe, desk, chair, ceiling_fan, curtains 2.
+- R08 Schlafzimmer 3 (bedroom3): bed_double, bedside, wardrobe, ceiling_fan, curtains 2.
+- R05 Esszimmer (dining): dining_table, dining_chair 6, ceiling_fan, curtains 2, wall_lamp.
+- R06 Küche (kitchen): fridge, cooker, kitchen_run, kitchen_table, kitchen_chair 4, wall_shelf 2, pantry, ceiling_fan.
+- R07 Bad (bathroom): wc, basin, shower, mirror, towel_rail, washing_machine, laundry_basket, ceiling_lamp.
+- Insgesamt 72 Platzhalter, aus der Namensliste des Prüfberichts gezählt. Material "placeholder", ohne Textur.
+- Die Platzhalterpositionen wurden im Bericht nicht einzeln auf Abstände geprüft.
+
+TÜREN (Namen laut Prüfbericht; Breiten und Anschläge aus dem Plan)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: R01 Veranda → R02 Salon, Doppeltür, 1,50 m lichte Breite.
+- DoorLeaf_02_L_in: R02 → R03, 0,95 m.
+- DoorLeaf_03_R_in: R02 → R04, 0,95 m.
+- DoorLeaf_04_L_in: R02 → R05, 0,95 m.
+- DoorLeaf_05_L_in: R05 → R08, 0,95 m.
+- DoorLeaf_06_R_in: R05 → R06, 0,95 m.
+- DoorLeaf_07_R_in: R05 → R07, 0,95 m.
+- DoorLeaf_08_L_in: R06 → außen (Hintertür Ostwand), 1,00 m.
+- Plan-Türhöhe: 2,40 m (Haustür) bzw. 2,20 m (übrige). Blatt 50 mm, Spalt 7 mm.
+- Alle Türen öffnen nach innen.
+- Die tatsächlich modellierten Türmaße wurden im Bericht nicht einzeln nachgemessen.
+
+ERSCHLIESSUNG
+- Haupttreppe: Stein, mittig, 1,4 m breit, 5 Steigungen à 0,16 m, mit Handläufen.
+- Hintertreppe mit Stoop an der Ostwand: 1,2 m breit, 5 Steigungen.
+- Veranda-Geländer: 1,0 m hoch, Öffnung nur an der Treppe.
+- Es gibt keine Flure, keine Balkone und keinen Turm. Der Dachboden ist geschlossen und nicht begehbar.
+
+MATERIALIEN (laut Prüfbericht im GLB)
+- basalt_dressed
+- basalt_masonry
+- ceramic_glazed_white
+- floor_tiles
+- galvanized_steel
+- glass
+- limewash
+- new_roof_corrugated_red
+- painted_timber_warmgrey
+- placeholder
+- shutter_paint
+- steel_painted_worn
+- weatherboard_cream
+- white_peeling_timber
+- Zuordnung der Materialien zu den Bauteilen: siehe Plan Abschnitt 9.
+- UV0 in Metern ist Pipeline-Vorgabe. Der Prüfbericht führt sie nicht gesondert auf.
+
+NEUES MATERIAL / FEHLENDE TEXTUR
+- new_roof_corrugated_red: rot beschichtetes Wellblech, verblasst, mit Rostschlieren.
+  - Vorgesehene reale Tile-Größe: 2 m x 2 m.
+  - Die Datei new_roof_corrugated_red.png liegt nicht vor (NEW_MATERIAL_FILES leer). Das ist kein Auslieferungshindernis.
+  - Der Materialslot bleibt im GLB.
+  - Grund: corrugated_rust deckt den roten Farbton nicht ab.
+- Weitere new_*-Materialien: keine.
+
+ABWEICHUNGEN ZUM REFERENZFOTO
+- Grundriss, Innenräume und Rückseite sind im Foto nicht sichtbar und wurden erfunden. Bildtreue dafür wird nicht behauptet. Für das Gesamtbild wurde keine Bildtreue-Messung durchgeführt.
+- Gartenmauer, Bepflanzung und Tor sind laut Scope nicht modelliert. Stattdessen gibt es Veranda-Geländer und Treppenhandläufe (Absturzhöhe 0,80 m).
+- Grüne Läden sind fest und flach offen neben den Fenstern modelliert (Dekor, kein Verschluss). Das weicht von "closed" ab.
+- Dach: getrenntes Haupt- und Verandadach mit Knick, abgeleitet aus der Seitenansicht des Fotos.
+- Lambrequin-Muster vereinfacht (Planvorgabe). Läden mit je 10 Lamellen (Planvorgabe, nicht einzeln nachgezählt).
+- Gemessene Footprint-Maße weichen leicht vom Plan ab (siehe oben).
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 105
+Triangles: 55756
+Reimport Meshes: 105
+Bounds m: [12.929, 13.554, 7.7]
+Materials: basalt_dressed, basalt_masonry, ceramic_glazed_white, floor_tiles, galvanized_steel, glass, limewash, new_roof_corrugated_red, painted_timber_warmgrey, placeholder, shutter_paint, steel_painted_worn, weatherboard_cream, white_peeling_timber
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_L_in, DoorLeaf_03_R_in, DoorLeaf_04_L_in, DoorLeaf_05_L_in, DoorLeaf_06_R_in, DoorLeaf_07_R_in, DoorLeaf_08_L_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_laundry_basket_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_bedside_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_chair_01, Ph_bedroom2_curtains_01, Ph_bedroom2_curtains_02, Ph_bedroom2_desk_01, Ph_bedroom2_wardrobe_01, Ph_bedroom3_bed_double_01, Ph_bedroom3_bedside_01, Ph_bedroom3_ceiling_fan_01, Ph_bedroom3_curtains_01, Ph_bedroom3_curtains_02, Ph_bedroom3_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_curtains_01, Ph_bedroom_curtains_02, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_dining_ceiling_fan_01, Ph_dining_curtains_01, Ph_dining_curtains_02, Ph_dining_dining_chair_01, Ph_dining_dining_chair_02, Ph_dining_dining_chair_03, Ph_dining_dining_chair_04, Ph_dining_dining_chair_05, Ph_dining_dining_chair_06, Ph_dining_dining_table_01, Ph_dining_wall_lamp_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_ceiling_lamp_02, Ph_hall_rocking_chair_01, Ph_hall_rocking_chair_02, Ph_kitchen_ceiling_fan_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_chair_04, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_curtains_01, Ph_living_curtains_02, Ph_living_display_cabinet_01, Ph_living_floor_lamp_01, Ph_living_rug_01, Ph_living_side_table_01, Ph_living_sofa_01, Ph_living_tv_unit_01
+API-Schätzkosten USD: 5.09 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_roof_corrugated_red: inbox/riviere_noire_h04/new_roof_corrugated_red.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
