@@ -228,7 +228,7 @@ def run_code(label: str, prev: Path | None, prompt: str):
             prompt + "\n\nDas vorige Stufenskript schlug fehl. Repariere gezielt diese Stufe, "
             "gebe aber wieder den vollständigen ausführbaren Stufencode aus. "
             "Vorstufen liegen schon als .blend vor.\n" +
-            "BLENDER-TRACEBACK:\n" + failure[-10000:] +
+            "BLENDER-TRACEBACK:\n" + failure +
             "\nVORHERIGER STUFENCODE:\n" + last_code
         )
         answer = ask(f"{label}_code_{retry}", task)
@@ -264,7 +264,7 @@ def review_stage(stage: str, report: dict, planned: str):
         "architecture = Dach/Türen/Treppen; details = finale Baugeometrie/Platzhalter. "
         "Gib ausschließlich JSON zurück: {\"needs_fix\": true/false, \"issues\": [\"...\"], "
         "\"comparison_possible\": true/false}. Keine erfundenen Prüfungen.\n"
-        f"STUFE: {stage}\nBERICHT:\n{json.dumps(report, ensure_ascii=False)[:12000]}\n"
+        f"STUFE: {stage}\nBERICHT:\n{json.dumps(report, ensure_ascii=False)}\n"
         f"PLAN:\n{planned}\nBAUVERTRAG:\n{building_contract}"
     )
     answer = ask(stage + "_vision_review", prompt, visuals)
@@ -317,7 +317,7 @@ plan_prompt = (
     "Nenne alle bekannten Abweichungen.\n\n"
     f"VERBINDLICHER BAUVERTRAG MIT ORIGINALPROMPT:\n{building_contract}\n"
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
-    f"VORHANDENE ECHTE TEXTUREN (max 120): {', '.join(list(texture_index)[:120]) or 'KEINE'}"
+    f"VORHANDENE ECHTE TEXTUREN (alle vorhandenen): {', '.join(list(texture_index)) or 'KEINE'}"
 )
 plan = ask("plan", plan_prompt, refs)
 (work / "plan.md").write_text(plan, encoding="utf-8")
@@ -349,8 +349,8 @@ for idx, stage in enumerate(STAGES, start=1):
         f"STUFE: {stage}\nAUFGABE: {purpose}\n"
         f"BAUVERTRAG UND VOLLSTÄNDIGER ORIGINALPROMPT:\n{building_contract}\n"
         f"VERBINDLICHER PLAN:\n{plan}\n"
-        f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False)[:9000] if idx>1 else 'Keine'}\n"
-        f"Verfügbare Fototextur-Namen: {', '.join(list(texture_index)[:120])}"
+        f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False) if idx>1 else 'Keine'}\n"
+        f"Verfügbare Fototextur-Namen: {', '.join(list(texture_index))}"
     )
     previous, report = run_code(stage, previous, stage_prompt)
     stage_results[stage] = report
@@ -366,7 +366,7 @@ for idx, stage in enumerate(STAGES, start=1):
             "Benenne neue Teile ordentlich und repariere vorhandene Meshes statt zusätzliche "
             "deckungslose Fassadenflächen darüberzulegen. Keine Bilderzeugung.\n"
             f"STUFE {stage}, KORREKTUR {correction}\nPROBLEME:\n{issues}\n"
-            f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)[:9000]}"
+            f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)}"
         )
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
         stage_results[stage] = report
