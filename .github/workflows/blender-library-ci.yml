@@ -1,0 +1,34 @@
+name: Blender-Bauteilbibliothek kostenlos pruefen
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/blender_lib/**'
+      - 'scripts/blender_worker.py'
+      - '.github/workflows/blender-library-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Quellcode holen
+        uses: actions/checkout@v4
+      - name: Headless Blender und Python NumPy installieren
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+      - name: Blender-Version, Bibliothek und Blender-Python prüfen
+        run: |
+          blender --version | head -n 1 | grep -E 'Blender 4\.'
+          blender --background --factory-startup --python-expr 'import bpy, numpy; print("BLENDER_NUMPY_OK", numpy.__version__)'
+          python3 -m py_compile scripts/blender_lib/building_kit.py scripts/blender_lib/smoke_test.py
+      - name: Echte Geometrie, metrische UVs und GLB-Roundtrip ohne Claude testen
+        run: |
+          timeout 180s blender --background --factory-startup --python scripts/blender_lib/smoke_test.py | tee /tmp/building-kit-test.log
+          grep -F BUILDING_KIT_SMOKE_OK /tmp/building-kit-test.log
