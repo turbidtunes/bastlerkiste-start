@@ -1,7 +1,14 @@
 # Vollstaendiger Bauprompt — Katholische Pfarrkirche Grand-Fond, Mauritius
 
+## OUTPUT-CONTRACT / PLANPHASE – GELD UND TOKENS SPAREN (VERBINDLICH)
+
+Der Architekturplan in Phase **1/5 PLAN ist ausschließlich eine kompakte, ausführbare BAUSPEZIFIKATION**, kein Essay und keine Probe-Modellierung. **Richtwert für kleine Gebäude: 900–1.500 Wörter, für komplexe Gebäude: höchstens ca. 2.200 Wörter.** Das betrifft NUR die Textausgabe der Planphase, niemals den LOD0-Detailgrad oder die späteren Blender-Codephasen. Der Controller fordert die Felder IDENTITÄT, GRUNDSTÜCK, GESCHOSSE, RÄUME (ein Datensatz pro Raum), ERSCHLIESSUNG, TÜREN (ein Datensatz pro Öffnung), FENSTER/FASSADEN (gleiche Fenster als Raster), DACH/SONDERBAUTEN, MATERIALSLOTS (nur genutzte), PH-PLACEHOLDER (Rollen und Anzahlen), REFERENZABWEICHUNGEN, BAUPHASEN und `MAX_TRIS` an. **Ein Datensatz statt eines Absatzes.** Parameter, Maße, Koordinaten, Namen, Nutzbarkeit und Material-IDs dürfen NICHT fehlen.
+
+**Stoppregel:** Plan genau **einmal** schreiben und am Ende `PLAN_COMPLETE` ausgeben, danach **sofort die Ausgabe beenden**. Keine Wiederholung der Aufgabenstellung oder Materialliste, keine alternativen Varianten, keine ausführlichen Überlegungen, keine Architekturgeschichte, keine Schritt-für-Schritt-Tutorials, keine einzeln beschriebenen 50 identischen Fenstern oder Bänke, kein Python-Code und keine zweite Planfassung. Unklare Kleinigkeiten konsistent entscheiden und in einer Zeile kennzeichnen, statt endlos Möglichkeiten gegeneinander abzuwägen. **Vollständige Modellierung erfolgt danach automatisch**, ohne Go, im selben Workflow.
+
+
 **Dieser Text ist bereits fertig zusammengefuehrt.** Der GitHub-Agent liest
-die gesamte Datei und beginnt sofort mit der detaillierten Planung. Danach
+die gesamte Datei und beginnt sofort mit einer kompakten, maßhaltigen Bauspezifikation. Danach
 folgt automatisch der Blender-Build ohne Compiler und ohne "Go".
 
 **WICHTIG:** Die nachfolgenden konkreten Kirchenmasse, Nutzungsdaten und
@@ -53,7 +60,7 @@ explizit. **Sobald der Plan fertig ist, beginnt die Modellierung im selben GitHu
 sofort automatisch. Niemals auf „go“, Genehmigung oder interaktive Bestätigung warten.**
 
 Der ausführende Controller übernimmt die Phasensteuerung:
-1. PLAN: Analysiere die echten Referenzfotos und schreibe einen konkreten Bauplan.
+1. PLAN: Analysiere die echten Referenzfotos und schreibe genau eine kompakte, numerisch vollständige Bauspezifikation nach OUTPUT-CONTRACT; keine Essays oder Blender-Code.
 2. SHELL: Baue maßhaltiges Fundament, Decken, Hauptwände, Raumvolumen und echte Öffnungen.
 3. ARCHITECTURE: Ergänze Dach, Turm, echte Treppen, geschlossene Fenster- und Türgeometrie.
 4. DETAILS: Ergänze architektonische Details, Materialnamen, UV0 und Möbel-Placeholder.
