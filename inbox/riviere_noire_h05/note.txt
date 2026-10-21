@@ -1,0 +1,117 @@
+NOTE.TXT – riviere_noire_h05_grillhouse
+
+1. GEBÄUDE
+- Name: riviere_noire_h05_grillhouse ("Le Filet Bleu – Grillades de la Mer"), Plot riviere_noire_H05, Rivière-Noire, Mauritius.
+- Nutzung: Fischgrill-Restaurant. Im EG liegen Gastraum, Küche mit Holzkohlegrill, Lager und WCs. Im OG liegen die Terrasse mit Palmwedel-Schattendach und die Besitzerwohnung hinten.
+- furniture_style: spanish_modern.
+- Zwei Geschosse. Lichte Höhe EG 3,20 m, OG 2,80 m. Flachdach über der Wohnung mit Attika bis z 7,20 m (nicht begehbar). Terrasse mit Thatch-Walmdach, First z 8,00 m.
+- Plan-Wandkörper: 11,5 × 13,25 m. Plan-Hüllkörper inkl. Vordächern, Thatch und Rauchrohr: 12,5 × 14,0 m.
+- Hauptfassade -Y, zweite Straße +X.
+
+2. GEMESSENE WERTE (laut Prüfbericht, Blender 4.0.2)
+- Meshes: 169. Dreiecke: 75 740 (Limit laut Plan: 110 000).
+- Bounds min [-6,30 / -7,09 / -0,20] m, max [6,34 / 7,295 / 8,00] m. Maße 12,64 × 14,385 × 8,20 m (inkl. Fundament bis z -0,20).
+- Das Modell ist damit etwas größer als der geplante Hüllkörper (12,5 × 14,0 m). Es passt in die bebaubare Fläche von 14,0 × 15,0 m.
+- Die Grenzabstände wurden nicht separat nachgemessen. Rechnerisch aus den Bounds, falls die Plan-Koordinaten gelten: Straße vorn ca. 2,91 m (Soll 3,0 m), links ca. 1,45 m (Soll 1,5 m). Beides liegt knapp unter Soll.
+- GLB-Reimport: 169 Meshes, keine Verstöße im Prüfbericht. GLB-Größe 4 928 748 Bytes.
+- Die Maßgenauigkeit der Einzelteile und die Bildtreue sind nicht belegt. Die visuelle Analyse ist eine KI-Einschätzung aus Workbench-Bildern, keine Garantie. Eine UE5-Prüfung wurde nicht durchgeführt.
+
+3. RÄUME UND PLACEHOLDER
+Alle Möbel sind Platzhalter (Material placeholder, Ph_<Raum>_<Rolle>_<nn>). Es sind 124 Stück, aus der Prüfliste gezählt.
+
+EG
+- GF_DINING (Gastraum, Raumname "dining"): dining_table ×4, dining_chair ×16, ceiling_fan ×4, ceiling_lamp ×4, wall_lamp ×4.
+- GF_KITCHEN (kitchen): cooker (Grill) ×1, kitchen_run ×1, fridge ×1, kitchen_table ×1, kitchen_chair ×2, wall_shelf ×3, pantry ×1, ceiling_lamp ×2, ceiling_fan ×1.
+- GF_STORE (store): storage_rack ×2, chest_freezer ×2, ceiling_lamp ×1.
+- GF_WC (bathroom): wc, basin ×2, mirror ×2, ceiling_lamp.
+- GF_STAFFWC (bathroom2): wc, basin, mirror, ceiling_lamp.
+- GF_HALL (hall): bench, coat_rack, console, notice_board, ceiling_lamp ×2.
+- GF_STAIR: kein Platzhalter.
+
+OG
+- 1F_TERRACE (dining2): dining_table ×3, dining_chair ×12, ceiling_lamp ×4.
+- 1F_LOBBY (hall2): bench, console, ceiling_lamp.
+- 1F_CORRIDOR (hall3): ceiling_lamp ×2.
+- 1F_LIVING (living): sofa, armchair ×2, coffee_table, tv_unit, display_cabinet, side_table, floor_lamp, rug, ceiling_fan.
+- 1F_KITCHEN (kitchen2): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair ×2, wall_shelf, pantry, ceiling_lamp.
+- 1F_BATH (bathroom3): wc, basin, shower, mirror, towel_rail, washing_machine, bath_cabinet, ceiling_lamp.
+- 1F_BEDROOM (bedroom): bed_double, bedside ×2, wardrobe, dresser, gun_cabinet (Ph_bedroom_gun_cabinet_01), ceiling_fan.
+
+Erschließung
+- Eine U-förmige Innentreppe führt von der EG-Halle über ein Podest in die OG-Lobby.
+- Die Terrasse wird nur über D13 und D14 betreten.
+- Das Flachdach hat keine Luke.
+
+4. TÜREN
+Breite = lichte Breite laut Plan. Alle Flügel sind geschlossen modelliert, als eigene Nodes. Die Namen stehen im Prüfbericht (23 Flügel). Die Plan-Werte für Dicke (50 mm) und Spalt (8 mm) sind im Bericht nicht separat nachgemessen.
+
+| Name | von → nach | Breite |
+|---|---|---|
+| DoorLeaf_01a_L_in / 01b_R_in | Straße → Dining (Front links) | 2,40 m |
+| DoorLeaf_02a_L_in / 02b_R_in | Straße → Dining (Haupteingang) | 2,40 m |
+| DoorLeaf_03a_L_in / 03b_R_in | Straße → Dining (Front rechts) | 2,40 m |
+| DoorLeaf_04a_L_in / 04b_R_in | Straße +X → Dining | 2,40 m |
+| DoorLeaf_05_L_in | Straße +X → Hall | 1,10 m |
+| DoorLeaf_06_L_in | Dining → Küche | 1,00 m |
+| DoorLeaf_07_R_in | Dining → Hall | 1,00 m |
+| DoorLeaf_08_L_in | Hall → Küche | 0,90 m |
+| DoorLeaf_09_L_in | Hall → GF_WC | 0,90 m |
+| DoorLeaf_10_L_in | Küche → Store | 0,90 m |
+| DoorLeaf_11_L_in | Küche → Personal-WC | 0,90 m |
+| DoorLeaf_12_L_in | Hof hinten → Store | 1,00 m |
+| DoorLeaf_13_L_in | Terrasse → Lobby | 1,10 m |
+| DoorLeaf_14_L_in | Terrasse → Living | 1,10 m |
+| DoorLeaf_15_L_in | Lobby → Korridor | 1,00 m |
+| DoorLeaf_16_L_in | Korridor → Living | 1,00 m |
+| DoorLeaf_17_L_in | Korridor → Wohnküche | 0,90 m |
+| DoorLeaf_18_L_in | Korridor → Bad | 0,90 m |
+| DoorLeaf_19_L_in | Korridor → Schlafzimmer | 0,90 m |
+
+5. MATERIALIEN IM GLB (laut Prüfbericht, 29)
+concrete_cast, corrugated_rust, flagstone, floor_tiles, galvanized_steel, glass, lamp_glass, limestone_flag, mixed_fieldstone, new_buoy_paint_peeled, new_plaster_blue_peeled, new_rattan_woven, new_rope_hemp, oak_honey, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, shutter_paint, sign_filet_bleu_front, sign_poissons_side, stainless_brushed, steel_bare_rusty, steel_painted_worn, stone_counter_light, thatch_palm, weatherboard_cream, white_peeling_timber, wood_weathered.
+
+Abweichungen zwischen Plan und Bericht:
+- weatherboard_cream ist im GLB vorhanden, steht aber nicht in der Materialtabelle des Plans. Die genaue Verwendung ist unbekannt.
+- ceramic_glazed_white (Wandfliesen Küche/Bäder) war geplant, steht aber nicht in der Materialliste des Berichts. Es ist daher vermutlich nicht im GLB verwendet.
+- Die Einbettung der Schildtexturen (sign_*, ≥1024 px, UV 0–1) und UV0 in Metern sind laut Plan vorgesehen. Der Prüfbericht bestätigt sie nicht einzeln.
+
+6. NEUE MATERIALIEN (new_*)
+Die PNG-Dateien fehlen. NEW_MATERIAL_FILES ist leer. Das blockiert die Auslieferung nicht. Die Materialslots bleiben im GLB. Die Fotos müssen nachgeliefert werden.
+
+| Material | Beschreibung | Tile-Größe |
+|---|---|---|
+| new_plaster_blue_peeled | Blauer Putz mit gelblich-weißen Abplatzungen | 2 m × 2 m |
+| new_buoy_paint_peeled | Rot/blau/creme lackierte Schwimmer, Lack abgerieben | 1 m × 1 m |
+| new_rope_hemp | Grobes Manilaseil | 1 m × 1 m |
+| new_rattan_woven | Geflochtenes Rattan | 1 m × 1 m |
+
+Fehlende Dateien: new_plaster_blue_peeled.png, new_buoy_paint_peeled.png, new_rope_hemp.png, new_rattan_woven.png.
+
+7. ENTSCHEIDUNGEN UND ABWEICHUNGEN ZUM REFERENZFOTO (laut Plan)
+- Die Front ist im Foto offen, mit zurückgeklappten Flügeln. Im Modell sind die Flügel geschlossen (Lamellenfüllung), zusätzlich gibt es feste Klappladen-Paare an den Pfeilern.
+- Die rote Außentreppe der Referenz entfällt. Stattdessen führt eine Innentreppe ins OG.
+- Vor den OG-Fenstern zeigt das Foto Brüstungen. Im Modell gibt es dort Wellblech-Vordächer, keinen begehbaren Balkon.
+- Die Terrasse ist mit 3,45 m Tiefe kleiner als im Foto, damit Wohnung und Treppe hinten Platz haben.
+- Der Grill steht an der Westwand, damit das Rauchrohr außen aufsteigen kann.
+- Das Nachbargebäude im Foto wird nicht modelliert.
+- Der Blauton des Putzes hat keinen Listenslot und ist daher new_plaster_blue_peeled.
+- Zusätzlich gelten die Vorgaben des Auftrags: keine Vegetation, keine Figuren, kein Gelände.
+- Nicht belegt ist, wie genau Details (Schriftzüge, Bojen, Lampen, Thatch, Rauchrohr) dem Foto entsprechen. Das wurde nicht gesondert verifiziert.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 169
+Triangles: 75740
+Reimport Meshes: 169
+Bounds m: [12.64, 14.385, 8.2]
+Materials: concrete_cast, corrugated_rust, flagstone, floor_tiles, galvanized_steel, glass, lamp_glass, limestone_flag, mixed_fieldstone, new_buoy_paint_peeled, new_plaster_blue_peeled, new_rattan_woven, new_rope_hemp, oak_honey, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, shutter_paint, sign_filet_bleu_front, sign_poissons_side, stainless_brushed, steel_bare_rusty, steel_painted_worn, stone_counter_light, thatch_palm, weatherboard_cream, white_peeling_timber, wood_weathered
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02a_L_in, DoorLeaf_02b_R_in, DoorLeaf_03a_L_in, DoorLeaf_03b_R_in, DoorLeaf_04a_L_in, DoorLeaf_04b_R_in, DoorLeaf_05_L_in, DoorLeaf_06_L_in, DoorLeaf_07_R_in, DoorLeaf_08_L_in, DoorLeaf_09_L_in, DoorLeaf_10_L_in, DoorLeaf_11_L_in, DoorLeaf_12_L_in, DoorLeaf_13_L_in, DoorLeaf_14_L_in, DoorLeaf_15_L_in, DoorLeaf_16_L_in, DoorLeaf_17_L_in, DoorLeaf_18_L_in, DoorLeaf_19_L_in
+Nodes Placeholders: Ph_bathroom2_basin_01, Ph_bathroom2_ceiling_lamp_01, Ph_bathroom2_mirror_01, Ph_bathroom2_wc_01, Ph_bathroom3_basin_01, Ph_bathroom3_bath_cabinet_01, Ph_bathroom3_ceiling_lamp_01, Ph_bathroom3_mirror_01, Ph_bathroom3_shower_01, Ph_bathroom3_towel_rail_01, Ph_bathroom3_washing_machine_01, Ph_bathroom3_wc_01, Ph_bathroom_basin_01, Ph_bathroom_basin_02, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_mirror_02, Ph_bathroom_wc_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_dining2_ceiling_lamp_01, Ph_dining2_ceiling_lamp_02, Ph_dining2_ceiling_lamp_03, Ph_dining2_ceiling_lamp_04, Ph_dining2_dining_chair_01, Ph_dining2_dining_chair_02, Ph_dining2_dining_chair_03, Ph_dining2_dining_chair_04, Ph_dining2_dining_chair_05, Ph_dining2_dining_chair_06, Ph_dining2_dining_chair_07, Ph_dining2_dining_chair_08, Ph_dining2_dining_chair_09, Ph_dining2_dining_chair_10, Ph_dining2_dining_chair_11, Ph_dining2_dining_chair_12, Ph_dining2_dining_table_01, Ph_dining2_dining_table_02, Ph_dining2_dining_table_03, Ph_dining_ceiling_fan_01, Ph_dining_ceiling_fan_02, Ph_dining_ceiling_fan_03, Ph_dining_ceiling_fan_04, Ph_dining_ceiling_lamp_01, Ph_dining_ceiling_lamp_02, Ph_dining_ceiling_lamp_03, Ph_dining_ceiling_lamp_04, Ph_dining_dining_chair_01, Ph_dining_dining_chair_02, Ph_dining_dining_chair_03, Ph_dining_dining_chair_04, Ph_dining_dining_chair_05, Ph_dining_dining_chair_06, Ph_dining_dining_chair_07, Ph_dining_dining_chair_08, Ph_dining_dining_chair_09, Ph_dining_dining_chair_10, Ph_dining_dining_chair_11, Ph_dining_dining_chair_12, Ph_dining_dining_chair_13, Ph_dining_dining_chair_14, Ph_dining_dining_chair_15, Ph_dining_dining_chair_16, Ph_dining_dining_table_01, Ph_dining_dining_table_02, Ph_dining_dining_table_03, Ph_dining_dining_table_04, Ph_dining_wall_lamp_01, Ph_dining_wall_lamp_02, Ph_dining_wall_lamp_03, Ph_dining_wall_lamp_04, Ph_hall2_bench_01, Ph_hall2_ceiling_lamp_01, Ph_hall2_console_01, Ph_hall3_ceiling_lamp_01, Ph_hall3_ceiling_lamp_02, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_ceiling_lamp_02, Ph_hall_coat_rack_01, Ph_hall_console_01, Ph_hall_notice_board_01, Ph_kitchen2_ceiling_lamp_01, Ph_kitchen2_cooker_01, Ph_kitchen2_fridge_01, Ph_kitchen2_kitchen_chair_01, Ph_kitchen2_kitchen_chair_02, Ph_kitchen2_kitchen_run_01, Ph_kitchen2_kitchen_table_01, Ph_kitchen2_pantry_01, Ph_kitchen2_wall_shelf_01, Ph_kitchen_ceiling_fan_01, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_ceiling_lamp_02, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_kitchen_wall_shelf_03, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_floor_lamp_01, Ph_living_rug_01, Ph_living_side_table_01, Ph_living_sofa_01, Ph_living_tv_unit_01, Ph_store_ceiling_lamp_01, Ph_store_chest_freezer_01, Ph_store_chest_freezer_02, Ph_store_storage_rack_01, Ph_store_storage_rack_02
+API-Schätzkosten USD: 4.35 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_buoy_paint_peeled: inbox/riviere_noire_h05/new_buoy_paint_peeled.png (FEHLT)
+- new_plaster_blue_peeled: inbox/riviere_noire_h05/new_plaster_blue_peeled.png (FEHLT)
+- new_rattan_woven: inbox/riviere_noire_h05/new_rattan_woven.png (FEHLT)
+- new_rope_hemp: inbox/riviere_noire_h05/new_rope_hemp.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
