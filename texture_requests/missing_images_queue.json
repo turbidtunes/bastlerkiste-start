@@ -91,8 +91,25 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": "78f31f07f5bc36acd9fa5ca86c942c25b64edf88",
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "28145bf4e7bd19d1732ac046eedcf6b4266f177fc743404d4e3525de254262cb",
+        "png_verified": true,
+        "visual_3x3": "passed",
+        "generation_attempts": 2
+      }
     },
     {
       "id": "int_cloth",
