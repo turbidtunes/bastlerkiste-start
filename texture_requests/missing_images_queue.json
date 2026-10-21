@@ -719,8 +719,13 @@
       "physical_tile_m": null,
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "blocked_native_resolution",
+      "priority": "medium",
+      "approved_size_px": [
+        1254,
+        836
+      ],
+      "failure_reason": "Required user-approved 1254-width landscape output. Available image_gen landscape size probe (coast_guard_flag) returned native 1536x1024 despite explicit 1254x836 request. Awaiting user choice to accept native 1536x1024 or explicitly allow downsampling; this motif not generated yet."
     },
     {
       "id": "loading_private_guns",
@@ -744,8 +749,13 @@
       "physical_tile_m": null,
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "blocked_native_resolution",
+      "priority": "medium",
+      "approved_size_px": [
+        1254,
+        836
+      ],
+      "failure_reason": "Required user-approved 1254-width landscape output. Available image_gen landscape size probe (coast_guard_flag) returned native 1536x1024 despite explicit 1254x836 request. Awaiting user choice to accept native 1536x1024 or explicitly allow downsampling; this motif not generated yet."
     },
     {
       "id": "mode_card_solo",
@@ -769,8 +779,13 @@
       "physical_tile_m": null,
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "blocked_native_resolution",
+      "priority": "medium",
+      "approved_size_px": [
+        1254,
+        836
+      ],
+      "failure_reason": "Required user-approved 1254-width landscape output. Available image_gen landscape size probe (coast_guard_flag) returned native 1536x1024 despite explicit 1254x836 request. Awaiting user choice to accept native 1536x1024 or explicitly allow downsampling; this motif not generated yet."
     },
     {
       "id": "mode_card_duo",
@@ -794,8 +809,13 @@
       "physical_tile_m": null,
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "medium"
+      "status": "blocked_native_resolution",
+      "priority": "medium",
+      "approved_size_px": [
+        1254,
+        836
+      ],
+      "failure_reason": "Required user-approved 1254-width landscape output. Available image_gen landscape size probe (coast_guard_flag) returned native 1536x1024 despite explicit 1254x836 request. Awaiting user choice to accept native 1536x1024 or explicitly allow downsampling; this motif not generated yet."
     },
     {
       "id": "end_why_one",
