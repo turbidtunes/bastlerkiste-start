@@ -1,0 +1,93 @@
+PORT SARCELLE PAGODA / Temple des Marees Paisibles
+Use: Sino-Mauritian port-town temple: worship, offerings, custodian administration and upper teaching/assembly hall.
+Furniture style: authority. Plot: port_sarcelle_H03.
+LOD0: 106,060 triangles including 15 door leaf nodes and 83 furniture placeholder nodes.
+Overall envelope: 17.860 m wide x 17.625 m deep; height 9.239 m.
+Two storeys in the rear annex; double-height main sanctuary. Main body 13.8 x 12.8 m.
+Ground floor FFL 0.32 m; upper FFL 3.52 m; slabs 0.22 m; exterior walls 0.30 m; internal walls 0.15 m.
+Foundation bottom -0.20 m. Entrance steps: 2 x 0.16 m. Ground/upper side rooms clear height 2.98 m.
+External return stair: 20 x 0.16 m risers, 0.30 m treads, >=1.20 m clear flights, >=1.40 m clear landings; 1.0 m guards.
+The upper foyer extends forward along the east side to receive the stair landing directly.
+Sanctuary, side rooms, rear corridor, WCs, upper foyer, upper hall and committee office are all reachable.
+No occupied roof terrace: tiled roofs and the rear maintenance roof are not player destinations.
+Metres; glTF Y-up; main facade +Z in glTF (= -Y in design Z-up). Origin at footprint centre, ground datum.
+Static meshes/primitives use exact material names. Door leaves retain separate hinge-origin nodes; closed, with 7 mm gaps and 40 mm base leaves plus shallow relief.
+Placeholders: closed local-frame boxes, local -Y front; node-only position and yaw. Floor centres at floor; wall items have origins on their mounting faces; ceiling item origins at ceiling.
+No LODs, collision meshes, animation clips, terrain, vegetation, people, vehicles or exterior loose furniture.
+GLB contains no embedded textures. Bind the supplied new_ PNGs by material name; existing-list material names receive your own photos. Glass/lamp_glass/placeholder need no image.
+UV0 is metric, one UV unit per metre, on building surfaces. Each supplied tile represents 1 x 1 m.
+
+DOORS: clear opening width; all heights 2.18 m.
+DoorLeaf_01a_L_in + DoorLeaf_01b_R_in | porch -> chapel | 2.40 m total; two leaves
+DoorLeaf_02_L_in | chapel -> office | 1.00 m
+DoorLeaf_03_R_in | chapel -> store | 1.00 m
+DoorLeaf_04_R_in | chapel -> workshop | 1.00 m
+DoorLeaf_05_L_in | chapel -> hall | 1.00 m
+DoorSlide_06_R | chapel -> hall2 | 1.20 m
+DoorLeaf_07_L_in | hall2 -> kitchen | 1.00 m
+DoorLeaf_08_R_in | hall2 -> store2 | 1.00 m
+DoorLeaf_09_L_in | hall2 -> bathroom | 0.90 m
+DoorLeaf_10_R_in | hall2 -> bathroom2 | 0.90 m
+DoorLeaf_11_R_in | external_lower_landing -> hall | 1.10 m
+DoorLeaf_12_L_in | external_upper_landing -> lobby | 1.10 m
+DoorLeaf_13_L_in | lobby -> classroom | 1.00 m
+DoorLeaf_14_R_in | classroom -> office2 | 1.00 m
+
+ROOMS / PLACEHOLDERS: each role expands to Ph_<room>_<role>_<nn>. Every count is a separate box.
+chapel: altar, lectern, incense_burner, offering_table, 4 x pew, 2 x ceiling_fan, 2 x ceiling_lamp
+office: office_desk, office_chair, 2 x visitor_chair, filing_cabinet, safe, ceiling_lamp
+store: 3 x storage_rack, ceiling_lamp
+workshop: workbench, tool_wall, storage_rack, ceiling_lamp
+hall: bench, notice_board, ceiling_lamp
+hall2: 2 x ceiling_lamp
+kitchen: kitchen_run, cooker, fridge, kitchen_table, 2 x kitchen_chair, wall_shelf, ceiling_lamp
+store2: 4 x file_shelf, ceiling_lamp
+bathroom: wc, basin, mirror, towel_rail, ceiling_lamp
+bathroom2: wc, basin, mirror, towel_rail, ceiling_lamp
+classroom: 6 x school_desk, 6 x chair, teacher_desk, office_chair, blackboard, 2 x ceiling_fan, 2 x ceiling_lamp
+office2: office_desk, office_chair, 2 x visitor_chair, filing_cabinet, ceiling_lamp
+lobby: waiting_bench, notice_board, ceiling_lamp
+
+MATERIALS USED:
+aluminium_weathered, basalt_dressed, brass_tarnished, ceramic_glazed_white, concrete_cast, flagstone, floor_tiles, galvanized_steel, glass, lamp_glass, new_cobalt_glazed_ceramic, new_deep_green_painted_metal, new_deep_green_painted_timber, new_gilded_timber, new_jade_glazed_ceramic, new_ochre_render, new_oxblood_lacquered_timber, new_vermilion_painted_timber, new_vermilion_render, new_yellow_glazed_ceramic, placeholder, plaster_cream_warm
+
+NEW TEXTURE TILES: each PNG is 1254 x 1254 px, one tile = 1.0 x 1.0 m.
+new_vermilion_render.png | seamless tile | 1 m x 1 m | Weathered vermilion painted mineral lime render; fine pores and pigment wear.
+new_ochre_render.png | seamless tile | 1 m x 1 m | Faded yellow-ochre painted mineral render on the rear annex.
+new_vermilion_painted_timber.png | seamless tile | 1 m x 1 m | Opaque vermilion painted timber with fine grain and aged satin paint.
+new_oxblood_lacquered_timber.png | seamless tile | 1 m x 1 m | Aged deep oxblood-red lacquered timber, subtly grained satin finish.
+new_gilded_timber.png | seamless tile | 1 m x 1 m | Warm aged gold-leaf gilding over timber, fine irregular leaf texture.
+new_jade_glazed_ceramic.png | seamless tile | 1 m x 1 m | Jade-green glazed ceramic with fine glaze variation and crazing.
+new_cobalt_glazed_ceramic.png | seamless tile | 1 m x 1 m | Cobalt-blue glazed ceramic with fine glaze variation and crazing.
+new_yellow_glazed_ceramic.png | seamless tile | 1 m x 1 m | Golden-yellow glazed ceramic with fine glaze variation and crazing.
+new_deep_green_painted_metal.png | seamless tile | 1 m x 1 m | Aged dark forest-green enamel-painted iron, fine surface wear.
+new_deep_green_painted_timber.png | seamless tile | 1 m x 1 m | Aged dark forest-green opaque painted timber with subtle fine grain.
+
+SURFACE ALLOCATION:
+new_vermilion_render: exterior red masonry, portal piers, stair guarding bodies.
+new_ochre_render: ochre annex and parapets. plaster_cream_warm: interior plaster and plastered ceilings.
+concrete_cast: structural concrete, plinth, foundation, maintenance roof and stair undersides.
+basalt_dressed: portal feet, column bases and window sills. flagstone: own entrance/porch/stair walking surfaces.
+floor_tiles: internal floors. ceramic_glazed_white: WC tile surfaces.
+new_vermilion_painted_timber: posts, brackets, rafters, beams, sign board and roof soffits.
+new_oxblood_lacquered_timber: doors and linings, inset inscription panels.
+new_gilded_timber: raised carvings, borders and fictional lettering.
+new_jade_glazed_ceramic: roof tiles and green ornament. new_cobalt_glazed_ceramic: blue ridge/hip ornament.
+new_yellow_glazed_ceramic: dragons, pearls and ceramic finials.
+new_deep_green_painted_metal: geometric stair infill; new_deep_green_painted_timber: bracket inserts.
+aluminium_weathered: window framing/sashes/bars. brass_tarnished: handles, lamp mounts and hardware.
+galvanized_steel: gutters, flashings, swan-necks, wall-clipped downpipes. glass: 8 mm panes. lamp_glass: fixed lamp diffusers.
+placeholder: every furniture box; furniture is not modelled.
+
+DEVIATIONS FROM THE REFERENCE / APPROVED PLAN:
+The ceremonial red portal is integrated into the building entrance landing. No boundary gate or enclosing walls are included.
+The incense yard is reduced to the own entrance platform and covered porch. The incense-burner placeholder is inside the sanctuary.
+The reference straight external stair becomes a return stair with wider clear landings and fully supported railing bases.
+The upper foyer projects forward on the east side, permitting a direct stair arrival without a gallery obstructing the stair.
+Full room layouts, kitchen, WCs, door openings and additional matching side/rear windows are supplied where the reference is silent.
+The nave has a clerestory and double-height interior; the upper occupied rooms are in the rear annex.
+Roof forms are closed supported assemblies with soffits, flashing and drainage. Exposed unfinished reinforcement is omitted.
+Dragons, floral brackets, gilded panels and ridge ornaments are simplified sculptural geometry within the LOD0 budget.
+The front sign uses raised fictional Latin lettering: TEMPLE DES MAREES PAISIBLES.
+Overall projection grew slightly from the estimate to preserve clear circulation: still within the 18 x 19 m buildable area.
+New tiles are 1254 px square, above the required 1024 minimum; 2048 px was preferred in the plan.
