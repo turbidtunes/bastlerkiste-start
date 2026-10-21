@@ -43,6 +43,23 @@ class PromptContractTests(unittest.TestCase):
             self.assertEqual(source_brief(file)[0], CHURCH)
             self.assertEqual(source_brief(file, BAKERY)[0], BAKERY)
 
+    def test_long_prompt_survives_without_truncation(self):
+        long_source = CHURCH + "\n" + ("MANDATORY_DETAIL_" + "0123456789" * 70 + "\n") * 100
+        self.assertGreater(len(long_source), 50000)
+        task = compiler_task(long_source, [], "long_building")
+        self.assertIn(long_source, task)
+        context = contract_context(long_source, VALID_CONTRACT, "briefs/long.md")
+        self.assertIn(long_source, context)
+        self.assertIn(sha256_text(long_source), context)
+
+    def test_real_church_brief_survives_verbatim(self):
+        actual = Path(__file__).resolve().parents[1] / "briefs" / "grand_fond_parish_church.md"
+        self.assertTrue(actual.is_file())
+        original = actual.read_text(encoding="utf-8")
+        context = contract_context(original, VALID_CONTRACT, str(actual))
+        self.assertIn(original, context)
+        self.assertIn(sha256_text(original), context)
+
     def test_compiler_required_sections(self):
         with self.assertRaises(ValueError):
             validate_compiled_contract("## ROOMS_AND_FURNITURE\nNo other details")
