@@ -1,75 +1,77 @@
-# Claude Blender AutoBuild – Prompt direkt vom Smartphone starten
+# Claude Blender AutoBuild – fertige Markdown-Prompts aus dem Repository
 
-## Einmalige Einrichtung
+Die Pipeline erwartet eine **bereits fertig zusammengeführte Markdown-Datei**
+im Verzeichnis `prompts/` des GitHub-Repositories
+`turbidtunes/bastlerkiste-start`. Es gibt **keinen Prompt-Compiler** und
+**kein langes Texteingabefeld** im GitHub-Actions-Startformular.
 
-Die GitHub-Actions-Pipeline ist bereits im Repository angelegt. Stelle sicher,
-dass das GitHub Actions Secret `ANTHROPIC_API_KEY` gesetzt ist. Der zugehörige
-Workspace muss API-Abrechnung erlauben.
+## Für jedes neue Gebäude
 
-## Jeden neuen Bauauftrag starten
+1. Lass den vollständigen Gebäude-Prompt mit den nötigen Blender-/UE5-Regeln
+   vorab zusammenführen. Die Datei ist inhaltlich fertig und benötigt keine
+   automatische Verschmelzung durch die Pipeline.
+2. Lege die gesamte Markdown-Datei unter `prompts/` ab, z. B.
+   `prompts/creole_bakery_01.md`. Du kannst dazu im GitHub-Webinterface
+   in den Ordner `prompts/` wechseln und **Add file → Create new file**
+   benutzen, oder eine fertige `.md`-Datei hochladen.
+3. Öffne [GitHub Actions](https://github.com/turbidtunes/bastlerkiste-start/actions)
+   → **Claude Blender Gebaeude automatisch bauen** → **Run workflow**.
+   Wähle den Branch `main`.
+4. Gib die Eingaben an:
 
-1. Öffne https://github.com/turbidtunes/bastlerkiste-start/actions
-2. Öffne **Claude Blender Gebaeude automatisch bauen** → **Run workflow**
-3. Wähle den Branch **main**.
-4. `building_name`: eindeutiger Name in `lower_snake_case`
-   (z. B. `creole_bakery_01`).
-5. `building_prompt`: **den ganzen fertig zusammengeführten Prompt**
-   direkt hineinkopieren. Du kannst ihn vorher mit ChatGPT individuell
-   verschmelzen lassen. Die Pipeline führt **keinen Prompt-Compiler mehr aus**
-   und hängt den alten `prompts/master_system.md`-Prompt nicht erneut an.
-6. `reference_images`: Bildpfade im Repository, mit Komma getrennt
-   (z. B. `referenzbilder/bakery_01.png` oder `references/bakery_01.png`).
-   Lass dieses Feld leer, wenn kein Bild vorhanden ist.
-7. Modell auswählen und bei `review_fixes` die Anzahl erlaubter visueller
-   Korrekturrunden auswählen. Mit **Run workflow** starten.
+   | Feld | Beispiel |
+   |---|---|
+   | `building_name` | `creole_bakery_01` |
+   | `prompt_path` | `prompts/creole_bakery_01.md` |
+   | `reference_images` | `references/bakery_front.png` |
+   | `model` | `claude-sonnet-5-5` |
+   | `review_fixes` | `1` |
 
-**Wichtig:** GitHub Actions begrenzt alle `workflow_dispatch`-Eingaben
-zusammen auf **65.535 Zeichen**. Das ist ein Plattformlimit, kein
-künstliches Claude-Tokenlimit. Wenn ein von ChatGPT zusammengeführter Prompt
-größer ist, passt er nicht vollständig in dieses Actions-Formular. Bitte
-nicht einfach abschneiden, sondern dafür einen anderen Eingabeweg verwenden.
+   Referenzbilder können in `references/` oder `referenzbilder/`
+   liegen. Mehrere Pfade mit Kommas trennen. Ohne Bild das Feld leer lassen.
 
-Die Eingabe wird als `_asset_work/<building_name>/input_prompt.md`
-im temporären Arbeitsverzeichnis protokolliert und bei der Diagnose als
-Actions-Artefakt bereitgestellt (nicht als Datei in `inbox/` committed).
+## Bereits vorhandener Kirchenauftrag
 
-## Ablauf (ohne Go und ohne Compiler)
+Die fertige Kirche liegt unter
+`prompts/grand_fond_parish_church.md`. Diese Datei enthält **beides**:
+die konkreten Kirchen- und Grundstücksvorgaben **sowie** die umfassenden
+Blender-/UE5-Systemregeln.
 
-1. **1/5 PLAN:** Claude liest deinen eingegebenen Prompt und die verfügbaren
-   Referenzbilder und erstellt den ausführlichen Architekturplan.
-2. **2/5 SHELL:** Blender modelliert Fundament, Geschossplatten und Hauptwände.
-3. **3/5 ARCHITECTURE:** Gebäudeabhängige Architektur, Dächer, Fenster, Türen.
-4. **4/5 DETAILS:** Geometrie-Details, Materialnamen, UVs und Platzhalter.
-5. **5/5 EXPORT:** GLB technisch prüfen, exportieren und wieder importieren.
+- `building_name`: `grand_fond_parish_church`
+- `prompt_path`: `prompts/grand_fond_parish_church.md`
+- `reference_images`: `references/ref_grand_fond_H04_g_church_creole.png`
 
-Nach jeder der drei Bauphasen werden Blender-Kontrollrenderings erstellt;
-Claude kann anhand dieser Aufnahmen Änderungen beauftragen. Nach erfolgreicher
-Validierung committet der GitHub Actions Bot die endgültigen Dateien nach
+Die Kirche umfasst ein 30 × 42 m großes Grundstück und einen maximalen
+Footprint von 27 × 36 m. Die tatsächlichen Kirchenmaße ermittelt Claude
+im Architekturplan anhand des übergebenen Referenzbildes.
+
+## Der Ablauf: 1/5 bis 5/5, ohne Go
+
+- **1/5 PLAN:** Gründliche Architekturplanung unmittelbar aus der
+  vollständigen Prompt-Datei und den tatsächlichen Referenzbildern.
+- **2/5 SHELL:** Fundamente, Rohbau, Außen-/Innenwände.
+- **3/5 ARCHITECTURE:** Dächer, Türen, Fenster, Treppen und Sonderbauteile.
+- **4/5 DETAILS:** Details, UVs, Materialslots und Möbel-Placeholder.
+- **5/5 EXPORT:** Qualität prüfen, GLB exportieren und reimportieren.
+
+Nach jeder Modellierstufe werden die echten Blender-Kontrollansichten
+geprüft und optional korrigiert. Erfolgreiche Lieferungen landen unter
 `inbox/<building_name>/`.
 
-## Was unverändert bleibt
+**Kein 0/6-Compiler, keine doppelte automatische Einbindung
+von `prompts/master_system.md`.** Der fertig zusammengeführte Prompt
+bleibt unverändert und wird den Bauphasen als Kontext übergeben.
 
-- Kein künstliches Gesamt-Tokenlimit und keine eigene API-Dollargrenze.
-  Die Anthropic-API setzt weiterhin ein technisches Limit je Anfrage; der
-  Agent setzt Ausgaben beim Erreichen des Modelllimits automatisch fort.
-- Keine generierten Fototexturen als Ersatz für echte Fotos.
-- Fehlende erforderliche `new_*.png`-Dateien blockieren weiter die Lieferung.
-- QA-Renderings, Fehlerprotokolle, Zwischenstände und ursprünglicher Prompt
-  landen **nicht** in der fertigen `inbox/`-Lieferung.
-- GitHub-/Anthropic-Kontingente und technische Laufzeitgrenzen bleiben gültig.
+Eine zusätzliche Vorprüfung kontrolliert den Prompt-Pfad und den Dateiinhalt
+**vor** der Blender-Installation und dem kostenpflichtigen API-Aufruf.
 
-## Bestehende Workflows
+## Technische Grenzen
 
-Nur **neue** GitHub-Actions-Durchläufe auf dem aktualisierten Branch `main`
-verwenden die direkte Prompteingabe. Ein bereits gestarteter Lauf arbeitet mit
-dem Commit, von dem er gestartet wurde, und führt gegebenenfalls noch den
-alten Compiler aus. Starte neue Läufe über **Run workflow**, nicht über
-**Re-run failed jobs** für einen alten Durchlauf.
+Es gibt keine eigene Gesamt-Tokenobergrenze oder Dollar-Softgrenze.
+Technische Grenzen der Anthropic-API und von GitHub gelten weiterhin.
+Fehlende Fototexturen dürfen nicht durch synthetische Bilder ersetzt werden.
+Die Prompt-Datei und QA-Berichte erscheinen bei Bedarf in den
+Diagnose-Artefakten, nicht im fertigen `inbox/`-Ordner.
 
-## Fehlerdiagnose
-
-Wenn der Run fehlschlägt, öffne den roten Schritt unter GitHub **Actions**
-und lies die letzten Logzeilen. Die Diagnose-Dateien und Kontrollbilder
-liegen bei **Artifacts** des jeweiligen Durchlaufs. Bei fehlenden Blender-
-Systembibliotheken beendet der Workflow den Lauf vor der kostenpflichtigen
-Claude-Arbeit.
+Nur **neu gestartete** GitHub-Actions-Läufe auf `main` verwenden die
+aktuelle Pipeline. Ein alter Re-run kann weiterhin auf altem Code beruhen.
