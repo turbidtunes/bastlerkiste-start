@@ -25,11 +25,6 @@ on:
         options:
           - claude-sonnet-5-5
           - claude-opus-5-5
-      max_api_usd:
-        description: "Weiche geschätzte API-Kostenbremse in USD"
-        required: true
-        type: string
-        default: "20"
       review_fixes:
         description: "Maximale visuelle Korrekturrunden je Modellstufe"
         required: true
@@ -51,7 +46,6 @@ jobs:
   build-asset:
     if: github.ref_name == 'main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
@@ -80,7 +74,6 @@ jobs:
           BRIEF_PATH: ${{ inputs.brief_path }}
           REFERENCE_IMAGES: ${{ inputs.reference_images }}
           CLAUDE_MODEL: ${{ inputs.model }}
-          MAX_API_USD: ${{ inputs.max_api_usd }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
         run: python -u scripts/asset_agent.py
 
