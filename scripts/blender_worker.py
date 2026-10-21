@@ -13,6 +13,14 @@ import struct
 import sys
 from pathlib import Path
 
+# Blender 4.0 from Ubuntu may start with a separate Python search path after
+# actions/setup-python. apt's python3-numpy is then present on disk but not
+# importable by Blender/glTF. The distro path must be added *inside* Blender,
+# before generated code or the glTF add-on can import numpy.
+SYSTEM_DIST_PACKAGES = Path("/usr/lib/python3/dist-packages")
+if SYSTEM_DIST_PACKAGES.is_dir() and str(SYSTEM_DIST_PACKAGES) not in sys.path:
+    sys.path.insert(0, str(SYSTEM_DIST_PACKAGES))
+
 import bpy
 from mathutils import Vector
 
