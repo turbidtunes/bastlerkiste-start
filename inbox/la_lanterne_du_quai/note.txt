@@ -1,0 +1,76 @@
+LA LANTERNE DU QUAI | port_sarcelle_H05
+Use: harbour rum shop / bar with pool table and back store; owner two-bedroom flat above.
+Furniture style: creole_poor. All furniture is placeholder geometry; pool_table is the additional role.
+LOD0 only. Units metres; glTF Y-up; street facade +Z in glTF (-Y in construction coordinates).
+Enclosed footprint 10.4 x 11.6 m. Overall design envelope 12.6 x 14.4 m, inside 13 x 17 m buildable area.
+Two storeys: finished floors 0.35 and 3.50 m; 3.15 m floor-to-floor; 0.225 m slabs; 0.30 m exterior / 0.12 m interior walls; approximately 2.925 m clear rooms.
+Foundation bottom -0.20 m. Shallow corrugated mono-pitch roof above concrete ceiling deck; roof is unoccupied.
+Exterior stair: 18 risers x 0.175 m, 17 exposed goings x 0.28 m, approximately 1.4 m clear flight and landings. Continuous 1 m railings.
+Front and east-return balcony reached by east stair; flat entered from east landing; living room opens to front balcony.
+Bar: approximately 9.8 x 6.78 m. Pool table 2.3 x 1.3 m; reserved cue envelope 5.3 x 4.3 m.
+Ground rear: store 4 x 4.1 m; service hall 1.4 x 4.1 m; WC lobby 4.16 x 1.58 m; two WCs 2.02 x 2.4 m each.
+Upper: living 4.9 x 5.36 m; kitchen/dining 4.78 x 5.36 m; 1.4 m hall; two bedrooms 3.9 x 4 m; bath 1.76 x 2.4 m.
+Triangles: 82,524 including doors and 88 placeholders. No LODs, collision, proxies, terrain or outside props.
+
+DOORS | node | from -> to | clear width x height (m)
+DoorLeaf_01a_L_in | front landing -> bar | 1.00 x 2.30
+DoorLeaf_01b_R_in | front landing -> bar | 1.00 x 2.30
+DoorRoll_02 | front landing -> bar | 3.60 x 2.40
+DoorRoll_03 | east landing -> bar | 3.00 x 2.40
+DoorLeaf_04_R_in | rear landing -> service hall | 1.00 x 2.10
+DoorLeaf_05_L_in | service hall -> store | 0.90 x 2.10
+DoorLeaf_06_L_in | WC lobby -> customer WC | 0.90 x 2.10
+DoorLeaf_07_R_in | WC lobby -> staff WC | 0.90 x 2.10
+DoorLeaf_08_R_in | east balcony -> kitchen | 1.00 x 2.10
+DoorLeaf_09_L_in | front balcony -> living | 1.00 x 2.10
+DoorLeaf_10_L_in | hall -> bedroom | 0.90 x 2.10
+DoorLeaf_11_R_in | hall -> bedroom2 | 0.90 x 2.10
+DoorLeaf_12_R_in | hall -> bathroom | 0.90 x 2.10
+All leaves closed; hinged leaf bodies 50 mm, frame gaps 7 mm. Hinged pivots are on hinge axes.
+Frames are fixed. Roller shutters each have one independent node and roll_up metadata. Sliding/sash windows are fixed closed.
+Door nodes contain motion metadata; the UE5 project must bind its own interactive door behaviour. No gameplay scripts are stored in GLB.
+
+ROOMS | placeholder roles (count); each piece is one Ph_<room>_<role>_<nn> node
+Room labels: hall = ground service hall; hall2 = ground WC lobby; hall3 = owner hall; bathroom = owner bath; bathroom2 = customer WC; bathroom3 = staff WC.
+bar | pool_table x1, bar_counter x1, bar_stool x6, drinks_cooler x1, chest_freezer x1, shop_shelf x2, cafe_table x2, dining_chair x4, ceiling_fan x3
+store | storage_rack x4, workbench x1, ceiling_lamp x1
+hall | notice_board x1, ceiling_lamp x1
+hall2 | mirror x1, ceiling_lamp x1
+bathroom2 | wc x1, basin x1, mirror x1, towel_rail x1, ceiling_lamp x1
+bathroom3 | wc x1, basin x1, mirror x1, towel_rail x1, ceiling_lamp x1
+living | sofa x1, coffee_table x1, armchair x2, tv_unit x1, sideboard x1, bookcase x1, ceiling_fan x1, curtains x1
+kitchen | kitchen_run x1, cooker x1, fridge x1, pantry x1, kitchen_table x1, kitchen_chair x4, wall_shelf x2, ceiling_fan x1, curtains x1
+hall3 | coat_rack x1, shoe_cabinet x1, ceiling_lamp x1
+bedroom | bed_double x1, bedside x2, wardrobe x1, dresser x1, gun_cabinet x1, ceiling_fan x1, curtains x1
+bedroom2 | bed_single x1, bedside x1, wardrobe x1, desk x1, chair x1, ceiling_fan x1, curtains x1
+bathroom | shower x1, wc x1, basin x1, mirror x1, towel_rail x1, bath_cabinet x1, ceiling_lamp x1
+Main bedroom includes Ph_bedroom_gun_cabinet_01.
+Floor placeholders have bottom-centre origins; wall pieces have wall-face origins; ceiling pieces have ceiling origins. Local -Y is front. Rotation is on the node, not baked into dimensions or placement.
+
+MATERIALS
+new_render_cobalt_worn, new_render_turquoise_worn, new_render_ochre_worn, new_render_orange_worn, new_timber_magenta_worn, plaster_cream_warm, plaster_white, concrete_cast, floor_tiles, ceramic_glazed_white, pavers_concrete, corrugated_rust, galvanized_steel, steel_painted_worn, steel_bare_rusty, aluminium_weathered, painted_timber_warmgrey, glass, lamp_glass, sign_lanterne_du_quai, placeholder
+UV0 is metres on replaceable surfaces (1 UV = 1 m). New material tiles represent 2 x 2 m: apply a 0.5 UV multiplier for those tiles in UE5. Material extras repeat this binding.
+Only sign_lanterne_du_quai embeds an image (4096 x 1024). All other physical surfaces are bound by exact replaceable material name. No photo copies for list materials are supplied or embedded.
+Glass and lamp_glass are untextured special materials; placeholder is untextured. Sign includes raised lettering geometry.
+
+NEW TILES | file | real size | description
+new_render_cobalt_worn.png | 2 m x 2 m | 1254 x 1254 px | faded cobalt-blue painted cement render; fine chalking and small paint losses
+new_render_turquoise_worn.png | 2 m x 2 m | 1254 x 1254 px | weathered turquoise painted cement render; fine pores and salt speckling
+new_render_ochre_worn.png | 2 m x 2 m | 1254 x 1254 px | faded mustard-ochre painted cement render; fine abrasion
+new_render_orange_worn.png | 2 m x 2 m | 1254 x 1254 px | weathered burnt-orange painted cement render; fine paint wear
+new_timber_magenta_worn.png | 2 m x 2 m | 1254 x 1254 px | faded magenta-painted timber; subtle grain and small paint chips
+
+DEVIATIONS FROM REFERENCE / PLAN
+One front roller bay becomes a recessed glazed double pedestrian door. Retained front and east roller bays are modelled closed as required.
+Added full modelled service rooms, two WCs, two-bedroom owner flat, kitchen, bathroom and side/rear ventilation windows.
+East stair and balcony void are set out to usable dimensions; balcony enlarged to 1.6 m projection and rails set to 1 m.
+Added wall thickness, complete reveals, slab undersides, closed corrugated roof profile, supporting purlins and fully seated posts/column heads.
+Roof column heads follow the roof pitch; exposed reinforcing reaches approximately 8 m maximum height, without creating another storey.
+Added complete front gutter with swan-necks, wall-fixed downpipes, clips, entrance landings and steps.
+Replaced reference lettering with fictional La Lanterne du Quai and Port Sarcelle signage.
+Café tables use two chairs each (four total rather than eight planned) to retain a clear route from the entrance.
+Bathroom leaf 12 uses R hinge, clearing the basin. Slightly narrowed bedroom dresser for bed-side access.
+Generated tiles are 1254 px square (above the 1024 px minimum) rather than the preferred 2048 px.
+Omitted reference street paving, outside chairs, plants, surrounding buildings and boundary elements.
+
+Delivery contains only the GLB, five new tile PNGs and this note.
