@@ -16,6 +16,11 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
+# Make the shared, versioned building API available to every incremental stage.
+BUILDING_LIB = Path(__file__).resolve().parent / "blender_lib"
+if str(BUILDING_LIB) not in sys.path:
+    sys.path.insert(0, str(BUILDING_LIB))
+
 MODE = os.environ.get("WORKER_MODE", "stage")
 WORK = Path(os.environ["ASSET_WORK"]).resolve()
 WORK.mkdir(parents=True, exist_ok=True)
@@ -150,6 +155,8 @@ def stage():
     report = stats(strict=False)
     report["stage"] = name
     report["views"] = views
+    if "building_kit" in sys.modules:
+        report["building_kit_calls"] = dict(sys.modules["building_kit"].CALLS)
     Path(os.environ["STAGE_REPORT"]).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print("STAGE_OK", name, report["meshes"], report["triangles"])
 
