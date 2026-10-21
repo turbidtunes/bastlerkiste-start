@@ -184,8 +184,28 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste": "8ee71a28b6efa84fd79edae0392684fb1672e942"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "bd24aca49ed2dd1768f9c5f9392368d2724e04413a061dadad3dc8db9ddc11c6",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "int_crochet",
