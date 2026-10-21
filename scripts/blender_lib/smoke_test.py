@@ -8,7 +8,14 @@ import sys
 import tempfile
 from pathlib import Path
 
+# Mirror the production Blender worker: distro NumPy must be available even
+# when actions/setup-python selected a separate hosted Python distribution.
+distro = "/usr/lib/python3/dist-packages"
+if distro not in sys.path:
+    sys.path.insert(0, distro)
 import bpy
+import numpy
+print("SMOKE_NUMPY_OK", numpy.__version__)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import building_kit as k  # noqa: E402
