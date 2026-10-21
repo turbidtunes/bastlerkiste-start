@@ -1,0 +1,130 @@
+name: Claude Blender Gebaeude automatisch bauen
+
+on:
+  workflow_dispatch:
+    inputs:
+      building_name:
+        description: "Zielname (lower_snake_case)"
+        required: true
+        type: string
+        default: "grand_fond_parish_church"
+      brief_path:
+        description: "Auftrags-MD innerhalb briefs/"
+        required: true
+        type: string
+        default: "briefs/grand_fond_parish_church.md"
+      reference_images:
+        description: "Bis 3 Bilder unter references/, durch Komma getrennt"
+        required: false
+        type: string
+      model:
+        description: "Claude-Modell (Kosten aus API-Guthaben)"
+        required: true
+        type: choice
+        default: claude-sonnet-5-5
+        options:
+          - claude-sonnet-5-5
+          - claude-opus-5-5
+      max_api_usd:
+        description: "Weiche geschätzte API-Kostenbremse in USD"
+        required: true
+        type: string
+        default: "20"
+      review_fixes:
+        description: "Maximale visuelle Korrekturrunden je Modellstufe"
+        required: true
+        type: choice
+        default: "1"
+        options:
+          - "0"
+          - "1"
+          - "2"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: claude-blender-${{ inputs.building_name }}
+  cancel-in-progress: false
+
+jobs:
+  build-asset:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Python installieren
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Blender und SDK installieren
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y blender
+          python -m pip install --upgrade 'anthropic>=0.75' 'Pillow>=10'
+          blender --version | head -n 2
+          python -m py_compile scripts/asset_agent.py scripts/blender_worker.py
+          blender --version | head -n 1 | grep -E 'Blender 4\.' || (echo 'Blender 4.x benoetigt' && exit 1)
+
+      - name: Automatisch planen, bauen, prüfen und exportieren (kein Go)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUILDING_NAME: ${{ inputs.building_name }}
+          BRIEF_PATH: ${{ inputs.brief_path }}
+          REFERENCE_IMAGES: ${{ inputs.reference_images }}
+          CLAUDE_MODEL: ${{ inputs.model }}
+          MAX_API_USD: ${{ inputs.max_api_usd }}
+          REVIEW_FIXES: ${{ inputs.review_fixes }}
+        run: python -u scripts/asset_agent.py
+
+      - name: Automatischen Plan im Actions-Protokoll zusammenfassen
+        if: always()
+        env:
+          BUILDING_NAME: ${{ inputs.building_name }}
+        run: |
+          if test -s "_asset_work/${BUILDING_NAME}/plan.md"; then
+            printf '## Architekturplan (automatisch, kein Go nötig)\n\n' >> "$GITHUB_STEP_SUMMARY"
+            head -c 32000 "_asset_work/${BUILDING_NAME}/plan.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Diagnose und QA-Bilder bereitstellen (auch bei Fehler)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnose-${{ inputs.building_name }}-${{ github.run_number }}
+          path: |
+            _asset_work/${{ inputs.building_name }}/plan.md
+            _asset_work/${{ inputs.building_name }}/usage.json
+            _asset_work/${{ inputs.building_name }}/final_validation.json
+            _asset_work/${{ inputs.building_name }}/stages/*.log
+            _asset_work/${{ inputs.building_name }}/stages/*.json
+            _asset_work/${{ inputs.building_name }}/views/*.png
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Ausschliesslich fertige Dateien nach inbox committen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUILDING_NAME: ${{ inputs.building_name }}
+        run: |
+          set -euo pipefail
+          test -s "inbox/${BUILDING_NAME}/${BUILDING_NAME}.glb"
+          test -s "inbox/${BUILDING_NAME}/note.txt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- "inbox/${BUILDING_NAME}/"
+          if git diff --cached --quiet; then
+            echo 'Kein neuer Commit notwendig.'
+            exit 0
+          fi
+          git commit -m "Build Blender UE5 asset ${BUILDING_NAME}"
+          HEADER="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c http.extraheader="$HEADER" pull --rebase origin main
+          git -c http.extraheader="$HEADER" push origin HEAD:main
