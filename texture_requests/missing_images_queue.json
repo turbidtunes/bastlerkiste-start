@@ -48,9 +48,23 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
+      "status": "blocked_capability",
       "priority": "high",
-      "failure_reason": "Codex image_gen generated a PNG at 1254x1254 despite the full prompt requesting native 2048x2048; Pillow verified actual pixels. No resize/upscale or destination upload performed. 3x3 preview inspected separately."
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "failure_reason": "Native 1254x1254 authorized by user and verified. Three Codex image-generation attempts failed visual 3x3 seamless review: horizontal wood grain breaks at left/right joins. No nonconforming destination image uploaded.",
+      "validation": {
+        "native_size_px": [
+          1254,
+          1254
+        ],
+        "png_verified": true,
+        "visual_3x3": "failed",
+        "generation_attempts": 3
+      }
     },
     {
       "id": "int_fabric",
@@ -77,9 +91,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_cloth",
@@ -106,9 +119,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_floral",
@@ -135,9 +147,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_crochet",
@@ -164,9 +175,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_formica",
@@ -193,9 +203,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_plastic",
@@ -222,9 +231,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_rattan",
@@ -251,9 +259,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "int_net",
@@ -280,9 +287,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "hedge_bark",
@@ -309,9 +315,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "pitto_bark",
@@ -338,9 +343,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "rescue_foil",
@@ -367,9 +371,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "chicken_wire",
@@ -396,9 +399,8 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "blocked_native_resolution",
-      "priority": "high",
-      "failure_reason": "Required native 2048x2048. Available Codex image_gen has no output-size parameter; int_veneer test with explicit 2048x2048 prompt returned a Pillow-verified 1254x1254 PNG. Same native square-output limitation; no image generated for this motif, no resampling or upload."
+      "status": "missing",
+      "priority": "high"
     },
     {
       "id": "coast_guard_emblem",
