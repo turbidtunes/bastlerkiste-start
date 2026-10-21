@@ -1,0 +1,797 @@
+{
+  "schema_version": "2.0",
+  "scope": "EXCLUSIVELY turbidtunes/bastlerkiste-start/inbox/",
+  "date": "2026-10-21",
+  "source_git_tree_sha": "152c9304a0204904fd4ede2c398858e3b1919d2a",
+  "source_rule": "For each inbox/<building>/note.txt, compare new_* material slots in recorded Materials with files in the SAME inbox/<building>. Photos already present are not jobs; historic FEHLT text may be stale.",
+  "audit_counts": {
+    "building_folders_with_glb": 27,
+    "buildings_with_missing_tiles": 14,
+    "missing_png_files": 33,
+    "unique_material_names": 33,
+    "source_scope": "only inbox/* in turbidtunes/bastlerkiste-start"
+  },
+  "global_rules": {
+    "only_repository": "turbidtunes/bastlerkiste-start",
+    "only_file_roots": [
+      "inbox/"
+    ],
+    "write_only_existing_building_folders": true,
+    "preserve_existing_glb_and_note": true,
+    "never_rename": true,
+    "never_overwrite_existing_png": true,
+    "sequential_one_image_at_a_time": true,
+    "commit_after_each_verified_image": true,
+    "exact_native_resolution_px": [
+      2048,
+      2048
+    ],
+    "no_upscaling": true,
+    "no_procedural_or_CGI_phototextures": true,
+    "do_not_use_external_paid_image_APIs": true,
+    "visual_check": "Inspect a 3×3 grid of exact repeating copies; seam and duplication artifacts need full regeneration, not simple mirror/blur/crossfade fixes",
+    "strict_target": "each job.destination is the ONLY image output path",
+    "preserve_physical_sizes": "physical_tile_m comes from note.txt; if null, suggested_tile_m_unverified is only an idea, not a verified dimension"
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "id": "cite_carriere_h01__new_timber_oxblood_red",
+      "building_name": "cite_carriere_h01",
+      "material": "new_timber_oxblood_red",
+      "filename": "new_timber_oxblood_red.png",
+      "destination": "inbox/cite_carriere_h01/new_timber_oxblood_red.png",
+      "source_note": "inbox/cite_carriere_h01/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Oxblood-red painted timber, chalked and peeling, fine visible natural wood grain; no individual boards, seams, hinges or hardware.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Oxblood-red painted timber, chalked and peeling, fine visible natural wood grain; no individual boards, seams, hinges or hardware. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_timber_oxblood_red.png into inbox/cite_carriere_h01/new_timber_oxblood_red.png."
+    },
+    {
+      "order": 2,
+      "id": "cite_moulin_h06__new_corrugated_blue_paint",
+      "building_name": "cite_moulin_h06",
+      "material": "new_corrugated_blue_paint",
+      "filename": "new_corrugated_blue_paint.png",
+      "destination": "inbox/cite_moulin_h06/new_corrugated_blue_paint.png",
+      "source_note": "inbox/cite_moulin_h06/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Aged blue enamel coating on galvanized roof/wall steel with irregular subtle rust runs, mineral discoloration and fine paint wear; corrugated metal profile is modeled in geometry, not painted in the texture.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged blue enamel coating on galvanized roof/wall steel with irregular subtle rust runs, mineral discoloration and fine paint wear; corrugated metal profile is modeled in geometry, not painted in the texture. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_corrugated_blue_paint.png into inbox/cite_moulin_h06/new_corrugated_blue_paint.png."
+    },
+    {
+      "order": 3,
+      "id": "cite_moulin_h06__new_door_paint_green",
+      "building_name": "cite_moulin_h06",
+      "material": "new_door_paint_green",
+      "filename": "new_door_paint_green.png",
+      "destination": "inbox/cite_moulin_h06/new_door_paint_green.png",
+      "source_note": "inbox/cite_moulin_h06/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Faded pale mint-green painted timber, flaking paint and exposed fine natural wood grain, without board joins, panels, handles or hardware.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Faded pale mint-green painted timber, flaking paint and exposed fine natural wood grain, without board joins, panels, handles or hardware. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_door_paint_green.png into inbox/cite_moulin_h06/new_door_paint_green.png."
+    },
+    {
+      "order": 4,
+      "id": "fond_h09__new_plaster_blue_weathered",
+      "building_name": "fond_h09",
+      "material": "new_plaster_blue_weathered",
+      "filename": "new_plaster_blue_weathered.png",
+      "destination": "inbox/fond_h09/new_plaster_blue_weathered.png",
+      "source_note": "inbox/fond_h09/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Weathered pale-blue cement render, fine sandy plaster grains, restrained organic green algae traces and small white mineral efflorescence, random distribution without directional repeat.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Weathered pale-blue cement render, fine sandy plaster grains, restrained organic green algae traces and small white mineral efflorescence, random distribution without directional repeat. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_blue_weathered.png into inbox/fond_h09/new_plaster_blue_weathered.png."
+    },
+    {
+      "order": 5,
+      "id": "fond_h09__new_tank_plastic_black",
+      "building_name": "fond_h09",
+      "material": "new_tank_plastic_black",
+      "filename": "new_tank_plastic_black.png",
+      "destination": "inbox/fond_h09/new_tank_plastic_black.png",
+      "source_note": "inbox/fond_h09/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Matte black polyethylene water tank material, very fine molded-plastic grain, slightly chalked UV-weathered surface with subdued scratches, no tank ribs or molded parts.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Matte black polyethylene water tank material, very fine molded-plastic grain, slightly chalked UV-weathered surface with subdued scratches, no tank ribs or molded parts. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_tank_plastic_black.png into inbox/fond_h09/new_tank_plastic_black.png."
+    },
+    {
+      "order": 6,
+      "id": "fond_h10__new_cast_iron_green",
+      "building_name": "fond_h10",
+      "material": "new_cast_iron_green",
+      "filename": "new_cast_iron_green.png",
+      "destination": "inbox/fond_h10/new_cast_iron_green.png",
+      "source_note": "inbox/fond_h10/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Old green-painted cast iron close-up: fine rough cast-metal microtexture beneath lightly flaking and scuffed green enamel, occasional exposed darker metal, without whole-object geometry.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Old green-painted cast iron close-up: fine rough cast-metal microtexture beneath lightly flaking and scuffed green enamel, occasional exposed darker metal, without whole-object geometry. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_cast_iron_green.png into inbox/fond_h10/new_cast_iron_green.png."
+    },
+    {
+      "order": 7,
+      "id": "fond_h10__new_paint_red_iron",
+      "building_name": "fond_h10",
+      "material": "new_paint_red_iron",
+      "filename": "new_paint_red_iron.png",
+      "destination": "inbox/fond_h10/new_paint_red_iron.png",
+      "source_note": "inbox/fond_h10/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Aged red enamel on traditional cast iron, rubbed and chipped in scattered small patches, underlying grain of cast iron visible, no ornamental patterns or object outlines.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged red enamel on traditional cast iron, rubbed and chipped in scattered small patches, underlying grain of cast iron visible, no ornamental patterns or object outlines. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_red_iron.png into inbox/fond_h10/new_paint_red_iron.png."
+    },
+    {
+      "order": 8,
+      "id": "fond_h11__new_plaster_ochre_yellow",
+      "building_name": "fond_h11",
+      "material": "new_plaster_ochre_yellow",
+      "filename": "new_plaster_ochre_yellow.png",
+      "destination": "inbox/fond_h11/new_plaster_ochre_yellow.png",
+      "source_note": "inbox/fond_h11/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Sun-aged ochre-yellow lime render, small pores and rough mineral grain, subdued uneven fading with a few scattered fine green algae traces; no painted cracks or shadows.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-aged ochre-yellow lime render, small pores and rough mineral grain, subdued uneven fading with a few scattered fine green algae traces; no painted cracks or shadows. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_ochre_yellow.png into inbox/fond_h11/new_plaster_ochre_yellow.png."
+    },
+    {
+      "order": 9,
+      "id": "fond_h11__new_plaster_rose_dado",
+      "building_name": "fond_h11",
+      "material": "new_plaster_rose_dado",
+      "filename": "new_plaster_rose_dado.png",
+      "destination": "inbox/fond_h11/new_plaster_rose_dado.png",
+      "source_note": "inbox/fond_h11/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Dusty-rose painted plinth/dado plaster, worn, gently chipped and weathered, fine irregular granular cement surface, no dado boundary or ornamental border.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Dusty-rose painted plinth/dado plaster, worn, gently chipped and weathered, fine irregular granular cement surface, no dado boundary or ornamental border. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_rose_dado.png into inbox/fond_h11/new_plaster_rose_dado.png."
+    },
+    {
+      "order": 10,
+      "id": "fond_h12__new_paint_bluegrey_peeling",
+      "building_name": "fond_h12",
+      "material": "new_paint_bluegrey_peeling",
+      "filename": "new_paint_bluegrey_peeling.png",
+      "destination": "inbox/fond_h12/new_paint_bluegrey_peeling.png",
+      "source_note": "inbox/fond_h12/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Pale blue-grey aged paint over timber, visible fine longitudinal grain, chalking, scattered naturally irregular paint peel and small exposed areas, no panel or plank seams.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Pale blue-grey aged paint over timber, visible fine longitudinal grain, chalking, scattered naturally irregular paint peel and small exposed areas, no panel or plank seams. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_bluegrey_peeling.png into inbox/fond_h12/new_paint_bluegrey_peeling.png."
+    },
+    {
+      "order": 11,
+      "id": "fond_h12__new_roof_shingle_dark_moss",
+      "building_name": "fond_h12",
+      "material": "new_roof_shingle_dark_moss",
+      "filename": "new_roof_shingle_dark_moss.png",
+      "destination": "inbox/fond_h12/new_roof_shingle_dark_moss.png",
+      "source_note": "inbox/fond_h12/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Dark charcoal-grey aged timber roof-shingle SURFACE with fine weathered wood fibres and sparse natural moss traces. Shingles and overlap rows are real 3D geometry; no tile outlines or fake ridge shadows.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Dark charcoal-grey aged timber roof-shingle SURFACE with fine weathered wood fibres and sparse natural moss traces. Shingles and overlap rows are real 3D geometry; no tile outlines or fake ridge shadows. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_roof_shingle_dark_moss.png into inbox/fond_h12/new_roof_shingle_dark_moss.png."
+    },
+    {
+      "order": 12,
+      "id": "fond_h13__new_grille_steel_white",
+      "building_name": "fond_h13",
+      "material": "new_grille_steel_white",
+      "filename": "new_grille_steel_white.png",
+      "destination": "inbox/fond_h13/new_grille_steel_white.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Old white-painted mild steel grille surface, fine orange-peel enamel, slightly chalked/weathered, scattered tiny rust pinholes around chipped paint; no painted grille bars or geometry.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Old white-painted mild steel grille surface, fine orange-peel enamel, slightly chalked/weathered, scattered tiny rust pinholes around chipped paint; no painted grille bars or geometry. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_grille_steel_white.png into inbox/fond_h13/new_grille_steel_white.png."
+    },
+    {
+      "order": 13,
+      "id": "fond_h13__new_paint_terracotta_trim",
+      "building_name": "fond_h13",
+      "material": "new_paint_terracotta_trim",
+      "filename": "new_paint_terracotta_trim.png",
+      "destination": "inbox/fond_h13/new_paint_terracotta_trim.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Terracotta-red aged architectural paint on solid molded facade trim, fine subtle grain, gentle chalking and irregular fading, no molded profiles or cast highlights.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Terracotta-red aged architectural paint on solid molded facade trim, fine subtle grain, gentle chalking and irregular fading, no molded profiles or cast highlights. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_terracotta_trim.png into inbox/fond_h13/new_paint_terracotta_trim.png."
+    },
+    {
+      "order": 14,
+      "id": "fond_h13__new_pe_tank_black",
+      "building_name": "fond_h13",
+      "material": "new_pe_tank_black",
+      "filename": "new_pe_tank_black.png",
+      "destination": "inbox/fond_h13/new_pe_tank_black.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Weathered matte black polyethylene rooftop water-tank skin, fine molded plastic texture and UV-chalked grey-black microspeckling, no tank ribs or labels.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Weathered matte black polyethylene rooftop water-tank skin, fine molded plastic texture and UV-chalked grey-black microspeckling, no tank ribs or labels. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_pe_tank_black.png into inbox/fond_h13/new_pe_tank_black.png."
+    },
+    {
+      "order": 15,
+      "id": "fond_h13__new_plaster_mint_green",
+      "building_name": "fond_h13",
+      "material": "new_plaster_mint_green",
+      "filename": "new_plaster_mint_green.png",
+      "destination": "inbox/fond_h13/new_plaster_mint_green.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Mint-green exterior render on traditional Mauritian house walls, columns and tower, fine sand/cement pores, gentle paint fading and irregular natural age mottling, no architectural relief.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Mint-green exterior render on traditional Mauritian house walls, columns and tower, fine sand/cement pores, gentle paint fading and irregular natural age mottling, no architectural relief. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_mint_green.png into inbox/fond_h13/new_plaster_mint_green.png."
+    },
+    {
+      "order": 16,
+      "id": "fond_h13__new_pvc_pipe_green",
+      "building_name": "fond_h13",
+      "material": "new_pvc_pipe_green",
+      "filename": "new_pvc_pipe_green.png",
+      "destination": "inbox/fond_h13/new_pvc_pipe_green.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Aged green rigid PVC downpipe material, subtle extrusion marks, smooth slightly chalky plastic surface, gentle micro-scuffs; no circular pipe shape, brackets or perspective.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged green rigid PVC downpipe material, subtle extrusion marks, smooth slightly chalky plastic surface, gentle micro-scuffs; no circular pipe shape, brackets or perspective. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_pvc_pipe_green.png into inbox/fond_h13/new_pvc_pipe_green.png."
+    },
+    {
+      "order": 17,
+      "id": "fond_h13__new_tile_slate_brown",
+      "building_name": "fond_h13",
+      "material": "new_tile_slate_brown",
+      "filename": "new_tile_slate_brown.png",
+      "destination": "inbox/fond_h13/new_tile_slate_brown.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Dark slate-brown exterior facade-cladding tile material, low-sheen slightly mineral-grained flat fired-ceramic/stone-like surface, restrained natural tonal variation; no grout seams or individual tile borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Dark slate-brown exterior facade-cladding tile material, low-sheen slightly mineral-grained flat fired-ceramic/stone-like surface, restrained natural tonal variation; no grout seams or individual tile borders. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_tile_slate_brown.png into inbox/fond_h13/new_tile_slate_brown.png."
+    },
+    {
+      "order": 18,
+      "id": "fond_h13__new_tile_terracotta_step",
+      "building_name": "fond_h13",
+      "material": "new_tile_terracotta_step",
+      "filename": "new_tile_terracotta_step.png",
+      "destination": "inbox/fond_h13/new_tile_terracotta_step.png",
+      "source_note": "inbox/fond_h13/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Warm terracotta-colored exterior step/veranda ceramic tile surface, lightly abraded matte glaze, fine fired-clay grain and subtle mottling; no grout, borders, step nosings or perspective.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Warm terracotta-colored exterior step/veranda ceramic tile surface, lightly abraded matte glaze, fine fired-clay grain and subtle mottling; no grout, borders, step nosings or perspective. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_tile_terracotta_step.png into inbox/fond_h13/new_tile_terracotta_step.png."
+    },
+    {
+      "order": 19,
+      "id": "fond_h14__new_plaster_blue_faded",
+      "building_name": "fond_h14",
+      "material": "new_plaster_blue_faded",
+      "filename": "new_plaster_blue_faded.png",
+      "destination": "inbox/fond_h14/new_plaster_blue_faded.png",
+      "source_note": "inbox/fond_h14/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Sun-faded blue painted mineral plaster of an old Mauritian street shop, fine grain and mottled local chalking, soft natural wear, no architectural borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-faded blue painted mineral plaster of an old Mauritian street shop, fine grain and mottled local chalking, soft natural wear, no architectural borders. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_blue_faded.png into inbox/fond_h14/new_plaster_blue_faded.png."
+    },
+    {
+      "order": 20,
+      "id": "fond_h14__new_plaster_green_faded",
+      "building_name": "fond_h14",
+      "material": "new_plaster_green_faded",
+      "filename": "new_plaster_green_faded.png",
+      "destination": "inbox/fond_h14/new_plaster_green_faded.png",
+      "source_note": "inbox/fond_h14/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Sun-faded medium green painted mineral plaster of an old Mauritian street shop, fine aggregate grains, patchy chalking and slight restrained weathering, no borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-faded medium green painted mineral plaster of an old Mauritian street shop, fine aggregate grains, patchy chalking and slight restrained weathering, no borders. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_green_faded.png into inbox/fond_h14/new_plaster_green_faded.png."
+    },
+    {
+      "order": 21,
+      "id": "fond_h14__new_plaster_rose_faded",
+      "building_name": "fond_h14",
+      "material": "new_plaster_rose_faded",
+      "filename": "new_plaster_rose_faded.png",
+      "destination": "inbox/fond_h14/new_plaster_rose_faded.png",
+      "source_note": "inbox/fond_h14/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Sun-faded dusty-rose pink painted mineral plaster of an old Mauritian street shop, fine sand pores and irregular fading, matte aged finish, no borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-faded dusty-rose pink painted mineral plaster of an old Mauritian street shop, fine sand pores and irregular fading, matte aged finish, no borders. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_rose_faded.png into inbox/fond_h14/new_plaster_rose_faded.png."
+    },
+    {
+      "order": 22,
+      "id": "fond_h14__new_plaster_yellow_faded",
+      "building_name": "fond_h14",
+      "material": "new_plaster_yellow_faded",
+      "filename": "new_plaster_yellow_faded.png",
+      "destination": "inbox/fond_h14/new_plaster_yellow_faded.png",
+      "source_note": "inbox/fond_h14/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Sun-faded yellow painted mineral plaster of an old Mauritian street shop, very fine granular render, irregular chalking and subtle scattered age spots, no borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-faded yellow painted mineral plaster of an old Mauritian street shop, very fine granular render, irregular chalking and subtle scattered age spots, no borders. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_yellow_faded.png into inbox/fond_h14/new_plaster_yellow_faded.png."
+    },
+    {
+      "order": 23,
+      "id": "fond_h15__new_plaster_salmon_red",
+      "building_name": "fond_h15",
+      "material": "new_plaster_salmon_red",
+      "filename": "new_plaster_salmon_red.png",
+      "destination": "inbox/fond_h15/new_plaster_salmon_red.png",
+      "source_note": "inbox/fond_h15/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Salmon-red / coral-pink coarse cement render on an outdoor architectural tower, moderately weathered, with a few restrained darker runoff staining traces, irregular sandy pores, no relief.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Salmon-red / coral-pink coarse cement render on an outdoor architectural tower, moderately weathered, with a few restrained darker runoff staining traces, irregular sandy pores, no relief. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_salmon_red.png into inbox/fond_h15/new_plaster_salmon_red.png."
+    },
+    {
+      "order": 24,
+      "id": "grand_fond_h07__new_paint_green_timber",
+      "building_name": "grand_fond_h07",
+      "material": "new_paint_green_timber",
+      "filename": "new_paint_green_timber.png",
+      "destination": "inbox/grand_fond_h07/new_paint_green_timber.png",
+      "source_note": "inbox/grand_fond_h07/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Deep forest-green painted timber of mosque doors and window frames, lightly weathered, subtle fine wood grain and microscopic surface checking, no panel seams or hardware.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Deep forest-green painted timber of mosque doors and window frames, lightly weathered, subtle fine wood grain and microscopic surface checking, no panel seams or hardware. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_green_timber.png into inbox/grand_fond_h07/new_paint_green_timber.png."
+    },
+    {
+      "order": 25,
+      "id": "sarcelle_h05__new_door_paint_blue_worn",
+      "building_name": "sarcelle_h05",
+      "material": "new_door_paint_blue_worn",
+      "filename": "new_door_paint_blue_worn.png",
+      "destination": "inbox/sarcelle_h05/new_door_paint_blue_worn.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Weathered strong blue exterior door paint surface, matte to low satin, soft chalking and minute random paint losses, restrained underlying substrate micrograin, no molded door panels or handles.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Weathered strong blue exterior door paint surface, matte to low satin, soft chalking and minute random paint losses, restrained underlying substrate micrograin, no molded door panels or handles. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_door_paint_blue_worn.png into inbox/sarcelle_h05/new_door_paint_blue_worn.png."
+    },
+    {
+      "order": 26,
+      "id": "sarcelle_h05__new_door_paint_magenta_worn",
+      "building_name": "sarcelle_h05",
+      "material": "new_door_paint_magenta_worn",
+      "filename": "new_door_paint_magenta_worn.png",
+      "destination": "inbox/sarcelle_h05/new_door_paint_magenta_worn.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        1,
+        1
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Weathered magenta-pink exterior door paint surface, low satin aged finish, subtle scuffs, fine natural cracks and scattered local paint loss; no full door object, hinges or seams.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Weathered magenta-pink exterior door paint surface, low satin aged finish, subtle scuffs, fine natural cracks and scattered local paint loss; no full door object, hinges or seams. Physical tile coverage not stated in note.txt; suggested for scale only: about 1 m by 1 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_door_paint_magenta_worn.png into inbox/sarcelle_h05/new_door_paint_magenta_worn.png."
+    },
+    {
+      "order": 27,
+      "id": "sarcelle_h05__new_paint_orange_worn",
+      "building_name": "sarcelle_h05",
+      "material": "new_paint_orange_worn",
+      "filename": "new_paint_orange_worn.png",
+      "destination": "inbox/sarcelle_h05/new_paint_orange_worn.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Sun-weathered bright orange architectural paint on doorway surrounds and facade posts, finely textured painted render, faint chalking and modest patchy wear, no profiles or grooves.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-weathered bright orange architectural paint on doorway surrounds and facade posts, finely textured painted render, faint chalking and modest patchy wear, no profiles or grooves. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_orange_worn.png into inbox/sarcelle_h05/new_paint_orange_worn.png."
+    },
+    {
+      "order": 28,
+      "id": "sarcelle_h05__new_plaster_cobalt_blue_peeling",
+      "building_name": "sarcelle_h05",
+      "material": "new_plaster_cobalt_blue_peeling",
+      "filename": "new_plaster_cobalt_blue_peeling.png",
+      "destination": "inbox/sarcelle_h05/new_plaster_cobalt_blue_peeling.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Aged intense cobalt-blue rendered exterior ground-floor wall, irregular flaking paint with small chalky exposed plaster patches and granular pores, no large fake geometry cracks.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged intense cobalt-blue rendered exterior ground-floor wall, irregular flaking paint with small chalky exposed plaster patches and granular pores, no large fake geometry cracks. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_cobalt_blue_peeling.png into inbox/sarcelle_h05/new_plaster_cobalt_blue_peeling.png."
+    },
+    {
+      "order": 29,
+      "id": "sarcelle_h05__new_plaster_teal_chalky",
+      "building_name": "sarcelle_h05",
+      "material": "new_plaster_teal_chalky",
+      "filename": "new_plaster_teal_chalky.png",
+      "destination": "inbox/sarcelle_h05/new_plaster_teal_chalky.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Aged turquoise-teal upper-floor exterior cement render, dusty/chalky fine-grained matte painted surface and gentle sun fading, no geometry or decorative borders.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged turquoise-teal upper-floor exterior cement render, dusty/chalky fine-grained matte painted surface and gentle sun fading, no geometry or decorative borders. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_teal_chalky.png into inbox/sarcelle_h05/new_plaster_teal_chalky.png."
+    },
+    {
+      "order": 30,
+      "id": "sarcelle_h05__new_plaster_yellow_worn",
+      "building_name": "sarcelle_h05",
+      "material": "new_plaster_yellow_worn",
+      "filename": "new_plaster_yellow_worn.png",
+      "destination": "inbox/sarcelle_h05/new_plaster_yellow_worn.png",
+      "source_note": "inbox/sarcelle_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Sun-worn golden-yellow paint over coarse facade render used on corner pillars, fine rough pores, mild localized paint abrasion, no pillar profile.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Sun-worn golden-yellow paint over coarse facade render used on corner pillars, fine rough pores, mild localized paint abrasion, no pillar profile. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_yellow_worn.png into inbox/sarcelle_h05/new_plaster_yellow_worn.png."
+    },
+    {
+      "order": 31,
+      "id": "souffleur_h04__new_paint_teal_worn",
+      "building_name": "souffleur_h04",
+      "material": "new_paint_teal_worn",
+      "filename": "new_paint_teal_worn.png",
+      "destination": "inbox/souffleur_h04/new_paint_teal_worn.png",
+      "source_note": "inbox/souffleur_h04/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": null,
+      "suggested_tile_m_unverified": [
+        2,
+        2
+      ],
+      "source_of_physical_size": "not_provided_in_note",
+      "surface_description_english": "Aged muted teal blue-green paint on plastered facade bands, slightly chalked and flaking, fine cement-render grain with delicate sporadic iron-rust staining, no linear trim geometry.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Aged muted teal blue-green paint on plastered facade bands, slightly chalked and flaking, fine cement-render grain with delicate sporadic iron-rust staining, no linear trim geometry. Physical tile coverage not stated in note.txt; suggested for scale only: about 2 m by 2 m. Label suggestion as unverified. ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_paint_teal_worn.png into inbox/souffleur_h04/new_paint_teal_worn.png."
+    },
+    {
+      "order": 32,
+      "id": "souffleur_h05__new_plaster_pink_spalled",
+      "building_name": "souffleur_h05",
+      "material": "new_plaster_pink_spalled",
+      "filename": "new_plaster_pink_spalled.png",
+      "destination": "inbox/souffleur_h05/new_plaster_pink_spalled.png",
+      "source_note": "inbox/souffleur_h05/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        2,
+        2
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Old pink-painted exterior cement render with realistic shallow scattered spalls, weathered chalky pink remnants and muted cement patches; flat material-only photographic view, no molded facade detail.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Old pink-painted exterior cement render with realistic shallow scattered spalls, weathered chalky pink remnants and muted cement patches; flat material-only photographic view, no molded facade detail. A single image depicts 2 m by 2 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_plaster_pink_spalled.png into inbox/souffleur_h05/new_plaster_pink_spalled.png."
+    },
+    {
+      "order": 33,
+      "id": "weiler_h01__new_solar_collector_panel",
+      "building_name": "weiler_h01",
+      "material": "new_solar_collector_panel",
+      "filename": "new_solar_collector_panel.png",
+      "destination": "inbox/weiler_h01/new_solar_collector_panel.png",
+      "source_note": "inbox/weiler_h01/note.txt",
+      "status": "missing_at_audit",
+      "kind": "photorealistic_seamless_photo_tile",
+      "resolution_px": [
+        2048,
+        2048
+      ],
+      "physical_tile_m": [
+        1,
+        1
+      ],
+      "suggested_tile_m_unverified": null,
+      "source_of_physical_size": "note_txt",
+      "surface_description_english": "Dark navy-blue photovoltaic or solar-collector optical SURFACE, fine uniform micrograin, slight realistic mineral/solar-glass variation, very subdued reflection under cross-polarised light; no frame, cell grid, wiring or reflective specular highlight.",
+      "prompt": "Real photographic seamless tileable material texture for a production Unreal Engine 5 architectural asset. Material: Dark navy-blue photovoltaic or solar-collector optical SURFACE, fine uniform micrograin, slight realistic mineral/solar-glass variation, very subdued reflection under cross-polarised light; no frame, cell grid, wiring or reflective specular highlight. A single image depicts 1 m by 1 m in the real world (given in note.txt). ONE continuous real-looking physical material surface fills the square image edge to edge. Camera exactly perpendicular to surface; optically flat straight-on close-up; even overcast / cross-polarised soft illumination, corner-to-corner uniform brightness. Natural photorealistic fine detail and realistic color, no CGI, no 3D render, no painting, no AI smoothing, no text or logos, no perspective, no vignette, no cast shadows or highlights, no large seams, no actual geometric components. Seamless content at ALL FOUR EDGES: adjacent 3×3 repeats must show no crossing seam, mirrored halves, blurred blend band, obvious repeated focal feature or ghosting. Square native 2048×2048 PNG. Do not upscale, resample or fake the resolution. Output file EXACTLY new_solar_collector_panel.png into inbox/weiler_h01/new_solar_collector_panel.png."
+    }
+  ]
+}
