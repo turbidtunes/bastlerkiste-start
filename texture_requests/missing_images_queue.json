@@ -1324,8 +1324,28 @@
       "source_file": [
         "inbox/weiler_h01/note.txt"
       ],
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste-start": "c2f18f9101b059da69834fd649677cbafe3222db"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "6ccff6f5c7b801376a4791e81215561863ec823081bb87937358f40beb8e8980",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "new_solar_collector_panel",
