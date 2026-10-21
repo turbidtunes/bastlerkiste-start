@@ -18,12 +18,15 @@ from pathlib import Path
 
 from anthropic import Anthropic
 from PIL import Image
+from prompt_contract import (compiler_task, contract_context, source_brief,
+                             validate_compiled_contract, sha256_text)
 
 REPO = Path(__file__).resolve().parents[1]
 SLUG = os.environ.get("BUILDING_NAME", "").strip()
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5").strip()
 BRIEF_PATH = os.environ.get("BRIEF_PATH", "briefs/grand_fond_parish_church.md").strip()
 REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
+DIRECT_PROMPT = os.environ.get("BUILDING_PROMPT", "")
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "1"))
 STAGES = ["shell", "architecture", "details"]
 RATE = {"claude-sonnet-5-5": (2, 10), "claude-opus-5-5": (4, 20)}
@@ -47,10 +50,13 @@ def repo_file(rel: str, allowed_root: str | None = None) -> Path:
     return path
 
 
-brief_file = repo_file(BRIEF_PATH, "briefs")
-if not brief_file.is_file() or brief_file.suffix.lower() != ".md":
-    sys.exit(f"Brief fehlt im Repo: {BRIEF_PATH}")
-brief = brief_file.read_text(encoding="utf-8")
+brief_file = repo_file(BRIEF_PATH, "briefs") if BRIEF_PATH else None
+if not DIRECT_PROMPT.strip() and (brief_file is None or brief_file.suffix.lower() != ".md"):
+    sys.exit("Ein .md-Briefing innerhalb briefs/ wird benötigt")
+try:
+    brief, brief_source = source_brief(brief_file, DIRECT_PROMPT)
+except (FileNotFoundError, ValueError) as error:
+    sys.exit(str(error))
 master = (REPO / "prompts" / "master_system.md").read_text(encoding="utf-8")
 work = REPO / "_asset_work" / SLUG
 delivery = REPO / "inbox" / SLUG
@@ -61,9 +67,10 @@ work.mkdir(parents=True)
 (work / "views").mkdir()
 images = []
 for rel in [s.strip() for s in REFERENCES.split(",") if s.strip()]:
-    if len(images) >= 3:
-        sys.exit("Maximal 3 Referenzbilder")
-    src = repo_file(rel, "references")
+    src = repo_file(rel)
+    if not any(src.is_relative_to((REPO / folder).resolve())
+               for folder in ("references", "referenzbilder")):
+        sys.exit(f"Referenzbild muss in references/ oder referenzbilder/ liegen: {rel}")
     if not src.is_file() or src.stat().st_size > 5_000_000:
         sys.exit(f"Referenzbild fehlt oder >5 MB: {rel}")
     media = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}.get(src.suffix.lower())
@@ -258,7 +265,7 @@ def review_stage(stage: str, report: dict, planned: str):
         "Gib ausschließlich JSON zurück: {\"needs_fix\": true/false, \"issues\": [\"...\"], "
         "\"comparison_possible\": true/false}. Keine erfundenen Prüfungen.\n"
         f"STUFE: {stage}\nBERICHT:\n{json.dumps(report, ensure_ascii=False)[:12000]}\n"
-        f"PLAN:\n{planned}"
+        f"PLAN:\n{planned}\nBAUVERTRAG:\n{building_contract}"
     )
     answer = ask(stage + "_vision_review", prompt, visuals)
     raw = re.sub(r"^```(?:json)?\s*\n|\n```$", "", answer.strip())
@@ -270,8 +277,36 @@ def review_stage(stage: str, report: dict, planned: str):
     return parsed
 
 
-print("1/5 PLAN – anschließend automatisch BUILD, kein GO nötig", flush=True)
+print("0/6 PROMPT-COMPILER – Originalprompt automatisch verschmelzen", flush=True)
 refs = ref_blocks()
+(work / "original_prompt.md").write_text(brief, encoding="utf-8")
+compiled = ask("compiler", compiler_task(
+    brief, [name for name, _, _ in images], SLUG), refs)
+for attempt in range(1, 4):
+    try:
+        validate_compiled_contract(compiled)
+        break
+    except ValueError as error:
+        print(f"PROMPT-COMPILER: {error}", flush=True)
+        if attempt == 3:
+            raise RuntimeError("Compiler konnte den Pflichtvertrag nicht erzeugen") from error
+        compiled = ask(
+            f"compiler_repair_{attempt}",
+            "Repariere die Struktur des folgenden Compiler-Vertrags. "
+            "Übernimm alle Anforderungen aus dem vollständigen ORIGINALPROMPT, "
+            "verwende exakt die verlangten Überschriften. Warte nicht auf Go. "
+            "Gib den gesamten korrigierten Vertrag aus.\\n"
+            + str(error) + "\\nVORHERIGER VERTRAG:\\n" + compiled
+            + "\\nORIGINALPROMPT:\\n" + brief,
+            refs,
+        )
+building_contract = contract_context(brief, compiled, brief_source)
+(work / "compiled_contract.md").write_text(
+    "# Automatisch verschmolzener Gebäudeauftrag\\n\\n"
+    + f"Original: {brief_source}\\nSHA256: {sha256_text(brief)}\\n\\n"
+    + building_contract, encoding="utf-8",
+)
+print("1/6 PLAN – Vertrag geprüft; BUILD folgt ohne Go", flush=True)
 plan_prompt = (
     "Erstelle JETZT den vollständigen maßhaltigen Architektur- und Materialplan anhand des "
     "konkreten Briefings und aller verfügbaren echten Referenzen. Das ist die erste interne "
@@ -280,7 +315,7 @@ plan_prompt = (
     "geplante Türen und die nötigen echten Fototexturen. "
     "Exaktes MAX_TRIS als einzelne Zeile 'MAX_TRIS: 150000' oder kleiner. "
     "Nenne alle bekannten Abweichungen.\n\n"
-    f"BRIEF ({BRIEF_PATH}):\n{brief}\n"
+    f"VERBINDLICHER BAUVERTRAG MIT ORIGINALPROMPT:\n{building_contract}\n"
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
     f"VORHANDENE ECHTE TEXTUREN (max 120): {', '.join(list(texture_index)[:120]) or 'KEINE'}"
 )
@@ -298,8 +333,8 @@ for idx, stage in enumerate(STAGES, start=1):
     print(f"{idx+1}/5 BUILD STUFE: {stage}", flush=True)
     purpose = {
         "shell": "Fundamente, Geschossplatten, echte dicke Wände mit realen Öffnungen, Raumvolumen, präzise Hauptsilhouette. Verteile die Teile in benannten Meshes. KEINE falsche Fassaden-Plane hinter Fenstern.",
-        "architecture": "Auf bestehender shell-Szene: Dach als geschlossene Körper, Kirchturm, echte durchgängige Treppen samt Podesten, Fenster mit Laibungen, getrennte geschlossene Türblatt-Meshes samt Pivot, Geländer, Fassadenordnung.",
-        "details": "Auf bestehender architecture-Szene: Detailgeometrie, echte Ziegelreihen, Dachrinnen, Fixierungen, Bevel, alle gültig benannten PBR-Materialslots, metrische UV0 (auch auf Bestand), maßhaltige Ph_*-Boxen für ALLE Räume mit lokalen Pivots. Korrigiere fehlende Slots/UVs in Bestand. Keine Fotoerzeugung.",
+        "architecture": "Auf bestehender shell-Szene: geplante Dachform und gebäudespezifische Sonderbauten (nur falls laut Auftrag), echte Treppen und Podeste, Fenster mit Laibungen, getrennte geschlossene Türblatt-Meshes samt Pivot, Geländer, Fassadenordnung gemäß Plan.",
+        "details": "Auf bestehender architecture-Szene: maßhaltige Details der laut Plan vorgesehenen Dachdeckung (Ziegel/Wellblech/Schiefer/andere), Dachrinnen, Befestigungen, Bevel, PBR-Materialslots und metrische UV0 auch im Bestand, maßhaltige Ph_*-Boxen für alle Räume. Korrigiere fehlende Slots und UVs. Keine Fotoerzeugung.",
     }[stage]
     stage_prompt = (
         "Gib ausschließlich ausführbares Python für Blender 4.x (bpy) zurück, kein Markdown. "
@@ -312,7 +347,7 @@ for idx, stage in enumerate(STAGES, start=1):
         "Die Materialnamen müssen aus der Systemliste stammen oder deklarierte new_* sein. "
         "Nach Blender Code wird NICHT manuell auf Go gewartet.\n"
         f"STUFE: {stage}\nAUFGABE: {purpose}\n"
-        f"GEBÄUDE-BRIEF:\n{brief}\n"
+        f"BAUVERTRAG UND VOLLSTÄNDIGER ORIGINALPROMPT:\n{building_contract}\n"
         f"VERBINDLICHER PLAN:\n{plan}\n"
         f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False)[:9000] if idx>1 else 'Keine'}\n"
         f"Verfügbare Fototextur-Namen: {', '.join(list(texture_index)[:120])}"
@@ -331,7 +366,7 @@ for idx, stage in enumerate(STAGES, start=1):
             "Benenne neue Teile ordentlich und repariere vorhandene Meshes statt zusätzliche "
             "deckungslose Fassadenflächen darüberzulegen. Keine Bilderzeugung.\n"
             f"STUFE {stage}, KORREKTUR {correction}\nPROBLEME:\n{issues}\n"
-            f"PLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)[:9000]}"
+            f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)[:9000]}"
         )
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
         stage_results[stage] = report
@@ -363,7 +398,7 @@ note_prompt = (
     "Raumliste/Placeholder, Türen mit von/nach und Breiten aus dem Plan, exakte Materialliste, "
     "new_* Oberfläche mit real-world Tile-Maßen sofern BEKANNT; sonst unbekannt markieren. "
     "Die folgenden validierten Zahlen verwenden, nichts erfinden. Gib nur Text aus.\n"
-    f"PLAN:\n{plan}\n"
+    f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\n"
     f"PRÜFBERICHT:\n{json.dumps(result, ensure_ascii=False)}\n"
     f"REFERENZFOTOS vorhanden: {'JA' if images else 'NEIN'}\n"
     f"NEW_MATERIAL_FILES: {[str(p.relative_to(REPO)) for p in new_textures]}\n"
