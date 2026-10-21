@@ -1,0 +1,101 @@
+NOTE.TXT – grand_fond_h09_doctor_house
+
+GEBÄUDE
+- Slot grand_fond_H09, Grand-Fond (Mauritius), zweigeschossiges Flachdach-Betonhaus.
+- Nutzung: Erdgeschoss Arztpraxis (Wartezimmer mit Empfang, Flur, Sprechzimmer, Behandlungsraum, Patienten-WC, Gerätelager unter dem Podest). Obergeschoss Familienwohnung des Arztes (Wohnzimmer, Küche mit Essplatz, Bad, 3 Schlafzimmer, Flur/Halle, Balkon).
+- furniture_style: creole_poor.
+- OG nur über die Außentreppe an der Ostseite erreichbar (Podest, Tür D07). Es gibt keine Innentreppe. Das Dach ist über Luke und Leiter in der OG-Halle erreichbar.
+- Gewehrschrank: Ph_bedroom_gun_cabinet_01 im Elternschlafzimmer.
+
+MASSE
+- Geplant: Footprint inkl. Balkon, Treppe und Podest 13,0 × 12,0 m. Geschosse 2,80 m lichte Höhe, Platten 0,25 m, Außenwände 0,25 m, Innenwände 0,12 m. Gesamthöhe bis Tankoberkante 7,92 m.
+- Gemessen im Prüfbericht (Blender 4.0.2): Bounds min (-6,56 / -6,04 / -0,20), max (6,50 / 6,20 / 7,92), Abmessungen 13,06 × 12,24 × 8,12 m.
+- Die gemessene Ausdehnung liegt leicht über dem Plan (+0,06 m in X, +0,24 m in Y). Die Ursache ist nicht geprüft.
+- Bei Plot-Koordinaten wie im Plan ergäbe y = -6,04 rechnerisch 2,96 m statt 3,0 m Abstand zur Straße. Das wäre eine Unterschreitung um etwa 4 cm. Das Gebäude liegt weiterhin innerhalb von 14 × 15 m.
+- Weitere Maße wurden nicht einzeln nachgemessen. Sie gelten als Planwerte.
+
+KENNZAHLEN (Prüfbericht)
+- 166 Meshes, 25.074 Dreiecke (Limit 90.000), GLB 1.459.812 Bytes.
+- Violations: keine gemeldet. Reimport des GLB: 166 Meshes.
+- Die visuelle Analyse ist eine KI-Einschätzung aus Workbench-Bildern. Bildtreue, Spielbarkeit und UE5-Verhalten sind damit nicht garantiert. Eine UE5-Prüfung wurde nicht durchgeführt.
+
+TÜREN (Name: von → nach, lichte Breite laut Plan)
+- DoorLeaf_01_R_in: Außen → G01 Wartezimmer, 1,10 m
+- DoorLeaf_02_R_in: G01 → G02 Flur, 1,0 m
+- DoorLeaf_03_R_in: G02 → G03 Patienten-WC, 0,9 m
+- DoorLeaf_04_L_in: G02 → G04 Sprechzimmer, 0,9 m
+- DoorLeaf_05_R_in: G02 → G05 Behandlungsraum, 1,0 m
+- DoorLeaf_06_R_in: Außen → G06 Gerätelager, 1,0 m
+- DoorLeaf_07_L_in: Podest (außen) → F05 Flur/Halle OG, 1,0 m
+- DoorLeaf_08_L_in: F05 → F02 Elternschlafzimmer, 0,9 m
+- DoorLeaf_09_R_in: F05 → F03 Schlafzimmer 2, 0,9 m
+- DoorLeaf_10_R_in: F05 → F01 Wohnzimmer, 0,9 m
+- DoorLeaf_11_R_in: F05 → F06 Bad, 0,9 m
+- DoorLeaf_12_L_in: F05 → F07 Schlafzimmer 3, 0,9 m
+- DoorLeaf_13_R_in: F05 → F08 Küche, 0,9 m
+- DoorLeaf_14a_L_in + DoorLeaf_14b_R_in: F01 Wohnzimmer → F04 Balkon, 2 × 0,8 m = 1,6 m
+- Alle Türblätter sind geschlossen im Rahmen modelliert, Rahmen und Futter bleiben beim Gebäude.
+
+RÄUME UND PLACEHOLDER (Ph_<room>_<role>)
+- waiting (G01): visitor_chair ×8, public_counter, office_chair, filing_cabinet, water_cooler, notice_board, ceiling_lamp ×4, ceiling_fan ×2
+- hall (G02 Flur EG): ceiling_lamp ×3, notice_board
+- bathroom (G03 Patienten-WC): wc, basin, mirror, towel_rail, bath_cabinet, ceiling_lamp
+- clinic (G04 Sprechzimmer): office_desk, office_chair, visitor_chair ×2, exam_couch, med_cabinet, filing_cabinet, ceiling_lamp, ceiling_fan
+- clinic2 (G05 Behandlungsraum): exam_couch ×2, med_cabinet ×2, screen, office_desk, office_chair, ceiling_lamp ×2, ceiling_fan
+- store (G06): storage_rack
+- living (F01): sofa, armchair ×2, coffee_table, tv_unit, display_cabinet, sideboard, side_table, floor_lamp, rug, ceiling_fan, ceiling_lamp, curtains ×2
+- bedroom (F02 Elternschlafzimmer): bed_double, bedside ×2, wardrobe, dresser, gun_cabinet, ceiling_fan, ceiling_lamp, curtains
+- bedroom2 (F03): bed_single ×2, wardrobe, desk, chair, ceiling_fan, curtains
+- bedroom3 (F07): bed_single, wardrobe, desk, chair, ceiling_fan, curtains
+- kitchen (F08): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair ×4, wall_shelf ×2, pantry, ceiling_lamp, ceiling_fan
+- bathroom2 (F06 Bad): wc, basin, mirror, shower, towel_rail, washing_machine, laundry_basket, bath_cabinet, ceiling_lamp
+- hall2 (F05 Flur/Halle OG): ceiling_lamp ×5, coat_rack, shoe_cabinet
+- balcony (F04): wall_lamp ×1
+- Alle Placeholder stehen mit Material "placeholder" im GLB. Die Rollen entsprechen der Liste im Prüfbericht.
+
+MATERIALIEN (im GLB verwendet, laut Prüfbericht)
+aluminium_weathered, brass_tarnished, ceramic_glazed_white, concrete_cast, floor_tiles, galvanized_steel, glass, lamp_glass, new_plaster_blue_weathered, new_tank_plastic_black, painted_timber_warmgrey, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, plastic_weathered, sign_doctor_plate, stainless_brushed, steel_painted_worn
+
+NEUE OBERFLÄCHEN (new_*)
+- new_plaster_blue_weathered: hellblauer Zementputz mit grünen Algenstreifen und weißen Ausblühungen, Tile-Größe laut Plan 2 m × 2 m.
+- new_tank_plastic_black: mattschwarzes PE, leicht kreidig, Tile-Größe laut Plan 1 m × 1 m.
+- Die Dateien new_plaster_blue_weathered.png und new_tank_plastic_black.png liegen NICHT vor (NEW_MATERIAL_FILES leer). Es existieren keine echten Fototexturen.
+- Beide Slots bleiben im GLB und sind in Blender als Materialien angelegt.
+- Fehlende Foto-PNGs sind kein Auslieferungshindernis. Bis zum Ersatz greift die Engine nicht auf Fototexturen für diese Slots zurück.
+
+SCHILD
+- sign_doctor_plate, 0,55 × 0,70 × 0,03 m, Text laut Plan „Dr. L. Pillay – Médecin“ (fiktiv), mit Messingkanten (brass_tarnished).
+
+ENTSCHEIDUNGEN UND ABWEICHUNGEN ZUM REFERENZFOTO
+- Referenzfoto war vorhanden. Eine Bildtreue-Messung wurde nicht durchgeführt, Bildtreue ist nicht belegt.
+- Rück-, West- und Innenseiten sowie alle Innenräume sind erfunden, das Foto zeigt sie nicht.
+- Das Rautenmuster der Schaufenster-Dekorfolie ist nicht modelliert, die Verglasung ist "glass".
+- Pflanzen, Fußmatte, Straße und Gehweg sind nicht modelliert (Scope).
+- Wandstärken, Glasflächen und Leibungen sind vereinfacht (0,25 m Leibungstiefe).
+- Der Eingang hat zwei Stufen à 0,06 m (insgesamt 0,12 m), also nicht barrierefrei. Die Schwelle ist eine flache Aluschwelle.
+- Die Außentreppe liegt eng an der Ostwand. Dort gibt es nur Lamellenfenster davor und dahinter, keines unter der Treppe.
+- Die Podestbreite beträgt nur 1,2 m (Richtwert ≥ 1,4 m), die Tiefe 3,1 m. Die Tür öffnet nach innen, am Podest steht kein Möbel.
+- Schmale Räume: Patienten-WC G03 ca. 2,0 × 4,36 m, Lager G06 1,2 m breit (kein Aufenthaltsraum), Halle F05 ca. 1,54 m breit. Die Mindestmaße der Regeln werden dort nur teilweise eingehalten.
+- Das Dach ist eben modelliert (kein Gefälle).
+- Fensterläden und Schlagläden sind nicht vorhanden.
+
+OFFEN / NICHT BELEGT
+- Detaillierte Maßtreue pro Bauteil und die Fotoähnlichkeit sind nicht geprüft.
+- Einbettung und Lesbarkeit der sign_doctor_plate-Textur sind im Prüfbericht nicht gesondert ausgewiesen.
+- Tile-Größen anderer Listenmaterialien: nicht relevant (Engine-Fotos ersetzen sie). UV0 in Metern ist laut Plan vorgesehen.
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 166
+Triangles: 25074
+Reimport Meshes: 166
+Bounds m: [13.06, 12.24, 8.12]
+Materials: aluminium_weathered, brass_tarnished, ceramic_glazed_white, concrete_cast, floor_tiles, galvanized_steel, glass, lamp_glass, new_plaster_blue_weathered, new_tank_plastic_black, painted_timber_warmgrey, pavers_concrete, placeholder, plaster_cream_warm, plaster_white, plastic_weathered, sign_doctor_plate, stainless_brushed, steel_painted_worn
+Nodes Doors: DoorLeaf_01_R_in, DoorLeaf_02_R_in, DoorLeaf_03_R_in, DoorLeaf_04_L_in, DoorLeaf_05_R_in, DoorLeaf_06_R_in, DoorLeaf_07_L_in, DoorLeaf_08_L_in, DoorLeaf_09_R_in, DoorLeaf_10_R_in, DoorLeaf_11_R_in, DoorLeaf_12_L_in, DoorLeaf_13_R_in, DoorLeaf_14a_L_in, DoorLeaf_14b_R_in
+Nodes Placeholders: Ph_balcony_wall_lamp_01, Ph_bathroom2_basin_01, Ph_bathroom2_bath_cabinet_01, Ph_bathroom2_ceiling_lamp_01, Ph_bathroom2_laundry_basket_01, Ph_bathroom2_mirror_01, Ph_bathroom2_shower_01, Ph_bathroom2_towel_rail_01, Ph_bathroom2_washing_machine_01, Ph_bathroom2_wc_01, Ph_bathroom_basin_01, Ph_bathroom_bath_cabinet_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_towel_rail_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_chair_01, Ph_bedroom2_curtains_01, Ph_bedroom2_desk_01, Ph_bedroom2_wardrobe_01, Ph_bedroom3_bed_single_01, Ph_bedroom3_ceiling_fan_01, Ph_bedroom3_chair_01, Ph_bedroom3_curtains_01, Ph_bedroom3_desk_01, Ph_bedroom3_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_ceiling_lamp_01, Ph_bedroom_curtains_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_clinic2_ceiling_fan_01, Ph_clinic2_ceiling_lamp_01, Ph_clinic2_ceiling_lamp_02, Ph_clinic2_exam_couch_01, Ph_clinic2_exam_couch_02, Ph_clinic2_med_cabinet_01, Ph_clinic2_med_cabinet_02, Ph_clinic2_office_chair_01, Ph_clinic2_office_desk_01, Ph_clinic2_screen_01, Ph_clinic_ceiling_fan_01, Ph_clinic_ceiling_lamp_01, Ph_clinic_exam_couch_01, Ph_clinic_filing_cabinet_01, Ph_clinic_med_cabinet_01, Ph_clinic_office_chair_01, Ph_clinic_office_desk_01, Ph_clinic_visitor_chair_01, Ph_clinic_visitor_chair_02, Ph_hall2_ceiling_lamp_01, Ph_hall2_ceiling_lamp_02, Ph_hall2_ceiling_lamp_03, Ph_hall2_ceiling_lamp_04, Ph_hall2_ceiling_lamp_05, Ph_hall2_coat_rack_01, Ph_hall2_shoe_cabinet_01, Ph_hall_ceiling_lamp_01, Ph_hall_ceiling_lamp_02, Ph_hall_ceiling_lamp_03, Ph_hall_notice_board_01, Ph_kitchen_ceiling_fan_01, Ph_kitchen_ceiling_lamp_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_chair_04, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_kitchen_wall_shelf_02, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_ceiling_lamp_01, Ph_living_coffee_table_01, Ph_living_curtains_01, Ph_living_curtains_02, Ph_living_display_cabinet_01, Ph_living_floor_lamp_01, Ph_living_rug_01, Ph_living_side_table_01, Ph_living_sideboard_01, Ph_living_sofa_01, Ph_living_tv_unit_01, Ph_store_storage_rack_01, Ph_waiting_ceiling_fan_01, Ph_waiting_ceiling_fan_02, Ph_waiting_ceiling_lamp_01, Ph_waiting_ceiling_lamp_02, Ph_waiting_ceiling_lamp_03, Ph_waiting_ceiling_lamp_04, Ph_waiting_filing_cabinet_01, Ph_waiting_notice_board_01, Ph_waiting_office_chair_01, Ph_waiting_public_counter_01, Ph_waiting_visitor_chair_01, Ph_waiting_visitor_chair_02, Ph_waiting_visitor_chair_03, Ph_waiting_visitor_chair_04, Ph_waiting_visitor_chair_05, Ph_waiting_visitor_chair_06, Ph_waiting_visitor_chair_07, Ph_waiting_visitor_chair_08, Ph_waiting_water_cooler_01
+API-Schätzkosten USD: 3.17 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_plaster_blue_weathered: inbox/fond_h09/new_plaster_blue_weathered.png (FEHLT)
+- new_tank_plastic_black: inbox/fond_h09/new_tank_plastic_black.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
