@@ -500,8 +500,28 @@
       ],
       "additional_rules": "",
       "source_file": "AUFTRAG_BILDER_GPT.json",
-      "status": "missing",
-      "priority": "high"
+      "status": "done",
+      "priority": "high",
+      "commit": {
+        "turbidtunes/bastlerkiste": "9baa76672edac2dc89e2291580e7ba9dbde6aa62"
+      },
+      "approved_size_px": [
+        1254,
+        1254
+      ],
+      "resolution_authorization": "User explicitly authorized native 1254 output in this session.",
+      "validation": {
+        "format": "PNG",
+        "size_px": [
+          1254,
+          1254
+        ],
+        "sha256": "3047aaf6ba1322489789b09e4f090940ab7f8ae8062171de3432ec6a937a6b7c",
+        "png_verified": true,
+        "remote_blob_verified": true,
+        "generation_attempts": 1,
+        "visual_3x3": "passed"
+      }
     },
     {
       "id": "rescue_foil",
