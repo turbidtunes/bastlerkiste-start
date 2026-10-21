@@ -311,6 +311,9 @@ def review_stage(stage: str, report: dict, planned: str):
     return parsed
 
 
+# Reuse pre-validated building primitives instead of re-generating boilerplate bpy.
+KIT_GUIDE = (REPO / "scripts" / "blender_lib" / "API.md").read_text(encoding="utf-8")
+print("BUILDING_KIT aktiv: bewährte Bauteile und Blueprint-API geladen", flush=True)
 print("1/5 PLAN – anschließend automatisch BUILD, kein GO nötig", flush=True)
 refs = ref_blocks()
 (work / "input_prompt.md").write_text(brief, encoding="utf-8")
@@ -350,10 +353,15 @@ for idx, stage in enumerate(STAGES, start=1):
         "Du bearbeitest eine vorhandene .blend-Vorstufe (außer SHELL); "
         "die Python-Funktionen früherer Skripte existieren NICHT mehr, die bpy-Objekte schon. "
         "Beginne NICHT mit Szenenlöschung, außer bei SHELL (dort leert der Controller die Szene). "
+        "Verwende für Standardelemente vorrangig 'import building_kit as kit' und die getesteten "
+        "kit-Methoden für Wände, Öffnungen, Dächer, Treppen, Türen und Platzhalter. "
+        "Individuelle Gebäudeformen weiterhin maßhaltig in bpy umsetzen. "
+        "Jede Stufe importiert building_kit erneut, die bereits gebauten Meshes bleiben in der Szene. "
         "Nutze zuverlässige bpy Mesh-Operatoren, nachvollziehbare Teilenamen, origin floor center für Ph_*. "
         "Die Materialnamen müssen aus der Systemliste stammen oder deklarierte new_* sein. "
         "Nach Blender Code wird NICHT manuell auf Go gewartet.\n"
         f"STUFE: {stage}\nAUFGABE: {purpose}\n"
+        f"GETESTETE WIEDERVERWENDBARE BAUBIBLIOTHEK (im Blender-Lauf als import building_kit verfügbar):\n{KIT_GUIDE}\n"
         f"VOLLSTÄNDIGER EINGABEPROMPT:\n{brief}\n"
         f"VERBINDLICHER PLAN:\n{plan}\n"
         f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False) if idx>1 else 'Keine'}\n"
@@ -373,6 +381,7 @@ for idx, stage in enumerate(STAGES, start=1):
             "Benenne neue Teile ordentlich und repariere vorhandene Meshes statt zusätzliche "
             "deckungslose Fassadenflächen darüberzulegen. Keine Bilderzeugung.\n"
             f"STUFE {stage}, KORREKTUR {correction}\nPROBLEME:\n{issues}\n"
+            f"WIEDERVERWENDBARE BLENDER-API:\n{KIT_GUIDE}\n"
             f"EINGABEPROMPT:\n{brief}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)}"
         )
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
