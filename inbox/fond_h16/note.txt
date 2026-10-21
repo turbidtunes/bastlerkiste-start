@@ -1,0 +1,100 @@
+NOTE.TXT – cobbler_house_grand_fond_h16
+
+1. IDENTITÄT
+- Gebäude: Schuhmacherhaus, Slot grand_fond_H16, Grand-Fond (Mauritius).
+- Nutzung: Werkstattladen mit Verkaufstresen zur Straße (-Y). Dahinter und darüber liegt die Wohnung mit Küche, Bad, 2 Schlafzimmern und Wohnzimmer.
+- furniture_style: creole_poor.
+- Hinweis: Hauptschlafzimmer enthält Ph_bedroom_gun_cabinet_01.
+
+2. STAND DER PRÜFUNG
+- Automatischer Prüfbericht (Blender 4.0.2): 97 Meshes, 49.870 Dreiecke (Budget laut Plan: max. 85.000), keine gemeldeten Verstöße.
+- GLB-Reimport: 97 Meshes. GLB-Größe: 3.589.516 Bytes.
+- Die visuelle Analyse ist eine KI-Einschätzung aus Blender-Workbench-Bildern. Sie ist keine Garantie für Fotorealismus oder Spielbarkeit und keine UE5-Prüfung.
+- Eine Übereinstimmung mit dem Referenzfoto oder den Plan-Maßen im Detail ist nicht belegt.
+
+3. MASSE (gemessen, Bounds laut Prüfbericht)
+- Bounds min: X -4,977 / Y -5,427 / Z -0,200 m. Bounds max: X 4,940 / Y 5,427 / Z 8,832 m.
+- Gesamtmaß: 9,917 × 10,855 × 9,032 m.
+- Plan: Wandfootprint 9,0 × 9,5 m, Gesamtmaß inkl. Dach 9,75 × 10,8 m, First z 8,80 m.
+- Das gemessene Maß ist etwas größer als der Plan. Die Ursache ist nicht dokumentiert.
+- Die Bounds liegen innerhalb des Baufensters X ±5,0 / Y ±5,5 m. Abstand zur Grenze, aus den Bounds gerechnet:
+  - Straße und Rückseite: 3,073 m.
+  - West: 1,523 m.
+  - Ost: 1,560 m.
+- Geschosse laut Plan: EG-Fertigboden z 0,15, lichte Höhe 2,80. OG-Boden z 3,20, lichte Höhe 2,70. Zwischendecke z 2,95..3,20. Gemessen wurden diese Werte nicht einzeln.
+- Dach laut Plan: Walm West, Giebel Ost, 30° Neigung.
+
+4. ABWEICHUNGEN ZUM REFERENZFOTO (laut Plan)
+- Balkon: Die Bilder sind widersprüchlich. Der Balkon liegt auf der Westseite (Y -4,75..1,25 m) unter dem Walm, Zugang nur über T07. Die Straßenfassade bleibt balkonfrei.
+- Ladenöffnung: Statt einer offenen Öffnung gibt es eine geschlossene Doppeltür (Oberhälften verglast).
+- Dachform: Das Bild zeigt eher ein Satteldach mit Walm vorn. Gebaut ist Walm West, Giebel Ost.
+- Treppe, Wandstärken, Türbreiten und Raumprogramm sind funktional ergänzt und nicht im Bild.
+- Ladenminimum: Fridge/chest_freezer entfällt (kein Lebensmittelladen), Ersatz ist shoe_rack.
+- Das Vordach springt 0,6 m über die Fassade vor.
+- Türanzahl: Der Plan nennt "14 Blätter". Der Prüfbericht listet 12 Türblatt-Nodes (11 Türen, davon 1 Doppeltür). Die Zahl 14 ist nicht belegt.
+
+5. RÄUME UND PLACEHOLDER
+Insgesamt 57 Placeholder laut Prüfbericht. Die Erschließung ist EG→OG über eine U-Treppe laut Plan (17 Steigungen à 0,1794 m, Laufbreite 1,20 m).
+
+EG
+- G01 Laden (shop): shop_counter, shop_shelf ×3, shoe_rack, ceiling_lamp.
+- G02 Werkstatt (workshop): workbench ×2, tool_wall, storage_rack ×2, parts_crates, ceiling_lamp.
+- G03 Flur/Treppenhaus (hall): coat_rack, shoe_cabinet, bench, ceiling_lamp.
+- G04 Küche mit Essplatz (kitchen): kitchen_run, cooker, fridge, kitchen_table, kitchen_chair ×3, wall_shelf, pantry, ceiling_fan.
+
+OG
+- F01 Wohnzimmer (living): sofa, armchair ×2, coffee_table, tv_unit, display_cabinet, ceiling_fan.
+- F02 Hauptschlafzimmer (bedroom): bed_double, bedside ×2, wardrobe, dresser, gun_cabinet, ceiling_fan.
+- F03 Flur/Treppenabsatz (hall2): console, ceiling_lamp.
+- F04 Bad (bathroom): wc, basin, shower, mirror, towel_rail, washing_machine, ceiling_lamp.
+- F05 Schlafzimmer 2 (bedroom2): bed_single ×2, bedside, wardrobe, desk, chair, ceiling_fan.
+- B01 Westbalkon: erreichbar nur über T07, kein Placeholder.
+- Dachboden: geschlossen und unzugänglich. Keine Flachdach- oder Turmnutzung.
+
+6. TÜREN (Breite = lichte Breite laut Plan, nicht einzeln nachgemessen)
+- DoorLeaf_01a_L_in + DoorLeaf_01b_R_in: außen → G01 (Laden), Doppeltür, 2 × 1,2 m = 2,4 m.
+- DoorLeaf_02_R_in: außen (West) → G03, 1,0 m.
+- DoorLeaf_03_L_in: G01 → G02, 0,9 m.
+- DoorLeaf_04_R_in: G03 → G02, 0,9 m.
+- DoorLeaf_05_L_in: G03 → G04, 0,9 m.
+- DoorLeaf_06_R_in: außen (Nord) → G04, 1,0 m.
+- DoorLeaf_07_L_in: Balkon B01 → F03, 1,0 m.
+- DoorLeaf_08_R_in: F03 → F01, 0,9 m.
+- DoorLeaf_09_L_in: F03 → F02, 0,9 m.
+- DoorLeaf_10_R_in: F03 → F04, 0,9 m.
+- DoorLeaf_11_L_in: F03 → F05, 0,9 m.
+- Alle Blätter sind geschlossen und eigene Nodes. Material außen shutter_paint, innen painted_timber_warmgrey (laut Plan).
+
+7. MATERIALIEN IM GLB (laut Prüfbericht, 20 Stück)
+concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, new_floorboards_pine, new_render_pink_weathered, new_weatherboard_pink, paint_clean, painted_timber_warmgrey, pavers_concrete, placeholder, plaster_cream_warm, render_spalled_old, shutter_paint, sign_atelier_cordonnier, steel_painted_worn, white_peeling_timber, wood_weathered.
+- ceramic_glazed_white (Badwandfliesen laut Plan) steht nicht in der Materialliste des Prüfberichts. Die Verwendung im GLB ist nicht belegt.
+- Schild: sign_atelier_cordonnier, laut Plan 1024 px mit 0–1-UV. Die Einbettung im GLB ist im Prüfbericht nicht gesondert bestätigt.
+
+8. NEW_*-MATERIALIEN
+- Die Materialslots sind im GLB vorhanden, es gibt aber keine PNG-Dateien (NEW_MATERIAL_FILES leer).
+- Fehlende Fototexturen, nur dokumentiert, nicht blockierend:
+  - new_render_pink_weathered: rosa, verwitterter Putz, Sockelband z 0..1,0 m. Reale Tile-Größe: unbekannt.
+  - new_weatherboard_pink: rosa horizontale Weatherboards, OG-Wände und Giebel. Reale Tile-Größe: unbekannt.
+  - new_floorboards_pine: Kiefern-Bodendielen, OG-Böden und Treppenstufen. Reale Tile-Größe: unbekannt.
+- Die Beschreibungen sind aus den Materialnamen und Planzuordnungen abgeleitet. Es gibt keine bestätigten Tile-Maße.
+
+9. LIEFERUNG
+- Enthalten: GLB cobbler_house_grand_fond_h16.glb und diese note.txt.
+- Keine new_*-PNGs enthalten (siehe Punkt 8).
+
+=== Maschinenvalidierte Daten (Blender) ===
+Meshes: 97
+Triangles: 49870
+Reimport Meshes: 97
+Bounds m: [9.917, 10.855, 9.032]
+Materials: concrete_cast, corrugated_rust, floor_tiles, galvanized_steel, glass, lamp_glass, new_floorboards_pine, new_render_pink_weathered, new_weatherboard_pink, paint_clean, painted_timber_warmgrey, pavers_concrete, placeholder, plaster_cream_warm, render_spalled_old, shutter_paint, sign_atelier_cordonnier, steel_painted_worn, white_peeling_timber, wood_weathered
+Nodes Doors: DoorLeaf_01a_L_in, DoorLeaf_01b_R_in, DoorLeaf_02_R_in, DoorLeaf_03_L_in, DoorLeaf_04_R_in, DoorLeaf_05_L_in, DoorLeaf_06_R_in, DoorLeaf_07_L_in, DoorLeaf_08_R_in, DoorLeaf_09_L_in, DoorLeaf_10_R_in, DoorLeaf_11_L_in
+Nodes Placeholders: Ph_bathroom_basin_01, Ph_bathroom_ceiling_lamp_01, Ph_bathroom_mirror_01, Ph_bathroom_shower_01, Ph_bathroom_towel_rail_01, Ph_bathroom_washing_machine_01, Ph_bathroom_wc_01, Ph_bedroom2_bed_single_01, Ph_bedroom2_bed_single_02, Ph_bedroom2_bedside_01, Ph_bedroom2_ceiling_fan_01, Ph_bedroom2_chair_01, Ph_bedroom2_desk_01, Ph_bedroom2_wardrobe_01, Ph_bedroom_bed_double_01, Ph_bedroom_bedside_01, Ph_bedroom_bedside_02, Ph_bedroom_ceiling_fan_01, Ph_bedroom_dresser_01, Ph_bedroom_gun_cabinet_01, Ph_bedroom_wardrobe_01, Ph_hall2_ceiling_lamp_01, Ph_hall2_console_01, Ph_hall_bench_01, Ph_hall_ceiling_lamp_01, Ph_hall_coat_rack_01, Ph_hall_shoe_cabinet_01, Ph_kitchen_ceiling_fan_01, Ph_kitchen_cooker_01, Ph_kitchen_fridge_01, Ph_kitchen_kitchen_chair_01, Ph_kitchen_kitchen_chair_02, Ph_kitchen_kitchen_chair_03, Ph_kitchen_kitchen_run_01, Ph_kitchen_kitchen_table_01, Ph_kitchen_pantry_01, Ph_kitchen_wall_shelf_01, Ph_living_armchair_01, Ph_living_armchair_02, Ph_living_ceiling_fan_01, Ph_living_coffee_table_01, Ph_living_display_cabinet_01, Ph_living_sofa_01, Ph_living_tv_unit_01, Ph_shop_ceiling_lamp_01, Ph_shop_shoe_rack_01, Ph_shop_shop_counter_01, Ph_shop_shop_shelf_01, Ph_shop_shop_shelf_02, Ph_shop_shop_shelf_03, Ph_workshop_ceiling_lamp_01, Ph_workshop_parts_crates_01, Ph_workshop_storage_rack_01, Ph_workshop_storage_rack_02, Ph_workshop_tool_wall_01, Ph_workshop_workbench_01, Ph_workshop_workbench_02
+API-Schätzkosten USD: 4.87 (nicht der Abrechnungsbeleg)
+
+=== Fehlende Fototexturen (GLB wurde trotzdem ausgeliefert) ===
+Die Materialslots sind im GLB vorhanden; passende PNG-Dateien sind nachzureichen:
+- new_floorboards_pine: inbox/fond_h16/new_floorboards_pine.png (FEHLT)
+- new_render_pink_weathered: inbox/fond_h16/new_render_pink_weathered.png (FEHLT)
+- new_weatherboard_pink: inbox/fond_h16/new_weatherboard_pink.png (FEHLT)
+Kein Bild-/Nahtlosigkeitscheck ausgefuehrt; fehlende Fotos sind kein Export-Blocker.
