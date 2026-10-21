@@ -556,7 +556,6 @@ note += (
     f"API-Schätzkosten USD: {check_budget():.2f} (nicht der Abrechnungsbeleg)\n"
 )
 note += missing_texture_note(missing, SLUG)
-)
 # Important: Codex has already committed new_*.png to this directory.
 # Never remove the whole folder or the previously generated photo textures!
 delivery.mkdir(parents=True, exist_ok=True)
