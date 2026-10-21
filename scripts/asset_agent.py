@@ -18,13 +18,10 @@ from pathlib import Path
 
 from anthropic import Anthropic
 from PIL import Image
-from prompt_contract import (compiler_task, contract_context, source_brief,
-                             validate_compiled_contract, sha256_text)
 
 REPO = Path(__file__).resolve().parents[1]
 SLUG = os.environ.get("BUILDING_NAME", "").strip()
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5").strip()
-BRIEF_PATH = os.environ.get("BRIEF_PATH", "briefs/grand_fond_parish_church.md").strip()
 REFERENCES = os.environ.get("REFERENCE_IMAGES", "").strip()
 DIRECT_PROMPT = os.environ.get("BUILDING_PROMPT", "")
 REVIEW_FIXES = int(os.environ.get("REVIEW_FIXES", "1"))
@@ -50,14 +47,22 @@ def repo_file(rel: str, allowed_root: str | None = None) -> Path:
     return path
 
 
-brief_file = repo_file(BRIEF_PATH, "briefs") if BRIEF_PATH else None
-if not DIRECT_PROMPT.strip() and (brief_file is None or brief_file.suffix.lower() != ".md"):
-    sys.exit("Ein .md-Briefing innerhalb briefs/ wird benötigt")
-try:
-    brief, brief_source = source_brief(brief_file, DIRECT_PROMPT)
-except (FileNotFoundError, ValueError) as error:
-    sys.exit(str(error))
-master = (REPO / "prompts" / "master_system.md").read_text(encoding="utf-8")
+# Im Actions-Formular wird der bereits manuell kombinierte Prompt eingegeben.
+# Kein Vorverarbeitungsaufruf, kein automatisches Anhängen des alten Masterprompts.
+brief = DIRECT_PROMPT.strip()
+if len(brief) < 25:
+    sys.exit("building_prompt fehlt oder ist zu kurz: vollstaendigen Bauauftrag im Actions-Eingabefeld einfuegen")
+master = (
+    "Du bist ein erfahrener Blender-4.x-bpy- und UE5-3D-Asset-Agent. "
+    "Der vollständige Bauauftrag ist vom Nutzer bereits manuell zusammengeführt; "
+    "bewahre seine konkreten Vorgaben und ergänze keinen zweiten Masterprompt. "
+    "Der Ablauf ist stets automatisch: zuerst gründlich planen, danach ohne Go "
+    "Schritt für Schritt Blender-Code erstellen, Renderbilder überprüfen, "
+    "Fehler gezielt korrigieren und GLB validieren. "
+    "In reinen Codephasen gib ausschließlich vollständigen ausführbaren Python-Code zurück. "
+    "Keine externen Assets herunterladen oder fotorealistische Texturen synthetisieren. "
+    "Behaupte keine nicht durchgeführten Blender- oder Bildprüfungen."
+)
 work = REPO / "_asset_work" / SLUG
 delivery = REPO / "inbox" / SLUG
 if work.exists():
@@ -283,7 +288,7 @@ def review_stage(stage: str, report: dict, planned: str):
         "Gib ausschließlich JSON zurück: {\"needs_fix\": true/false, \"issues\": [\"...\"], "
         "\"comparison_possible\": true/false}. Keine erfundenen Prüfungen.\n"
         f"STUFE: {stage}\nBERICHT:\n{json.dumps(report, ensure_ascii=False)}\n"
-        f"PLAN:\n{planned}\nBAUVERTRAG:\n{building_contract}"
+        f"PLAN:\n{planned}\nVOLLSTÄNDIGER EINGABEPROMPT:\n{brief}"
     )
     answer = ask(stage + "_vision_review", prompt, visuals)
     raw = re.sub(r"^```(?:json)?\s*\n|\n```$", "", answer.strip())
@@ -295,36 +300,9 @@ def review_stage(stage: str, report: dict, planned: str):
     return parsed
 
 
-print("0/6 PROMPT-COMPILER – Originalprompt automatisch verschmelzen", flush=True)
+print("1/5 PLAN – anschließend automatisch BUILD, kein GO nötig", flush=True)
 refs = ref_blocks()
-(work / "original_prompt.md").write_text(brief, encoding="utf-8")
-compiled = ask("compiler", compiler_task(
-    brief, [name for name, _, _ in images], SLUG), refs)
-for attempt in range(1, 4):
-    try:
-        validate_compiled_contract(compiled)
-        break
-    except ValueError as error:
-        print(f"PROMPT-COMPILER: {error}", flush=True)
-        if attempt == 3:
-            raise RuntimeError("Compiler konnte den Pflichtvertrag nicht erzeugen") from error
-        compiled = ask(
-            f"compiler_repair_{attempt}",
-            "Repariere die Struktur des folgenden Compiler-Vertrags. "
-            "Übernimm alle Anforderungen aus dem vollständigen ORIGINALPROMPT, "
-            "verwende exakt die verlangten Überschriften. Warte nicht auf Go. "
-            "Gib den gesamten korrigierten Vertrag aus.\n"
-            + str(error) + "\nVORHERIGER VERTRAG:\n" + compiled
-            + "\nORIGINALPROMPT:\n" + brief,
-            refs,
-        )
-building_contract = contract_context(brief, compiled, brief_source)
-(work / "compiled_contract.md").write_text(
-    "# Automatisch verschmolzener Gebäudeauftrag\n\n"
-    + f"Original: {brief_source}\nSHA256: {sha256_text(brief)}\n\n"
-    + building_contract, encoding="utf-8",
-)
-print("1/6 PLAN – Vertrag geprüft; BUILD folgt ohne Go", flush=True)
+(work / "input_prompt.md").write_text(brief, encoding="utf-8")
 plan_prompt = (
     "Erstelle JETZT den vollständigen maßhaltigen Architektur- und Materialplan anhand des "
     "konkreten Briefings und aller verfügbaren echten Referenzen. Das ist die erste interne "
@@ -333,7 +311,7 @@ plan_prompt = (
     "geplante Türen und die nötigen echten Fototexturen. "
     "Exaktes MAX_TRIS als einzelne Zeile 'MAX_TRIS: 150000' oder kleiner. "
     "Nenne alle bekannten Abweichungen.\n\n"
-    f"VERBINDLICHER BAUVERTRAG MIT ORIGINALPROMPT:\n{building_contract}\n"
+    f"VOLLSTÄNDIGER MANUELL ZUSAMMENGEFÜHRTER EINGABEPROMPT:\n{brief}\n"
     f"REFERENZFOTOS: {', '.join(n for n,_,_ in images) if images else 'KEINE – keine Bildtreue behaupten'}\n"
     f"VORHANDENE ECHTE TEXTUREN (alle vorhandenen): {', '.join(list(texture_index)) or 'KEINE'}"
 )
@@ -365,7 +343,7 @@ for idx, stage in enumerate(STAGES, start=1):
         "Die Materialnamen müssen aus der Systemliste stammen oder deklarierte new_* sein. "
         "Nach Blender Code wird NICHT manuell auf Go gewartet.\n"
         f"STUFE: {stage}\nAUFGABE: {purpose}\n"
-        f"BAUVERTRAG UND VOLLSTÄNDIGER ORIGINALPROMPT:\n{building_contract}\n"
+        f"VOLLSTÄNDIGER EINGABEPROMPT:\n{brief}\n"
         f"VERBINDLICHER PLAN:\n{plan}\n"
         f"VORSTUFEN-BERICHT: {json.dumps(stage_results.get(STAGES[idx-2], {}), ensure_ascii=False) if idx>1 else 'Keine'}\n"
         f"Verfügbare Fototextur-Namen: {', '.join(list(texture_index))}"
@@ -384,7 +362,7 @@ for idx, stage in enumerate(STAGES, start=1):
             "Benenne neue Teile ordentlich und repariere vorhandene Meshes statt zusätzliche "
             "deckungslose Fassadenflächen darüberzulegen. Keine Bilderzeugung.\n"
             f"STUFE {stage}, KORREKTUR {correction}\nPROBLEME:\n{issues}\n"
-            f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)}"
+            f"EINGABEPROMPT:\n{brief}\nPLAN:\n{plan}\nIST-BERICHT:\n{json.dumps(report, ensure_ascii=False)}"
         )
         previous, report = run_code(f"{stage}_fix{correction}", previous, correction_prompt)
         stage_results[stage] = report
@@ -416,7 +394,7 @@ note_prompt = (
     "Raumliste/Placeholder, Türen mit von/nach und Breiten aus dem Plan, exakte Materialliste, "
     "new_* Oberfläche mit real-world Tile-Maßen sofern BEKANNT; sonst unbekannt markieren. "
     "Die folgenden validierten Zahlen verwenden, nichts erfinden. Gib nur Text aus.\n"
-    f"BAUVERTRAG:\n{building_contract}\nPLAN:\n{plan}\n"
+    f"EINGABEPROMPT:\n{brief}\nPLAN:\n{plan}\n"
     f"PRÜFBERICHT:\n{json.dumps(result, ensure_ascii=False)}\n"
     f"REFERENZFOTOS vorhanden: {'JA' if images else 'NEIN'}\n"
     f"NEW_MATERIAL_FILES: {[str(p.relative_to(REPO)) for p in new_textures]}\n"
