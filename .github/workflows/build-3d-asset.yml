@@ -82,13 +82,38 @@ jobs:
           print(f"PROMPT_OK: {os.environ['PROMPT_PATH']} ({len(txt)} Zeichen)")
           PY
 
+      - name: Wiederaufnahme-Eingabe prüfen (keine API-Kosten)
+        id: resume_guard
+        env:
+          RESUME_ID_INPUT: ${{ inputs.resume_run_id }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          raw = os.environ.get("RESUME_ID_INPUT", "").strip()
+          if not raw:
+              values = "enabled=false\n"
+              print("Neuer Build: resume_run_id ist leer; kein Artefakt-Download")
+          elif not re.fullmatch(r"[1-9][0-9]{0,17}", raw):
+              raise SystemExit("Ungültige resume_run_id: nur positive numerische GitHub-Run-IDs erlaubt")
+          elif raw == os.environ.get("GITHUB_RUN_ID"):
+              raise SystemExit("resume_run_id darf nicht der aktuell laufende Job sein")
+          else:
+              values = f"enabled=true\nrun_id={int(raw)}\n"
+              print(f"Wiederaufnahme aktiviert für Run-ID {int(raw)}")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write(values)
+          PY
+
       - name: Frühere Blender-Zwischenstände laden (optional, vor API-Aufrufen)
-        if: ${{ inputs.resume_run_id != '' }}
+        if: ${{ steps.resume_guard.outputs.enabled == 'true' }}
         uses: actions/download-artifact@v4
         with:
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
-          run-id: ${{ inputs.resume_run_id }}
+          run-id: ${{ steps.resume_guard.outputs.run_id }}
           pattern: diagnose-${{ inputs.building_name }}-*
           merge-multiple: true
           path: _asset_work/${{ inputs.building_name }}
@@ -117,7 +142,7 @@ jobs:
           REFERENCE_IMAGES: ${{ inputs.reference_images }}
           CLAUDE_MODEL: ${{ inputs.model }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
-          RESUME_RUN_ID: ${{ inputs.resume_run_id }}
+          RESUME_RUN_ID: ${{ steps.resume_guard.outputs.run_id }}
         run: python -u scripts/asset_agent.py
 
       - name: Automatischen Plan im Actions-Protokoll zusammenfassen
