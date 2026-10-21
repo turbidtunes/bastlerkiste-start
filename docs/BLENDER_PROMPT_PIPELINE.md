@@ -75,3 +75,63 @@ Diagnose-Artefakten, nicht im fertigen `inbox/`-Ordner.
 
 Nur **neu gestartete** GitHub-Actions-Läufe auf `main` verwenden die
 aktuelle Pipeline. Ein alter Re-run kann weiterhin auf altem Code beruhen.
+
+## Wiederverwendbare Blender-Bauteile (neu)
+
+Die Pipeline besitzt jetzt unter `scripts/blender_lib/` eine getestete
+Gebäude-API `building_kit.py`, basierend auf wiederverwendbaren Modulen
+des Repositories `turbidtunes/bastlerkiste`.
+
+Die API stellt Funktionen für geschlossene Boxen/Platten, Wände mit echten
+Öffnungen, Trennwände, separate Türblätter mit Scharnier-Origin,
+Fensterrahmen/Glas, normgerechte Geradeaus-Treppen, Satteldachplatten und
+`Ph_*`-Möbelboxen bereit. Für ungewöhnliche Architektur verwendet Claude
+weiterhin individuelle Blender-Geometrie. Materialnamen, UV0 und Export
+liegen unter Kontrolle des aktuellen Workers. Ein vollständiger Funktions-
+Smoke-Test führt einen echten GLB-Export/Reimport vor jedem kostenpflichtigen
+Run durch.
+
+Die exakte Import- und Funktionsbeschreibung steht in
+`scripts/blender_lib/API.md`. Historische Generatoren aus bastlerkiste
+liegen unter `scripts/blender_lib/legacy/` bzw. als Studienvorlagen in
+`scripts/blender_lib/examples/`. Letztere **nicht** als komplette Gebäude
+direkt ausführen: ihre Material-/Exportkonventionen sind älter.
+
+## Eine unterbrochene Modellierung fortsetzen (neu)
+
+Neue Läufe sichern jetzt nach jeder fertig geprüften Blender-Stufe
+`stage_checkpoints.json`, die jeweilige `.blend`, erzeugten Stufencode,
+den vollständigen Plan, QA-Ansichten sowie einen SHA256-Fingerprint des
+Eingabeprompts und aller übergebenen Referenzbilder.
+
+Diese Dateien werden **auch bei einem Fehler** als GitHub-Actions-Artefakt
+mit der Bezeichnung `diagnose-<building_name>-<laufnummer>` hochgeladen.
+Sie sind derzeit 7 Tage verfügbar.
+
+Um bei einem späteren Fehler kostensparend fortzufahren:
+
+1. In GitHub Actions die **Run-ID** des fehlgeschlagenen Laufs aus seiner URL
+   kopieren, z. B. aus `.../actions/runs/123456789` den Wert `123456789`.
+2. Unter **Run workflow** auf `main` ein neues Mal starten. Derselbe
+   `building_name`, `prompt_path` und dieselben `reference_images`
+   sind erforderlich.
+3. Die alte Run-ID in das neue optionale Feld `resume_run_id` eintragen.
+4. GitHub lädt das frühere Diagnose-Artefakt automatisch, **bevor** Claude
+   aufgerufen wird. Der Agent prüft die Originaleingaben und überspringt
+   vorhandene gültige Planungs- und Blender-Checkpoints. Bei einer bereits
+   vollständigen `details`-Stufe beginnt er direkt beim GLB-Export.
+
+Ist das Artefakt verschwunden, fehlen die Checkpoints oder hat sich
+der Eingabeprompt/das Referenzbild verändert, bricht die Fortsetzung ab,
+**ohne erneut API-Tokens für den Bau zu verbrauchen**.
+
+**Grenze:** Die Läufe **vor** Einführung der Checkpoint-Funktion haben
+weder `stage_checkpoints.json` noch gespeicherte `.blend`-Artefakte.
+Für sie ist dieser neue Resume-Pfad leider nicht rückwirkend verwendbar.
+
+## Kostenloser Bibliothekstest
+
+Das separate GitHub-Workflow
+`Blender-Bauteilbibliothek kostenlos pruefen` prüft ohne
+`ANTHROPIC_API_KEY` und ohne Claude-API-Kosten die Blender-Bibliothek
+inklusive tatsächlichem GLB-Roundtrip. Ausführung über GitHub Actions.
