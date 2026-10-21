@@ -1,0 +1,31 @@
+name: Codex-Fototextur-Uebergabe kostenlos pruefen
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/texture_handoff.py'
+      - 'scripts/tests/test_texture_handoff.py'
+      - '.github/workflows/texture-handoff-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  handoff-smoke-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+      - name: Python und Pillow fuer Bilddatei-Tests bereitstellen
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y python3-pil
+          python3 -m py_compile scripts/texture_handoff.py scripts/tests/test_texture_handoff.py
+      - name: Codex-Bildablage direkt neben GLB und Validierung pruefen
+        run: |
+          set -euo pipefail
+          python3 scripts/tests/test_texture_handoff.py | tee /tmp/codex-texture-smoke.log
+          grep -F CODEX_TEXTURE_HANDOFF_SMOKE_OK /tmp/codex-texture-smoke.log
