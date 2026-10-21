@@ -12,6 +12,7 @@ from pathlib import Path
 RX = re.compile(r"\bnew_[a-z][a-z0-9_]*\b")
 BAD = {"new_what", "new_name", "new_material", "new_texture", "new_surface"}
 SLUG = re.compile(r"[a-z][a-z0-9_]{2,55}\Z")
+TEXTURE_SIZE = (1254, 1254)
 
 
 def requested(plan, roots):
@@ -25,7 +26,7 @@ def requested(plan, roots):
         result.append({
             "material": name, "filename": name + ".png",
             "description_from_plan": desc,
-            "pixel_size": [2048, 2048], "physical_tile_size_m": None,
+            "pixel_size": list(TEXTURE_SIZE), "physical_tile_size_m": None,
             "status": "awaiting_codex_image",
         })
     return result
@@ -51,7 +52,7 @@ def prepare(repo, name, plan_path, refs):
         "plan_file": "texture_requests/" + name + "/plan.md",
         "texture_directory": "inbox/" + name,
         "missing_textures": missing,
-        "requirements": "Photorealistic seamless photo-like image; no procedural or rendered look; exact 2048x2048 PNG; matte diffuse even lighting; perpendicular camera; 3x3 repeat check",
+        "requirements": "Photorealistic seamless photo-like image; no procedural or rendered look; exact native 1254x1254 PNG; no upscaling; matte diffuse even lighting; perpendicular camera; 3x3 repeat check",
     }
     (folder / "manifest.json").write_text(
         json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -72,7 +73,7 @@ synthetische Foto-Texturen vortaeuschen.
    senkrecht, realistische fotografische Oberflaeche, keine gemalten
    Kanten, Schatten, Glanz, Verfahrenstricks oder Pseudo-Fotos.
    Kein Mirroring, kein Ghosting, keine vignettierten Raender.
-5. Korrekte, wirklich nahtlose 2048x2048-PNG mit Dateinamen
+5. Korrekte, wirklich nahtlose native 1254x1254-PNG mit Dateinamen
    aus manifest.json unter inbox/""" + name + """/ direkt neben der
    spaeteren GLB und note.txt speichern. KEIN Upscaling.
 6. Wiederholung als 3x3-Kacheln auch VISUELL pruefen. Physische
@@ -117,8 +118,8 @@ def verify(repo, name):
             continue
         try:
             with Image.open(file) as im:
-                if im.format != "PNG" or im.size != (2048, 2048):
-                    failures.append("EXPECTED_2048_PNG " + str(file))
+                if im.format != "PNG" or im.size != TEXTURE_SIZE:
+                    failures.append("EXPECTED_1254_PNG " + str(file))
                 im.verify()
         except OSError:
             failures.append("CORRUPT " + str(file))

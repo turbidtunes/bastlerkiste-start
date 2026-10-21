@@ -14,7 +14,7 @@ synthetische Foto-Texturen vortaeuschen.
    senkrecht, realistische fotografische Oberflaeche, keine gemalten
    Kanten, Schatten, Glanz, Verfahrenstricks oder Pseudo-Fotos.
    Kein Mirroring, kein Ghosting, keine vignettierten Raender.
-5. Korrekte, wirklich nahtlose 2048x2048-PNG mit Dateinamen
+5. Korrekte, wirklich nahtlose 1254x1254-PNG mit Dateinamen
    aus manifest.json unter inbox/les_calanques_fischerhaus/ direkt neben der
    spaeteren GLB und note.txt speichern. KEIN Upscaling.
 6. Wiederholung als 3x3-Kacheln auch VISUELL pruefen. Physische

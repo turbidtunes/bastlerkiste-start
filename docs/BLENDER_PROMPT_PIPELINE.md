@@ -155,7 +155,7 @@ Die ausführliche Einmal-Anweisung steht dort einschließlich der
    wird 7 Tage als GitHub-Actions-Artefakt aufbewahrt.
 4. **Codex (ChatGPT Plus) erzeugt die Bilder**, soweit seine konkrete
    Codex-Sitzung Bildgenerierung unterstützt. Die Dateien müssen exakt
-   `2048 × 2048` Pixel groß sein, als PNG echte fotorealistische,
+   `1254 × 1254` Pixel groß sein, als PNG echte fotorealistische,
    nahtlose Materialkacheln ergeben und die visuelle 3×3-Kontrolle
    bestehen. Kein Upscaling, keine prozeduralen Pseudotexturen.
 5. Neue Texturen werden **NICHT** in einem globalen Ordner gespeichert,
@@ -168,7 +168,7 @@ Die ausführliche Einmal-Anweisung steht dort einschließlich der
    Blender-Agent ausdrücklich **nicht mehr gelöscht**.
 6. Codex kontrolliert mit
    `python3 scripts/texture_handoff.py verify --repo . --slug <building_name>`
-   PNG-Dateinamen, Dateiformat und 2048×2048-Auflösung. Das Prüfen der
+   PNG-Dateinamen, Dateiformat und 1254×1254-Auflösung. Das Prüfen der
    echten optischen Nahtlosigkeit bleibt eine zusätzliche visuelle Aufgabe.
 7. Danach neuer **`run_mode=build`**-Lauf mit derselben Referenz und
    **`resume_run_id` = ID des abgeschlossenen plan_textures-Laufs**.

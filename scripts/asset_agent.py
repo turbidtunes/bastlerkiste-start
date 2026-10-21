@@ -19,6 +19,7 @@ from pathlib import Path
 
 from anthropic import Anthropic
 from PIL import Image
+from texture_handoff import TEXTURE_SIZE
 
 REPO = Path(__file__).resolve().parents[1]
 SLUG = os.environ.get("BUILDING_NAME", "").strip()
@@ -81,7 +82,11 @@ master = (
     "nicht als Essay, Tutorial, Wiederholung des Prompts oder Python-Code. "
     "In reinen Codephasen gib ausschließlich vollständigen ausführbaren Python-Code zurück. "
     "Keine externen Assets herunterladen oder fotorealistische Texturen synthetisieren. "
-    "Behaupte keine nicht durchgeführten Blender- oder Bildprüfungen."
+    "Behaupte keine nicht durchgeführten Blender- oder Bildprüfungen. "
+    "Aktuelle, vom Nutzer freigegebene Texturvorgabe: new_*-Fototexturen haben exakt "
+    f"{TEXTURE_SIZE[0]} × {TEXTURE_SIZE[1]} native Pixel als PNG, ohne Upscaling. "
+    "Diese Auflösung ersetzt ältere 2048er-Vorgaben auch in gespeicherten "
+    "Originalprompts bei Wiederaufnahme; alle übrigen Qualitätsregeln bleiben gültig."
 )
 work = REPO / "_asset_work" / SLUG
 delivery = REPO / "inbox" / SLUG
@@ -533,8 +538,9 @@ new_textures = []
 for name in new_materials:
     file = texture_index[name]
     with Image.open(file) as image:
-        if image.width < 1024 or image.height < 1024:
-            raise RuntimeError(f"new_* Fototextur zu klein (<1024px): {file}")
+        if image.format != "PNG" or image.size != TEXTURE_SIZE:
+            raise RuntimeError(f"new_* Fototextur muss native {TEXTURE_SIZE} PNG sein: {file}")
+        image.verify()
     new_textures.append(file)
 
 note_prompt = (

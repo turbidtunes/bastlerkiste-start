@@ -31,6 +31,7 @@ with tempfile.TemporaryDirectory(prefix="codex_texture_test_") as d:
     assert manifest["texture_directory"] == "inbox/" + name, manifest
     assert [x["material"] for x in manifest["missing_textures"]] == [
         "new_finca_plaster"], manifest
+    assert manifest["missing_textures"][0]["pixel_size"] == [1254, 1254]
     assert (repo / "texture_requests" / name / "CODEX_TASK.md").is_file()
     guide = (repo / "texture_requests" / name / "CODEX_TASK.md").read_text()
     assert "inbox/" + name + "/" in guide
@@ -39,11 +40,19 @@ with tempfile.TemporaryDirectory(prefix="codex_texture_test_") as d:
     image_dir = repo / "inbox" / name
     image_dir.mkdir(parents=True)
     file = image_dir / "new_finca_plaster.png"
-    Image.new("RGB", (2048, 2048), (151, 132, 104)).save(file)
+    # Both the former resolution and smaller/non-square images must fail.
+    for size in [(2048, 2048), (1024, 1024), (1254, 1024)]:
+        Image.new("RGB", size, (151, 132, 104)).save(file)
+        assert verify(repo, name) == 1, f"Must reject {size}"
+    Image.new("RGB", (1254, 1254), (151, 132, 104)).save(file, format="JPEG")
+    assert verify(repo, name) == 1, "A PNG extension is not sufficient"
+    file.write_bytes(b"not an image")
+    assert verify(repo, name) == 1, "Must reject corrupt image"
+    Image.new("RGB", (1254, 1254), (151, 132, 104)).save(file)
     assert verify(repo, name) == 0
     assert not (repo / "textures" / "new_finca_plaster.png").exists()
     with Image.open(file) as img:
-        assert img.size == (2048, 2048)
+        assert img.size == (1254, 1254)
     # The presence of an image makes a NEW plan omit it from pending requests.
     manifest2 = prepare(repo, name, plan_path, [ref])
     assert manifest2["missing_textures"] == []

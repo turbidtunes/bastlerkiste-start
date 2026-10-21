@@ -12,34 +12,57 @@
       "filename": "new_limestone_dressed_ochre.png",
       "description_from_plan": "| Quader-Einfassungen, Eckquader, Gesimsband, Sohlbänke, Stürze, Balkonplatte, Konsolen, Schwelle | `new_limestone_dressed_ochre` |",
       "pixel_size": [
-        2048,
-        2048
+        1254,
+        1254
       ],
-      "physical_tile_size_m": null,
-      "status": "awaiting_codex_image"
+      "physical_tile_size_m": [
+        1.6,
+        1.6
+      ],
+      "status": "ready",
+      "description": "Dressed warm ochre-beige limestone face, fine pores and restrained tool wear; block joints are geometry.",
+      "source": "codex_image_generation",
+      "upscaled": false,
+      "visual_3x3_repeat_checked": true
     },
     {
       "material": "new_limestone_rubble_ochre",
       "filename": "new_limestone_rubble_ochre.png",
       "description_from_plan": "| EG-Außenwand, Fundament | `new_limestone_rubble_ochre` |",
       "pixel_size": [
-        2048,
-        2048
+        1254,
+        1254
       ],
-      "physical_tile_size_m": null,
-      "status": "awaiting_codex_image"
+      "physical_tile_size_m": [
+        2.0,
+        2.0
+      ],
+      "status": "ready",
+      "description": "Warm ochre-beige rough limestone face with fine grains and pores; masonry joints are geometry.",
+      "source": "codex_image_generation",
+      "upscaled": false,
+      "visual_3x3_repeat_checked": true
     },
     {
       "material": "new_teal_weathered_planks",
       "filename": "new_teal_weathered_planks.png",
       "description_from_plan": "| Bootstor- und Haustür-Blätter | `new_teal_weathered_planks` |",
       "pixel_size": [
-        2048,
-        2048
+        1254,
+        1254
       ],
-      "physical_tile_size_m": null,
-      "status": "awaiting_codex_image"
+      "physical_tile_size_m": [
+        1.2,
+        1.2
+      ],
+      "status": "ready",
+      "description": "Muted aged blue-green paint on fine-grained timber with small paint chips; plank edges are geometry.",
+      "source": "codex_image_generation",
+      "upscaled": false,
+      "visual_3x3_repeat_checked": true
     }
   ],
-  "requirements": "Photorealistic seamless photo-like image; no procedural or rendered look; exact 2048x2048 PNG; matte diffuse even lighting; perpendicular camera; 3x3 repeat check"
+  "requirements": "Photorealistic seamless photo-like image; no procedural or rendered look; exact native 1254x1254 PNG; no upscaling; matte diffuse even lighting; perpendicular camera; 3x3 repeat check",
+  "resolution_policy": "q1254: user-approved native 1254x1254 PNG for current and future Codex textures",
+  "plan_run_id": "39594481574"
 }

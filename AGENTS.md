@@ -56,7 +56,9 @@ OpenAI- noch sonstige Bilderzeugungs-API-Schlüssel stillschweigend einsetzen.
    die vollständige Materialliste und nicht das eigene Bauchgefühl.
 7. Für jeden missing_textures-Eintrag unter Verwendung der tatsächlich
    verfügbaren Codex-Bildgenerierung ein photorealistisches neues PNG
-   erzeugen. Genau 2048 × 2048 Pixel; fotografischer Materiallook,
+   erzeugen. Künftiger Standard: exakt native 1254 × 1254 Pixel (q1254),
+   vom Nutzer als ausreichend freigegeben; kein Hochskalieren auf 2048.
+   Fotografischer Materiallook,
    senkrechte Kamera, homogene diffuse matte Beleuchtung, physisch
    realistische Detailgröße, alle vier Kanten nahtlos, keine Spiegel-
    wiederholungen, kein Ghosting, keine künstlichen Farb-/Texturflächen,
@@ -90,6 +92,9 @@ OpenAI- noch sonstige Bilderzeugungs-API-Schlüssel stillschweigend einsetzen.
       -f resume_run_id=<GENAUE_PLAN_RUN_ID>
 
     Diese Wiederaufnahme spart die schon bezahlte Architekturplanung.
+    Bei älteren gespeicherten Prompts gilt ebenfalls die aktuelle native
+    q1254-Texturvorgabe; der Controller ergänzt sie, ohne Originalprompt,
+    Referenzfingerprints oder Plan für eine neue Planung zu verändern.
     Die neue Action muss aus dem GitHub-Artefakt den exakten Originalprompt,
     die Referenzbildfingerprints und den gespeicherten Plan übernehmen.
     Vor neuen Claude-Build-API-Aufrufen muss das Manifest erfolgreich
