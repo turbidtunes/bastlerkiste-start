@@ -8,10 +8,11 @@ on:
         required: true
         type: string
         default: "grand_fond_parish_church"
-      building_prompt:
-        description: "Vollstaendigen manuell zusammengefuehrten Bauprompt hier einfuegen"
+      prompt_path:
+        description: "Pfad zum fertig zusammengefuehrten .md-Prompt im Ordner prompts/"
         required: true
         type: string
+        default: "prompts/grand_fond_parish_church.md"
       reference_images:
         description: "Bildpfade aus references/ oder referenzbilder/, Komma-getrennt"
         required: false
@@ -74,7 +75,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUILDING_NAME: ${{ inputs.building_name }}
-          BUILDING_PROMPT: ${{ inputs.building_prompt }}
+          PROMPT_PATH: ${{ inputs.prompt_path }}
           REFERENCE_IMAGES: ${{ inputs.reference_images }}
           CLAUDE_MODEL: ${{ inputs.model }}
           REVIEW_FIXES: ${{ inputs.review_fixes }}
