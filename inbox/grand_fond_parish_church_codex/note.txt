@@ -1,0 +1,20 @@
+GRAND-FOND H04 / CODEX ALTERNATIVE – VORABVERSION, NICHT ENDABGENOMMEN
+
+Datei: grand_fond_parish_church_codex.glb
+Quelle: latest_generated_raw
+Dreiecke: 126972; Architektur-Meshes: 20
+Tueren: 12; Moebel-Platzhalter: 73
+Fuer Unreal Engine 5 / glTF. Keine Texturen eingebettet.
+
+WICHTIG: Der strenge Fertigstellungsprozess wurde nicht erfolgreich abgeschlossen.
+Die GLB konnte numerisch als glTF geladen werden, aber dies ist KEINE
+Zusicherung ueber wasserdichte Architektur, Kollisionen, begehbaren Turm,
+Tuerschwenks, UV-Qualitaet, Triangulation oder UE5 Import.
+Es wird keine vollstaendige Qualitaetspruefung behauptet.
+
+Gefundene bzw. ungepruefte Probleme:
+ - Strict full QA interrupted or not completed; refer to diagnostic logs
+
+Vollstaendige Fehlerdetails: qa_status.json und Action-Artefakt finish_logs/.
+Historische Originaldateien unveraendert in rescue/grand_fond_H04/.
+Fototexturen weiterhin separat im Rettungsordner; keine neuen erzeugt.
