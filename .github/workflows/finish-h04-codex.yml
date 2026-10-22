@@ -28,8 +28,20 @@ jobs:
       - name: Umgebung fuer Codex-Generator und Blender installieren - 0 Claude USD
         run: |
           set -euo pipefail
-          sudo apt-get update -qq
-          sudo apt-get install -y blender python3-venv python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          # Azure mirror stalled for 19+ minutes on the previous run.
+          # Replace that runner-specific mirror with the standard Ubuntu archive.
+          if test -f /etc/apt/apt-mirrors.txt; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#http://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+            echo "Ubuntu mirror URLs:"
+            cat /etc/apt/apt-mirrors.txt
+          fi
+          if test -f /etc/apt/sources.list.d/ubuntu.sources; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#http://archive.ubuntu.com/ubuntu#g' /etc/apt/sources.list.d/ubuntu.sources
+          fi
+          timeout 240s sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update -qq
+          timeout 600s sudo DEBIAN_FRONTEND=noninteractive apt-get \
+            -o Acquire::Retries=2 -o Acquire::http::Timeout=30 \
+            install -y --no-install-recommends blender python3-venv python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
           /usr/bin/python3 -m venv .finish_venv
           .finish_venv/bin/pip install --upgrade pip
           .finish_venv/bin/pip install --no-cache-dir 'numpy>=1.26,<2' 'manifold3d>=3,<4' 'trimesh>=4,<5' 'shapely>=2,<3' 'scipy>=1.11,<2' 'pygltflib>=1.16,<2'
