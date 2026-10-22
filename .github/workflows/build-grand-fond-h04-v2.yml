@@ -122,7 +122,8 @@ jobs:
 
       - name: Kostenlose Vorbereitung beendet
         if: ${{ inputs.preflight_only }}
-        run: echo "PRE-FLIGHT-ONLY: Blender und Python bereit. Kein Claude-Aufruf."
+        run: |
+          echo "PRE-FLIGHT-ONLY: Blender und Python bereit. Kein Claude-Aufruf."
 
       - name: Kirche frisch generieren, pruefen und GLB exportieren
         if: ${{ !inputs.preflight_only }}
