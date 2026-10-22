@@ -4,11 +4,11 @@
 
 ## Ausführung
 
-GitHub → `turbidtunes/bastlerkiste-start` → **Actions** → **Grand-Fond H04 - Kirche neu bauen (V2)** → **Run workflow** auf `main`.
+GitHub → `turbidtunes/bastlerkiste-start` → **Actions** → **Kirche H04 - Neubau (5 USD)** → **Run workflow** auf `main`.
 
 1. Zunächst optional `preflight_only=true` auswählen und kostenlos überprüfen, ob Python, Blender 4.x und die Building-Kit-Bibliothek starten. Dieser Test verwendet **keine Claude API**.
-2. Zum eigentlichen Bau `preflight_only=false` wählen. Standardmodell ist `claude-sonnet-5-5`; optional `claude-opus-5-5`.
-3. `max_estimated_usd=40` ist **nur eine geschätzte** Kostenbremse, keine garantierte Obergrenze der Anthropic-Abrechnung. Der Agent prüft vor jedem weiteren API-Aufruf seinen bisherigen geschätzten Verbrauch. Ein einzelner letzter Aufruf kann die Grenze überschreiten.
+2. Zum eigentlichen Bau `preflight_only=false` wählen. Es steht ausschließlich `claude-sonnet-5-5` zur Verfügung, um das Restbudget nicht durch ein versehentlich teureres Modell zu gefährden.
+3. `max_estimated_usd=5.00` ist die Voreinstellung; **hartes Limit der Agent-Konfiguration ist 5.30 USD**, mit 0.70 USD Reserve zu deinem verbleibenden Guthaben von 6 USD. Vor jedem generierenden API-Aufruf zählt der Agent kostenlos die Eingabetokens und reserviert den maximal möglichen Ausgabetokenverbrauch mit 10 % Sicherheitsaufschlag. Dieses Limit ist eine vorsichtige Kostenschätzung auf Basis der veröffentlichten Sonnet-Preise, keine Garantie der tatsächlichen API-Abrechnung. Anthropic-Guthaben muss auf der passenden API-Organisation liegen.
 4. `visual_review=true` prüft die wichtigsten Phasen gegen die Referenz; bei sichtbaren Problemen erfolgt eine gezielte Zusatzphase. Das erzeugt zusätzliche API-Aufrufe.
 5. `resume_run_id` beim ersten Lauf **leer lassen**. Für die Fortsetzung **dieses V2-Workflows** nach einem Fehler die GitHub-Actions-Run-ID des fehlgeschlagenen V2-Laufs eintragen. Die heruntergeladenen `.blend`-Checkpoints und der unveränderte Plan müssen vorhanden sein; nach 30 Tagen können die Artefakte ablaufen.
 
@@ -47,6 +47,8 @@ Bei Erfolg schreibt der Workflow **nur**:
 Bei Erfolg und bei Fehlschlag entstehen GitHub-Actions-Artefakte mit `plan.md`, `usage.json`, Python-Code, Blender-Checkpoints, Prüfreports und Renderansichten. Retention: 30 Tage.
 
 ## Grenzen
+
+Um den Workflow im GitHub-Mobile-Browser zu finden: zuerst im Repository **Actions** öffnen, auf **Kirche H04 - Neubau (5 USD)** tippen und dann **Run workflow** wählen. Bei fehlendem Button gegebenenfalls die Desktop-Ansicht des Browsers aktivieren. Die Datei wurde zunächst wegen eines YAML-Fehlers nicht korrekt geladen; dieser Fehler ist korrigiert und ein kostenloser Aktivierungslauf registriert den Namen. Direkter Link: https://github.com/turbidtunes/bastlerkiste-start/actions/workflows/build-grand-fond-h04-v2.yml .
 
 Der technische GLB-Reimport ist keine vollständige physikalische UE5-Begehbarkeitsprüfung. Auch eine automatisierte Sichtkontrolle kann einen Referenzfehler übersehen. Ein erfolgreicher Workflow garantiert deshalb nicht, dass jede Fensteröffnung, jeder Türschwenk und jede Turmstufe den Anforderungen entspricht. Die Pipeline reduziert die häufigsten Ursachen für Komplettabbrüche, kann die Erfolgswahrscheinlichkeit aber nicht quantifizieren.
 
