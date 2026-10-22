@@ -1,0 +1,509 @@
+{
+  "schema_version": "3.0",
+  "created_date": "2026-10-22",
+  "title": "Folgeauftrag Fototexturen – NUR inbox/ in bastlerkiste-start – native 1254 px",
+  "repository": "turbidtunes/bastlerkiste-start",
+  "scope": "inbox only",
+  "source_git_tree_sha": "84b4d9367b47e8e588ab376b558b71975a5dbd1f",
+  "summary": {
+    "building_folders_with_glb": 39,
+    "newly_incomplete_buildings": 12,
+    "missing_png_files": 22,
+    "previous_33_files_now_present": true
+  },
+  "requirements": {
+    "priority": "THIS FILE OVERRIDES earlier 2048×2048 instructions for this batch, including AGENTS.md and earlier Codex briefs",
+    "native_resolution_px": [
+      1254,
+      1254
+    ],
+    "no_upscaling": true,
+    "photoreal_seamless_photo_not_procedural": true,
+    "one_image_generation_at_a_time": true,
+    "check_3x3_repetition": true,
+    "commit_after_each_validated_image": true,
+    "never_overwrite_existing_png": true,
+    "save_at_exact_destination": true,
+    "no_paid_image_api_without_explicit_permission": true,
+    "only_source_and_destinations_in_inbox": true,
+    "do_not_modify_building_glbs_or_notes": true,
+    "no_new_blender_build": true
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "job_id": "calanques_h09__new_door_oak_aged",
+      "building_name": "calanques_h09",
+      "source_note": "inbox/calanques_h09/note.txt",
+      "material": "new_door_oak_aged",
+      "filename": "new_door_oak_aged.png",
+      "destination": "inbox/calanques_h09/new_door_oak_aged.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged dark-brown Mallorcan oak door wood, fine longitudinal oak grain, subtle silvery-grey sun-weathered wood fibres, cracked varnish and small scuffs; no door panels, plank seams, handles or frames.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged dark-brown Mallorcan oak door wood, fine longitudinal oak grain, subtle silvery-grey sun-weathered wood fibres, cracked varnish and small scuffs; no door panels, plank seams, handles or frames. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_door_oak_aged.png. Output relative to the repository: inbox/calanques_h09/new_door_oak_aged.png."
+    },
+    {
+      "order": 2,
+      "job_id": "filaos_h01__new_railing_steel_blue",
+      "building_name": "filaos_h01",
+      "source_note": "inbox/filaos_h01/note.txt",
+      "material": "new_railing_steel_blue",
+      "filename": "new_railing_steel_blue.png",
+      "destination": "inbox/filaos_h01/new_railing_steel_blue.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old medium blue enamel-painted steel with fine orange-peel paint grain, local chalking and tiny scattered naturally chipped paint and rust flecks; no railing silhouette or bars.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old medium blue enamel-painted steel with fine orange-peel paint grain, local chalking and tiny scattered naturally chipped paint and rust flecks; no railing silhouette or bars. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_railing_steel_blue.png. Output relative to the repository: inbox/filaos_h01/new_railing_steel_blue.png."
+    },
+    {
+      "order": 3,
+      "job_id": "fond_h06__new_castiron_green_worn",
+      "building_name": "fond_h06",
+      "source_note": "inbox/fond_h06/note.txt",
+      "material": "new_castiron_green_worn",
+      "filename": "new_castiron_green_worn.png",
+      "destination": "inbox/fond_h06/new_castiron_green_worn.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged dark-green painted cast iron, natural fine casting pores, small irregular paint flakes exposing dark metal and restrained rust at exposed spots; no cast-iron column or ornament in frame.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged dark-green painted cast iron, natural fine casting pores, small irregular paint flakes exposing dark metal and restrained rust at exposed spots; no cast-iron column or ornament in frame. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_castiron_green_worn.png. Output relative to the repository: inbox/fond_h06/new_castiron_green_worn.png."
+    },
+    {
+      "order": 4,
+      "job_id": "fond_h16__new_floorboards_pine",
+      "building_name": "fond_h16",
+      "source_note": "inbox/fond_h16/note.txt",
+      "material": "new_floorboards_pine",
+      "filename": "new_floorboards_pine.png",
+      "destination": "inbox/fond_h16/new_floorboards_pine.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Warm sun-aged pine timber flooring surface, detailed longitudinal pale-gold and light-brown natural pine growth grain, fine soft foot-wear and mild dulling; plank joints and grooves are building geometry, do not paint them.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Warm sun-aged pine timber flooring surface, detailed longitudinal pale-gold and light-brown natural pine growth grain, fine soft foot-wear and mild dulling; plank joints and grooves are building geometry, do not paint them. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_floorboards_pine.png. Output relative to the repository: inbox/fond_h16/new_floorboards_pine.png."
+    },
+    {
+      "order": 5,
+      "job_id": "fond_h16__new_render_pink_weathered",
+      "building_name": "fond_h16",
+      "source_note": "inbox/fond_h16/note.txt",
+      "material": "new_render_pink_weathered",
+      "filename": "new_render_pink_weathered.png",
+      "destination": "inbox/fond_h16/new_render_pink_weathered.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Old dusty-pink painted cement facade render, fine and coarse sand grains, tropical faded chalking and occasional tiny chips and dirt mottling, no relief or plinth borders.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old dusty-pink painted cement facade render, fine and coarse sand grains, tropical faded chalking and occasional tiny chips and dirt mottling, no relief or plinth borders. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_render_pink_weathered.png. Output relative to the repository: inbox/fond_h16/new_render_pink_weathered.png."
+    },
+    {
+      "order": 6,
+      "job_id": "fond_h16__new_weatherboard_pink",
+      "building_name": "fond_h16",
+      "source_note": "inbox/fond_h16/note.txt",
+      "material": "new_weatherboard_pink",
+      "filename": "new_weatherboard_pink.png",
+      "destination": "inbox/fond_h16/new_weatherboard_pink.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Weathered faded pink opaque paint on timber cladding with readable fine real wood grain, minor sun-cracks and irregular paint peeling; no overlapping weatherboard rows or board seams.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered faded pink opaque paint on timber cladding with readable fine real wood grain, minor sun-cracks and irregular paint peeling; no overlapping weatherboard rows or board seams. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_weatherboard_pink.png. Output relative to the repository: inbox/fond_h16/new_weatherboard_pink.png."
+    },
+    {
+      "order": 7,
+      "job_id": "pointe_h01__new_timber_black_paint",
+      "building_name": "pointe_h01",
+      "source_note": "inbox/pointe_h01/note.txt",
+      "material": "new_timber_black_paint",
+      "filename": "new_timber_black_paint.png",
+      "destination": "inbox/pointe_h01/new_timber_black_paint.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered black-painted outdoor timber, fine longitudinal wood grain beneath matte chalked charcoal-black coating, subtle micro-cracks and irregular abrasion; no complete door frame or boards.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered black-painted outdoor timber, fine longitudinal wood grain beneath matte chalked charcoal-black coating, subtle micro-cracks and irregular abrasion; no complete door frame or boards. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_black_paint.png. Output relative to the repository: inbox/pointe_h01/new_timber_black_paint.png."
+    },
+    {
+      "order": 8,
+      "job_id": "rhumerie_h01__new_plaster_ochre_yellow",
+      "building_name": "rhumerie_h01",
+      "source_note": "inbox/rhumerie_h01/note.txt",
+      "material": "new_plaster_ochre_yellow",
+      "filename": "new_plaster_ochre_yellow.png",
+      "destination": "inbox/rhumerie_h01/new_plaster_ochre_yellow.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Slightly sun-faded ochre-yellow exterior lime-cement plaster with fine uneven mineral aggregates and restrained tropical stains and chalking; no masonry joints, trims or painted shadows.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Slightly sun-faded ochre-yellow exterior lime-cement plaster with fine uneven mineral aggregates and restrained tropical stains and chalking; no masonry joints, trims or painted shadows. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_ochre_yellow.png. Output relative to the repository: inbox/rhumerie_h01/new_plaster_ochre_yellow.png."
+    },
+    {
+      "order": 9,
+      "job_id": "rhumerie_h01__new_plaster_oxblood_brown",
+      "building_name": "rhumerie_h01",
+      "source_note": "inbox/rhumerie_h01/note.txt",
+      "material": "new_plaster_oxblood_brown",
+      "filename": "new_plaster_oxblood_brown.png",
+      "destination": "inbox/rhumerie_h01/new_plaster_oxblood_brown.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Coarse oxblood-brown aged painted exterior cement plinth plaster, dark reddish-brown matte pigments, sand pores, mild wear, subtle natural color variation; no dado outline.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Coarse oxblood-brown aged painted exterior cement plinth plaster, dark reddish-brown matte pigments, sand pores, mild wear, subtle natural color variation; no dado outline. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_oxblood_brown.png. Output relative to the repository: inbox/rhumerie_h01/new_plaster_oxblood_brown.png."
+    },
+    {
+      "order": 10,
+      "job_id": "rhumerie_h01__new_timber_dark_stained",
+      "building_name": "rhumerie_h01",
+      "source_note": "inbox/rhumerie_h01/note.txt",
+      "material": "new_timber_dark_stained",
+      "filename": "new_timber_dark_stained.png",
+      "destination": "inbox/rhumerie_h01/new_timber_dark_stained.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Deep dark-brown stained weathered timber with convincing long directional natural wood grain and slight worn varnish patina, no joinery hardware or panel lines.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Deep dark-brown stained weathered timber with convincing long directional natural wood grain and slight worn varnish patina, no joinery hardware or panel lines. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_dark_stained.png. Output relative to the repository: inbox/rhumerie_h01/new_timber_dark_stained.png."
+    },
+    {
+      "order": 11,
+      "job_id": "riviere_noire_h03__new_door_blue_peeling",
+      "building_name": "riviere_noire_h03",
+      "source_note": "inbox/riviere_noire_h03/note.txt",
+      "material": "new_door_blue_peeling",
+      "filename": "new_door_blue_peeling.png",
+      "destination": "inbox/riviere_noire_h03/new_door_blue_peeling.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Flaking aged blue paint over grey-weathered wooden door material, organic irregular small paint chips, readable fine grey wood grain, matte salty-air weathering; no door geometry or hardware.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Flaking aged blue paint over grey-weathered wooden door material, organic irregular small paint chips, readable fine grey wood grain, matte salty-air weathering; no door geometry or hardware. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_door_blue_peeling.png. Output relative to the repository: inbox/riviere_noire_h03/new_door_blue_peeling.png."
+    },
+    {
+      "order": 12,
+      "job_id": "riviere_noire_h03__new_tarp_green",
+      "building_name": "riviere_noire_h03",
+      "source_note": "inbox/riviere_noire_h03/note.txt",
+      "material": "new_tarp_green",
+      "filename": "new_tarp_green.png",
+      "destination": "inbox/riviere_noire_h03/new_tarp_green.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered greyish-green heavy polyethylene woven tarpaulin textile material, fine subtle woven fibre grid, matte slightly sun-bleached plastic strands, no folded object, stitching or attachment eyelets.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered greyish-green heavy polyethylene woven tarpaulin textile material, fine subtle woven fibre grid, matte slightly sun-bleached plastic strands, no folded object, stitching or attachment eyelets. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_tarp_green.png. Output relative to the repository: inbox/riviere_noire_h03/new_tarp_green.png."
+    },
+    {
+      "order": 13,
+      "job_id": "riviere_noire_h04__new_roof_corrugated_red",
+      "building_name": "riviere_noire_h04",
+      "source_note": "inbox/riviere_noire_h04/note.txt",
+      "material": "new_roof_corrugated_red",
+      "filename": "new_roof_corrugated_red.png",
+      "destination": "inbox/riviere_noire_h04/new_roof_corrugated_red.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Sun-faded muted red-coated galvanized steel roofing surface, very small chipped paint spots and sparse natural rust streaks; roof corrugation itself is geometry, do not paint 3D corrugation ribs or directional specular highlights.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Sun-faded muted red-coated galvanized steel roofing surface, very small chipped paint spots and sparse natural rust streaks; roof corrugation itself is geometry, do not paint 3D corrugation ribs or directional specular highlights. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_roof_corrugated_red.png. Output relative to the repository: inbox/riviere_noire_h04/new_roof_corrugated_red.png."
+    },
+    {
+      "order": 14,
+      "job_id": "riviere_noire_h05__new_buoy_paint_peeled",
+      "building_name": "riviere_noire_h05",
+      "source_note": "inbox/riviere_noire_h05/note.txt",
+      "material": "new_buoy_paint_peeled",
+      "filename": "new_buoy_paint_peeled.png",
+      "destination": "inbox/riviere_noire_h05/new_buoy_paint_peeled.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered chipped exterior paint on old fishing floats, subdued neighboring patches of red, faded blue and creamy white with light abrasion exposing the underlying material; no full buoy, text, rope or circular silhouette.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered chipped exterior paint on old fishing floats, subdued neighboring patches of red, faded blue and creamy white with light abrasion exposing the underlying material; no full buoy, text, rope or circular silhouette. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_buoy_paint_peeled.png. Output relative to the repository: inbox/riviere_noire_h05/new_buoy_paint_peeled.png."
+    },
+    {
+      "order": 15,
+      "job_id": "riviere_noire_h05__new_plaster_blue_peeled",
+      "building_name": "riviere_noire_h05",
+      "source_note": "inbox/riviere_noire_h05/note.txt",
+      "material": "new_plaster_blue_peeled",
+      "filename": "new_plaster_blue_peeled.png",
+      "destination": "inbox/riviere_noire_h05/new_plaster_blue_peeled.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged blue-painted exterior cement plaster with irregular small yellowish-white exposed mineral patches from peeled paint, realistic fine sand texture and salt weathering, no masonry features.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged blue-painted exterior cement plaster with irregular small yellowish-white exposed mineral patches from peeled paint, realistic fine sand texture and salt weathering, no masonry features. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_blue_peeled.png. Output relative to the repository: inbox/riviere_noire_h05/new_plaster_blue_peeled.png."
+    },
+    {
+      "order": 16,
+      "job_id": "riviere_noire_h05__new_rattan_woven",
+      "building_name": "riviere_noire_h05",
+      "source_note": "inbox/riviere_noire_h05/note.txt",
+      "material": "new_rattan_woven",
+      "filename": "new_rattan_woven.png",
+      "destination": "inbox/riviere_noire_h05/new_rattan_woven.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Authentic tightly handwoven tan and brown rattan cane material close-up, fine organic strand fibres, natural slight weave irregularity, subtle warm hue variation, no basket shape, borders or trims.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Authentic tightly handwoven tan and brown rattan cane material close-up, fine organic strand fibres, natural slight weave irregularity, subtle warm hue variation, no basket shape, borders or trims. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_rattan_woven.png. Output relative to the repository: inbox/riviere_noire_h05/new_rattan_woven.png."
+    },
+    {
+      "order": 17,
+      "job_id": "riviere_noire_h05__new_rope_hemp",
+      "building_name": "riviere_noire_h05",
+      "source_note": "inbox/riviere_noire_h05/note.txt",
+      "material": "new_rope_hemp",
+      "filename": "new_rope_hemp.png",
+      "destination": "inbox/riviere_noire_h05/new_rope_hemp.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Close-up of coarse natural straw-brown manila/hemp rope fibre covering the frame, natural fibrous threads, rough braided texture and realistic strand irregularities; no coils, loops, knots or loose rope objects.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Close-up of coarse natural straw-brown manila/hemp rope fibre covering the frame, natural fibrous threads, rough braided texture and realistic strand irregularities; no coils, loops, knots or loose rope objects. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_rope_hemp.png. Output relative to the repository: inbox/riviere_noire_h05/new_rope_hemp.png."
+    },
+    {
+      "order": 18,
+      "job_id": "riviere_noire_h06__new_paint_red_oxide_peeling",
+      "building_name": "riviere_noire_h06",
+      "source_note": "inbox/riviere_noire_h06/note.txt",
+      "material": "new_paint_red_oxide_peeling",
+      "filename": "new_paint_red_oxide_peeling.png",
+      "destination": "inbox/riviere_noire_h06/new_paint_red_oxide_peeling.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old oxide-red reddish-brown oil paint, scattered irregular small paint chips, aged matte finish and slight underlying dark substrate showing through, fine material surface only.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old oxide-red reddish-brown oil paint, scattered irregular small paint chips, aged matte finish and slight underlying dark substrate showing through, fine material surface only. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_paint_red_oxide_peeling.png. Output relative to the repository: inbox/riviere_noire_h06/new_paint_red_oxide_peeling.png."
+    },
+    {
+      "order": 19,
+      "job_id": "riviere_noire_h06__new_plaster_sage_green_weathered",
+      "building_name": "riviere_noire_h06",
+      "source_note": "inbox/riviere_noire_h06/note.txt",
+      "material": "new_plaster_sage_green_weathered",
+      "filename": "new_plaster_sage_green_weathered.png",
+      "destination": "inbox/riviere_noire_h06/new_plaster_sage_green_weathered.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old sage-green painted mineral lime plaster, gently mottled weathered chalk finish, rough sand pores, muted tropical dirt and gentle fading, no structural edges.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old sage-green painted mineral lime plaster, gently mottled weathered chalk finish, rough sand pores, muted tropical dirt and gentle fading, no structural edges. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_sage_green_weathered.png. Output relative to the repository: inbox/riviere_noire_h06/new_plaster_sage_green_weathered.png."
+    },
+    {
+      "order": 20,
+      "job_id": "souffleur_h03__new_plaster_pink_weathered",
+      "building_name": "souffleur_h03",
+      "source_note": "inbox/souffleur_h03/note.txt",
+      "material": "new_plaster_pink_weathered",
+      "filename": "new_plaster_pink_weathered.png",
+      "destination": "inbox/souffleur_h03/new_plaster_pink_weathered.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Dusty salmon-pink exterior mineral plaster, irregular tiny weathered chips, chalky sand grains and restrained sun fading, photorealistic surface without geometry or architecture.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Dusty salmon-pink exterior mineral plaster, irregular tiny weathered chips, chalky sand grains and restrained sun fading, photorealistic surface without geometry or architecture. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_pink_weathered.png. Output relative to the repository: inbox/souffleur_h03/new_plaster_pink_weathered.png."
+    },
+    {
+      "order": 21,
+      "job_id": "souffleur_h06__new_plaster_ochre_peeling",
+      "building_name": "souffleur_h06",
+      "source_note": "inbox/souffleur_h06/note.txt",
+      "material": "new_plaster_ochre_peeling",
+      "filename": "new_plaster_ochre_peeling.png",
+      "destination": "inbox/souffleur_h06/new_plaster_ochre_peeling.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old ochre-yellow painted lime plaster with worn small irregular white paint flakes and underlying textured plaster, restrained chalking, sandy natural mineral detail, no trims.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old ochre-yellow painted lime plaster with worn small irregular white paint flakes and underlying textured plaster, restrained chalking, sandy natural mineral detail, no trims. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_ochre_peeling.png. Output relative to the repository: inbox/souffleur_h06/new_plaster_ochre_peeling.png."
+    },
+    {
+      "order": 22,
+      "job_id": "souffleur_h06__new_timber_teal_peeling",
+      "building_name": "souffleur_h06",
+      "source_note": "inbox/souffleur_h06/note.txt",
+      "material": "new_timber_teal_peeling",
+      "filename": "new_timber_teal_peeling.png",
+      "destination": "inbox/souffleur_h06/new_timber_teal_peeling.png",
+      "status_at_audit": "missing",
+      "kind": "photoreal_seamless_tile",
+      "required_native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged turquoise-teal painted outdoor timber, fine visible wood fibre underneath worn paint, irregular peeling and subtle discolored wood, no full wooden doors, panels, borders or plank seams.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged turquoise-teal painted outdoor timber, fine visible wood fibre underneath worn paint, irregular peeling and subtle discolored wood, no full wooden doors, panels, borders or plank seams. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_teal_peeling.png. Output relative to the repository: inbox/souffleur_h06/new_timber_teal_peeling.png."
+    }
+  ]
+}
