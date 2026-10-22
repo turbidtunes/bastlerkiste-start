@@ -1,0 +1,1718 @@
+{
+  "schema_version": "4.0",
+  "created_date": "2026-10-22",
+  "title": "Full new-material photo inventory from all 48 main-branch building GLBs + both Grand-Fond H04 church variants",
+  "repository": "turbidtunes/bastlerkiste-start",
+  "inventory_source": {
+    "main_tree_sha": "f2fa2600668fa6637bf8a3fb46bd27310e43d79f",
+    "main_branch": "main",
+    "alternative_branch": "finish/fond-h04-codex",
+    "notes": "Names of missing new_ materials derived from the building's own note.txt/reported GLB material list; exact destination existence checked from Git tree. No independent bulk binary material extraction."
+  },
+  "summary": {
+    "main_building_glb_count": 48,
+    "main_buildings_missing_photo_count": 21,
+    "main_missing_native_png_count": 46,
+    "main_old_v3_corrected_jobs": 22,
+    "main_earlier_omitted_missing_jobs": 24,
+    "codex_church_existing_source_png_reuse_jobs": 5,
+    "total_pending_operations": 51,
+    "church_variants": [
+      {
+        "name": "main-fond-h04",
+        "branch": "main",
+        "glb": "inbox/fond_h04/fond_h04.glb",
+        "size_bytes": 6896988,
+        "missing_materials": [
+          "new_roof_corrugated_red",
+          "new_stained_glass"
+        ]
+      },
+      {
+        "name": "codex-church",
+        "branch": "finish/fond-h04-codex",
+        "glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+        "size_bytes": 21872712,
+        "available_existing_png_in_recovery": 5
+      }
+    ],
+    "size_discrepancy_warning": "The user mentioned a 29 MB church GLB on another branch, but the verified Codex alternative at the referenced branch currently measures 21,872,712 bytes. Use exact branch/path; do not guess that a different 29 MB object was checked."
+  },
+  "scope": {
+    "material_prefix": "new_",
+    "all_existing_building_folders": [
+      {
+        "building_name": "anse_pecheur_H01",
+        "glb_path": "inbox/anse_pecheur_H01/anse_pecheur_H01.glb",
+        "size_bytes": 1721084
+      },
+      {
+        "building_name": "bel_air_H01",
+        "glb_path": "inbox/bel_air_H01/bel_air_H01.glb",
+        "size_bytes": 4041680
+      },
+      {
+        "building_name": "calanques_h07",
+        "glb_path": "inbox/calanques_h07/calanques_h07.glb",
+        "size_bytes": 3462012
+      },
+      {
+        "building_name": "cite_carriere_H01",
+        "glb_path": "inbox/cite_carriere_H01/cite_carriere_H01.glb",
+        "size_bytes": 2434908
+      },
+      {
+        "building_name": "cite_moulin_H04",
+        "glb_path": "inbox/cite_moulin_H04/cite_moulin_H04.glb",
+        "size_bytes": 4986612
+      },
+      {
+        "building_name": "cite_moulin_H05",
+        "glb_path": "inbox/cite_moulin_H05/cite_moulin_H05.glb",
+        "size_bytes": 1556152
+      },
+      {
+        "building_name": "cite_moulin_H06",
+        "glb_path": "inbox/cite_moulin_H06/cite_moulin_H06.glb",
+        "size_bytes": 2642280
+      },
+      {
+        "building_name": "cite_rhumerie_H01",
+        "glb_path": "inbox/cite_rhumerie_H01/cite_rhumerie_H01.glb",
+        "size_bytes": 4404180
+      },
+      {
+        "building_name": "filaos_H01",
+        "glb_path": "inbox/filaos_H01/filaos_H01.glb",
+        "size_bytes": 3383828
+      },
+      {
+        "building_name": "fond_h04",
+        "glb_path": "inbox/fond_h04/fond_h04.glb",
+        "size_bytes": 6896988
+      },
+      {
+        "building_name": "fond_h08",
+        "glb_path": "inbox/fond_h08/fond_h08.glb",
+        "size_bytes": 5013688
+      },
+      {
+        "building_name": "grand_fond_H06",
+        "glb_path": "inbox/grand_fond_H06/grand_fond_H06.glb",
+        "size_bytes": 2707040
+      },
+      {
+        "building_name": "grand_fond_H07",
+        "glb_path": "inbox/grand_fond_H07/grand_fond_H07.glb",
+        "size_bytes": 3695104
+      },
+      {
+        "building_name": "grand_fond_H09",
+        "glb_path": "inbox/grand_fond_H09/grand_fond_H09.glb",
+        "size_bytes": 1459812
+      },
+      {
+        "building_name": "grand_fond_H10",
+        "glb_path": "inbox/grand_fond_H10/grand_fond_H10.glb",
+        "size_bytes": 5584308
+      },
+      {
+        "building_name": "grand_fond_H11",
+        "glb_path": "inbox/grand_fond_H11/grand_fond_H11.glb",
+        "size_bytes": 6627472
+      },
+      {
+        "building_name": "grand_fond_H12",
+        "glb_path": "inbox/grand_fond_H12/grand_fond_H12.glb",
+        "size_bytes": 2965500
+      },
+      {
+        "building_name": "grand_fond_H13",
+        "glb_path": "inbox/grand_fond_H13/grand_fond_H13.glb",
+        "size_bytes": 3646616
+      },
+      {
+        "building_name": "grand_fond_H14",
+        "glb_path": "inbox/grand_fond_H14/grand_fond_H14.glb",
+        "size_bytes": 3957348
+      },
+      {
+        "building_name": "grand_fond_H15",
+        "glb_path": "inbox/grand_fond_H15/grand_fond_H15.glb",
+        "size_bytes": 2960432
+      },
+      {
+        "building_name": "grand_fond_H16",
+        "glb_path": "inbox/grand_fond_H16/grand_fond_H16.glb",
+        "size_bytes": 3589516
+      },
+      {
+        "building_name": "la_lanterne_du_quai",
+        "glb_path": "inbox/la_lanterne_du_quai/la_lanterne_du_quai.glb",
+        "size_bytes": 6262296
+      },
+      {
+        "building_name": "la_pointe_H01",
+        "glb_path": "inbox/la_pointe_H01/la_pointe_H01.glb",
+        "size_bytes": 2255784
+      },
+      {
+        "building_name": "le_souffleur_H03",
+        "glb_path": "inbox/le_souffleur_H03/le_souffleur_H03.glb",
+        "size_bytes": 4082804
+      },
+      {
+        "building_name": "le_souffleur_H04",
+        "glb_path": "inbox/le_souffleur_H04/le_souffleur_H04.glb",
+        "size_bytes": 1627556
+      },
+      {
+        "building_name": "le_souffleur_H05",
+        "glb_path": "inbox/le_souffleur_H05/le_souffleur_H05.glb",
+        "size_bytes": 1112760
+      },
+      {
+        "building_name": "le_souffleur_H06",
+        "glb_path": "inbox/le_souffleur_H06/le_souffleur_H06.glb",
+        "size_bytes": 1584180
+      },
+      {
+        "building_name": "les_calanques_H06",
+        "glb_path": "inbox/les_calanques_H06/les_calanques_H06.glb",
+        "size_bytes": 4065472
+      },
+      {
+        "building_name": "les_calanques_H08",
+        "glb_path": "inbox/les_calanques_H08/les_calanques_H08.glb",
+        "size_bytes": 3302388
+      },
+      {
+        "building_name": "les_calanques_H09",
+        "glb_path": "inbox/les_calanques_H09/les_calanques_H09.glb",
+        "size_bytes": 4640532
+      },
+      {
+        "building_name": "les_calanques_H10",
+        "glb_path": "inbox/les_calanques_H10/les_calanques_H10.glb",
+        "size_bytes": 11594204
+      },
+      {
+        "building_name": "les_calanques_H11",
+        "glb_path": "inbox/les_calanques_H11/les_calanques_H11.glb",
+        "size_bytes": 10152192
+      },
+      {
+        "building_name": "mare_joncs_h01",
+        "glb_path": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+        "size_bytes": 1347280
+      },
+      {
+        "building_name": "paletuviers_h01",
+        "glb_path": "inbox/paletuviers_h01/paletuviers_h01.glb",
+        "size_bytes": 4433084
+      },
+      {
+        "building_name": "port_sarcelle_H03",
+        "glb_path": "inbox/port_sarcelle_H03/port_sarcelle_H03.glb",
+        "size_bytes": 9767648
+      },
+      {
+        "building_name": "port_sarcelle_H04",
+        "glb_path": "inbox/port_sarcelle_H04/port_sarcelle_H04.glb",
+        "size_bytes": 3438824
+      },
+      {
+        "building_name": "port_sarcelle_H05",
+        "glb_path": "inbox/port_sarcelle_H05/port_sarcelle_H05.glb",
+        "size_bytes": 2631756
+      },
+      {
+        "building_name": "port_sarcelle_H09",
+        "glb_path": "inbox/port_sarcelle_H09/port_sarcelle_H09.glb",
+        "size_bytes": 11303592
+      },
+      {
+        "building_name": "port_sarcelle_H10",
+        "glb_path": "inbox/port_sarcelle_H10/port_sarcelle_H10.glb",
+        "size_bytes": 11567092
+      },
+      {
+        "building_name": "port_sarcelle_H11",
+        "glb_path": "inbox/port_sarcelle_H11/port_sarcelle_H11.glb",
+        "size_bytes": 3927900
+      },
+      {
+        "building_name": "riviere_noire_H03",
+        "glb_path": "inbox/riviere_noire_H03/riviere_noire_H03.glb",
+        "size_bytes": 2752332
+      },
+      {
+        "building_name": "riviere_noire_H04",
+        "glb_path": "inbox/riviere_noire_H04/riviere_noire_H04.glb",
+        "size_bytes": 3389016
+      },
+      {
+        "building_name": "riviere_noire_H05",
+        "glb_path": "inbox/riviere_noire_H05/riviere_noire_H05.glb",
+        "size_bytes": 4928748
+      },
+      {
+        "building_name": "riviere_noire_H06",
+        "glb_path": "inbox/riviere_noire_H06/riviere_noire_H06.glb",
+        "size_bytes": 1484340
+      },
+      {
+        "building_name": "sarcelle_h06",
+        "glb_path": "inbox/sarcelle_h06/sarcelle_h06.glb",
+        "size_bytes": 3119748
+      },
+      {
+        "building_name": "sarcelle_h07",
+        "glb_path": "inbox/sarcelle_h07/sarcelle_h07.glb",
+        "size_bytes": 3234196
+      },
+      {
+        "building_name": "sarcelle_h08",
+        "glb_path": "inbox/sarcelle_h08/sarcelle_h08.glb",
+        "size_bytes": 6883704
+      },
+      {
+        "building_name": "sarcelle_h12",
+        "glb_path": "inbox/sarcelle_h12/sarcelle_h12.glb",
+        "size_bytes": 3839328
+      }
+    ],
+    "material_list_slots_excluded": true,
+    "copy_existing_images_without_generation": true,
+    "retain_original_glbs_notes_images": true
+  },
+  "requirements": {
+    "native_resolution_px": [
+      1254,
+      1254
+    ],
+    "no_upscaling": true,
+    "photo_not_procedural": true,
+    "one_image_generation_at_a_time": true,
+    "check_3x3_tile": true,
+    "validate_all_four_edges": true,
+    "commit_each_validated_image": true,
+    "no_paid_image_api_without_explicit_user_permission": true,
+    "never_modify_existing_glb_note_or_png": true,
+    "do_not_run_3d_workflows": true,
+    "keep_case_exact": true,
+    "branch_aware": true,
+    "check_same_name_reuse_candidates_only_when_surface_matches": true
+  },
+  "jobs": [
+    {
+      "order": 1,
+      "job_id": "calanques_h07__new_plaster_ochre_mallorca",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "calanques_h07",
+      "source_glb": "inbox/calanques_h07/calanques_h07.glb",
+      "source_note": "inbox/calanques_h07/note.txt",
+      "material": "new_plaster_ochre_mallorca",
+      "filename": "new_plaster_ochre_mallorca.png",
+      "destination": "inbox/calanques_h07/new_plaster_ochre_mallorca.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Sun-worn ochre yellow Mallorcan lime render: chalky mineral grains, light natural age mottling, subtly weathered surface, no stone joints or trim.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Sun-worn ochre yellow Mallorcan lime render: chalky mineral grains, light natural age mottling, subtly weathered surface, no stone joints or trim. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/calanques_h07/new_plaster_ochre_mallorca.png; filename new_plaster_ochre_mallorca.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 2,
+      "job_id": "cite_rhumerie_H01__new_plaster_ochre_yellow",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "cite_rhumerie_H01",
+      "source_glb": "inbox/cite_rhumerie_H01/cite_rhumerie_H01.glb",
+      "source_note": "inbox/cite_rhumerie_H01/note.txt",
+      "material": "new_plaster_ochre_yellow",
+      "filename": "new_plaster_ochre_yellow.png",
+      "destination": "inbox/cite_rhumerie_H01/new_plaster_ochre_yellow.png",
+      "previous_v3_destination": "inbox/rhumerie_h01/new_plaster_ochre_yellow.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Slightly sun-faded ochre-yellow exterior lime-cement plaster with fine uneven mineral aggregates and restrained tropical stains and chalking; no masonry joints, trims or painted shadows.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Slightly sun-faded ochre-yellow exterior lime-cement plaster with fine uneven mineral aggregates and restrained tropical stains and chalking; no masonry joints, trims or painted shadows. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_ochre_yellow.png. Output relative to the repository: inbox/cite_rhumerie_H01/new_plaster_ochre_yellow.png.",
+      "existing_same_named_png_elsewhere": [
+        "inbox/grand_fond_H11/new_plaster_ochre_yellow.png"
+      ],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 3,
+      "job_id": "cite_rhumerie_H01__new_plaster_oxblood_brown",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "cite_rhumerie_H01",
+      "source_glb": "inbox/cite_rhumerie_H01/cite_rhumerie_H01.glb",
+      "source_note": "inbox/cite_rhumerie_H01/note.txt",
+      "material": "new_plaster_oxblood_brown",
+      "filename": "new_plaster_oxblood_brown.png",
+      "destination": "inbox/cite_rhumerie_H01/new_plaster_oxblood_brown.png",
+      "previous_v3_destination": "inbox/rhumerie_h01/new_plaster_oxblood_brown.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Coarse oxblood-brown aged painted exterior cement plinth plaster, dark reddish-brown matte pigments, sand pores, mild wear, subtle natural color variation; no dado outline.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Coarse oxblood-brown aged painted exterior cement plinth plaster, dark reddish-brown matte pigments, sand pores, mild wear, subtle natural color variation; no dado outline. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_oxblood_brown.png. Output relative to the repository: inbox/cite_rhumerie_H01/new_plaster_oxblood_brown.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 4,
+      "job_id": "cite_rhumerie_H01__new_timber_dark_stained",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "cite_rhumerie_H01",
+      "source_glb": "inbox/cite_rhumerie_H01/cite_rhumerie_H01.glb",
+      "source_note": "inbox/cite_rhumerie_H01/note.txt",
+      "material": "new_timber_dark_stained",
+      "filename": "new_timber_dark_stained.png",
+      "destination": "inbox/cite_rhumerie_H01/new_timber_dark_stained.png",
+      "previous_v3_destination": "inbox/rhumerie_h01/new_timber_dark_stained.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Deep dark-brown stained weathered timber with convincing long directional natural wood grain and slight worn varnish patina, no joinery hardware or panel lines.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Deep dark-brown stained weathered timber with convincing long directional natural wood grain and slight worn varnish patina, no joinery hardware or panel lines. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_dark_stained.png. Output relative to the repository: inbox/cite_rhumerie_H01/new_timber_dark_stained.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 5,
+      "job_id": "filaos_H01__new_railing_steel_blue",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "filaos_H01",
+      "source_glb": "inbox/filaos_H01/filaos_H01.glb",
+      "source_note": "inbox/filaos_H01/note.txt",
+      "material": "new_railing_steel_blue",
+      "filename": "new_railing_steel_blue.png",
+      "destination": "inbox/filaos_H01/new_railing_steel_blue.png",
+      "previous_v3_destination": "inbox/filaos_h01/new_railing_steel_blue.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old medium blue enamel-painted steel with fine orange-peel paint grain, local chalking and tiny scattered naturally chipped paint and rust flecks; no railing silhouette or bars.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old medium blue enamel-painted steel with fine orange-peel paint grain, local chalking and tiny scattered naturally chipped paint and rust flecks; no railing silhouette or bars. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_railing_steel_blue.png. Output relative to the repository: inbox/filaos_H01/new_railing_steel_blue.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 6,
+      "job_id": "fond_h04__new_roof_corrugated_red",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "fond_h04",
+      "source_glb": "inbox/fond_h04/fond_h04.glb",
+      "source_note": "inbox/fond_h04/note.txt",
+      "material": "new_roof_corrugated_red",
+      "filename": "new_roof_corrugated_red.png",
+      "destination": "inbox/fond_h04/new_roof_corrugated_red.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old red-painted corrugated roof steel: faded oxblood red coating, scattered microscopic rust specks and fine ageing, no corrugation ridges or standing-seam profiles (these belong to geometry).",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Old red-painted corrugated roof steel: faded oxblood red coating, scattered microscopic rust specks and fine ageing, no corrugation ridges or standing-seam profiles (these belong to geometry). Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/fond_h04/new_roof_corrugated_red.png; filename new_roof_corrugated_red.png.",
+      "existing_same_named_png_elsewhere": [
+        "inbox/bel_air_H01/new_roof_corrugated_red.png",
+        "inbox/cite_moulin_H04/new_roof_corrugated_red.png"
+      ],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 7,
+      "job_id": "fond_h04__new_stained_glass",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "fond_h04",
+      "source_glb": "inbox/fond_h04/fond_h04.glb",
+      "source_note": "inbox/fond_h04/note.txt",
+      "material": "new_stained_glass",
+      "filename": "new_stained_glass.png",
+      "destination": "inbox/fond_h04/new_stained_glass.png",
+      "kind": "seamless_stained_glass_photo_pattern",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Real close photograph of richly coloured translucent stained-glass material: deep blue, warm red and amber panes connected by restrained dark leadwork; pattern repeatable across edges. The glass design is intentionally part of the requested artwork and not ordinary stone/paint surface.",
+      "prompt": "Generate exactly one sharp, documentary-style photograph of genuine stained-glass colour and leadwork artwork for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Real close photograph of richly coloured translucent stained-glass material: deep blue, warm red and amber panes connected by restrained dark leadwork; pattern repeatable across edges. The glass design is intentionally part of the requested artwork and not ordinary stone/paint surface. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. The coloured glass and leadwork are deliberately requested as a stained-glass pattern; preserve realistic glass appearance and transmissive colour. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/fond_h04/new_stained_glass.png; filename new_stained_glass.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 8,
+      "job_id": "fond_h08__new_roof_shingle_wood_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "fond_h08",
+      "source_glb": "inbox/fond_h08/fond_h08.glb",
+      "source_note": "inbox/fond_h08/note.txt",
+      "material": "new_roof_shingle_wood_weathered",
+      "filename": "new_roof_shingle_wood_weathered.png",
+      "destination": "inbox/fond_h08/new_roof_shingle_wood_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered grey-brown timber roofing shingle surface: fine grain and silvery sun-bleached fibres, rain-darkened grain grooves; do not paint shingle outlines or overlapping courses since the physical shingles are modelled geometry.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Weathered grey-brown timber roofing shingle surface: fine grain and silvery sun-bleached fibres, rain-darkened grain grooves; do not paint shingle outlines or overlapping courses since the physical shingles are modelled geometry. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/fond_h08/new_roof_shingle_wood_weathered.png; filename new_roof_shingle_wood_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 9,
+      "job_id": "grand_fond_H06__new_castiron_green_worn",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "grand_fond_H06",
+      "source_glb": "inbox/grand_fond_H06/grand_fond_H06.glb",
+      "source_note": "inbox/grand_fond_H06/note.txt",
+      "material": "new_castiron_green_worn",
+      "filename": "new_castiron_green_worn.png",
+      "destination": "inbox/grand_fond_H06/new_castiron_green_worn.png",
+      "previous_v3_destination": "inbox/fond_h06/new_castiron_green_worn.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged dark-green painted cast iron, natural fine casting pores, small irregular paint flakes exposing dark metal and restrained rust at exposed spots; no cast-iron column or ornament in frame.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged dark-green painted cast iron, natural fine casting pores, small irregular paint flakes exposing dark metal and restrained rust at exposed spots; no cast-iron column or ornament in frame. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_castiron_green_worn.png. Output relative to the repository: inbox/grand_fond_H06/new_castiron_green_worn.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 10,
+      "job_id": "grand_fond_H16__new_floorboards_pine",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "grand_fond_H16",
+      "source_glb": "inbox/grand_fond_H16/grand_fond_H16.glb",
+      "source_note": "inbox/grand_fond_H16/note.txt",
+      "material": "new_floorboards_pine",
+      "filename": "new_floorboards_pine.png",
+      "destination": "inbox/grand_fond_H16/new_floorboards_pine.png",
+      "previous_v3_destination": "inbox/fond_h16/new_floorboards_pine.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Warm sun-aged pine timber flooring surface, detailed longitudinal pale-gold and light-brown natural pine growth grain, fine soft foot-wear and mild dulling; plank joints and grooves are building geometry, do not paint them.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Warm sun-aged pine timber flooring surface, detailed longitudinal pale-gold and light-brown natural pine growth grain, fine soft foot-wear and mild dulling; plank joints and grooves are building geometry, do not paint them. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_floorboards_pine.png. Output relative to the repository: inbox/grand_fond_H16/new_floorboards_pine.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 11,
+      "job_id": "grand_fond_H16__new_render_pink_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "grand_fond_H16",
+      "source_glb": "inbox/grand_fond_H16/grand_fond_H16.glb",
+      "source_note": "inbox/grand_fond_H16/note.txt",
+      "material": "new_render_pink_weathered",
+      "filename": "new_render_pink_weathered.png",
+      "destination": "inbox/grand_fond_H16/new_render_pink_weathered.png",
+      "previous_v3_destination": "inbox/fond_h16/new_render_pink_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Old dusty-pink painted cement facade render, fine and coarse sand grains, tropical faded chalking and occasional tiny chips and dirt mottling, no relief or plinth borders.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old dusty-pink painted cement facade render, fine and coarse sand grains, tropical faded chalking and occasional tiny chips and dirt mottling, no relief or plinth borders. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_render_pink_weathered.png. Output relative to the repository: inbox/grand_fond_H16/new_render_pink_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 12,
+      "job_id": "grand_fond_H16__new_weatherboard_pink",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "grand_fond_H16",
+      "source_glb": "inbox/grand_fond_H16/grand_fond_H16.glb",
+      "source_note": "inbox/grand_fond_H16/note.txt",
+      "material": "new_weatherboard_pink",
+      "filename": "new_weatherboard_pink.png",
+      "destination": "inbox/grand_fond_H16/new_weatherboard_pink.png",
+      "previous_v3_destination": "inbox/fond_h16/new_weatherboard_pink.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": null,
+      "physical_tile_size_source": "not stated in note.txt",
+      "description": "Weathered faded pink opaque paint on timber cladding with readable fine real wood grain, minor sun-cracks and irregular paint peeling; no overlapping weatherboard rows or board seams.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered faded pink opaque paint on timber cladding with readable fine real wood grain, minor sun-cracks and irregular paint peeling; no overlapping weatherboard rows or board seams. unknown in note.txt; do not treat a guess as verified. The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_weatherboard_pink.png. Output relative to the repository: inbox/grand_fond_H16/new_weatherboard_pink.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 13,
+      "job_id": "la_pointe_H01__new_timber_black_paint",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "la_pointe_H01",
+      "source_glb": "inbox/la_pointe_H01/la_pointe_H01.glb",
+      "source_note": "inbox/la_pointe_H01/note.txt",
+      "material": "new_timber_black_paint",
+      "filename": "new_timber_black_paint.png",
+      "destination": "inbox/la_pointe_H01/new_timber_black_paint.png",
+      "previous_v3_destination": "inbox/pointe_h01/new_timber_black_paint.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered black-painted outdoor timber, fine longitudinal wood grain beneath matte chalked charcoal-black coating, subtle micro-cracks and irregular abrasion; no complete door frame or boards.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered black-painted outdoor timber, fine longitudinal wood grain beneath matte chalked charcoal-black coating, subtle micro-cracks and irregular abrasion; no complete door frame or boards. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_black_paint.png. Output relative to the repository: inbox/la_pointe_H01/new_timber_black_paint.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 14,
+      "job_id": "le_souffleur_H03__new_plaster_pink_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "le_souffleur_H03",
+      "source_glb": "inbox/le_souffleur_H03/le_souffleur_H03.glb",
+      "source_note": "inbox/le_souffleur_H03/note.txt",
+      "material": "new_plaster_pink_weathered",
+      "filename": "new_plaster_pink_weathered.png",
+      "destination": "inbox/le_souffleur_H03/new_plaster_pink_weathered.png",
+      "previous_v3_destination": "inbox/souffleur_h03/new_plaster_pink_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Dusty salmon-pink exterior mineral plaster, irregular tiny weathered chips, chalky sand grains and restrained sun fading, photorealistic surface without geometry or architecture.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Dusty salmon-pink exterior mineral plaster, irregular tiny weathered chips, chalky sand grains and restrained sun fading, photorealistic surface without geometry or architecture. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_pink_weathered.png. Output relative to the repository: inbox/le_souffleur_H03/new_plaster_pink_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 15,
+      "job_id": "le_souffleur_H06__new_plaster_ochre_peeling",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "le_souffleur_H06",
+      "source_glb": "inbox/le_souffleur_H06/le_souffleur_H06.glb",
+      "source_note": "inbox/le_souffleur_H06/note.txt",
+      "material": "new_plaster_ochre_peeling",
+      "filename": "new_plaster_ochre_peeling.png",
+      "destination": "inbox/le_souffleur_H06/new_plaster_ochre_peeling.png",
+      "previous_v3_destination": "inbox/souffleur_h06/new_plaster_ochre_peeling.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old ochre-yellow painted lime plaster with worn small irregular white paint flakes and underlying textured plaster, restrained chalking, sandy natural mineral detail, no trims.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old ochre-yellow painted lime plaster with worn small irregular white paint flakes and underlying textured plaster, restrained chalking, sandy natural mineral detail, no trims. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_ochre_peeling.png. Output relative to the repository: inbox/le_souffleur_H06/new_plaster_ochre_peeling.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 16,
+      "job_id": "le_souffleur_H06__new_timber_teal_peeling",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "le_souffleur_H06",
+      "source_glb": "inbox/le_souffleur_H06/le_souffleur_H06.glb",
+      "source_note": "inbox/le_souffleur_H06/note.txt",
+      "material": "new_timber_teal_peeling",
+      "filename": "new_timber_teal_peeling.png",
+      "destination": "inbox/le_souffleur_H06/new_timber_teal_peeling.png",
+      "previous_v3_destination": "inbox/souffleur_h06/new_timber_teal_peeling.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged turquoise-teal painted outdoor timber, fine visible wood fibre underneath worn paint, irregular peeling and subtle discolored wood, no full wooden doors, panels, borders or plank seams.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged turquoise-teal painted outdoor timber, fine visible wood fibre underneath worn paint, irregular peeling and subtle discolored wood, no full wooden doors, panels, borders or plank seams. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_timber_teal_peeling.png. Output relative to the repository: inbox/le_souffleur_H06/new_timber_teal_peeling.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 17,
+      "job_id": "les_calanques_H09__new_door_oak_aged",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "les_calanques_H09",
+      "source_glb": "inbox/les_calanques_H09/les_calanques_H09.glb",
+      "source_note": "inbox/les_calanques_H09/note.txt",
+      "material": "new_door_oak_aged",
+      "filename": "new_door_oak_aged.png",
+      "destination": "inbox/les_calanques_H09/new_door_oak_aged.png",
+      "previous_v3_destination": "inbox/calanques_h09/new_door_oak_aged.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged dark-brown Mallorcan oak door wood, fine longitudinal oak grain, subtle silvery-grey sun-weathered wood fibres, cracked varnish and small scuffs; no door panels, plank seams, handles or frames.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged dark-brown Mallorcan oak door wood, fine longitudinal oak grain, subtle silvery-grey sun-weathered wood fibres, cracked varnish and small scuffs; no door panels, plank seams, handles or frames. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_door_oak_aged.png. Output relative to the repository: inbox/les_calanques_H09/new_door_oak_aged.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 18,
+      "job_id": "mare_joncs_h01__new_plaster_pink_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "mare_joncs_h01",
+      "source_glb": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+      "source_note": "inbox/mare_joncs_h01/note.txt",
+      "material": "new_plaster_pink_weathered",
+      "filename": "new_plaster_pink_weathered.png",
+      "destination": "inbox/mare_joncs_h01/new_plaster_pink_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered old pink limewashed cement plaster, gentle dust, tiny mineral pores and restrained irregular mottling, no cracks larger than material microstructure.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Weathered old pink limewashed cement plaster, gentle dust, tiny mineral pores and restrained irregular mottling, no cracks larger than material microstructure. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/mare_joncs_h01/new_plaster_pink_weathered.png; filename new_plaster_pink_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 19,
+      "job_id": "mare_joncs_h01__new_plaster_rose_dark",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "mare_joncs_h01",
+      "source_glb": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+      "source_note": "inbox/mare_joncs_h01/note.txt",
+      "material": "new_plaster_rose_dark",
+      "filename": "new_plaster_rose_dark.png",
+      "destination": "inbox/mare_joncs_h01/new_plaster_rose_dark.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Dusty deep rose-red paint over fine-grain plaster, lightly chalky aged finish, no bands or trim silhouettes.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Dusty deep rose-red paint over fine-grain plaster, lightly chalky aged finish, no bands or trim silhouettes. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/mare_joncs_h01/new_plaster_rose_dark.png; filename new_plaster_rose_dark.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 20,
+      "job_id": "mare_joncs_h01__new_shade_net_black",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "mare_joncs_h01",
+      "source_glb": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+      "source_note": "inbox/mare_joncs_h01/note.txt",
+      "material": "new_shade_net_black",
+      "filename": "new_shade_net_black.png",
+      "destination": "inbox/mare_joncs_h01/new_shade_net_black.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Black woven UV shade mesh material, tight textile filament weave with small evenly distributed open gaps, matte in diffuse daylight, no support poles, hems or frame.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Black woven UV shade mesh material, tight textile filament weave with small evenly distributed open gaps, matte in diffuse daylight, no support poles, hems or frame. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/mare_joncs_h01/new_shade_net_black.png; filename new_shade_net_black.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 21,
+      "job_id": "mare_joncs_h01__new_tank_plastic_black",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "mare_joncs_h01",
+      "source_glb": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+      "source_note": "inbox/mare_joncs_h01/note.txt",
+      "material": "new_tank_plastic_black",
+      "filename": "new_tank_plastic_black.png",
+      "destination": "inbox/mare_joncs_h01/new_tank_plastic_black.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Matte black weathered polyethylene water tank plastic surface: faint molded grain, small scuffs and natural outdoor aging, no tanks, ribs, pipes or silhouettes.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Matte black weathered polyethylene water tank plastic surface: faint molded grain, small scuffs and natural outdoor aging, no tanks, ribs, pipes or silhouettes. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/mare_joncs_h01/new_tank_plastic_black.png; filename new_tank_plastic_black.png.",
+      "existing_same_named_png_elsewhere": [
+        "inbox/grand_fond_H09/new_tank_plastic_black.png"
+      ],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 22,
+      "job_id": "mare_joncs_h01__new_tank_plastic_green",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "mare_joncs_h01",
+      "source_glb": "inbox/mare_joncs_h01/mare_joncs_h01.glb",
+      "source_note": "inbox/mare_joncs_h01/note.txt",
+      "material": "new_tank_plastic_green",
+      "filename": "new_tank_plastic_green.png",
+      "destination": "inbox/mare_joncs_h01/new_tank_plastic_green.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Dark green aged polyethylene water tank plastic surface, fine molded grain and restrained chalking, no pipe or tank form.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Dark green aged polyethylene water tank plastic surface, fine molded grain and restrained chalking, no pipe or tank form. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/mare_joncs_h01/new_tank_plastic_green.png; filename new_tank_plastic_green.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 23,
+      "job_id": "paletuviers_h01__new_floor_planks_worn",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "paletuviers_h01",
+      "source_glb": "inbox/paletuviers_h01/paletuviers_h01.glb",
+      "source_note": "inbox/paletuviers_h01/note.txt",
+      "material": "new_floor_planks_worn",
+      "filename": "new_floor_planks_worn.png",
+      "destination": "inbox/paletuviers_h01/new_floor_planks_worn.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old heavily trodden brown timber floorboard surface, warm gray-brown exposed grain and sparse worn finish, no plank seam lines because boards are modelled geometry.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Old heavily trodden brown timber floorboard surface, warm gray-brown exposed grain and sparse worn finish, no plank seam lines because boards are modelled geometry. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/paletuviers_h01/new_floor_planks_worn.png; filename new_floor_planks_worn.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 24,
+      "job_id": "paletuviers_h01__new_roof_sheet_verdigris",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "paletuviers_h01",
+      "source_glb": "inbox/paletuviers_h01/paletuviers_h01.glb",
+      "source_note": "inbox/paletuviers_h01/note.txt",
+      "material": "new_roof_sheet_verdigris",
+      "filename": "new_roof_sheet_verdigris.png",
+      "destination": "inbox/paletuviers_h01/new_roof_sheet_verdigris.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Matte gray-green weathered roof sheet metal with soft verdigris-type oxidation and occasional rust spots, no raised corrugation or sheet seams.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Matte gray-green weathered roof sheet metal with soft verdigris-type oxidation and occasional rust spots, no raised corrugation or sheet seams. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/paletuviers_h01/new_roof_sheet_verdigris.png; filename new_roof_sheet_verdigris.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 25,
+      "job_id": "paletuviers_h01__new_weatherboard_green",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "paletuviers_h01",
+      "source_glb": "inbox/paletuviers_h01/paletuviers_h01.glb",
+      "source_note": "inbox/paletuviers_h01/note.txt",
+      "material": "new_weatherboard_green",
+      "filename": "new_weatherboard_green.png",
+      "destination": "inbox/paletuviers_h01/new_weatherboard_green.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered green painted outdoor timber: peeling green pigment over underlying gray-brown wood grain, no horizontal siding joins or complete plank outlines.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Weathered green painted outdoor timber: peeling green pigment over underlying gray-brown wood grain, no horizontal siding joins or complete plank outlines. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/paletuviers_h01/new_weatherboard_green.png; filename new_weatherboard_green.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 26,
+      "job_id": "riviere_noire_H03__new_door_blue_peeling",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H03",
+      "source_glb": "inbox/riviere_noire_H03/riviere_noire_H03.glb",
+      "source_note": "inbox/riviere_noire_H03/note.txt",
+      "material": "new_door_blue_peeling",
+      "filename": "new_door_blue_peeling.png",
+      "destination": "inbox/riviere_noire_H03/new_door_blue_peeling.png",
+      "previous_v3_destination": "inbox/riviere_noire_h03/new_door_blue_peeling.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Flaking aged blue paint over grey-weathered wooden door material, organic irregular small paint chips, readable fine grey wood grain, matte salty-air weathering; no door geometry or hardware.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Flaking aged blue paint over grey-weathered wooden door material, organic irregular small paint chips, readable fine grey wood grain, matte salty-air weathering; no door geometry or hardware. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_door_blue_peeling.png. Output relative to the repository: inbox/riviere_noire_H03/new_door_blue_peeling.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 27,
+      "job_id": "riviere_noire_H03__new_tarp_green",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H03",
+      "source_glb": "inbox/riviere_noire_H03/riviere_noire_H03.glb",
+      "source_note": "inbox/riviere_noire_H03/note.txt",
+      "material": "new_tarp_green",
+      "filename": "new_tarp_green.png",
+      "destination": "inbox/riviere_noire_H03/new_tarp_green.png",
+      "previous_v3_destination": "inbox/riviere_noire_h03/new_tarp_green.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered greyish-green heavy polyethylene woven tarpaulin textile material, fine subtle woven fibre grid, matte slightly sun-bleached plastic strands, no folded object, stitching or attachment eyelets.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered greyish-green heavy polyethylene woven tarpaulin textile material, fine subtle woven fibre grid, matte slightly sun-bleached plastic strands, no folded object, stitching or attachment eyelets. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_tarp_green.png. Output relative to the repository: inbox/riviere_noire_H03/new_tarp_green.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 28,
+      "job_id": "riviere_noire_H04__new_roof_corrugated_red",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H04",
+      "source_glb": "inbox/riviere_noire_H04/riviere_noire_H04.glb",
+      "source_note": "inbox/riviere_noire_H04/note.txt",
+      "material": "new_roof_corrugated_red",
+      "filename": "new_roof_corrugated_red.png",
+      "destination": "inbox/riviere_noire_H04/new_roof_corrugated_red.png",
+      "previous_v3_destination": "inbox/riviere_noire_h04/new_roof_corrugated_red.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Sun-faded muted red-coated galvanized steel roofing surface, very small chipped paint spots and sparse natural rust streaks; roof corrugation itself is geometry, do not paint 3D corrugation ribs or directional specular highlights.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Sun-faded muted red-coated galvanized steel roofing surface, very small chipped paint spots and sparse natural rust streaks; roof corrugation itself is geometry, do not paint 3D corrugation ribs or directional specular highlights. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_roof_corrugated_red.png. Output relative to the repository: inbox/riviere_noire_H04/new_roof_corrugated_red.png.",
+      "existing_same_named_png_elsewhere": [
+        "inbox/bel_air_H01/new_roof_corrugated_red.png",
+        "inbox/cite_moulin_H04/new_roof_corrugated_red.png"
+      ],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 29,
+      "job_id": "riviere_noire_H05__new_buoy_paint_peeled",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H05",
+      "source_glb": "inbox/riviere_noire_H05/riviere_noire_H05.glb",
+      "source_note": "inbox/riviere_noire_H05/note.txt",
+      "material": "new_buoy_paint_peeled",
+      "filename": "new_buoy_paint_peeled.png",
+      "destination": "inbox/riviere_noire_H05/new_buoy_paint_peeled.png",
+      "previous_v3_destination": "inbox/riviere_noire_h05/new_buoy_paint_peeled.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered chipped exterior paint on old fishing floats, subdued neighboring patches of red, faded blue and creamy white with light abrasion exposing the underlying material; no full buoy, text, rope or circular silhouette.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Weathered chipped exterior paint on old fishing floats, subdued neighboring patches of red, faded blue and creamy white with light abrasion exposing the underlying material; no full buoy, text, rope or circular silhouette. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_buoy_paint_peeled.png. Output relative to the repository: inbox/riviere_noire_H05/new_buoy_paint_peeled.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 30,
+      "job_id": "riviere_noire_H05__new_plaster_blue_peeled",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H05",
+      "source_glb": "inbox/riviere_noire_H05/riviere_noire_H05.glb",
+      "source_note": "inbox/riviere_noire_H05/note.txt",
+      "material": "new_plaster_blue_peeled",
+      "filename": "new_plaster_blue_peeled.png",
+      "destination": "inbox/riviere_noire_H05/new_plaster_blue_peeled.png",
+      "previous_v3_destination": "inbox/riviere_noire_h05/new_plaster_blue_peeled.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged blue-painted exterior cement plaster with irregular small yellowish-white exposed mineral patches from peeled paint, realistic fine sand texture and salt weathering, no masonry features.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Aged blue-painted exterior cement plaster with irregular small yellowish-white exposed mineral patches from peeled paint, realistic fine sand texture and salt weathering, no masonry features. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_blue_peeled.png. Output relative to the repository: inbox/riviere_noire_H05/new_plaster_blue_peeled.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 31,
+      "job_id": "riviere_noire_H05__new_rattan_woven",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H05",
+      "source_glb": "inbox/riviere_noire_H05/riviere_noire_H05.glb",
+      "source_note": "inbox/riviere_noire_H05/note.txt",
+      "material": "new_rattan_woven",
+      "filename": "new_rattan_woven.png",
+      "destination": "inbox/riviere_noire_H05/new_rattan_woven.png",
+      "previous_v3_destination": "inbox/riviere_noire_h05/new_rattan_woven.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Authentic tightly handwoven tan and brown rattan cane material close-up, fine organic strand fibres, natural slight weave irregularity, subtle warm hue variation, no basket shape, borders or trims.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Authentic tightly handwoven tan and brown rattan cane material close-up, fine organic strand fibres, natural slight weave irregularity, subtle warm hue variation, no basket shape, borders or trims. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_rattan_woven.png. Output relative to the repository: inbox/riviere_noire_H05/new_rattan_woven.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 32,
+      "job_id": "riviere_noire_H05__new_rope_hemp",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H05",
+      "source_glb": "inbox/riviere_noire_H05/riviere_noire_H05.glb",
+      "source_note": "inbox/riviere_noire_H05/note.txt",
+      "material": "new_rope_hemp",
+      "filename": "new_rope_hemp.png",
+      "destination": "inbox/riviere_noire_H05/new_rope_hemp.png",
+      "previous_v3_destination": "inbox/riviere_noire_h05/new_rope_hemp.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Close-up of coarse natural straw-brown manila/hemp rope fibre covering the frame, natural fibrous threads, rough braided texture and realistic strand irregularities; no coils, loops, knots or loose rope objects.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Close-up of coarse natural straw-brown manila/hemp rope fibre covering the frame, natural fibrous threads, rough braided texture and realistic strand irregularities; no coils, loops, knots or loose rope objects. actual material coverage 1 metres wide by 1 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_rope_hemp.png. Output relative to the repository: inbox/riviere_noire_H05/new_rope_hemp.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 33,
+      "job_id": "riviere_noire_H06__new_paint_red_oxide_peeling",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H06",
+      "source_glb": "inbox/riviere_noire_H06/riviere_noire_H06.glb",
+      "source_note": "inbox/riviere_noire_H06/note.txt",
+      "material": "new_paint_red_oxide_peeling",
+      "filename": "new_paint_red_oxide_peeling.png",
+      "destination": "inbox/riviere_noire_H06/new_paint_red_oxide_peeling.png",
+      "previous_v3_destination": "inbox/riviere_noire_h06/new_paint_red_oxide_peeling.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old oxide-red reddish-brown oil paint, scattered irregular small paint chips, aged matte finish and slight underlying dark substrate showing through, fine material surface only.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old oxide-red reddish-brown oil paint, scattered irregular small paint chips, aged matte finish and slight underlying dark substrate showing through, fine material surface only. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_paint_red_oxide_peeling.png. Output relative to the repository: inbox/riviere_noire_H06/new_paint_red_oxide_peeling.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 34,
+      "job_id": "riviere_noire_H06__new_plaster_sage_green_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "riviere_noire_H06",
+      "source_glb": "inbox/riviere_noire_H06/riviere_noire_H06.glb",
+      "source_note": "inbox/riviere_noire_H06/note.txt",
+      "material": "new_plaster_sage_green_weathered",
+      "filename": "new_plaster_sage_green_weathered.png",
+      "destination": "inbox/riviere_noire_H06/new_plaster_sage_green_weathered.png",
+      "previous_v3_destination": "inbox/riviere_noire_h06/new_plaster_sage_green_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old sage-green painted mineral lime plaster, gently mottled weathered chalk finish, rough sand pores, muted tropical dirt and gentle fading, no structural edges.",
+      "prompt": "Real documentary macro photograph of a single material surface for a production UE5 game asset. SUBJECT: Old sage-green painted mineral lime plaster, gently mottled weathered chalk finish, rough sand pores, muted tropical dirt and gentle fading, no structural edges. actual material coverage 2 metres wide by 2 metres tall (from note.txt). The entire square is filled edge-to-edge by the one realistic material, naturally detailed without any repetitive synthetic grid. Camera exactly perpendicular to the material, straight-on/orthographic perspective, even soft diffused daylight, matte cross-polarized appearance, uniform brightness to all corners, no reflections, shadows or perspective. Unretouched, sharp photorealistic real-world microstructure, not CGI, no illustration or painterly smoothing. The seamless tile must join across ALL FOUR edges without visible boundaries, ghosting, mirrored halves, blurred fade bands or obvious identical focal details when repeated 3 by 3. Geometry larger than 1 cm (seams, planks, corrugations, tiles, panel outlines) must not be painted into this surface. NO text, watermark or logo. Generate a native square PNG of exactly 1254 x 1254 pixels, with no upscaling or resampling. File name: new_plaster_sage_green_weathered.png. Output relative to the repository: inbox/riviere_noire_H06/new_plaster_sage_green_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 35,
+      "job_id": "sarcelle_h06__new_render_yellow_peeling",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h06",
+      "source_glb": "inbox/sarcelle_h06/sarcelle_h06.glb",
+      "source_note": "inbox/sarcelle_h06/note.txt",
+      "material": "new_render_yellow_peeling",
+      "filename": "new_render_yellow_peeling.png",
+      "destination": "inbox/sarcelle_h06/new_render_yellow_peeling.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old strong ochre-yellow cement exterior render with irregular small peeling patches revealing weathered gray plaster, a few dark mildew speckles; no architectural boundaries.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Old strong ochre-yellow cement exterior render with irregular small peeling patches revealing weathered gray plaster, a few dark mildew speckles; no architectural boundaries. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h06/new_render_yellow_peeling.png; filename new_render_yellow_peeling.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 36,
+      "job_id": "sarcelle_h07__new_paint_teal_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h07",
+      "source_glb": "inbox/sarcelle_h07/sarcelle_h07.glb",
+      "source_note": "inbox/sarcelle_h07/note.txt",
+      "material": "new_paint_teal_weathered",
+      "filename": "new_paint_teal_weathered.png",
+      "destination": "inbox/sarcelle_h07/new_paint_teal_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged petrol-teal exterior enamel paint, naturally chipped and chalky, restrained oxidation and rust flecks at cracks, no pillars or awning shapes.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Aged petrol-teal exterior enamel paint, naturally chipped and chalky, restrained oxidation and rust flecks at cracks, no pillars or awning shapes. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h07/new_paint_teal_weathered.png; filename new_paint_teal_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 37,
+      "job_id": "sarcelle_h07__new_paint_yellow_worn",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h07",
+      "source_glb": "inbox/sarcelle_h07/sarcelle_h07.glb",
+      "source_note": "inbox/sarcelle_h07/note.txt",
+      "material": "new_paint_yellow_worn",
+      "filename": "new_paint_yellow_worn.png",
+      "destination": "inbox/sarcelle_h07/new_paint_yellow_worn.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Worn warning-yellow paint on outdoor stair nosing, micro-scratches, isolated dark exposed metal/mineral speckles, no stair shape or colored stripes.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Worn warning-yellow paint on outdoor stair nosing, micro-scratches, isolated dark exposed metal/mineral speckles, no stair shape or colored stripes. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h07/new_paint_yellow_worn.png; filename new_paint_yellow_worn.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 38,
+      "job_id": "sarcelle_h08__new_enamel_green_cross",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h08",
+      "source_glb": "inbox/sarcelle_h08/sarcelle_h08.glb",
+      "source_note": "inbox/sarcelle_h08/note.txt",
+      "material": "new_enamel_green_cross",
+      "filename": "new_enamel_green_cross.png",
+      "destination": "inbox/sarcelle_h08/new_enamel_green_cross.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        0.5,
+        0.5
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Deep green weathered vitreous enamel with fine surface scratches, tiny chips and slight gloss subdued by cross-polarized lighting. No cross icon or readable symbol: the cross is in the geometry.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Deep green weathered vitreous enamel with fine surface scratches, tiny chips and slight gloss subdued by cross-polarized lighting. No cross icon or readable symbol: the cross is in the geometry. Photographed real-world coverage: 0.5 × 0.5 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h08/new_enamel_green_cross.png; filename new_enamel_green_cross.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 39,
+      "job_id": "sarcelle_h08__new_paint_blue_signwriting",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h08",
+      "source_glb": "inbox/sarcelle_h08/sarcelle_h08.glb",
+      "source_note": "inbox/sarcelle_h08/note.txt",
+      "material": "new_paint_blue_signwriting",
+      "filename": "new_paint_blue_signwriting.png",
+      "destination": "inbox/sarcelle_h08/new_paint_blue_signwriting.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        0.5,
+        0.5
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Fine dark blue pigmented lettering paint, slightly chalky and worn, on a continuous surface. No actual letters or readable typography: the graphic is independent geometry.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Fine dark blue pigmented lettering paint, slightly chalky and worn, on a continuous surface. No actual letters or readable typography: the graphic is independent geometry. Photographed real-world coverage: 0.5 × 0.5 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h08/new_paint_blue_signwriting.png; filename new_paint_blue_signwriting.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 40,
+      "job_id": "sarcelle_h08__new_plaster_teal_faded",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h08",
+      "source_glb": "inbox/sarcelle_h08/sarcelle_h08.glb",
+      "source_note": "inbox/sarcelle_h08/note.txt",
+      "material": "new_plaster_teal_faded",
+      "filename": "new_plaster_teal_faded.png",
+      "destination": "inbox/sarcelle_h08/new_plaster_teal_faded.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Faded teal-turquoise painted aged plaster with cream-colored small peeling patches, subtle rust-colored rain stains and rough mineral texture.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Faded teal-turquoise painted aged plaster with cream-colored small peeling patches, subtle rust-colored rain stains and rough mineral texture. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h08/new_plaster_teal_faded.png; filename new_plaster_teal_faded.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 41,
+      "job_id": "sarcelle_h08__new_tile_plinth_teal",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h08",
+      "source_glb": "inbox/sarcelle_h08/sarcelle_h08.glb",
+      "source_note": "inbox/sarcelle_h08/note.txt",
+      "material": "new_tile_plinth_teal",
+      "filename": "new_tile_plinth_teal.png",
+      "destination": "inbox/sarcelle_h08/new_tile_plinth_teal.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Dark teal-green glazed ceramic tile face with fine ceramic glaze texture; no painted grout grid or repeating tile boundary unless already explicitly authored for this slot and consistent with geometry.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Dark teal-green glazed ceramic tile face with fine ceramic glaze texture; no painted grout grid or repeating tile boundary unless already explicitly authored for this slot and consistent with geometry. Photographed real-world coverage: 1 × 1 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h08/new_tile_plinth_teal.png; filename new_tile_plinth_teal.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 42,
+      "job_id": "sarcelle_h12__new_corrugated_blue_rusty",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h12",
+      "source_glb": "inbox/sarcelle_h12/sarcelle_h12.glb",
+      "source_note": "inbox/sarcelle_h12/note.txt",
+      "material": "new_corrugated_blue_rusty",
+      "filename": "new_corrugated_blue_rusty.png",
+      "destination": "inbox/sarcelle_h12/new_corrugated_blue_rusty.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old blue painted sheet metal with small irregular orange-brown rust patches and worn matte finish. Corrugation waves and panel profiles must remain geometry, not be baked into the photo.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Old blue painted sheet metal with small irregular orange-brown rust patches and worn matte finish. Corrugation waves and panel profiles must remain geometry, not be baked into the photo. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h12/new_corrugated_blue_rusty.png; filename new_corrugated_blue_rusty.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 43,
+      "job_id": "sarcelle_h12__new_paint_blue_plinth_band",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h12",
+      "source_glb": "inbox/sarcelle_h12/sarcelle_h12.glb",
+      "source_note": "inbox/sarcelle_h12/note.txt",
+      "material": "new_paint_blue_plinth_band",
+      "filename": "new_paint_blue_plinth_band.png",
+      "destination": "inbox/sarcelle_h12/new_paint_blue_plinth_band.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Old blue plinth-coat paint on exterior concrete, chalking and abrasion, no horizontal base band boundary.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Old blue plinth-coat paint on exterior concrete, chalking and abrasion, no horizontal base band boundary. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h12/new_paint_blue_plinth_band.png; filename new_paint_blue_plinth_band.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 44,
+      "job_id": "sarcelle_h12__new_paint_teal_worn",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h12",
+      "source_glb": "inbox/sarcelle_h12/sarcelle_h12.glb",
+      "source_note": "inbox/sarcelle_h12/note.txt",
+      "material": "new_paint_teal_worn",
+      "filename": "new_paint_teal_worn.png",
+      "destination": "inbox/sarcelle_h12/new_paint_teal_worn.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Well-worn teal/turquoise outdoor paint on metal and timber trims with very small irregular nicks, faded pigment and sparse staining, no door or fence outlines.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Well-worn teal/turquoise outdoor paint on metal and timber trims with very small irregular nicks, faded pigment and sparse staining, no door or fence outlines. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h12/new_paint_teal_worn.png; filename new_paint_teal_worn.png.",
+      "existing_same_named_png_elsewhere": [
+        "inbox/le_souffleur_H04/new_paint_teal_worn.png"
+      ],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 45,
+      "job_id": "sarcelle_h12__new_plaster_orange_weathered",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h12",
+      "source_glb": "inbox/sarcelle_h12/sarcelle_h12.glb",
+      "source_note": "inbox/sarcelle_h12/note.txt",
+      "material": "new_plaster_orange_weathered",
+      "filename": "new_plaster_orange_weathered.png",
+      "destination": "inbox/sarcelle_h12/new_plaster_orange_weathered.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Weathered orange-painted mineral render with flakes, chalking, sun-fading and fine sandy plaster grains, no columns, lintels or walls in view.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Weathered orange-painted mineral render with flakes, chalking, sun-fading and fine sandy plaster grains, no columns, lintels or walls in view. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h12/new_plaster_orange_weathered.png; filename new_plaster_orange_weathered.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    },
+    {
+      "order": 46,
+      "job_id": "sarcelle_h12__new_screen_block_concrete",
+      "action": "generate_missing_photo",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "main",
+      "building_name": "sarcelle_h12",
+      "source_glb": "inbox/sarcelle_h12/sarcelle_h12.glb",
+      "source_note": "inbox/sarcelle_h12/note.txt",
+      "material": "new_screen_block_concrete",
+      "filename": "new_screen_block_concrete.png",
+      "destination": "inbox/sarcelle_h12/new_screen_block_concrete.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "stated in note.txt",
+      "description": "Aged unpainted gray concrete block material, sandy aggregates, pores and scattered weather marks; screen-block perforations and rectangular outlines must be supplied by mesh geometry, not printed.",
+      "prompt": "Generate exactly one sharp, documentary-style photorealistic seamless material surface photograph for a production UE5 building, not a render, not a hand illustration, and not a procedurally synthesised texture. SUBJECT: Aged unpainted gray concrete block material, sandy aggregates, pores and scattered weather marks; screen-block perforations and rectangular outlines must be supplied by mesh geometry, not printed. Photographed real-world coverage: 2 × 2 metres (from building note). Fill one square frame edge to edge, camera exactly perpendicular to the surface, soft even diffuse/cross-polarised lighting and uniform exposure. True material detail, believable irregularity, natural colour. The pattern must continue seamlessly along all four edges; no mirror halves, cross-fades, blurred edge bands, ghosting, symmetry or repetitive artificial grid. Keep architectural joins, plank boundaries, corrugations, joints, mouldings, component silhouettes and large seams in the 3D mesh, not the photograph. No lettering, logos, vignette, dramatic shadows or perspective. Native 1254 × 1254 PNG ONLY, no upscaling or resampling. Save exact path: inbox/sarcelle_h12/new_screen_block_concrete.png; filename new_screen_block_concrete.png.",
+      "existing_same_named_png_elsewhere": [],
+      "audited_status": "missing_at_exact_destination"
+    }
+  ],
+  "reuse_jobs": [
+    {
+      "order": 1,
+      "job_id": "codex_church_reuse__new_clock_enamel_ivory",
+      "action": "copy_existing_photo_after_validation",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "finish/fond-h04-codex",
+      "building_name": "grand_fond_parish_church_codex",
+      "source_glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+      "source_note": "inbox/grand_fond_parish_church_codex/note.txt",
+      "material": "new_clock_enamel_ivory",
+      "source_image": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_clock_enamel_ivory.png",
+      "source_branch": "finish/fond-h04-codex",
+      "destination": "inbox/grand_fond_parish_church_codex/new_clock_enamel_ivory.png",
+      "filename": "new_clock_enamel_ivory.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "Codex church source notes",
+      "description": "Aged ivory enamel clock dial face, no numerals or hands – geometry carries dial indices.",
+      "audited_status": "source_image_exists_destination_missing",
+      "instruction": "Validate source PNG is readable/native 1254 square, inspect seamless 3x3 and copy byte-for-byte to exact destination in same branch; never regenerate or upscale. If invalid, mark blocked rather than replacing."
+    },
+    {
+      "order": 2,
+      "job_id": "codex_church_reuse__new_limestone_pale_aged",
+      "action": "copy_existing_photo_after_validation",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "finish/fond-h04-codex",
+      "building_name": "grand_fond_parish_church_codex",
+      "source_glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+      "source_note": "inbox/grand_fond_parish_church_codex/note.txt",
+      "material": "new_limestone_pale_aged",
+      "source_image": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_limestone_pale_aged.png",
+      "source_branch": "finish/fond-h04-codex",
+      "destination": "inbox/grand_fond_parish_church_codex/new_limestone_pale_aged.png",
+      "filename": "new_limestone_pale_aged.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "Codex church source notes",
+      "description": "Pale cream-grey weathered limestone surface with tiny mineral pores and mild age patina, no mortar or masonry joins.",
+      "audited_status": "source_image_exists_destination_missing",
+      "instruction": "Validate source PNG is readable/native 1254 square, inspect seamless 3x3 and copy byte-for-byte to exact destination in same branch; never regenerate or upscale. If invalid, mark blocked rather than replacing."
+    },
+    {
+      "order": 3,
+      "job_id": "codex_church_reuse__new_lookout_waterproofing",
+      "action": "copy_existing_photo_after_validation",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "finish/fond-h04-codex",
+      "building_name": "grand_fond_parish_church_codex",
+      "source_glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+      "source_note": "inbox/grand_fond_parish_church_codex/note.txt",
+      "material": "new_lookout_waterproofing",
+      "source_image": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_lookout_waterproofing.png",
+      "source_branch": "finish/fond-h04-codex",
+      "destination": "inbox/grand_fond_parish_church_codex/new_lookout_waterproofing.png",
+      "filename": "new_lookout_waterproofing.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "Codex church source notes",
+      "description": "Gray mineral-granule roof coating on lookout floor, restrained fine aggregate, no seams.",
+      "audited_status": "source_image_exists_destination_missing",
+      "instruction": "Validate source PNG is readable/native 1254 square, inspect seamless 3x3 and copy byte-for-byte to exact destination in same branch; never regenerate or upscale. If invalid, mark blocked rather than replacing."
+    },
+    {
+      "order": 4,
+      "job_id": "codex_church_reuse__new_roof_metal_oxblood",
+      "action": "copy_existing_photo_after_validation",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "finish/fond-h04-codex",
+      "building_name": "grand_fond_parish_church_codex",
+      "source_glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+      "source_note": "inbox/grand_fond_parish_church_codex/note.txt",
+      "material": "new_roof_metal_oxblood",
+      "source_image": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_roof_metal_oxblood.png",
+      "source_branch": "finish/fond-h04-codex",
+      "destination": "inbox/grand_fond_parish_church_codex/new_roof_metal_oxblood.png",
+      "filename": "new_roof_metal_oxblood.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        2,
+        2
+      ],
+      "physical_tile_size_source": "Codex church source notes",
+      "description": "Faded deep oxblood-red painted roof metal with natural coating chalk and tiny scuffs, no corrugation or raised metal seams.",
+      "audited_status": "source_image_exists_destination_missing",
+      "instruction": "Validate source PNG is readable/native 1254 square, inspect seamless 3x3 and copy byte-for-byte to exact destination in same branch; never regenerate or upscale. If invalid, mark blocked rather than replacing."
+    },
+    {
+      "order": 5,
+      "job_id": "codex_church_reuse__new_zinc_dome_aged",
+      "action": "copy_existing_photo_after_validation",
+      "repository": "turbidtunes/bastlerkiste-start",
+      "branch": "finish/fond-h04-codex",
+      "building_name": "grand_fond_parish_church_codex",
+      "source_glb": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
+      "source_note": "inbox/grand_fond_parish_church_codex/note.txt",
+      "material": "new_zinc_dome_aged",
+      "source_image": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_zinc_dome_aged.png",
+      "source_branch": "finish/fond-h04-codex",
+      "destination": "inbox/grand_fond_parish_church_codex/new_zinc_dome_aged.png",
+      "filename": "new_zinc_dome_aged.png",
+      "kind": "photoreal_seamless_tile",
+      "native_resolution_px": [
+        1254,
+        1254
+      ],
+      "physical_tile_size_m": [
+        1,
+        1
+      ],
+      "physical_tile_size_source": "Codex church source notes",
+      "description": "Oxidized dull gray zinc dome sheeting, fine diffuse oxidation; panel ribs and metal joins modeled in geometry.",
+      "audited_status": "source_image_exists_destination_missing",
+      "instruction": "Validate source PNG is readable/native 1254 square, inspect seamless 3x3 and copy byte-for-byte to exact destination in same branch; never regenerate or upscale. If invalid, mark blocked rather than replacing."
+    }
+  ]
+}
