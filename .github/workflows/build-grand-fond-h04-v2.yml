@@ -1,0 +1,180 @@
+name: Grand-Fond H04 - Kirche neu bauen (V2)
+
+# Explicit manual start ONLY: committing this file never spends Claude credits.
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Claude-Modell; Sonnet ist die guenstigere Voreinstellung"
+        required: true
+        type: choice
+        default: claude-sonnet-5-5
+        options:
+          - claude-sonnet-5-5
+          - claude-opus-5-5
+      max_estimated_usd:
+        description: "Geschätzte Obergrenze in USD; Prüfung vor jedem API-Aufruf"
+        required: true
+        type: string
+        default: "40"
+      visual_review:
+        description: "Visuelle Prüfung kritischer Phasen (+ API-Kosten)"
+        required: true
+        type: boolean
+        default: true
+      resume_run_id:
+        description: "Optional: Run-ID eines vorherigen V2-Laufs zum Wiederverwenden von Checkpoints"
+        required: false
+        type: string
+      preflight_only:
+        description: "Nur kostenlose Vorbereitung testen, keinen Claude-Aufruf starten"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: church-grand-fond-h04-v2
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Fond H04 - 9 isolierte Blender-Stufen
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Eingaben und feste Kirchenquellen pruefen (kostenlos)
+        id: guard
+        env:
+          RESUME_INPUT: ${{ inputs.resume_run_id }}
+          USD_INPUT: ${{ inputs.max_estimated_usd }}
+        run: |
+          set -euo pipefail
+          test -s prompts/fond_h04.md
+          test -s referenzbilder/ref_grand_fond_H04_g_church_creole.png
+          test -s scripts/church_h04_v2.py
+          /usr/bin/python3 - <<'PY'
+          import os, re
+          from pathlib import Path
+          value = os.environ.get("RESUME_INPUT", "").strip()
+          try:
+              usd = float(os.environ["USD_INPUT"])
+          except ValueError:
+              raise SystemExit("Maximale USD-Schaetzung muss eine Zahl sein")
+          if not 1 <= usd <= 500:
+              raise SystemExit("Nur MAX_ESTIMATED_USD 1..500 erlaubt")
+          if value and (not re.fullmatch(r"[1-9][0-9]{0,17}", value)
+                        or value == os.environ["GITHUB_RUN_ID"]):
+              raise SystemExit("Ungueltige Resume-Run-ID")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a") as f:
+              f.write("resume=" + ("true" if value else "false") + "\n")
+              if value:
+                  f.write("resume_id=" + value + "\n")
+          print("Kirchenquellen und Budgetparameter geprueft; noch keine API-Kosten")
+          PY
+
+      - name: V2-Checkpoints aus fehlgeschlagenem Lauf laden (optional, kostenlos)
+        if: ${{ steps.guard.outputs.resume == 'true' }}
+        uses: actions/download-artifact@v4
+        with:
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.guard.outputs.resume_id }}
+          pattern: diagnose-fond-h04-v2-*
+          merge-multiple: true
+          path: _asset_work/fond_h04
+
+      - name: Blender und Claude-SDK einrichten, vor API prüfen
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-numpy python3-venv libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          /usr/bin/python3 -m venv .church_venv
+          .church_venv/bin/pip install --upgrade 'anthropic>=0.75,<2'
+          .church_venv/bin/python -m py_compile scripts/church_h04_v2.py scripts/blender_worker.py scripts/blender_lib/smoke_test.py
+          blender --version | head -n 2
+          blender --version | head -n 1 | grep -E 'Blender 4\.'
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            --python scripts/blender_lib/smoke_test.py \
+            | tee /tmp/church-smoke-test.log
+          grep -F BUILDING_KIT_SMOKE_OK /tmp/church-smoke-test.log
+
+      - name: Kostenlose Vorbereitung beendet
+        if: ${{ inputs.preflight_only }}
+        run: echo "PRE-FLIGHT-ONLY: Blender und Python bereit. Kein Claude-Aufruf."
+
+      - name: Kirche frisch generieren, pruefen und GLB exportieren
+        if: ${{ !inputs.preflight_only }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ inputs.model }}
+          MAX_ESTIMATED_USD: ${{ inputs.max_estimated_usd }}
+          VISUAL_REVIEW: ${{ inputs.visual_review }}
+          RESUME_RUN_ID: ${{ steps.guard.outputs.resume_id }}
+        run: |
+          set -euo pipefail
+          .church_venv/bin/python -u scripts/church_h04_v2.py
+
+      - name: Bauphasen und Kosten in Job-Zusammenfassung anzeigen
+        if: always()
+        run: |
+          if test -s _asset_work/fond_h04/plan.md; then
+            printf '## Numerischer H04-Kirchenplan\n\n' >> "$GITHUB_STEP_SUMMARY"
+            head -c 20000 _asset_work/fond_h04/plan.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if test -s _asset_work/fond_h04/usage.json; then
+            printf '\n\n## Claude API-Nutzung (Einzelaufrufe)\n\n' >> "$GITHUB_STEP_SUMMARY"
+            printf 'Siehe diagnose-fond-h04-v2 Artefakt / usage.json\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Alle Blender-Zwischenstaende archivieren (auch bei Fehler)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnose-fond-h04-v2-${{ github.run_number }}
+          path: |
+            _asset_work/fond_h04/source_sha256.txt
+            _asset_work/fond_h04/plan.md
+            _asset_work/fond_h04/stage_checkpoints.json
+            _asset_work/fond_h04/usage.json
+            _asset_work/fond_h04/final_validation.json
+            _asset_work/fond_h04/stages/*.blend
+            _asset_work/fond_h04/stages/*.py
+            _asset_work/fond_h04/stages/*.json
+            _asset_work/fond_h04/stages/*.log
+            _asset_work/fond_h04/stages/*.txt
+            _asset_work/fond_h04/views/*.png
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: ignore
+
+      - name: Nur die fertige Kirche nach inbox/fond_h04 committen
+        if: ${{ success() && !inputs.preflight_only }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -s inbox/fond_h04/fond_h04.glb
+          test -s inbox/fond_h04/note.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- inbox/fond_h04/
+          if git diff --cached --quiet; then
+            echo "Kirche unveraendert"
+            exit 0
+          fi
+          git commit -m "Build fresh Grand-Fond H04 church LOD0 via segmented V2"
+          HEADER="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          git -c http.extraheader="$HEADER" pull --rebase origin main
+          git -c http.extraheader="$HEADER" push origin HEAD:main
+          echo "Fertig: inbox/fond_h04/fond_h04.glb"
