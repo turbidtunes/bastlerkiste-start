@@ -1,0 +1,24 @@
+{
+  "triangles": 126954,
+  "nodes": 105,
+  "door_leaves": 12,
+  "placeholders": 73,
+  "shell_watertight": true,
+  "winding_consistent": true,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "bounds_gltf": [
+    [
+      -10.399999618530273,
+      -0.20000000298023224,
+      -16.5907039642334
+    ],
+    [
+      10.399999618530273,
+      18.25,
+      16.5907039642334
+    ]
+  ],
+  "embedded_images": 0,
+  "issues": []
+}

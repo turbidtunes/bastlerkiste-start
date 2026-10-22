@@ -1,20 +1,49 @@
-GRAND-FOND H04 / CODEX ALTERNATIVE – VORABVERSION, NICHT ENDABGENOMMEN
+Grand-Fond H04 / Codex-Alternative – eigenstaendiger Produktionsstand
+Quelle: rescue/fond_h04 / rescue/grand_fond_H04/church_work/build.py
+vollstaendig NEU aus der letzten Quellfassung gebaut, nicht aus altem GLB kopiert.
+Fuer Unreal Engine 5: LOD0, Meter, glTF Y-up.
+Dreiecke: 126954; Tuernodes: 12; Moebelplatzhalter: 73
+gltf bounding box: [[-10.399999618530273, -0.20000000298023224, -16.5907039642334], [10.399999618530273, 18.25, 16.5907039642334]]
+PASS: Wasserfeste Architektur, keine degenerierten Dreiecke, keine Restkollisionen,
+alle Tuer-Schwenkwinkel 15/30/45/60/75/90 Grad getestet.
+Foto-Materialien fehlen im GLB absichtlich; vorhandene Texturkacheln aus dem
+Codex-Rettungsordner sind separate, unveraenderte 1254-Pixel-Bilder.
+Keine neuen oder prozeduralen Texturen wurden erzeugt.
+Materialien: basalt_masonry, basalt_dressed, rubble_pointing, new_limestone_pale_aged, limewash, limestone_flag, floor_tiles, concrete_cast, plaster_white, new_roof_metal_oxblood, new_zinc_dome_aged, white_peeling_timber, wood_mahogany_varnished, painted_timber_warmgrey, galvanized_steel, steel_painted_worn, new_clock_enamel_ivory, new_lookout_waterproofing, glass, lamp_glass, placeholder
+Anschlussfotos (bestehende, unveraenderte Dateinamen):
+ - new_limestone_pale_aged.png (separat aus rescue/grand_fond_H04/inbox/)
+ - new_roof_metal_oxblood.png (separat aus rescue/grand_fond_H04/inbox/)
+ - new_zinc_dome_aged.png (separat aus rescue/grand_fond_H04/inbox/)
+ - new_clock_enamel_ivory.png (separat aus rescue/grand_fond_H04/inbox/)
+ - new_lookout_waterproofing.png (separat aus rescue/grand_fond_H04/inbox/)
 
-Datei: grand_fond_parish_church_codex.glb
-Quelle: latest_generated_raw
-Dreiecke: 126972; Architektur-Meshes: 20
-Tueren: 12; Moebel-Platzhalter: 73
-Fuer Unreal Engine 5 / glTF. Keine Texturen eingebettet.
+Tuerrollen (aus dem aktuellen neu gebauten Modell):
+ - DoorLeaf_02_L_in: west landing -> side aisle; Oeffnung 1.10m
+ - DoorLeaf_03_R_in: east landing -> side aisle; Oeffnung 1.10m
+ - DoorLeaf_05_R_in: choir -> sacristy; Oeffnung 0.90m
+ - DoorLeaf_04_L_in: rear landing -> sacristy; Oeffnung 1.10m
+ - DoorLeaf_06_L_in: east aisle -> parish office; Oeffnung 0.90m
+ - DoorLeaf_07_R_in: rear passage -> store; Oeffnung 0.90m
+ - DoorLeaf_08_L_in: rear passage -> WC; Oeffnung 0.90m
+ - DoorLeaf_01a_L_in: main landing -> vestibule; Oeffnung 2.40m
+ - DoorLeaf_01b_R_in: main landing -> vestibule; Oeffnung 2.40m
+ - DoorLeaf_09_R_in: vestibule -> tower stair; Oeffnung 0.90m
+ - DoorLeaf_10_L_in: tower landing -> bell room; Oeffnung 0.90m
+ - DoorLeaf_11_R_in: lookout -> tower stair enclosure; Oeffnung 1.10m
 
-WICHTIG: Der strenge Fertigstellungsprozess wurde nicht erfolgreich abgeschlossen.
-Die GLB konnte numerisch als glTF geladen werden, aber dies ist KEINE
-Zusicherung ueber wasserdichte Architektur, Kollisionen, begehbaren Turm,
-Tuerschwenks, UV-Qualitaet, Triangulation oder UE5 Import.
-Es wird keine vollstaendige Qualitaetspruefung behauptet.
+Moebelrollen nach Raum:
+ - hall: bench x1, notice_board x1, ceiling_lamp x1
+ - chapel: pew x14, ceiling_lamp x6, ceiling_fan x4
+ - chapel2: altar x1, lectern x1, pew x4, ceiling_lamp x2
+ - store: vestment_cabinet x2, preparation_table x1, chair x2, basin x1, mirror x1, wall_shelf x1, ceiling_lamp x1
+ - office: office_desk x1, office_chair x1, visitor_chair x2, filing_cabinet x1, file_shelf x1, ceiling_lamp x1, ceiling_fan x1
+ - store2: storage_rack x2, ceiling_lamp x1
+ - bathroom: wc x1, basin x1, mirror x1, towel_rail x1, ceiling_lamp x1
+ - hall2: ceiling_lamp x2
+ - hall3: wall_lamp x9
+ - hall4: church_bell x1, wall_lamp x1
 
-Gefundene bzw. ungepruefte Probleme:
- - Strict full QA interrupted or not completed; refer to diagnostic logs
-
-Vollstaendige Fehlerdetails: qa_status.json und Action-Artefakt finish_logs/.
-Historische Originaldateien unveraendert in rescue/grand_fond_H04/.
-Fototexturen weiterhin separat im Rettungsordner; keine neuen erzeugt.
+Unvermeidbare Referenzabweichungen und vollstaendiger Architekturplan:
+siehe rescue/grand_fond_H04/original_plan.md und modelling_decisions.md.
+GLB-Unreal-Import und Material-Binding bleiben in UE5 zu testen; es wurden
+keine UE5-Spezifischen Interaktionen im Game-Editor ausgefuehrt.

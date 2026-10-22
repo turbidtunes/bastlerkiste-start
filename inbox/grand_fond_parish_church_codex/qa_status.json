@@ -1,24 +1,45 @@
 {
-  "status": "PREVIEW_NOT_APPROVED",
-  "ready_for_visual_inspection": true,
-  "strict_pipeline_exit_code": 1,
-  "strict_pipeline_timed_out": false,
-  "chosen_version": "latest_generated_raw",
-  "latest_source_included": true,
-  "file": "inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb",
-  "inspection": {
-    "nodes": 105,
-    "architecture_nodes": 20,
-    "door_nodes": 12,
-    "placeholder_nodes": 73,
-    "triangles": 126972,
-    "materials": 21,
-    "embedded_images": 0,
-    "source_bytes": 8107704
-  },
-  "known_or_unresolved_issues": [
-    "Strict full QA interrupted or not completed; refer to diagnostic logs"
+  "source": "/home/runner/work/bastlerkiste-start/bastlerkiste-start/rescue/grand_fond_H04",
+  "triangles": 126954,
+  "doors": 12,
+  "placeholders": 73,
+  "bounds_gltf": [
+    [
+      -10.399999618530273,
+      -0.20000000298023224,
+      -16.5907039642334
+    ],
+    [
+      10.399999618530273,
+      18.25,
+      16.5907039642334
+    ]
   ],
-  "important": "A parseable glTF is NOT evidence of correct walls, collision-free doors or a fully navigable tower",
-  "pipeline_log_tail": "    run(\"02_repair_python\", [sys.executable,\"-u\",str(WORK/\"repair_gltf_python.py\")],timeout=650)\n  File \"/home/runner/work/bastlerkiste-start/bastlerkiste-start/rescue/grand_fond_H04/finish_pipeline.py\", line 49, in run\n    raise RuntimeError(f\"{label}: return code {proc.returncode}: {text[-3000:]}\")\nRuntimeError: 02_repair_python: return code 1: STITCH 61166 vertices 124272 faces, 76 degenerate\nPRE_REPAIR_BOUNDARIES 62 NONMANIFOLD 0\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 5 vertices, area 2.465190328815662e-32 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 3.851859888774472e-34 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nFILL_LOOP 3 vertices -> 1 triangles\nFILL_LOOP 3 vertices -> 1 triangles\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 1.925929944387236e-34 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 12 vertices, area 0.0 offset=1mm\nDEGENERATE_SLIVER_SEALED 3 vertices, area 0.0 offset=1mm\nPOST_REPAIR_TOPOLOGY 0 boundary 0 nonmanifold\nTraceback (most recent call last):\n  File \"/workspace/church_work/repair_gltf_python.py\", line 196, in <module>\n    trimesh.repair.fix_normals(shell,multibody=True)\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/trimesh/repair.py\", line 181, in fix_normals\n    fix_winding(mesh)\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/trimesh/repair.py\", line 48, in fix_winding\n    graph_all = nx.from_edgelist(mesh.face_adjacency)\n                ^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/trimesh/exceptions.py\", line 35, in __getattribute__\n    raise exc_type(*exc_args)\nModuleNotFoundError: No module named 'networkx'\n\n"
+  "issues": [],
+  "validation": {
+    "triangles": 126954,
+    "nodes": 105,
+    "door_leaves": 12,
+    "placeholders": 73,
+    "shell_watertight": true,
+    "winding_consistent": true,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "bounds_gltf": [
+      [
+        -10.399999618530273,
+        -0.20000000298023224,
+        -16.5907039642334
+      ],
+      [
+        10.399999618530273,
+        18.25,
+        16.5907039642334
+      ]
+    ],
+    "embedded_images": 0,
+    "issues": []
+  },
+  "collisions": [],
+  "swing": []
 }
