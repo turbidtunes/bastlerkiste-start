@@ -1,22 +1,25 @@
-name: Grand-Fond H04 - Kirche neu bauen (V2)
+name: Kirche H04 - Neubau (5 USD)
 
 # Explicit manual start ONLY: committing this file never spends Claude credits.
 on:
+  # Register in the GitHub Actions sidebar on workflow-file changes, no paid call.
+  push:
+    paths:
+      - '.github/workflows/build-grand-fond-h04-v2.yml'
   workflow_dispatch:
     inputs:
       model:
-        description: "Claude-Modell; Sonnet ist die guenstigere Voreinstellung"
+        description: "Fest: Claude Sonnet 5.5 – schont das 6-USD-Restguthaben"
         required: true
         type: choice
         default: claude-sonnet-5-5
         options:
           - claude-sonnet-5-5
-          - claude-opus-5-5
       max_estimated_usd:
-        description: "Geschätzte Obergrenze in USD; Prüfung vor jedem API-Aufruf"
+        description: "Maximal 5.30 USD, Empfehlung 5.00 – Reserve zu 6 USD"
         required: true
         type: string
-        default: "40"
+        default: "5.00"
       visual_review:
         description: "Visuelle Prüfung kritischer Phasen (+ API-Kosten)"
         required: true
@@ -41,9 +44,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  register:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow in Actions sichtbar machen - kein Claude API-Aufruf
+        run: echo 'Workflow registriert. Manuell unter Actions starten.'
+
   build:
     name: Fond H04 - 9 isolierte Blender-Stufen
     runs-on: ubuntu-24.04
+    if: github.event_name == 'workflow_dispatch'
     timeout-minutes: 330
     steps:
       - name: Repository laden
@@ -69,8 +80,8 @@ jobs:
               usd = float(os.environ["USD_INPUT"])
           except ValueError:
               raise SystemExit("Maximale USD-Schaetzung muss eine Zahl sein")
-          if not 1 <= usd <= 500:
-              raise SystemExit("Nur MAX_ESTIMATED_USD 1..500 erlaubt")
+          if not 0.5 <= usd <= 5.30:
+              raise SystemExit("MAX_ESTIMATED_USD muss zwischen 0.50 und 5.30 liegen (6 USD Guthaben)")
           if value and (not re.fullmatch(r"[1-9][0-9]{0,17}", value)
                         or value == os.environ["GITHUB_RUN_ID"]):
               raise SystemExit("Ungueltige Resume-Run-ID")
