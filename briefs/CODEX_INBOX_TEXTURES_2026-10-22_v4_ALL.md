@@ -1,3 +1,5 @@
+> **NEUER IMPORTSTAND (22.10.2026):** 26 passende Material-PNGs liegen jetzt in den richtigen `inbox`-Ordnern; 20 V4-PNGs fehlen weiterhin. Die importierten JPG-Quellen wurden ohne Skalierung in PNG umgewandelt (25 × 2048², 1 × 1024²) und erfüllen deshalb noch nicht die in V4 gewünschte native Auflösung 1254². Vor weiterer Generierung immer `briefs/texture_import_progress_2026-10-22.json` und `texture_requests/IMPORT_REPORT_2026-10-22.md` prüfen, vorhandene PNGs nicht überschreiben.
+
 # CODEX-TEXTURAUFTRAG V4 – Gesamtes fertiges Gebäude-Inventar inkl. BEIDER Kirchen
 
 **Stand: 22. Oktober 2026.** Bezieht sich ausschließlich auf `turbidtunes/bastlerkiste-start` und vorhandene Gebäude-Assets. Dies ist der **verbindliche Nachfolger von V2, V3 und `texture_requests/CODEX_GENERATE_MISSING_IMAGES.md`**. NICHT alte Queues zusätzlich ausführen, sonst entstehen Dubletten oder falsch benannte Verzeichnisse.
