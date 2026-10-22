@@ -30,6 +30,22 @@ WORK.mkdir(parents=True,exist_ok=True)
 ORIG_OUT.mkdir(parents=True,exist_ok=True)
 for name in EXPECTED:
     shutil.copy2(SRC/"church_work"/name, WORK/name)
+
+# Codex authored its repair for Blender 4.3. GitHub's Ubuntu runner offers
+# Blender 4.0.2. Keep the archived original unchanged; patch ONLY this
+# ephemeral workspace copy with the compatible auto-smooth operator.
+repair_source=(WORK/"repair.py").read_text(encoding="utf-8")
+old_smooth="mesh.set_sharp_from_angle(angle=math.radians(30))"
+if repair_source.count(old_smooth)!=1:
+    raise RuntimeError("Unexpected Codex Blender smooth API; no unsafe patch")
+repair_source=repair_source.replace(
+    old_smooth,
+    "bpy.ops.object.shade_auto_smooth() if not hasattr(mesh, "
+    "'set_sharp_from_angle') else mesh.set_sharp_from_angle("
+    "angle=math.radians(30))"
+)
+(WORK/"repair.py").write_text(repair_source,encoding="utf-8")
+print("BLENDER_4_0_COMPATIBLE_REPAIR_PATCHED",flush=True)
 print("Source SHA256",hashlib.sha256((WORK/"build.py").read_bytes()).hexdigest(),flush=True)
 
 def run(label,cmd,timeout=900,env=None):
