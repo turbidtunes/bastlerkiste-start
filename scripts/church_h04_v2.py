@@ -35,7 +35,7 @@ PHASES = [
     ("facade_details", "Model columns, capitals, plinth, cornices, facade ornaments, tower louvers, cross and exterior lamps as real geometry, only building-attached elements."),
     ("furniture_uv", "Add complete Ph_* room furniture boxes (pews, altar, lectern, sacristy and other rooms); finalize exact named PBR material slots, metric UV0 on ALL meshes and modest bevels. No bitmap textures."),
 ]
-REVIEWS = {"tower_stairs", "doors", "furniture_uv"}
+REVIEWS = {"shell", "nave_roofs", "tower_stairs", "doors", "facade_details", "furniture_uv"}
 if MODEL not in RATES or not 1 <= LIMIT <= 500:
     raise SystemExit("Unzulässiges Modell oder MAX_ESTIMATED_USD")
 if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -205,6 +205,14 @@ def build_phase(phase, purpose, base, before, attempts=3):
             code=clean_code(answer)
             script.write_text(code, encoding="utf-8")
             blend, report=run_blender("stage","shell" if phase=="shell" else target,base,script)
+            if report["triangles"] > 150000:
+                raise RuntimeError("Trianglebudget schon in dieser Phase ueberschritten")
+            lower, upper = report["bounds_min_m"], report["bounds_max_m"]
+            if (lower[0] < -13.55 or upper[0] > 13.55 or
+                    lower[1] < -18.05 or upper[1] > 18.05):
+                raise RuntimeError("Bauteil ausserhalb des Baufensters; "
+                                   "Dach/Traufe/Stufen in Plot zuruecksetzen: "
+                                   + str((lower, upper)))
             if before and report["meshes"] < before["meshes"]*0.85:
                 raise RuntimeError("Bestand geloescht: zu viele Meshes verschwunden")
             if not blend.is_file():
