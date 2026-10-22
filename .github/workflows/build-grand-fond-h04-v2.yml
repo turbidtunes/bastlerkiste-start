@@ -40,7 +40,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: church-grand-fond-h04-v2
+  group: church-grand-fond-h04-v2-${{ github.event_name }}
   cancel-in-progress: false
 
 jobs:
