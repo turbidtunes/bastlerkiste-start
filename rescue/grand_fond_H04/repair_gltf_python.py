@@ -132,14 +132,37 @@ while unused:
     _,_,vt=np.linalg.svd(loopxyz-center,full_matrices=False)
     projected=(loopxyz-center)@vt[:2].T
     polygon=Polygon(projected)
-    if not polygon.is_valid or polygon.area<1e-12:
-        raise RuntimeError("Cannot triangulate degenerate boundary opening")
-    tri2d=triangulate(polygon)
     src=[edge_sources[tuple(sorted((path[i],path[(i+1)%len(path)])))]
          for i in range(len(path))]
     src=[k for group in src for k in group]
     mat=Counter(int(materials[x]) for x in src).most_common(1)[0][0]
     color=colors[src].mean(axis=0) if src else np.array([1.,1.,1.])
+    if not polygon.is_valid or polygon.area<1e-12:
+        # Original Manifold mesh sometimes collapses a submillimetre sliver
+        # to a line during glTF float32 export. Triangulation of such a loop
+        # fails. Close it with a tiny *off-line centre point* instead of
+        # returning an invalid non-watertight building.
+        from numpy.linalg import norm
+        direction=loopxyz[np.argmax(norm(loopxyz-loopxyz[0],axis=1))]-loopxyz[0]
+        direction/=max(norm(direction),1e-15)
+        neighbor=shell.face_normals[src[0]]
+        lateral=np.cross(neighbor,direction)
+        if norm(lateral)<1e-8:
+            lateral=np.cross(np.array([0.,0.,1.]),direction)
+        if norm(lateral)<1e-8:
+            lateral=np.cross(np.array([1.,0.,0.]),direction)
+        lateral/=max(norm(lateral),1e-15)
+        center3d=loopxyz.mean(axis=0)+lateral*0.001
+        new_id=len(vertices)
+        vertices=np.vstack((vertices,center3d))
+        for idx in range(len(path)):
+            added_faces.append([path[idx],path[(idx+1)%len(path)],new_id])
+            added_mats.append(mat)
+            added_colors.append(color)
+        print("DEGENERATE_SLIVER_SEALED",len(path),
+              "vertices, area",polygon.area,"offset=1mm",flush=True)
+        continue
+    tri2d=triangulate(polygon)
     added=0
     for poly in tri2d:
         if not polygon.covers(poly.representative_point()):
