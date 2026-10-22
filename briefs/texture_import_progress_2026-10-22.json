@@ -1,0 +1,277 @@
+{
+  "created_date": "2026-10-22",
+  "source_queue": "briefs/missing_inbox_textures_2026-10-22_v4_ALL.json",
+  "source_report": "texture_requests/IMPORT_REPORT_2026-10-22.md",
+  "status": "26 materials available in corresponding inbox; 20 V4 materials still missing; 5 alternative-church reuse items are separate",
+  "material_jobs_total": 46,
+  "existing_inbox_png": 26,
+  "remaining_missing_png": 20,
+  "note": "Existing PNGs were converted from source JPEGs without resampling. 25 images 2048x2048, one 1024x1024; they DO NOT meet strict 1254x1254 native resolution from V4. Their visual assignment is based on contact-sheet inspection; verify appearance in UE5.",
+  "existing_files": [
+    {
+      "destination": "inbox/calanques_h07/new_plaster_ochre_mallorca.png",
+      "bytes": 6974731,
+      "task_order": 1,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/cite_rhumerie_H01/new_plaster_oxblood_brown.png",
+      "bytes": 5846936,
+      "task_order": 3,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/cite_rhumerie_H01/new_timber_dark_stained.png",
+      "bytes": 5005518,
+      "task_order": 4,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/filaos_H01/new_railing_steel_blue.png",
+      "bytes": 5059274,
+      "task_order": 5,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/fond_h04/new_roof_corrugated_red.png",
+      "bytes": 4455582,
+      "task_order": 6,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/fond_h04/new_stained_glass.png",
+      "bytes": 6517323,
+      "task_order": 7,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/fond_h08/new_roof_shingle_wood_weathered.png",
+      "bytes": 5389358,
+      "task_order": 8,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/la_pointe_H01/new_timber_black_paint.png",
+      "bytes": 3455669,
+      "task_order": 13,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/les_calanques_H09/new_door_oak_aged.png",
+      "bytes": 6158275,
+      "task_order": 17,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/mare_joncs_h01/new_plaster_pink_weathered.png",
+      "bytes": 4020593,
+      "task_order": 18,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/mare_joncs_h01/new_plaster_rose_dark.png",
+      "bytes": 4212956,
+      "task_order": 19,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/mare_joncs_h01/new_shade_net_black.png",
+      "bytes": 7797823,
+      "task_order": 20,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/mare_joncs_h01/new_tank_plastic_green.png",
+      "bytes": 4741078,
+      "task_order": 22,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/paletuviers_h01/new_floor_planks_worn.png",
+      "bytes": 1045545,
+      "task_order": 23,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/paletuviers_h01/new_roof_sheet_verdigris.png",
+      "bytes": 3134750,
+      "task_order": 24,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/paletuviers_h01/new_weatherboard_green.png",
+      "bytes": 5490117,
+      "task_order": 25,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H03/new_door_blue_peeling.png",
+      "bytes": 7039071,
+      "task_order": 26,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H03/new_tarp_green.png",
+      "bytes": 5728944,
+      "task_order": 27,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H04/new_roof_corrugated_red.png",
+      "bytes": 2438387,
+      "task_order": 28,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H05/new_buoy_paint_peeled.png",
+      "bytes": 7807095,
+      "task_order": 29,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H05/new_plaster_blue_peeled.png",
+      "bytes": 6132961,
+      "task_order": 30,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H05/new_rattan_woven.png",
+      "bytes": 6234298,
+      "task_order": 31,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H05/new_rope_hemp.png",
+      "bytes": 9349777,
+      "task_order": 32,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H06/new_paint_red_oxide_peeling.png",
+      "bytes": 4943292,
+      "task_order": 33,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/riviere_noire_H06/new_plaster_sage_green_weathered.png",
+      "bytes": 5162632,
+      "task_order": 34,
+      "native_resolution_compliant": false
+    },
+    {
+      "destination": "inbox/sarcelle_h06/new_render_yellow_peeling.png",
+      "bytes": 7095448,
+      "task_order": 35,
+      "native_resolution_compliant": false
+    }
+  ],
+  "missing_files": [
+    {
+      "destination": "inbox/cite_rhumerie_H01/new_plaster_ochre_yellow.png",
+      "task_order": 2
+    },
+    {
+      "destination": "inbox/grand_fond_H06/new_castiron_green_worn.png",
+      "task_order": 9
+    },
+    {
+      "destination": "inbox/grand_fond_H16/new_floorboards_pine.png",
+      "task_order": 10
+    },
+    {
+      "destination": "inbox/grand_fond_H16/new_render_pink_weathered.png",
+      "task_order": 11
+    },
+    {
+      "destination": "inbox/grand_fond_H16/new_weatherboard_pink.png",
+      "task_order": 12
+    },
+    {
+      "destination": "inbox/le_souffleur_H03/new_plaster_pink_weathered.png",
+      "task_order": 14
+    },
+    {
+      "destination": "inbox/le_souffleur_H06/new_plaster_ochre_peeling.png",
+      "task_order": 15
+    },
+    {
+      "destination": "inbox/le_souffleur_H06/new_timber_teal_peeling.png",
+      "task_order": 16
+    },
+    {
+      "destination": "inbox/mare_joncs_h01/new_tank_plastic_black.png",
+      "task_order": 21
+    },
+    {
+      "destination": "inbox/sarcelle_h07/new_paint_teal_weathered.png",
+      "task_order": 36
+    },
+    {
+      "destination": "inbox/sarcelle_h07/new_paint_yellow_worn.png",
+      "task_order": 37
+    },
+    {
+      "destination": "inbox/sarcelle_h08/new_enamel_green_cross.png",
+      "task_order": 38
+    },
+    {
+      "destination": "inbox/sarcelle_h08/new_paint_blue_signwriting.png",
+      "task_order": 39
+    },
+    {
+      "destination": "inbox/sarcelle_h08/new_plaster_teal_faded.png",
+      "task_order": 40
+    },
+    {
+      "destination": "inbox/sarcelle_h08/new_tile_plinth_teal.png",
+      "task_order": 41
+    },
+    {
+      "destination": "inbox/sarcelle_h12/new_corrugated_blue_rusty.png",
+      "task_order": 42
+    },
+    {
+      "destination": "inbox/sarcelle_h12/new_paint_blue_plinth_band.png",
+      "task_order": 43
+    },
+    {
+      "destination": "inbox/sarcelle_h12/new_paint_teal_worn.png",
+      "task_order": 44
+    },
+    {
+      "destination": "inbox/sarcelle_h12/new_plaster_orange_weathered.png",
+      "task_order": 45
+    },
+    {
+      "destination": "inbox/sarcelle_h12/new_screen_block_concrete.png",
+      "task_order": 46
+    }
+  ],
+  "alternative_church_copy_jobs": [
+    {
+      "source": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_clock_enamel_ivory.png",
+      "destination": "inbox/grand_fond_parish_church_codex/new_clock_enamel_ivory.png",
+      "branch": "finish/fond-h04-codex"
+    },
+    {
+      "source": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_limestone_pale_aged.png",
+      "destination": "inbox/grand_fond_parish_church_codex/new_limestone_pale_aged.png",
+      "branch": "finish/fond-h04-codex"
+    },
+    {
+      "source": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_lookout_waterproofing.png",
+      "destination": "inbox/grand_fond_parish_church_codex/new_lookout_waterproofing.png",
+      "branch": "finish/fond-h04-codex"
+    },
+    {
+      "source": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_roof_metal_oxblood.png",
+      "destination": "inbox/grand_fond_parish_church_codex/new_roof_metal_oxblood.png",
+      "branch": "finish/fond-h04-codex"
+    },
+    {
+      "source": "rescue/grand_fond_H04/inbox/grand_fond_parish_church/new_zinc_dome_aged.png",
+      "destination": "inbox/grand_fond_parish_church_codex/new_zinc_dome_aged.png",
+      "branch": "finish/fond-h04-codex"
+    }
+  ]
+}
