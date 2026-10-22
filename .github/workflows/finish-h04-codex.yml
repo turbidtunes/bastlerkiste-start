@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: fond-h04-codex-alt-${{ github.ref }}
+  group: fond-h04-codex-pythononly-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
