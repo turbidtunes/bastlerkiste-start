@@ -1,0 +1,72 @@
+RETTUNGSKOPIE grand_fond_H04 — KEINE FERTIGABNAHME
+Nutzung: Katholische Pfarrkirche des Bourg Grand-Fond mit Schiff, Seitenschiffen, Chor, Sakristei, Büro, Lager, WC, Glockenturm und Ausblick.
+Möbelstil: authority. Assetname: grand_fond_parish_church.
+Branch: rescue/fond_h04. Basis-main: 8462cad7bf4e6f3ddb067aa31cca89fe45e8dfd8.
+Originaldateien unverändert gesichert. Keine Modellierung fortgesetzt, keine Texturen erzeugt. Bestehende Texturen wurden unverändert übernommen.
+
+BAUSTAND
+Vorhanden: Außenhülle und Innenräume, Arkaden/Obergaden/Apsis, Dächer und Turmkuppel, Turmtreppe und Ausblick, Freitreppen, gotische Türen/Fenster, Fassadendetails, Entwässerung, Uhr/Kreuze, 12 separate Türblätter und 73 Möbelplatzhalter. Python-Skripte, Blender-Datei samt Sicherung, rohe und bereinigte GLB, Renderings und sämtliche vorhandenen Prüfprotokolle sind enthalten.
+Roh-Export laut letztem stats.json: 126960 Dreiecke, davon Architektur 124376; 105 Knoten. Die finale Dreieckszahl von clean.glb ist noch nicht abschließend geprüft.
+
+BELEGTE PRÜFERGEBNISSE UND GRENZEN
+Letztes build.log: Manifold-Vereinigung abgeschlossen, Status Error.NoError.
+Letztes repair.log: 35 offene Randkanten vor Reparatur, 8 ergänzte Flächen; danach 0 Randkanten und 0 nicht-mannigfaltige Kanten in der lokalen Blender-Prüfung; kleine Dreiecke von 11 auf 0 reduziert. GLB-Export beendet. Diese Zwischenprüfung ersetzt keine Prüfung der exportierten Enddatei.
+Älteres validation.json: konsistente Orientierung, 12 Türblätter, 73 Platzhalter, keine eingebetteten Bilder; zugleich NICHT wasserdicht, eine nicht-mannigfaltige Kante und drei flächenlose Dreiecke. Älteres collisions.json: kleine Überschneidung an DoorLeaf_06_L_in. Diese Berichte sind älter als die letzten Korrekturen und bleiben unverändert erhalten.
+Blender-Import und historische Renderings vorhanden; diese Ansichten sind nicht der jüngste Modellstand.
+Dateisicherung: alle 26 Dateien aus church_work/ und dem vorhandenen Asset-Ausgabeordner bytegenau mit den Quellen verglichen; SHA256, Git-Blob-SHA1 und ursprüngliche Änderungszeiten im snapshot_manifest.json.
+
+BIS ZUR FERTIGEN GLB OFFEN
+1. Erst nach erneuter Modellierungsfreigabe: jüngste Quelltextänderung am Treppenunterseitenprofil bauen. build.py (07:41:44 UTC) ist neuer als Roh-GLB (07:41:10) und clean.glb (07:41:27).
+2. Neueste exportierte GLB unabhängig prüfen: geschlossene/manifold Geometrie, degenerierte Flächen, Normalen, Meter-UVs, Material-/Mesh-Namen, Tür-/Platzhaltertransformationen und Überschneidungen.
+3. Türschwenkprüfung durchführen; swing_check.py ist vorbereitet, ein Ergebnisbericht fehlt. Kopfhöhen, Treppen, Podeste und freie Wege anhand des aktuellen Stands abschließend prüfen.
+4. Aktuelle Sichtkontrolle/Renderings erstellen; review.blend und vorhandene Bilder sind historische Zwischenstände.
+5. Endgültige GLB aus dem verifizierten bereinigten Stand übernehmen, Mesh-Namen konsolidieren und Produktions-note.txt abschließen. finalise.py wurde nicht ausgeführt und enthält noch unbelegte Abschlussaussagen.
+6. UE5-Import, Materialersetzung und Türfunktion im Spiel sind noch nicht geprüft.
+
+TÜREN — Werte aus dem letzten ausgeführten stats.json; keine Endabnahme
+DoorLeaf_02_L_in: west landing -> side aisle; Öffnung 1.10 m; Blatt 1.086 m.
+DoorLeaf_03_R_in: east landing -> side aisle; Öffnung 1.10 m; Blatt 1.086 m.
+DoorLeaf_05_R_in: choir -> sacristy; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_04_L_in: rear landing -> sacristy; Öffnung 1.10 m; Blatt 1.086 m.
+DoorLeaf_06_L_in: east aisle -> parish office; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_07_R_in: rear passage -> store; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_08_L_in: rear passage -> WC; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_01a_L_in: main landing -> vestibule; Öffnung 2.40 m; Blatt 1.186 m.
+DoorLeaf_01b_R_in: main landing -> vestibule; Öffnung 2.40 m; Blatt 1.186 m.
+DoorLeaf_09_R_in: vestibule -> tower stair; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_10_L_in: tower landing -> bell room; Öffnung 0.90 m; Blatt 0.886 m.
+DoorLeaf_11_R_in: lookout -> tower stair enclosure; Öffnung 1.10 m; Blatt 1.086 m.
+Bei 01a/01b bezeichnet 2,40 m die gemeinsame Doppeltüröffnung.
+
+RÄUME UND PLATZHALTERROLLEN
+hall (Vorhalle): bench ×1, notice_board ×1, ceiling_lamp ×1
+chapel (Schiff und Seitenschiffe): pew ×14, ceiling_lamp ×6, ceiling_fan ×4
+chapel2 (Chor): altar ×1, lectern ×1, pew ×4, ceiling_lamp ×2
+store (Sakristei): vestment_cabinet ×2, preparation_table ×1, chair ×2, basin ×1, mirror ×1, wall_shelf ×1, ceiling_lamp ×1
+office (Pfarrbüro): office_desk ×1, office_chair ×1, visitor_chair ×2, filing_cabinet ×1, file_shelf ×1, ceiling_lamp ×1, ceiling_fan ×1
+store2 (Lager): storage_rack ×2, ceiling_lamp ×1
+bathroom (WC): wc ×1, basin ×1, mirror ×1, towel_rail ×1, ceiling_lamp ×1
+hall2 (hinterer Gang): ceiling_lamp ×2
+hall3 (Turmtreppe): wall_lamp ×9
+hall4 (Glockenraum): church_bell ×1, wall_lamp ×1
+Ausblick: kein loses Mobiliar; feste Außenleuchte. Exakte Knotennamen und Boxmaße in church_work/stats.json.
+
+MATERIALIEN
+basalt_masonry, basalt_dressed, rubble_pointing, new_limestone_pale_aged, limewash, limestone_flag, floor_tiles, concrete_cast, plaster_white, new_roof_metal_oxblood, new_zinc_dome_aged, white_peeling_timber, wood_mahogany_varnished, painted_timber_warmgrey, galvanized_steel, steel_painted_worn, new_clock_enamel_ivory, new_lookout_waterproofing, glass, lamp_glass, placeholder
+
+NEUE OBERFLÄCHEN / KACHELMASSSTAB
+new_limestone_pale_aged.png = 2 × 2 m; Hellgrau-cremefarbener gealterter Kalkstein mit feinen Poren und zurückhaltender Verwitterung, ohne Fugen oder Profile.
+new_roof_metal_oxblood.png = 2 × 2 m; Verblasster tiefroter Metallanstrich mit feiner Kreidung und Abnutzung, ohne Wellen oder Blechstöße.
+new_zinc_dome_aged.png = 1 × 1 m; Mattgraues gealtertes Zinkblech mit dezenter Oxidation, ohne Falze.
+new_clock_enamel_ivory.png = 1 × 1 m; Elfenbeinfarbene Emaille mit feiner Haarrissalterung, ohne Ziffern oder Schrift.
+new_lookout_waterproofing.png = 2 × 2 m; Gealterte graue mineralische Abdichtungsbeschichtung mit feinem Korn, ohne Fugen oder Schatten.
+Vorhandene Bildkacheln: 1254 × 1254 px, aus früherem Arbeitsstand; nicht während der Sicherung erzeugt.
+Fehlende new_*.png: keine unter den fünf im aktuellen Materialbestand deklarierten Oberflächen.
+Weitere fehlende Kacheln künftig ausschließlich in dieser note.txt aufführen; keine automatische Erzeugung.
+
+ABWEICHUNGEN VON DER REFERENZ / DEM URSPRÜNGLICHEN PLAN
+Maße und Innenräume aus der Referenz abgeleitet; Turm für begehbare Treppe verbreitert/vertieft; drei Nutzungsebenen; neue gesicherte Ausblickfläche vorne/rechts mit Zugang; Nebenräume hinten; verbreiterte begehbare Türen und bodengleicher Chor; nur eigene Treppen statt Vorplatz; Figurennische leer; kein Bewuchs.
+Im Verlauf: 14 statt 20 Schiffsbänke, eine statt zwei Vorhallenbänke, Bürozugang vom Ostseitenschiff, verschobene Tür/Pfeiler/Möbel zur Wegfreihaltung, größerer Treppenaustritt, bodengestützter Glocken-Gesamtplatzhalter, Uhrindices statt Ziffern. Vollständige Entscheidungsaufzeichnung in modelling_decisions.md; ursprünglicher Plan in original_plan.md.
+
+WIEDERAUFNAHME
+church_work/ und inbox/ bilden die bisherige relative Struktur ab. Skripte enthalten absolute /workspace-Pfade und erwarten zusätzliche Python-/Blender-Abhängigkeiten. Nicht automatisch ausführen. Quelldateien und Artefakte sind bewusst auf ihren unterschiedlichen historischen Ständen belassen. Die Sicherung ist kein fertig freigegebenes Produktionsasset.

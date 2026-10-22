@@ -1,0 +1,131 @@
+{
+  "triangles": 124154,
+  "nodes": 111,
+  "door_leaves": 12,
+  "placeholders": 79,
+  "shell_watertight": false,
+  "winding_consistent": true,
+  "boundary_edges": 83,
+  "nonmanifold_edges": 59,
+  "bounds_gltf": [
+    [
+      -10.399999618530273,
+      -0.20000000298023224,
+      -16.5907039642334
+    ],
+    [
+      10.399999618530273,
+      18.25,
+      16.5907039642334
+    ]
+  ],
+  "embedded_images": 0,
+  "issues": [
+    [
+      "basalt_masonry",
+      "zero_area",
+      14
+    ],
+    [
+      "basalt_masonry",
+      "reversed_normals",
+      32
+    ],
+    [
+      "basalt_masonry",
+      "bad_normals",
+      1.0
+    ],
+    [
+      "basalt_dressed",
+      "zero_area",
+      2
+    ],
+    [
+      "basalt_dressed",
+      "reversed_normals",
+      3
+    ],
+    [
+      "basalt_dressed",
+      "bad_normals",
+      1.0
+    ],
+    [
+      "rubble_pointing",
+      "zero_area",
+      14
+    ],
+    [
+      "rubble_pointing",
+      "reversed_normals",
+      1
+    ],
+    [
+      "new_limestone_pale_aged",
+      "zero_area",
+      1
+    ],
+    [
+      "limewash",
+      "zero_area",
+      13
+    ],
+    [
+      "limewash",
+      "reversed_normals",
+      16
+    ],
+    [
+      "limestone_flag",
+      "bad_normals",
+      1.0
+    ],
+    [
+      "concrete_cast",
+      "reversed_normals",
+      6
+    ],
+    [
+      "plaster_white",
+      "zero_area",
+      1
+    ],
+    [
+      "plaster_white",
+      "bad_normals",
+      1.0
+    ],
+    [
+      "new_roof_metal_oxblood",
+      "reversed_normals",
+      3
+    ],
+    [
+      "new_zinc_dome_aged",
+      "zero_area",
+      8
+    ],
+    [
+      "wood_mahogany_varnished",
+      "zero_area",
+      4
+    ],
+    [
+      "wood_mahogany_varnished",
+      "bad_normals",
+      1.0
+    ],
+    [
+      "steel_painted_worn",
+      "reversed_normals",
+      125
+    ],
+    [
+      "glass",
+      "reversed_normals",
+      42
+    ]
+  ]
+}
+Architecture intersections []

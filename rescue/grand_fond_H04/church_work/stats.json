@@ -1,0 +1,790 @@
+{
+  "triangles": 126960,
+  "shell_triangles": 124376,
+  "materials": [
+    "basalt_masonry",
+    "basalt_dressed",
+    "rubble_pointing",
+    "new_limestone_pale_aged",
+    "limewash",
+    "limestone_flag",
+    "floor_tiles",
+    "concrete_cast",
+    "plaster_white",
+    "new_roof_metal_oxblood",
+    "new_zinc_dome_aged",
+    "white_peeling_timber",
+    "wood_mahogany_varnished",
+    "painted_timber_warmgrey",
+    "galvanized_steel",
+    "steel_painted_worn",
+    "new_clock_enamel_ivory",
+    "new_lookout_waterproofing",
+    "glass",
+    "lamp_glass",
+    "placeholder"
+  ],
+  "doors": [
+    {
+      "name": "DoorLeaf_02_L_in",
+      "from_to": "west landing -> side aisle",
+      "opening_width_m": 1.1,
+      "leaf_width_m": 1.086
+    },
+    {
+      "name": "DoorLeaf_03_R_in",
+      "from_to": "east landing -> side aisle",
+      "opening_width_m": 1.1,
+      "leaf_width_m": 1.086
+    },
+    {
+      "name": "DoorLeaf_05_R_in",
+      "from_to": "choir -> sacristy",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_04_L_in",
+      "from_to": "rear landing -> sacristy",
+      "opening_width_m": 1.1,
+      "leaf_width_m": 1.086
+    },
+    {
+      "name": "DoorLeaf_06_L_in",
+      "from_to": "east aisle -> parish office",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_07_R_in",
+      "from_to": "rear passage -> store",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_08_L_in",
+      "from_to": "rear passage -> WC",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_01a_L_in",
+      "from_to": "main landing -> vestibule",
+      "opening_width_m": 2.4,
+      "leaf_width_m": 1.186
+    },
+    {
+      "name": "DoorLeaf_01b_R_in",
+      "from_to": "main landing -> vestibule",
+      "opening_width_m": 2.4,
+      "leaf_width_m": 1.186
+    },
+    {
+      "name": "DoorLeaf_09_R_in",
+      "from_to": "vestibule -> tower stair",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_10_L_in",
+      "from_to": "tower landing -> bell room",
+      "opening_width_m": 0.9,
+      "leaf_width_m": 0.886
+    },
+    {
+      "name": "DoorLeaf_11_R_in",
+      "from_to": "lookout -> tower stair enclosure",
+      "opening_width_m": 1.1,
+      "leaf_width_m": 1.086
+    }
+  ],
+  "rooms": {
+    "hall": [
+      {
+        "name": "Ph_hall_bench_01",
+        "role": "bench",
+        "size_m": [
+          1.7,
+          0.5,
+          0.85
+        ]
+      },
+      {
+        "name": "Ph_hall_notice_board_01",
+        "role": "notice_board",
+        "size_m": [
+          0.8,
+          0.05,
+          0.6
+        ]
+      },
+      {
+        "name": "Ph_hall_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "chapel": [
+      {
+        "name": "Ph_chapel_pew_01",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_02",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_03",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_04",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_05",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_06",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_07",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_08",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_09",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_10",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_11",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_12",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_13",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_pew_14",
+        "role": "pew",
+        "size_m": [
+          2.7,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_02",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_03",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_04",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_05",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_lamp_06",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_fan_01",
+        "role": "ceiling_fan",
+        "size_m": [
+          1.3,
+          1.3,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_fan_02",
+        "role": "ceiling_fan",
+        "size_m": [
+          1.3,
+          1.3,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_fan_03",
+        "role": "ceiling_fan",
+        "size_m": [
+          1.3,
+          1.3,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel_ceiling_fan_04",
+        "role": "ceiling_fan",
+        "size_m": [
+          1.3,
+          1.3,
+          0.15
+        ]
+      }
+    ],
+    "chapel2": [
+      {
+        "name": "Ph_chapel2_altar_01",
+        "role": "altar",
+        "size_m": [
+          2.4,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Ph_chapel2_lectern_01",
+        "role": "lectern",
+        "size_m": [
+          0.65,
+          0.6,
+          1.3
+        ]
+      },
+      {
+        "name": "Ph_chapel2_pew_01",
+        "role": "pew",
+        "size_m": [
+          1.8,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel2_pew_02",
+        "role": "pew",
+        "size_m": [
+          1.8,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel2_pew_03",
+        "role": "pew",
+        "size_m": [
+          1.8,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel2_pew_04",
+        "role": "pew",
+        "size_m": [
+          1.8,
+          0.65,
+          0.95
+        ]
+      },
+      {
+        "name": "Ph_chapel2_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_chapel2_ceiling_lamp_02",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "store": [
+      {
+        "name": "Ph_store_vestment_cabinet_01",
+        "role": "vestment_cabinet",
+        "size_m": [
+          1.5,
+          0.55,
+          2.1
+        ]
+      },
+      {
+        "name": "Ph_store_vestment_cabinet_02",
+        "role": "vestment_cabinet",
+        "size_m": [
+          1.4,
+          0.55,
+          2.1
+        ]
+      },
+      {
+        "name": "Ph_store_preparation_table_01",
+        "role": "preparation_table",
+        "size_m": [
+          1.5,
+          0.7,
+          0.85
+        ]
+      },
+      {
+        "name": "Ph_store_chair_01",
+        "role": "chair",
+        "size_m": [
+          0.45,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "name": "Ph_store_chair_02",
+        "role": "chair",
+        "size_m": [
+          0.45,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "name": "Ph_store_basin_01",
+        "role": "basin",
+        "size_m": [
+          0.6,
+          0.45,
+          0.85
+        ]
+      },
+      {
+        "name": "Ph_store_mirror_01",
+        "role": "mirror",
+        "size_m": [
+          0.6,
+          0.025,
+          0.7
+        ]
+      },
+      {
+        "name": "Ph_store_wall_shelf_01",
+        "role": "wall_shelf",
+        "size_m": [
+          1.0,
+          0.3,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_store_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "office": [
+      {
+        "name": "Ph_office_office_desk_01",
+        "role": "office_desk",
+        "size_m": [
+          1.4,
+          0.7,
+          0.75
+        ]
+      },
+      {
+        "name": "Ph_office_office_chair_01",
+        "role": "office_chair",
+        "size_m": [
+          0.55,
+          0.6,
+          1.05
+        ]
+      },
+      {
+        "name": "Ph_office_visitor_chair_01",
+        "role": "visitor_chair",
+        "size_m": [
+          0.5,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "name": "Ph_office_visitor_chair_02",
+        "role": "visitor_chair",
+        "size_m": [
+          0.5,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "name": "Ph_office_filing_cabinet_01",
+        "role": "filing_cabinet",
+        "size_m": [
+          0.9,
+          0.55,
+          1.35
+        ]
+      },
+      {
+        "name": "Ph_office_file_shelf_01",
+        "role": "file_shelf",
+        "size_m": [
+          1.2,
+          0.35,
+          1.9
+        ]
+      },
+      {
+        "name": "Ph_office_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_office_ceiling_fan_01",
+        "role": "ceiling_fan",
+        "size_m": [
+          1.3,
+          1.3,
+          0.15
+        ]
+      }
+    ],
+    "store2": [
+      {
+        "name": "Ph_store2_storage_rack_01",
+        "role": "storage_rack",
+        "size_m": [
+          1.4,
+          0.45,
+          2
+        ]
+      },
+      {
+        "name": "Ph_store2_storage_rack_02",
+        "role": "storage_rack",
+        "size_m": [
+          1.4,
+          0.45,
+          2
+        ]
+      },
+      {
+        "name": "Ph_store2_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "bathroom": [
+      {
+        "name": "Ph_bathroom_wc_01",
+        "role": "wc",
+        "size_m": [
+          0.55,
+          0.75,
+          0.8
+        ]
+      },
+      {
+        "name": "Ph_bathroom_basin_01",
+        "role": "basin",
+        "size_m": [
+          0.6,
+          0.45,
+          0.85
+        ]
+      },
+      {
+        "name": "Ph_bathroom_mirror_01",
+        "role": "mirror",
+        "size_m": [
+          0.6,
+          0.025,
+          0.7
+        ]
+      },
+      {
+        "name": "Ph_bathroom_towel_rail_01",
+        "role": "towel_rail",
+        "size_m": [
+          0.6,
+          0.08,
+          0.1
+        ]
+      },
+      {
+        "name": "Ph_bathroom_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "hall2": [
+      {
+        "name": "Ph_hall2_ceiling_lamp_01",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      },
+      {
+        "name": "Ph_hall2_ceiling_lamp_02",
+        "role": "ceiling_lamp",
+        "size_m": [
+          0.4,
+          0.4,
+          0.15
+        ]
+      }
+    ],
+    "hall3": [
+      {
+        "name": "Ph_hall3_wall_lamp_01",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_02",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_03",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_04",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_05",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_06",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_07",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_08",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      },
+      {
+        "name": "Ph_hall3_wall_lamp_09",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      }
+    ],
+    "hall4": [
+      {
+        "name": "Ph_hall4_church_bell_01",
+        "role": "church_bell",
+        "size_m": [
+          1.4,
+          1.2,
+          2.8
+        ]
+      },
+      {
+        "name": "Ph_hall4_wall_lamp_01",
+        "role": "wall_lamp",
+        "size_m": [
+          0.18,
+          0.1,
+          0.25
+        ]
+      }
+    ]
+  },
+  "bounds": [
+    -10.4,
+    -15.9,
+    -0.2,
+    10.4,
+    17.28140977367361,
+    18.25
+  ],
+  "nodes": 105,
+  "bytes": 8106024
+}

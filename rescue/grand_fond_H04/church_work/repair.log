@@ -1,0 +1,329 @@
+07:41:12 | INFO: Data are loaded, start creating Blender stuff
+07:41:12 | INFO: Blender create Mesh node basalt_masonry
+07:41:12 | INFO: Blender create Mesh node basalt_dressed
+07:41:12 | INFO: Blender create Mesh node rubble_pointing
+07:41:12 | INFO: Blender create Mesh node new_limestone_pale_aged
+07:41:12 | INFO: Blender create Mesh node limewash
+07:41:12 | INFO: Blender create Mesh node limestone_flag
+07:41:12 | INFO: Blender create Mesh node floor_tiles
+07:41:12 | INFO: Blender create Mesh node concrete_cast
+07:41:12 | INFO: Blender create Mesh node plaster_white
+07:41:12 | INFO: Blender create Mesh node new_roof_metal_oxblood
+07:41:12 | INFO: Blender create Mesh node new_zinc_dome_aged
+07:41:12 | INFO: Blender create Mesh node white_peeling_timber
+07:41:12 | INFO: Blender create Mesh node wood_mahogany_varnished
+07:41:12 | INFO: Blender create Mesh node painted_timber_warmgrey
+07:41:12 | INFO: Blender create Mesh node galvanized_steel
+07:41:12 | INFO: Blender create Mesh node steel_painted_worn
+07:41:12 | INFO: Blender create Mesh node new_clock_enamel_ivory
+07:41:12 | INFO: Blender create Mesh node new_lookout_waterproofing
+07:41:12 | INFO: Blender create Mesh node glass
+07:41:12 | INFO: Blender create Mesh node lamp_glass
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_02_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_03_R_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_05_R_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_04_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_06_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_07_R_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_08_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_01a_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_01b_R_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_09_R_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_10_L_in
+07:41:12 | INFO: Blender create Mesh node DoorLeaf_11_R_in
+07:41:12 | INFO: Blender create Mesh node Ph_hall_bench_01
+07:41:12 | INFO: Blender create Mesh node Ph_hall_notice_board_01
+07:41:12 | INFO: Blender create Mesh node Ph_hall_ceiling_lamp_01
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_01
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_02
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_03
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_04
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_05
+07:41:12 | INFO: Blender create Mesh node Ph_chapel_pew_06
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_07
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_08
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_09
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_10
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_11
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_12
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_13
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_pew_14
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_02
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_03
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_04
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_05
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_06
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_02
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_03
+07:41:13 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_04
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_altar_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_lectern_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_pew_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_pew_02
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_pew_03
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_pew_04
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_chapel2_ceiling_lamp_02
+07:41:13 | INFO: Blender create Mesh node Ph_store_vestment_cabinet_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_vestment_cabinet_02
+07:41:13 | INFO: Blender create Mesh node Ph_store_preparation_table_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_chair_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_chair_02
+07:41:13 | INFO: Blender create Mesh node Ph_store_basin_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_mirror_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_wall_shelf_01
+07:41:13 | INFO: Blender create Mesh node Ph_store_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_office_desk_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_office_chair_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_visitor_chair_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_visitor_chair_02
+07:41:13 | INFO: Blender create Mesh node Ph_office_filing_cabinet_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_file_shelf_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_office_ceiling_fan_01
+07:41:13 | INFO: Blender create Mesh node Ph_store2_storage_rack_01
+07:41:13 | INFO: Blender create Mesh node Ph_store2_storage_rack_02
+07:41:13 | INFO: Blender create Mesh node Ph_store2_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_bathroom_wc_01
+07:41:13 | INFO: Blender create Mesh node Ph_bathroom_basin_01
+07:41:13 | INFO: Blender create Mesh node Ph_bathroom_mirror_01
+07:41:13 | INFO: Blender create Mesh node Ph_bathroom_towel_rail_01
+07:41:13 | INFO: Blender create Mesh node Ph_bathroom_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_hall2_ceiling_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_hall2_ceiling_lamp_02
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_01
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_02
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_03
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_04
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_05
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_06
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_07
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_08
+07:41:13 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_09
+07:41:13 | INFO: Blender create Mesh node Ph_hall4_church_bell_01
+07:41:13 | INFO: Blender create Mesh node Ph_hall4_wall_lamp_01
+07:41:13 | INFO: glTF import finished in 0.55s
+Repair boundary before 35
+Repair faces added 8
+Repair boundary after 0 nonmanifold 0
+Tiny triangles 0 11
+Tiny triangles 1 0
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+07:41:27 | INFO: Starting glTF 2.0 export
+07:41:27 | INFO: Extracting primitive: lamp_glass.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: DoorLeaf_02_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_03_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_05_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_04_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_06_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_07_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_08_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_01a_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_01b_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_09_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_10_L_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: DoorLeaf_11_R_in
+07:41:27 | INFO: Primitives created: 2
+07:41:27 | INFO: Extracting primitive: Ph_hall_bench_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall_notice_board_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_03
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_04
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_05
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_06
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_07
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_08
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_09
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_10
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_11
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_12
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_13
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_pew_14
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_03
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_04
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_05
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_lamp_06
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_fan_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_fan_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_fan_03
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel_ceiling_fan_04
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_altar_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_lectern_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_pew_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_pew_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_pew_03
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_pew_04
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_chapel2_ceiling_lamp_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_vestment_cabinet_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_vestment_cabinet_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_preparation_table_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_chair_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_chair_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_basin_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_mirror_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_wall_shelf_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_office_desk_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_office_chair_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_visitor_chair_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_visitor_chair_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_filing_cabinet_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_file_shelf_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_office_ceiling_fan_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store2_storage_rack_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store2_storage_rack_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_store2_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_bathroom_wc_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_bathroom_basin_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_bathroom_mirror_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_bathroom_towel_rail_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_bathroom_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall2_ceiling_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall2_ceiling_lamp_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_02
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_03
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_04
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_05
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_06
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_07
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_08
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall3_wall_lamp_09
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall4_church_bell_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: Ph_hall4_wall_lamp_01
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: basalt_masonry
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: new_limestone_pale_aged.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: glass.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: new_roof_metal_oxblood.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: steel_painted_worn.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: painted_timber_warmgrey.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: galvanized_steel.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: rubble_pointing.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: white_peeling_timber.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: wood_mahogany_varnished.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: basalt_dressed.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: concrete_cast.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: new_zinc_dome_aged.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: new_clock_enamel_ivory.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: limewash.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: limestone_flag.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: floor_tiles.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: plaster_white.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Extracting primitive: new_lookout_waterproofing.001
+07:41:27 | INFO: Primitives created: 1
+07:41:27 | INFO: Finished glTF 2.0 export in 0.7698967456817627 s
+
+Blender 4.3.2
+
+Blender quit

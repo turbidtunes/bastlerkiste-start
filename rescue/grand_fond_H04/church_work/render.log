@@ -1,0 +1,430 @@
+07:11:22 | INFO: Data are loaded, start creating Blender stuff
+07:11:22 | INFO: Blender create Mesh node basalt_masonry
+07:11:22 | INFO: Blender create Mesh node basalt_dressed
+07:11:22 | INFO: Blender create Mesh node rubble_pointing
+07:11:22 | INFO: Blender create Mesh node new_limestone_pale_aged
+07:11:22 | INFO: Blender create Mesh node limewash
+07:11:22 | INFO: Blender create Mesh node limestone_flag
+07:11:22 | INFO: Blender create Mesh node floor_tiles
+07:11:22 | INFO: Blender create Mesh node concrete_cast
+07:11:22 | INFO: Blender create Mesh node plaster_white
+07:11:23 | INFO: Blender create Mesh node new_roof_metal_oxblood
+07:11:23 | INFO: Blender create Mesh node new_zinc_dome_aged
+07:11:23 | INFO: Blender create Mesh node white_peeling_timber
+07:11:23 | INFO: Blender create Mesh node wood_mahogany_varnished
+07:11:23 | INFO: Blender create Mesh node painted_timber_warmgrey
+07:11:23 | INFO: Blender create Mesh node galvanized_steel
+07:11:23 | INFO: Blender create Mesh node steel_painted_worn
+07:11:23 | INFO: Blender create Mesh node new_clock_enamel_ivory
+07:11:23 | INFO: Blender create Mesh node new_lookout_waterproofing
+07:11:23 | INFO: Blender create Mesh node glass
+07:11:23 | INFO: Blender create Mesh node lamp_glass
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_02_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_03_R_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_05_R_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_04_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_06_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_07_R_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_08_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_01a_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_01b_R_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_09_R_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_10_L_in
+07:11:23 | INFO: Blender create Mesh node DoorLeaf_11_R_in
+07:11:23 | INFO: Blender create Mesh node Ph_hall_bench_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall_notice_board_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_02
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_03
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_04
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_05
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_06
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_07
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_08
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_09
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_10
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_11
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_12
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_13
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_14
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_15
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_16
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_17
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_18
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_19
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_pew_20
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_02
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_03
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_04
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_05
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_lamp_06
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_02
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_03
+07:11:23 | INFO: Blender create Mesh node Ph_chapel_ceiling_fan_04
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_altar_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_lectern_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_pew_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_pew_02
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_pew_03
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_pew_04
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_chapel2_ceiling_lamp_02
+07:11:23 | INFO: Blender create Mesh node Ph_store_vestment_cabinet_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_vestment_cabinet_02
+07:11:23 | INFO: Blender create Mesh node Ph_store_preparation_table_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_chair_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_chair_02
+07:11:23 | INFO: Blender create Mesh node Ph_store_basin_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_mirror_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_wall_shelf_01
+07:11:23 | INFO: Blender create Mesh node Ph_store_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_office_desk_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_office_chair_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_visitor_chair_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_visitor_chair_02
+07:11:23 | INFO: Blender create Mesh node Ph_office_filing_cabinet_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_file_shelf_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_office_ceiling_fan_01
+07:11:23 | INFO: Blender create Mesh node Ph_store2_storage_rack_01
+07:11:23 | INFO: Blender create Mesh node Ph_store2_storage_rack_02
+07:11:23 | INFO: Blender create Mesh node Ph_store2_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_bathroom_wc_01
+07:11:23 | INFO: Blender create Mesh node Ph_bathroom_basin_01
+07:11:23 | INFO: Blender create Mesh node Ph_bathroom_mirror_01
+07:11:23 | INFO: Blender create Mesh node Ph_bathroom_towel_rail_01
+07:11:23 | INFO: Blender create Mesh node Ph_bathroom_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall2_ceiling_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall2_ceiling_lamp_02
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_02
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_03
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_04
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_05
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_06
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_07
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_08
+07:11:23 | INFO: Blender create Mesh node Ph_hall3_wall_lamp_09
+07:11:23 | INFO: Blender create Mesh node Ph_hall4_church_bell_01
+07:11:23 | INFO: Blender create Mesh node Ph_hall4_wall_lamp_01
+07:11:23 | INFO: glTF import finished in 0.43s
+Blender 4.3.2
+Fra:1 Mem:37.31M (Peak 37.31M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | basalt_dressed
+Fra:1 Mem:37.31M (Peak 37.31M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_11_R_in
+Fra:1 Mem:39.98M (Peak 39.98M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_10_L_in
+Fra:1 Mem:39.86M (Peak 39.98M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_09_R_in
+Fra:1 Mem:39.86M (Peak 39.98M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | rubble_pointing
+Fra:1 Mem:39.94M (Peak 39.98M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01b_R_in
+Fra:1 Mem:40.02M (Peak 40.02M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01a_L_in
+Fra:1 Mem:40.51M (Peak 40.51M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_08_L_in
+Fra:1 Mem:40.92M (Peak 40.92M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_07_R_in
+Fra:1 Mem:41.19M (Peak 41.19M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_06_L_in
+Fra:1 Mem:41.21M (Peak 41.21M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_04_L_in
+Fra:1 Mem:41.24M (Peak 41.24M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_05_R_in
+Fra:1 Mem:44.39M (Peak 44.40M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_03_R_in
+Fra:1 Mem:44.51M (Peak 44.51M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_02_L_in
+Fra:1 Mem:44.61M (Peak 44.61M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | lamp_glass
+Fra:1 Mem:44.63M (Peak 44.63M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | glass
+Fra:1 Mem:56.62M (Peak 56.62M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_lookout_waterproofing
+Fra:1 Mem:56.14M (Peak 56.62M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_clock_enamel_ivory
+Fra:1 Mem:56.12M (Peak 56.62M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | steel_painted_worn
+Fra:1 Mem:55.16M (Peak 57.76M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_limestone_pale_aged
+Fra:1 Mem:60.97M (Peak 64.59M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limewash
+Fra:1 Mem:61.99M (Peak 64.59M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limestone_flag
+Fra:1 Mem:62.16M (Peak 64.59M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | floor_tiles
+Fra:1 Mem:65.61M (Peak 65.61M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | concrete_cast
+Fra:1 Mem:65.62M (Peak 65.62M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | plaster_white
+Fra:1 Mem:65.84M (Peak 65.84M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_roof_metal_oxblood
+Fra:1 Mem:65.84M (Peak 65.84M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_zinc_dome_aged
+Fra:1 Mem:66.14M (Peak 66.14M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | white_peeling_timber
+Fra:1 Mem:67.72M (Peak 68.47M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | wood_mahogany_varnished
+Fra:1 Mem:67.82M (Peak 68.47M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | painted_timber_warmgrey
+Fra:1 Mem:68.13M (Peak 69.29M) | Time:00:00.06 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | galvanized_steel
+Fra:1 Mem:61.06M (Peak 69.29M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:58.97M (Peak 69.29M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:58.98M (Peak 69.29M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:58.98M (Peak 69.29M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:58.98M (Peak 69.29M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:59.07M (Peak 69.29M) | Time:00:00.08 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:59.08M (Peak 69.29M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:59.08M (Peak 69.29M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:59.08M (Peak 69.29M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:59.08M (Peak 69.29M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:60.96M (Peak 69.29M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.09 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.09 | Mem:4.91M, Peak:4.91M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.09 | Mem:4.91M, Peak:4.91M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.09 | Mem:8.67M, Peak:8.67M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.13 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:65.85M (Peak 69.29M) | Time:00:00.13 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images | Loading new_clock_enamel_ivory.png
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.14 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images | Loading new_lookout_waterproofing.png
+Fra:1 Mem:96.50M (Peak 96.50M) | Time:00:00.18 | Mem:31.80M, Peak:31.80M | Scene, ViewLayer | Updating Images | Loading new_roof_metal_oxblood.png
+Fra:1 Mem:102.50M (Peak 102.50M) | Time:00:00.23 | Mem:37.80M, Peak:37.80M | Scene, ViewLayer | Updating Images | Loading new_zinc_dome_aged.png
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.79M, Peak:55.79M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.79M, Peak:55.79M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.31 | Mem:55.80M, Peak:55.88M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.31 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Sample 0/6
+Fra:1 Mem:149.73M (Peak 149.73M) | Time:00:01.18 | Remaining:00:04.36 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Sample 1/6
+Fra:1 Mem:168.05M (Peak 204.67M) | Time:00:07.02 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Sample 6/6
+Fra:1 Mem:168.05M (Peak 204.67M) | Time:00:07.02 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Finished
+Saved: '/workspace/church_work/exterior.png'
+Time: 00:07.49 (Saving: 00:00.46)
+
+Fra:1 Mem:42.59M (Peak 42.59M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | basalt_masonry
+Fra:1 Mem:42.60M (Peak 42.60M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_11_R_in
+Fra:1 Mem:42.62M (Peak 42.62M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_10_L_in
+Fra:1 Mem:42.64M (Peak 42.64M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_09_R_in
+Fra:1 Mem:42.66M (Peak 42.66M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01b_R_in
+Fra:1 Mem:42.69M (Peak 42.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01a_L_in
+Fra:1 Mem:42.71M (Peak 42.71M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_08_L_in
+Fra:1 Mem:42.73M (Peak 42.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_07_R_in
+Fra:1 Mem:42.79M (Peak 42.79M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_06_L_in
+Fra:1 Mem:43.11M (Peak 43.11M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_04_L_in
+Fra:1 Mem:43.19M (Peak 43.19M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_05_R_in
+Fra:1 Mem:43.23M (Peak 43.23M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_03_R_in
+Fra:1 Mem:43.31M (Peak 43.31M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_02_L_in
+Fra:1 Mem:43.58M (Peak 43.58M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | rubble_pointing
+Fra:1 Mem:43.73M (Peak 43.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | lamp_glass
+Fra:1 Mem:43.73M (Peak 43.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | glass
+Fra:1 Mem:50.54M (Peak 59.24M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_lookout_waterproofing
+Fra:1 Mem:50.54M (Peak 59.24M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_clock_enamel_ivory
+Fra:1 Mem:50.58M (Peak 59.24M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | steel_painted_worn
+Fra:1 Mem:61.52M (Peak 62.82M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_limestone_pale_aged
+Fra:1 Mem:60.30M (Peak 63.29M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limewash
+Fra:1 Mem:61.29M (Peak 63.29M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limestone_flag
+Fra:1 Mem:61.34M (Peak 63.29M) | Time:00:00.04 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | floor_tiles
+Fra:1 Mem:61.86M (Peak 63.29M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | concrete_cast
+Fra:1 Mem:62.05M (Peak 63.29M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | plaster_white
+Fra:1 Mem:62.03M (Peak 63.29M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_roof_metal_oxblood
+Fra:1 Mem:64.72M (Peak 71.47M) | Time:00:00.05 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_zinc_dome_aged
+Fra:1 Mem:65.53M (Peak 71.47M) | Time:00:00.06 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | white_peeling_timber
+Fra:1 Mem:65.12M (Peak 71.47M) | Time:00:00.06 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | wood_mahogany_varnished
+Fra:1 Mem:63.55M (Peak 71.47M) | Time:00:00.06 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | painted_timber_warmgrey
+Fra:1 Mem:67.11M (Peak 71.47M) | Time:00:00.06 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | galvanized_steel
+Fra:1 Mem:61.06M (Peak 71.47M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:58.97M (Peak 71.47M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:58.98M (Peak 71.47M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:58.98M (Peak 71.47M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:58.98M (Peak 71.47M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:59.07M (Peak 71.47M) | Time:00:00.07 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:59.08M (Peak 71.47M) | Time:00:00.07 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:59.08M (Peak 71.47M) | Time:00:00.07 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:59.08M (Peak 71.47M) | Time:00:00.07 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:59.08M (Peak 71.47M) | Time:00:00.07 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:60.96M (Peak 71.47M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.08 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.08 | Mem:4.91M, Peak:4.91M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.08 | Mem:4.91M, Peak:4.91M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.08 | Mem:8.67M, Peak:8.67M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.12 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:65.85M (Peak 71.47M) | Time:00:00.12 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:13.15M, Peak:16.91M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images | Loading new_roof_metal_oxblood.png
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images | Loading new_lookout_waterproofing.png
+Fra:1 Mem:78.49M (Peak 78.49M) | Time:00:00.13 | Mem:25.80M, Peak:25.80M | Scene, ViewLayer | Updating Images | Loading new_limestone_pale_aged.png
+Fra:1 Mem:96.50M (Peak 96.50M) | Time:00:00.14 | Mem:31.80M, Peak:31.80M | Scene, ViewLayer | Updating Images | Loading new_clock_enamel_ivory.png
+Fra:1 Mem:102.50M (Peak 102.50M) | Time:00:00.19 | Mem:37.80M, Peak:37.80M | Scene, ViewLayer | Updating Images | Loading new_zinc_dome_aged.png
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.79M, Peak:55.79M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.79M, Peak:55.79M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:108.50M (Peak 108.50M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.27 | Mem:55.80M, Peak:55.88M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:108.51M (Peak 108.51M) | Time:00:00.27 | Mem:55.88M, Peak:55.88M | Scene, ViewLayer | Sample 0/6
+Fra:1 Mem:149.73M (Peak 149.73M) | Time:00:01.22 | Remaining:00:04.76 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Sample 1/6
+Fra:1 Mem:168.05M (Peak 204.67M) | Time:00:05.64 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Sample 6/6
+Fra:1 Mem:168.05M (Peak 204.67M) | Time:00:05.64 | Mem:97.09M, Peak:97.09M | Scene, ViewLayer | Finished
+Saved: '/workspace/church_work/rear.png'
+Time: 00:05.96 (Saving: 00:00.32)
+
+Fra:1 Mem:45.29M (Peak 45.29M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | basalt_masonry
+Fra:1 Mem:45.29M (Peak 45.29M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | basalt_dressed
+Fra:1 Mem:45.51M (Peak 45.51M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | rubble_pointing
+Fra:1 Mem:46.05M (Peak 46.05M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall4_wall_lamp_01
+Fra:1 Mem:46.49M (Peak 46.49M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall4_church_bell_01
+Fra:1 Mem:46.49M (Peak 46.49M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_09
+Fra:1 Mem:46.81M (Peak 46.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_08
+Fra:1 Mem:46.81M (Peak 46.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_07
+Fra:1 Mem:46.81M (Peak 46.81M) | Time:00:00.01 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_06
+Fra:1 Mem:46.81M (Peak 46.81M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_05
+Fra:1 Mem:46.82M (Peak 46.82M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_04
+Fra:1 Mem:46.82M (Peak 46.82M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_03
+Fra:1 Mem:46.82M (Peak 46.82M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_02
+Fra:1 Mem:46.82M (Peak 46.82M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall3_wall_lamp_01
+Fra:1 Mem:46.83M (Peak 46.83M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall2_ceiling_lamp_02
+Fra:1 Mem:46.83M (Peak 46.83M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall2_ceiling_lamp_01
+Fra:1 Mem:46.83M (Peak 46.83M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_bathroom_ceiling_lamp_01
+Fra:1 Mem:46.83M (Peak 46.83M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_bathroom_towel_rail_01
+Fra:1 Mem:46.83M (Peak 46.83M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_bathroom_mirror_01
+Fra:1 Mem:46.89M (Peak 46.89M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_bathroom_basin_01
+Fra:1 Mem:46.89M (Peak 46.89M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_bathroom_wc_01
+Fra:1 Mem:46.89M (Peak 46.89M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store2_ceiling_lamp_01
+Fra:1 Mem:52.02M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store2_storage_rack_02
+Fra:1 Mem:52.03M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store2_storage_rack_01
+Fra:1 Mem:52.03M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_ceiling_fan_01
+Fra:1 Mem:52.03M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_ceiling_lamp_01
+Fra:1 Mem:52.03M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_file_shelf_01
+Fra:1 Mem:52.03M (Peak 52.03M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_filing_cabinet_01
+Fra:1 Mem:52.04M (Peak 52.04M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_visitor_chair_02
+Fra:1 Mem:52.04M (Peak 52.04M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_visitor_chair_01
+Fra:1 Mem:52.04M (Peak 52.04M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_office_chair_01
+Fra:1 Mem:52.04M (Peak 52.04M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_office_office_desk_01
+Fra:1 Mem:52.10M (Peak 52.10M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_ceiling_lamp_01
+Fra:1 Mem:52.10M (Peak 52.10M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_wall_shelf_01
+Fra:1 Mem:52.10M (Peak 52.10M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_mirror_01
+Fra:1 Mem:52.11M (Peak 52.11M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_basin_01
+Fra:1 Mem:52.11M (Peak 52.11M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_chair_02
+Fra:1 Mem:52.11M (Peak 52.11M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_chair_01
+Fra:1 Mem:52.11M (Peak 52.11M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_preparation_table_01
+Fra:1 Mem:52.12M (Peak 52.12M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_vestment_cabinet_02
+Fra:1 Mem:52.12M (Peak 52.12M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_store_vestment_cabinet_01
+Fra:1 Mem:52.12M (Peak 52.12M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_ceiling_lamp_02
+Fra:1 Mem:52.12M (Peak 52.12M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_ceiling_lamp_01
+Fra:1 Mem:52.12M (Peak 52.12M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_pew_04
+Fra:1 Mem:52.13M (Peak 52.13M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_pew_03
+Fra:1 Mem:52.13M (Peak 52.13M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_pew_02
+Fra:1 Mem:52.13M (Peak 52.13M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_pew_01
+Fra:1 Mem:52.13M (Peak 52.13M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_lectern_01
+Fra:1 Mem:52.13M (Peak 52.13M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel2_altar_01
+Fra:1 Mem:52.14M (Peak 52.14M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_fan_04
+Fra:1 Mem:52.14M (Peak 52.14M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_fan_03
+Fra:1 Mem:55.24M (Peak 55.24M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_fan_02
+Fra:1 Mem:55.24M (Peak 55.24M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_fan_01
+Fra:1 Mem:55.25M (Peak 55.25M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_06
+Fra:1 Mem:55.26M (Peak 55.26M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_05
+Fra:1 Mem:55.27M (Peak 55.27M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_04
+Fra:1 Mem:55.28M (Peak 55.28M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_03
+Fra:1 Mem:55.30M (Peak 55.30M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_02
+Fra:1 Mem:55.30M (Peak 55.30M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_ceiling_lamp_01
+Fra:1 Mem:55.32M (Peak 55.32M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_20
+Fra:1 Mem:55.32M (Peak 55.32M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_19
+Fra:1 Mem:55.33M (Peak 55.33M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_18
+Fra:1 Mem:55.34M (Peak 55.34M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_17
+Fra:1 Mem:55.36M (Peak 55.36M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_16
+Fra:1 Mem:55.36M (Peak 55.36M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_15
+Fra:1 Mem:55.37M (Peak 55.37M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_14
+Fra:1 Mem:55.38M (Peak 55.38M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_13
+Fra:1 Mem:55.38M (Peak 55.38M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_12
+Fra:1 Mem:55.40M (Peak 55.40M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_11
+Fra:1 Mem:55.40M (Peak 55.40M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_10
+Fra:1 Mem:55.41M (Peak 55.41M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_09
+Fra:1 Mem:55.43M (Peak 55.43M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_08
+Fra:1 Mem:55.44M (Peak 55.44M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_07
+Fra:1 Mem:55.45M (Peak 55.45M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_06
+Fra:1 Mem:55.48M (Peak 55.48M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_05
+Fra:1 Mem:55.48M (Peak 55.48M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_04
+Fra:1 Mem:55.50M (Peak 55.50M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_03
+Fra:1 Mem:55.51M (Peak 55.51M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_02
+Fra:1 Mem:55.52M (Peak 55.52M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_chapel_pew_01
+Fra:1 Mem:55.53M (Peak 55.53M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall_ceiling_lamp_01
+Fra:1 Mem:55.55M (Peak 55.55M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall_notice_board_01
+Fra:1 Mem:55.56M (Peak 55.56M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | Ph_hall_bench_01
+Fra:1 Mem:55.57M (Peak 55.57M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_11_R_in
+Fra:1 Mem:55.65M (Peak 55.65M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_10_L_in
+Fra:1 Mem:55.69M (Peak 55.69M) | Time:00:00.02 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_09_R_in
+Fra:1 Mem:55.73M (Peak 55.73M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01b_R_in
+Fra:1 Mem:55.80M (Peak 55.80M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_01a_L_in
+Fra:1 Mem:55.86M (Peak 55.86M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_08_L_in
+Fra:1 Mem:55.92M (Peak 55.92M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_07_R_in
+Fra:1 Mem:56.04M (Peak 56.04M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_06_L_in
+Fra:1 Mem:56.25M (Peak 56.25M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_04_L_in
+Fra:1 Mem:56.84M (Peak 56.84M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_05_R_in
+Fra:1 Mem:57.13M (Peak 57.13M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_03_R_in
+Fra:1 Mem:57.15M (Peak 57.15M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | DoorLeaf_02_L_in
+Fra:1 Mem:57.17M (Peak 57.17M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | lamp_glass
+Fra:1 Mem:57.17M (Peak 57.17M) | Time:00:00.03 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | glass
+Fra:1 Mem:53.80M (Peak 63.33M) | Time:00:00.14 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_limestone_pale_aged
+Fra:1 Mem:53.88M (Peak 63.33M) | Time:00:00.14 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_clock_enamel_ivory
+Fra:1 Mem:53.98M (Peak 63.33M) | Time:00:00.14 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | steel_painted_worn
+Fra:1 Mem:65.68M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limewash
+Fra:1 Mem:61.88M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | limestone_flag
+Fra:1 Mem:61.91M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | floor_tiles
+Fra:1 Mem:61.93M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | concrete_cast
+Fra:1 Mem:62.04M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | plaster_white
+Fra:1 Mem:63.50M (Peak 74.56M) | Time:00:00.17 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_roof_metal_oxblood
+Fra:1 Mem:70.89M (Peak 74.56M) | Time:00:00.24 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | new_zinc_dome_aged
+Fra:1 Mem:71.03M (Peak 74.56M) | Time:00:00.24 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | white_peeling_timber
+Fra:1 Mem:72.63M (Peak 74.86M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | wood_mahogany_varnished
+Fra:1 Mem:68.91M (Peak 74.86M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | painted_timber_warmgrey
+Fra:1 Mem:67.65M (Peak 74.86M) | Time:00:00.25 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | galvanized_steel
+Fra:1 Mem:63.95M (Peak 74.86M) | Time:00:00.26 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:59.23M (Peak 74.86M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:59.23M (Peak 74.86M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:59.23M (Peak 74.86M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:59.23M (Peak 74.86M) | Time:00:00.27 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:59.33M (Peak 74.86M) | Time:00:00.27 | Mem:0.02M, Peak:0.02M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:59.35M (Peak 74.86M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:59.35M (Peak 74.86M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:59.35M (Peak 74.86M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:59.36M (Peak 74.86M) | Time:00:00.27 | Mem:0.04M, Peak:0.04M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:61.25M (Peak 74.86M) | Time:00:00.28 | Mem:0.04M, Peak:0.04M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:66.19M (Peak 74.86M) | Time:00:00.28 | Mem:0.05M, Peak:0.05M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:66.17M (Peak 74.86M) | Time:00:00.28 | Mem:4.97M, Peak:4.97M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:66.18M (Peak 74.86M) | Time:00:00.28 | Mem:4.97M, Peak:4.97M | Scene, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:66.18M (Peak 74.86M) | Time:00:00.28 | Mem:8.75M, Peak:8.75M | Scene, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:66.18M (Peak 74.86M) | Time:00:00.34 | Mem:13.27M, Peak:17.06M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:66.18M (Peak 74.86M) | Time:00:00.34 | Mem:13.27M, Peak:17.06M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:13.27M, Peak:17.06M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Images | Loading new_limestone_pale_aged.png
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Images | Loading new_lookout_waterproofing.png
+Fra:1 Mem:78.93M (Peak 78.93M) | Time:00:00.34 | Mem:26.03M, Peak:26.03M | Scene, ViewLayer | Updating Images | Loading new_clock_enamel_ivory.png
+Fra:1 Mem:96.94M (Peak 96.94M) | Time:00:00.38 | Mem:32.03M, Peak:32.03M | Scene, ViewLayer | Updating Images | Loading new_zinc_dome_aged.png
+Fra:1 Mem:102.93M (Peak 102.93M) | Time:00:00.45 | Mem:38.02M, Peak:38.02M | Scene, ViewLayer | Updating Images | Loading new_roof_metal_oxblood.png
+Fra:1 Mem:108.93M (Peak 108.93M) | Time:00:00.74 | Mem:56.02M, Peak:56.02M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:108.93M (Peak 108.93M) | Time:00:00.74 | Mem:56.02M, Peak:56.02M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.93M (Peak 108.93M) | Time:00:00.74 | Mem:56.10M, Peak:56.10M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:108.93M (Peak 108.93M) | Time:00:00.74 | Mem:56.10M, Peak:56.10M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.11M, Peak:56.11M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.11M, Peak:56.11M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.03M, Peak:56.11M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.11M, Peak:56.11M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.11M, Peak:56.11M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:108.94M (Peak 108.94M) | Time:00:00.74 | Mem:56.11M, Peak:56.11M | Scene, ViewLayer | Sample 0/6
+Fra:1 Mem:150.17M (Peak 150.17M) | Time:00:09.77 | Remaining:00:45.14 | Mem:97.32M, Peak:97.32M | Scene, ViewLayer | Sample 1/6
+Fra:1 Mem:150.17M (Peak 150.17M) | Time:00:45.89 | Remaining:00:09.03 | Mem:97.32M, Peak:97.32M | Scene, ViewLayer | Sample 5/6
+Fra:1 Mem:168.48M (Peak 205.10M) | Time:00:54.21 | Mem:97.32M, Peak:97.32M | Scene, ViewLayer | Sample 6/6
+Fra:1 Mem:168.48M (Peak 205.10M) | Time:00:54.21 | Mem:97.32M, Peak:97.32M | Scene, ViewLayer | Finished
+Saved: '/workspace/church_work/interior.png'
+Time: 00:54.61 (Saving: 00:00.39)
+
+Info: Saved "review.blend"
+
+Blender quit

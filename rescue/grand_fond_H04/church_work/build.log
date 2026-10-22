@@ -1,0 +1,43 @@
+Building shell
+Tower and stair
+Roofs and architectural detail
+Furniture placeholders
+Union solids 1729
+Union complete 7.364194869995117 124376 Error.NoError
+{
+  "triangles": 126960,
+  "shell_triangles": 124376,
+  "materials": [
+    "basalt_masonry",
+    "basalt_dressed",
+    "rubble_pointing",
+    "new_limestone_pale_aged",
+    "limewash",
+    "limestone_flag",
+    "floor_tiles",
+    "concrete_cast",
+    "plaster_white",
+    "new_roof_metal_oxblood",
+    "new_zinc_dome_aged",
+    "white_peeling_timber",
+    "wood_mahogany_varnished",
+    "painted_timber_warmgrey",
+    "galvanized_steel",
+    "steel_painted_worn",
+    "new_clock_enamel_ivory",
+    "new_lookout_waterproofing",
+    "glass",
+    "lamp_glass",
+    "placeholder"
+  ],
+  "bounds": [
+    -10.4,
+    -15.9,
+    -0.2,
+    10.4,
+    17.28140977367361,
+    18.25
+  ],
+  "nodes": 105,
+  "bytes": 8106024
+}

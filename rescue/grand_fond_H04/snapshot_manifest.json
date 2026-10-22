@@ -1,0 +1,214 @@
+{
+  "snapshot_local_time": "2026-10-22T13:30:21.707425+02:00",
+  "base_main_commit": "8462cad7bf4e6f3ddb067aa31cca89fe45e8dfd8",
+  "source_files": [
+    {
+      "source": "/workspace/church_work/build.log",
+      "path": "church_work/build.log",
+      "bytes": 869,
+      "sha256": "4e25352924d6eaf7d3dd93edd07e6e2c22708c9dc32c0d55eaa9c119db289ae0",
+      "git_blob_sha1": "c87d21bc04a94d1f148c70f40f4456fc9ad84885",
+      "source_mtime_utc": "2026-10-22T07:41:10.558632+00:00"
+    },
+    {
+      "source": "/workspace/church_work/build.py",
+      "path": "church_work/build.py",
+      "bytes": 31768,
+      "sha256": "27af71254fac463734cc58a272b6b22885cc71d9b64c703dbe35b417eabd9acf",
+      "git_blob_sha1": "5cceca16a2c72f709feb6a18cc311426d0c752d3",
+      "source_mtime_utc": "2026-10-22T07:41:44.693124+00:00"
+    },
+    {
+      "source": "/workspace/church_work/clean.glb",
+      "path": "church_work/clean.glb",
+      "bytes": 10520816,
+      "sha256": "8703053f0d9b4559c1a6734703b493717bdcc6b9eb14fd1243c128a8595caea9",
+      "git_blob_sha1": "e5eb4ea22a190022d22e7ad43d2c898823a3ba02",
+      "source_mtime_utc": "2026-10-22T07:41:27.901478+00:00"
+    },
+    {
+      "source": "/workspace/church_work/collisions.json",
+      "path": "church_work/collisions.json",
+      "bytes": 47,
+      "sha256": "d2237611fb78f127b24956d364305a28aa3109919ceddc041dda2a4c3903572b",
+      "git_blob_sha1": "e56f83d47668a19223267bf15ef4f1805299a6c6",
+      "source_mtime_utc": "2026-10-22T07:34:33.476084+00:00"
+    },
+    {
+      "source": "/workspace/church_work/exterior.png",
+      "path": "church_work/exterior.png",
+      "bytes": 1235232,
+      "sha256": "dadbf197d702ef4b9699fffdb87bd0f0ba1c1b2e9e1d3a611fa4dba5f2d997eb",
+      "git_blob_sha1": "d5657847d21d654fabca41e1ec4f37c914b8d46b",
+      "source_mtime_utc": "2026-10-22T07:11:30.785541+00:00"
+    },
+    {
+      "source": "/workspace/church_work/finalise.py",
+      "path": "church_work/finalise.py",
+      "bytes": 7628,
+      "sha256": "c2d563b0963fd601b5d9a91a4c5099d7d992d7631936136b4c29b7afc5e4525a",
+      "git_blob_sha1": "31a65500cf21c659dcdee9ac5147f02c5eb025df",
+      "source_mtime_utc": "2026-10-22T07:39:35.698842+00:00"
+    },
+    {
+      "source": "/workspace/church_work/interior.png",
+      "path": "church_work/interior.png",
+      "bytes": 3649941,
+      "sha256": "9c88a4539c2313e7c88653a65888d88f828a083f5fc7eea2c3f8562fad69b0c7",
+      "git_blob_sha1": "23c7637d7314b42c3e430151b8c76c29b78dd792",
+      "source_mtime_utc": "2026-10-22T07:12:31.403106+00:00"
+    },
+    {
+      "source": "/workspace/church_work/preview.py",
+      "path": "church_work/preview.py",
+      "bytes": 2379,
+      "sha256": "5a5cfa89fd08dad0795121ddecd317bef2c11231c04f88d05a9df65404451788",
+      "git_blob_sha1": "b4b0ba54c80218adbf7c96be3a397b62d0c4c3b4",
+      "source_mtime_utc": "2026-10-22T07:09:48.541692+00:00"
+    },
+    {
+      "source": "/workspace/church_work/rear.png",
+      "path": "church_work/rear.png",
+      "bytes": 1157352,
+      "sha256": "992b04c2b0338f5abe269042f8d0efd8800f53746bfdb3d87f992fe71bb43522",
+      "git_blob_sha1": "d8de5ada33d1256b8823ac977a1f77315847cdc4",
+      "source_mtime_utc": "2026-10-22T07:11:36.757300+00:00"
+    },
+    {
+      "source": "/workspace/church_work/render.log",
+      "path": "church_work/render.log",
+      "bytes": 46828,
+      "sha256": "f7f3957af64a591563388d3066a290ad3d46e8ff3dfd4378ca5c8df1b9aaf041",
+      "git_blob_sha1": "9e0b747c64c3604a2999ef0f7d1b9f32544d7e38",
+      "source_mtime_utc": "2026-10-22T07:12:31.627098+00:00"
+    },
+    {
+      "source": "/workspace/church_work/repair.log",
+      "path": "church_work/repair.log",
+      "bytes": 17567,
+      "sha256": "6d59ed7b1b9eac81d4a762753ad1fd4b1602dab564735a00551a67c4d8b6e5f9",
+      "git_blob_sha1": "eb127985adcd0b8c2eedab3bc45822e2fb08f01e",
+      "source_mtime_utc": "2026-10-22T07:41:28.101852+00:00"
+    },
+    {
+      "source": "/workspace/church_work/repair.py",
+      "path": "church_work/repair.py",
+      "bytes": 3317,
+      "sha256": "9d9a2f662a831b8758de18261a22744233b632ec7c0b6c6514a8f78f6f309075",
+      "git_blob_sha1": "9c595154b17204fa351f987bd340bf82ab24f9db",
+      "source_mtime_utc": "2026-10-22T07:36:30.972118+00:00"
+    },
+    {
+      "source": "/workspace/church_work/review.blend",
+      "path": "church_work/review.blend",
+      "bytes": 15503916,
+      "sha256": "cdb2150299e7a253fc1c7956043ee9ab2b75f5944a39f9e425c9e62236e2b5b7",
+      "git_blob_sha1": "3799da6b0d84bde77490ce1b5728a7f9130108e4",
+      "source_mtime_utc": "2026-10-22T07:12:31.423106+00:00"
+    },
+    {
+      "source": "/workspace/church_work/review.blend1",
+      "path": "church_work/review.blend1",
+      "bytes": 16353936,
+      "sha256": "cbf9fa1e503a9d673cb9db525b74adf604a5e3241dcc4d83eb49ba1bee3c85f0",
+      "git_blob_sha1": "d46653e55f3f86c646bfbe85c1827f3d06205ae9",
+      "source_mtime_utc": "2026-10-22T06:47:26.558897+00:00"
+    },
+    {
+      "source": "/workspace/church_work/stats.json",
+      "path": "church_work/stats.json",
+      "bytes": 14603,
+      "sha256": "64e99cf53831fa8e2bf66722a1f5ac10f6a10db427f969fcd784ec827cb38840",
+      "git_blob_sha1": "13c9fc8f4a2def0a139afe2c9b1e5e58d375c73d",
+      "source_mtime_utc": "2026-10-22T07:41:10.558423+00:00"
+    },
+    {
+      "source": "/workspace/church_work/swing_check.py",
+      "path": "church_work/swing_check.py",
+      "bytes": 1183,
+      "sha256": "862af59b26c2d655351142f47ebcf7619d1fe01c8c42e65df62ea613898fa862",
+      "git_blob_sha1": "0c9985feffd5b5bed6279c3ef7bdee2787662f58",
+      "source_mtime_utc": "2026-10-22T07:39:58.381849+00:00"
+    },
+    {
+      "source": "/workspace/church_work/texture_review.jpg",
+      "path": "church_work/texture_review.jpg",
+      "bytes": 57824,
+      "sha256": "ab26ca11f57b994aaaf0f1dfbbf5c588b783a088326d5adb760063aa09cf54bd",
+      "git_blob_sha1": "601b4e75f075732e9813f8ca0db09b37a317675d",
+      "source_mtime_utc": "2026-10-22T06:36:59.257338+00:00"
+    },
+    {
+      "source": "/workspace/church_work/validate.py",
+      "path": "church_work/validate.py",
+      "bytes": 3316,
+      "sha256": "22004fe0f58519adb0a91f6ccd4c7920ad4ac60e1ad20048cf694fcf529659ff",
+      "git_blob_sha1": "c8a0b374f8144e1143e8ebb9154e647ef7f6589f",
+      "source_mtime_utc": "2026-10-22T06:44:50.551137+00:00"
+    },
+    {
+      "source": "/workspace/church_work/validation.json",
+      "path": "church_work/validation.json",
+      "bytes": 489,
+      "sha256": "32737bd2bcd7827a1aeb82cb2ef22734df29618563af02e4a53cce52ac64f8ae",
+      "git_blob_sha1": "1c3d4b2ccbb34c0619446c1bcc2bf1f6299baca5",
+      "source_mtime_utc": "2026-10-22T07:34:32.368500+00:00"
+    },
+    {
+      "source": "/workspace/church_work/validation.log",
+      "path": "church_work/validation.log",
+      "bytes": 1906,
+      "sha256": "960d924a88f04a175b080cc9e26106888e3badf6a49ee94905e930af6e75505b",
+      "git_blob_sha1": "fa6169718752d75f051220af8898b6a9b33bf964",
+      "source_mtime_utc": "2026-10-22T07:10:01.164691+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/grand_fond_parish_church.glb",
+      "path": "inbox/grand_fond_parish_church/grand_fond_parish_church.glb",
+      "bytes": 8106024,
+      "sha256": "d72752bbba9732d75c01b1e205f618146a09740c41ddcd0b3851dc2066310fca",
+      "git_blob_sha1": "778b98af189d0775dfb96a75c263420a99d6aaa3",
+      "source_mtime_utc": "2026-10-22T07:41:10.553828+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/new_clock_enamel_ivory.png",
+      "path": "inbox/grand_fond_parish_church/new_clock_enamel_ivory.png",
+      "bytes": 1841544,
+      "sha256": "8648fe12268b8225277e72d6c2d071e7ee591984cc3b5c34797c4ee3b76aa61a",
+      "git_blob_sha1": "f06cf0a469b8142b40b70c40bb4110ae3616ea81",
+      "source_mtime_utc": "2026-10-22T06:30:41.617565+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/new_limestone_pale_aged.png",
+      "path": "inbox/grand_fond_parish_church/new_limestone_pale_aged.png",
+      "bytes": 3935336,
+      "sha256": "9e99c8a858f792954eea8c175048942e18a7547ec2b6b4b0bb19cfc6133cb2de",
+      "git_blob_sha1": "b47a1031c97f9694e4cc8ee96366c6e3246a0b0c",
+      "source_mtime_utc": "2026-10-22T06:30:41.600517+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/new_lookout_waterproofing.png",
+      "path": "inbox/grand_fond_parish_church/new_lookout_waterproofing.png",
+      "bytes": 4741123,
+      "sha256": "a3207df48e3cd37e89267575654cd8118c2efb88f42877fb674ad9ee007fa45d",
+      "git_blob_sha1": "cf5456d7122ac501fd6f979828c53721361c3690",
+      "source_mtime_utc": "2026-10-22T06:30:41.621810+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/new_roof_metal_oxblood.png",
+      "path": "inbox/grand_fond_parish_church/new_roof_metal_oxblood.png",
+      "bytes": 2880584,
+      "sha256": "ea1478ffc8a53ec4d8c2eb47bc04e5ba2fd147f7cb584a19a21451902b1d2444",
+      "git_blob_sha1": "1bf6ba395cf736178d0e6d48872388934f5e73ea",
+      "source_mtime_utc": "2026-10-22T06:30:41.608254+00:00"
+    },
+    {
+      "source": "/workspace/inbox/grand_fond_parish_church/new_zinc_dome_aged.png",
+      "path": "inbox/grand_fond_parish_church/new_zinc_dome_aged.png",
+      "bytes": 3699820,
+      "sha256": "9c11dbeff259ff20cb7825889f26d4d034cead5ef7f808517a2f78856e1b155d",
+      "git_blob_sha1": "8b1c7bf9f482c21d244fca95998c7566741d0796",
+      "source_mtime_utc": "2026-10-22T06:30:41.611504+00:00"
+    }
+  ]
+}
