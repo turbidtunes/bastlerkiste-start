@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/finish-h04-codex.yml'
       - 'rescue/grand_fond_H04/finish_pipeline.py'
+      - 'rescue/grand_fond_H04/repair_gltf_python.py'
       - 'rescue/grand_fond_H04/church_work/build.py'
   workflow_dispatch:
 
@@ -15,39 +16,32 @@ permissions:
 
 concurrency:
   group: fond-h04-codex-alt-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   rebuild:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 35
     steps:
       - name: Eigenstaendigen Codex-Branch laden
         uses: actions/checkout@v4
 
-      - name: Umgebung fuer Codex-Generator und Blender installieren - 0 Claude USD
+      - name: Python ohne Ubuntu apt bereitstellen
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Manifold3D und glTF-Tools installieren (kein Blender / apt)
         run: |
           set -euo pipefail
-          # Azure mirror stalled for 19+ minutes on the previous run.
-          # Replace that runner-specific mirror with the standard Ubuntu archive.
-          if test -f /etc/apt/apt-mirrors.txt; then
-            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#http://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
-            echo "Ubuntu mirror URLs:"
-            cat /etc/apt/apt-mirrors.txt
-          fi
-          if test -f /etc/apt/sources.list.d/ubuntu.sources; then
-            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#http://archive.ubuntu.com/ubuntu#g' /etc/apt/sources.list.d/ubuntu.sources
-          fi
-          timeout 240s sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update -qq
-          timeout 600s sudo DEBIAN_FRONTEND=noninteractive apt-get \
-            -o Acquire::Retries=2 -o Acquire::http::Timeout=30 \
-            install -y --no-install-recommends blender python3-venv python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
-          /usr/bin/python3 -m venv .finish_venv
-          .finish_venv/bin/pip install --upgrade pip
-          .finish_venv/bin/pip install --no-cache-dir 'numpy>=1.26,<2' 'manifold3d>=3,<4' 'trimesh>=4,<5' 'shapely>=2,<3' 'scipy>=1.11,<2' 'pygltflib>=1.16,<2'
-          .finish_venv/bin/python -m py_compile rescue/grand_fond_H04/church_work/build.py rescue/grand_fond_H04/finish_pipeline.py
-          blender --version | head -n 1
-          blender --version | head -n 1 | grep -E 'Blender 4\.'
+          python -m pip install --disable-pip-version-check --retries 2 --timeout 25 \
+            'numpy>=1.26,<2' 'manifold3d>=3,<4' 'trimesh>=4,<5' \
+            'shapely>=2,<3' 'scipy>=1.11,<2' 'pygltflib>=1.16,<2'
+          python -m py_compile \
+            rescue/grand_fond_H04/church_work/build.py \
+            rescue/grand_fond_H04/finish_pipeline.py \
+            rescue/grand_fond_H04/repair_gltf_python.py
+          echo 'PYTHON_SETUP_OK (kein Ubuntu-Paketdownload)'
 
       - name: Originalen Codex-Workspace an alter Stelle wiederherstellen
         run: |
@@ -63,7 +57,7 @@ jobs:
       - name: Letzte Quellfassung bauen, reparieren, Schwenk pruefen und GLB fertigstellen
         run: |
           set -euo pipefail
-          .finish_venv/bin/python -u rescue/grand_fond_H04/finish_pipeline.py
+          python -u rescue/grand_fond_H04/finish_pipeline.py
 
       - name: Diagnoseartefakte auch bei Fehlern sichern
         if: always()
