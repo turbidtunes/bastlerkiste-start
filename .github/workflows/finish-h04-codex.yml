@@ -1,0 +1,88 @@
+name: H04 Codex-Alternative fertigstellen (ohne Claude)
+
+on:
+  push:
+    branches:
+      - finish/fond-h04-codex
+    paths:
+      - '.github/workflows/finish-h04-codex.yml'
+      - 'rescue/grand_fond_H04/finish_pipeline.py'
+      - 'rescue/grand_fond_H04/church_work/build.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fond-h04-codex-alt-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Eigenstaendigen Codex-Branch laden
+        uses: actions/checkout@v4
+
+      - name: Umgebung fuer Codex-Generator und Blender installieren - 0 Claude USD
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-venv python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          /usr/bin/python3 -m venv .finish_venv
+          .finish_venv/bin/pip install --upgrade pip
+          .finish_venv/bin/pip install --no-cache-dir 'numpy>=1.26,<2' 'manifold3d>=3,<4' 'trimesh>=4,<5' 'shapely>=2,<3' 'scipy>=1.11,<2' 'pygltflib>=1.16,<2'
+          .finish_venv/bin/python -m py_compile rescue/grand_fond_H04/church_work/build.py rescue/grand_fond_H04/finish_pipeline.py
+          blender --version | head -n 1
+          blender --version | head -n 1 | grep -E 'Blender 4\.'
+
+      - name: Originalen Codex-Workspace an alter Stelle wiederherstellen
+        run: |
+          set -euo pipefail
+          sudo mkdir -p /workspace/church_work /workspace/inbox/grand_fond_parish_church /workspace/build_libs
+          sudo chown -R "$(id -u):$(id -g)" /workspace
+          test -s rescue/grand_fond_H04/church_work/build.py
+          test -s rescue/grand_fond_H04/church_work/repair.py
+          test -s rescue/grand_fond_H04/church_work/validate.py
+          test -s rescue/grand_fond_H04/church_work/swing_check.py
+          echo "CODEX_WORKSPACE_RESTORED"
+
+      - name: Letzte Quellfassung bauen, reparieren, Schwenk pruefen und GLB fertigstellen
+        run: |
+          set -euo pipefail
+          .finish_venv/bin/python -u rescue/grand_fond_H04/finish_pipeline.py
+
+      - name: Diagnoseartefakte auch bei Fehlern sichern
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-h04-alt-${{ github.run_number }}
+          path: |
+            rescue/grand_fond_H04/finish_logs/*
+            /workspace/church_work/fresh_raw.glb
+            /workspace/church_work/clean.glb
+            /workspace/church_work/validation.json
+            /workspace/church_work/collisions.json
+            /workspace/church_work/swing.json
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: ignore
+
+      - name: Fertige alternative Version in eigenem Branch speichern
+        if: success()
+        run: |
+          set -euo pipefail
+          test -s inbox/grand_fond_parish_church_codex/grand_fond_parish_church_codex.glb
+          test -s inbox/grand_fond_parish_church_codex/note.txt
+          test -s inbox/grand_fond_parish_church_codex/validation.json
+          test -s inbox/grand_fond_parish_church_codex/swing.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- inbox/grand_fond_parish_church_codex/
+          if git diff --cached --quiet; then
+            echo "Already committed"
+            exit 0
+          fi
+          git commit -m "Finish and validate alternate Codex Grand-Fond H04 church"
+          git push origin HEAD:finish/fond-h04-codex
