@@ -40,9 +40,12 @@ if repair_source.count(old_smooth)!=1:
     raise RuntimeError("Unexpected Codex Blender smooth API; no unsafe patch")
 repair_source=repair_source.replace(
     old_smooth,
-    "bpy.ops.object.shade_auto_smooth() if not hasattr(mesh, "
-    "'set_sharp_from_angle') else mesh.set_sharp_from_angle("
-    "angle=math.radians(30))"
+    "mesh.set_sharp_from_angle(angle=math.radians(30)) "
+    "if hasattr(mesh, 'set_sharp_from_angle') "
+    "else (setattr(mesh, 'use_auto_smooth', True), "
+    "setattr(mesh, 'auto_smooth_angle', math.radians(30))) "
+    "if hasattr(mesh, 'use_auto_smooth') "
+    "else [setattr(poly, 'use_smooth', False) for poly in mesh.polygons]"
 )
 (WORK/"repair.py").write_text(repair_source,encoding="utf-8")
 print("BLENDER_4_0_COMPATIBLE_REPAIR_PATCHED",flush=True)
