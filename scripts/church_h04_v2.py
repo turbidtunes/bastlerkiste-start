@@ -21,7 +21,7 @@ WORKER = ROOT / "scripts/blender_worker.py"
 API = (ROOT / "scripts/blender_lib/API.md").read_text(encoding="utf-8")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 RESUME = os.environ.get("RESUME_RUN_ID", "").strip()
-LIMIT = float(os.environ.get("MAX_ESTIMATED_USD", "50"))
+LIMIT = float(os.environ.get("MAX_ESTIMATED_USD", "5.00"))
 VISUAL = os.environ.get("VISUAL_REVIEW", "true").lower() == "true"
 RATES = {"claude-sonnet-5-5": (2.0, 10.0), "claude-opus-5-5": (4.0, 20.0)}
 PHASES = [
@@ -36,7 +36,7 @@ PHASES = [
     ("furniture_uv", "Add complete Ph_* room furniture boxes (pews, altar, lectern, sacristy and other rooms); finalize exact named PBR material slots, metric UV0 on ALL meshes and modest bevels. No bitmap textures."),
 ]
 REVIEWS = {"shell", "nave_roofs", "tower_stairs", "doors", "facade_details", "furniture_uv"}
-if MODEL not in RATES or not 1 <= LIMIT <= 500:
+if MODEL not in RATES or not 0.5 <= LIMIT <= 5.30:
     raise SystemExit("Unzulässiges Modell oder MAX_ESTIMATED_USD")
 if not os.environ.get("ANTHROPIC_API_KEY"):
     raise SystemExit("ANTHROPIC_API_KEY fehlt")
@@ -62,7 +62,7 @@ else:
     hash_file.write_text(fingerprint + "\n", encoding="utf-8")
     checkpoints = {}
 usage = json.loads(usage_file.read_text(encoding="utf-8")) if RESUME and usage_file.exists() else []
-client = Anthropic(timeout=900, max_retries=2)
+client = Anthropic(timeout=900, max_retries=1)
 
 def spent():
     i, o = RATES[MODEL]
@@ -72,17 +72,39 @@ def img(path):
     return {"type": "image", "source": {"type": "base64", "media_type": "image/png",
             "data": base64.b64encode(Path(path).read_bytes()).decode("ascii")}}
 
+class BudgetStop(Exception):
+    """Stop immediately, without retries, before exceeding the USD allowance."""
+
+
+SYSTEM_PROMPT = (
+    "Du bist ein Blender 4.x bpy Programmierer fuer eine begehbare"
+    " UE5 LOD0 Kirche. Halte den numerischen Plan und Referenzentwurf"
+    " exakt ein. Keine prozeduralen oder generierten Bildtexturen."
+    " Liefere nur das verlangte Ausgabeformat."
+)
+
+
 def ask(label, prompt, max_tokens, pictures=()):
-    if spent() >= LIMIT:
-        raise RuntimeError(f"Kostenschutz erreicht: USD {spent():.2f} / {LIMIT:.2f}")
-    print(f"CLAUDE {label} bisher USD {spent():.2f}", flush=True)
+    messages = [{"role": "user", "content":
+                 [{"type": "text", "text": prompt}, *pictures]}]
+    # Anthropic's token-count endpoint is free. Account for the maximum possible
+    # output of the NEXT paid call *before* asking Claude to generate anything.
+    tokens = client.messages.count_tokens(model=MODEL, system=SYSTEM_PROMPT,
+                                          messages=messages).input_tokens
+    price_in, price_out = RATES[MODEL]
+    worst_case = 1.10 * (tokens * price_in + max_tokens * price_out) / 1_000_000
+    if spent() + worst_case > LIMIT:
+        raise BudgetStop(
+            f"Kostenbremse: bisher USD {spent():.3f}, naechster Aufruf"
+            f" maximal geschaetzt USD {worst_case:.3f}, Limit USD {LIMIT:.2f}."
+            " Checkpoint bleibt im GitHub-Artefakt."
+        )
+    print(f"CLAUDE {label}: bisher USD {spent():.3f}, "
+          f"naechster Aufruf maximal geschaetzt USD {worst_case:.3f}, "
+          f"Budget USD {LIMIT:.2f}", flush=True)
     with client.messages.stream(
-        model=MODEL, max_tokens=max_tokens,
-        system=("Du bist ein Blender 4.x bpy Programmierer fuer eine begehbare"
-                " UE5 LOD0 Kirche. Halte den numerischen Plan und Referenzentwurf"
-                " exakt ein. Keine prozeduralen oder generierten Bildtexturen."
-                " Liefere nur das verlangte Ausgabeformat."),
-        messages=[{"role":"user", "content":[{"type":"text", "text":prompt}, *pictures]}],
+        model=MODEL, max_tokens=max_tokens, system=SYSTEM_PROMPT,
+        messages=messages,
     ) as stream:
         response = stream.get_final_message()
     usage.append({"label":label, "input_tokens":response.usage.input_tokens,
