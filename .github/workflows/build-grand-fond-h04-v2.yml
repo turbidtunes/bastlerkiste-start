@@ -46,10 +46,73 @@ concurrency:
 jobs:
   register:
     if: github.event_name == 'push'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
-      - name: Workflow in Actions sichtbar machen - kein Claude API-Aufruf
-        run: echo 'Workflow registriert. Manuell unter Actions starten.'
+      - name: Repository laden (kostenlos)
+        uses: actions/checkout@v4
+
+      - name: Echte Datei- und Python-Pruefung (kein Claude)
+        run: |
+          set -euo pipefail
+          test -s prompts/fond_h04.md
+          test -s referenzbilder/ref_grand_fond_H04_g_church_creole.png
+          test -s scripts/church_h04_v2.py
+          test -s scripts/blender_worker.py
+          test -s scripts/blender_lib/API.md
+          test -s scripts/blender_lib/smoke_test.py
+          test -s scripts/blender_lib/building_kit.py
+          python3 -m py_compile scripts/church_h04_v2.py scripts/blender_worker.py scripts/blender_lib/smoke_test.py
+          echo "ALLE_EINGABEPFADE_UND_PYTHON_SYNTAX_OK"
+
+      - name: Blender 4.x und numpy installieren (kein Claude)
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-numpy libegl1 libgl1 libxrender1 libxi6 libxkbcommon0
+          blender --version | head -n 1
+          blender --version | head -n 1 | grep -E 'Blender 4\.'
+
+      - name: Echten Blender-Stage-Checkpoint und GLB-Reimport pruefen (kein Claude)
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/church-audit/stages" "$RUNNER_TEMP/church-audit/views"
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            --python scripts/blender_lib/smoke_test.py \
+            | tee "$RUNNER_TEMP/church-kit-test.log"
+          grep -F BUILDING_KIT_SMOKE_OK "$RUNNER_TEMP/church-kit-test.log"
+          test -s "$RUNNER_TEMP/building-kit-worker-source.blend"
+          printf '%s\n' 'import building_kit as kit' \
+            'kit.box("ChurchV2_PathAudit", (-1, -1, 0), (0, 0, 1), "plaster_white")' \
+            > "$RUNNER_TEMP/church-audit/stages/audit.py"
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            WORKER_MODE=stage ASSET_WORK="$RUNNER_TEMP/church-audit" \
+            STAGE_NAME=audit STAGE_CODE="$RUNNER_TEMP/church-audit/stages/audit.py" \
+            STAGE_OUT_BLEND="$RUNNER_TEMP/church-audit/stages/audit.blend" \
+            STAGE_REPORT="$RUNNER_TEMP/church-audit/stages/audit.json" \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            "$RUNNER_TEMP/building-kit-worker-source.blend" \
+            --python scripts/blender_worker.py \
+            | tee "$RUNNER_TEMP/church-stage-test.log"
+          grep -F STAGE_OK "$RUNNER_TEMP/church-stage-test.log"
+          test -s "$RUNNER_TEMP/church-audit/stages/audit.blend"
+          test -s "$RUNNER_TEMP/church-audit/stages/audit.json"
+          env -u LD_LIBRARY_PATH -u PYTHONHOME -u PYTHONUSERBASE -u VIRTUAL_ENV \
+            PYTHONPATH=/usr/lib/python3/dist-packages \
+            WORKER_MODE=export ASSET_WORK="$RUNNER_TEMP/church-audit" \
+            GLB_PATH="$RUNNER_TEMP/church-audit/fond_h04.glb" \
+            STAGE_REPORT="$RUNNER_TEMP/church-audit/final_validation.json" MAX_TRIS=150000 \
+            timeout 180s blender --background --factory-startup --python-exit-code 37 \
+            "$RUNNER_TEMP/church-audit/stages/audit.blend" \
+            --python scripts/blender_worker.py \
+            | tee "$RUNNER_TEMP/church-export-test.log"
+          grep -F EXPORT_REIMPORT_OK "$RUNNER_TEMP/church-export-test.log"
+          test -s "$RUNNER_TEMP/church-audit/fond_h04.glb"
+          test -s "$RUNNER_TEMP/church-audit/final_validation.json"
+          echo "KIRCHEN_PIPELINE_IO_OK: Blender-Checkpoint, Stage-Report, GLB und Reimport"
 
   build:
     name: Fond H04 - 9 isolierte Blender-Stufen
