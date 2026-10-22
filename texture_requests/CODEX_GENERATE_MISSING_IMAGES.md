@@ -1,3 +1,5 @@
+> **ARCHIV / NICHT MEHR AUSFÜHREN (Stand 22.10.2026):** Der aktualisierte, branch-spezifische Gesamtauftrag steht unter [`briefs/CODEX_INBOX_TEXTURES_2026-10-22_v4_ALL.md`](../briefs/CODEX_INBOX_TEXTURES_2026-10-22_v4_ALL.md), zugehörige JSON: `briefs/missing_inbox_textures_2026-10-22_v4_ALL.json`. Darin sind beide Grand-Fond-H04-Kirchen berücksichtigt. Diese ältere Liste kann falsche Alias-Zielordner oder unvollständige Bestände enthalten.
+
 # CODEX-AUFTRAG – Fehlende Bildmotive sequenziell erstellen und einchecken
 
 ## Startpunkt
