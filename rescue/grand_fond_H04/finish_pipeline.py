@@ -19,7 +19,7 @@ SRC=REPO/"rescue/grand_fond_H04"
 WORK=Path("/workspace/church_work")
 ORIG_OUT=Path("/workspace/inbox/grand_fond_parish_church")
 ALTERNATE=REPO/"inbox/grand_fond_parish_church_codex"
-BLENDER=shutil.which("blender")
+# Blender installation deliberately omitted; geometry is rebuilt by manifold3d.
 LOGS=SRC/"finish_logs" # only local working tree; archived regardless of result
 LOGS.mkdir(parents=True,exist_ok=True)
 EXPECTED=["build.py","repair.py","validate.py","swing_check.py"]
@@ -31,24 +31,8 @@ ORIG_OUT.mkdir(parents=True,exist_ok=True)
 for name in EXPECTED:
     shutil.copy2(SRC/"church_work"/name, WORK/name)
 
-# Codex authored its repair for Blender 4.3. GitHub's Ubuntu runner offers
-# Blender 4.0.2. Keep the archived original unchanged; patch ONLY this
-# ephemeral workspace copy with the compatible auto-smooth operator.
-repair_source=(WORK/"repair.py").read_text(encoding="utf-8")
-old_smooth="mesh.set_sharp_from_angle(angle=math.radians(30))"
-if repair_source.count(old_smooth)!=1:
-    raise RuntimeError("Unexpected Codex Blender smooth API; no unsafe patch")
-repair_source=repair_source.replace(
-    old_smooth,
-    "mesh.set_sharp_from_angle(angle=math.radians(30)) "
-    "if hasattr(mesh, 'set_sharp_from_angle') "
-    "else (setattr(mesh, 'use_auto_smooth', True), "
-    "setattr(mesh, 'auto_smooth_angle', math.radians(30))) "
-    "if hasattr(mesh, 'use_auto_smooth') "
-    "else [setattr(poly, 'use_smooth', False) for poly in mesh.polygons]"
-)
-(WORK/"repair.py").write_text(repair_source,encoding="utf-8")
-print("BLENDER_4_0_COMPATIBLE_REPAIR_PATCHED",flush=True)
+# Python/Manifold repair needs no Blender or Ubuntu system downloads.
+shutil.copy2(SRC/"repair_gltf_python.py",WORK/"repair_gltf_python.py")
 print("Source SHA256",hashlib.sha256((WORK/"build.py").read_bytes()).hexdigest(),flush=True)
 
 def run(label,cmd,timeout=900,env=None):
@@ -75,16 +59,8 @@ if not raw.is_file() or raw.stat().st_size<100000:
     raise RuntimeError("Fresh raw GLB missing")
 shutil.copy2(raw, WORK/"fresh_raw.glb")
 
-# Clean architecture and retain door and furniture pivots.
-benv=dict(os.environ)
-for key in ("LD_LIBRARY_PATH","PYTHONHOME","PYTHONUSERBASE","VIRTUAL_ENV","PYTHONNOUSERSITE"):
-    benv.pop(key,None)
-benv["PYTHONPATH"]="/usr/lib/python3/dist-packages"
-if not BLENDER:
-    raise RuntimeError("Blender executable missing")
-run("02_repair", [BLENDER,"--background","--factory-startup",
-                 "--python-exit-code","37","--python",str(WORK/"repair.py")],
-    timeout=1050, env=benv)
+# Python-only architecture stitching, normal reconstruction and GLB export.
+run("02_repair_python", [sys.executable,"-u",str(WORK/"repair_gltf_python.py")],timeout=650)
 clean=WORK/"clean.glb"
 if not clean.is_file() or clean.stat().st_size<100000:
     raise RuntimeError("Repaired GLB missing")
