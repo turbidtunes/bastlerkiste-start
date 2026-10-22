@@ -1,0 +1,26 @@
+name: Move unlabeled texture uploads to correct inbox folders
+on:
+  push:
+    branches:
+      - audit/texture-requests-20261022
+    paths:
+      - '.github/workflows/move-unlabeled-textures.yml'
+      - 'scripts/move_unlabeled_textures.py'
+      - 'texture_requests/_audit/assignment_34_images.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: material-texture-migration-main
+  cancel-in-progress: false
+jobs:
+  convert-and-file:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Load original source JPGs and audited mapping
+        uses: actions/checkout@v4
+      - name: Install Pillow for JPEG to PNG conversion
+        run: python3 -m pip install --user --break-system-packages --disable-pip-version-check --timeout 20 --retries 2 'pillow>=10,<13'
+      - name: Preserve pixel dimensions, file real PNGs on main and archive duplicate JPGs
+        run: python3 -u scripts/move_unlabeled_textures.py
