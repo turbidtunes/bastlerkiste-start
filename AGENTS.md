@@ -1,3 +1,8 @@
+> **PRIORITÄT (Steuerung, 23.10.2026 – `bastlerkiste/PROJECT_STATUS.md`):** Das Projekt beweist jetzt zuerst in
+> Unreal, dass das Spiel funktioniert (Meilensteine M1–M3). Bis M2 (Grand-Fond spielbar) **keine neuen Gebäude-Bauläufe**
+> (sie kosten API-Guthaben) ohne ausdrücklichen neuen Auftrag des Nutzers. Fehlende Fotos für schon gelieferte Gebäude:
+> zuerst die 13 Grand-Fond-Ordner (`fond_h04`, `fond_h08`, `grand_fond_H06` … `H16`), die anderen danach.
+
 # Codex-Orchestrierung: komplette UE5-Gebäude mit optionalen Fototexturen
 
 **AKTUELLE PRODUKTIONSREGEL:** Ein normaler Bauauftrag kann direkt mit seinem

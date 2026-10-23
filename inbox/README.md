@@ -1,5 +1,9 @@
 # Inbox for ChatGPT / Codex deliveries
 
+**Parking rule (steering 23.10.2026, `bastlerkiste/PROJECT_STATUS.md`):** until milestone M2 (Grand-Fond playable in
+Unreal) only the Grand-Fond buildings are taken into the project (`fond_h04`, `fond_h08`, `grand_fond_H06` …
+`grand_fond_H16`). Every other folder stays parked here – nothing is lost; the user can pull single ones forward.
+
 Codex (or the user) puts new deliveries here: building GLB/ZIP + texture tiles `new_<what>.png`, sheets, notes.
 This repo is tiny, so Codex can clone it fast; the big project repo `turbidtunes/bastlerkiste` (40 GB) is not needed for
 a delivery.
