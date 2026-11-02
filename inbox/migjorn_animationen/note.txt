@@ -1,0 +1,7 @@
+Migjorn animation handoff requested by the repository owner.
+15 animation clips at 60 fps; Blender 5.3 source, preview and right-hand contact sheet.
+Finger spacing follows the user reference; the personal reference photo is not included.
+Original takes are preserved in the blend as ORIGINAL__*.
+Fire includes a short weapon recoil impulse: avoid double recoil when integrating with procedural engine recoil.
+This is a delivery only; no building-generation or paid model-generation workflow is required.
+Small skin intersections remain possible; no exhaustive skin collision simulation or Unreal playback validation was performed.
