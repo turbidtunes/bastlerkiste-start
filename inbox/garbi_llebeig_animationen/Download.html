@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Garbi & Llebeig · Blender-Dateien</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#14191e;color:#e9eef3}body{max-width:800px;margin:9vh auto;padding:24px}small{color:#9baebc;letter-spacing:.12em}h1{font-size:clamp(30px,6vw,52px);letter-spacing:-.04em;margin:12px 0}p{color:#aebcc7;line-height:1.6}.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:32px 0}.card{border:1px solid #34424b;background:#1d252d;border-radius:16px;padding:25px}h2{margin:0 0 8px}button{background:#b9e8cd;color:#10281d;font:600 15px system-ui;border:0;border-radius:8px;padding:14px 18px;cursor:pointer;width:100%;margin-top:16px}button:disabled{opacity:.65;cursor:progress}button:focus-visible{outline:3px solid white;outline-offset:4px}progress{width:100%;accent-color:#b9e8cd;margin-top:20px}.status{font-size:13px;min-height:40px;margin-bottom:0;overflow-wrap:anywhere}footer{font-size:13px;color:#9baebc}a{color:#b9e8cd}@media(max-width:570px){body{margin:3vh auto}.cards{grid-template-columns:1fr}}
+</style>
+<body><small>ÜBERARBEITETE ANIMATIONEN</small><h1>Garbi & Llebeig</h1><p>Korrigierte Hand- und Fingerhaltung, natürliche Nachladebewegungen und Sway. Die Visierung bleibt beim Zielen mittig.</p><div class="cards" id="cards"></div><footer>Die Downloads werden vor dem Speichern auf Vollständigkeit geprüft. Blender 5.3 Beta · 60 fps · Originalaktionen enthalten.<br><a href="https://github.com/turbidtunes/bastlerkiste-start/tree/codex/garbi-llebeig-animationen-2026-11-03/inbox/garbi_llebeig_animationen">Dateien und Hinweise im Repository</a></footer>
+<script id="files" type="application/json">[
+  {
+    "id": "garbi",
+    "name": "Garbi_Animationen_ueberarbeitet.blend",
+    "bytes": 3031788,
+    "sha256": "bf2bd3b235e98808caa00f06784e7a7ac286223f2db1d48b499041d39c219b71",
+    "parts": [
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.001",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.002",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.003",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.004",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.005",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.006",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.007",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.008",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.009",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.010",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.011",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.012",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.013",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.014",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.015",
+      "garbi/parts/Garbi_Animationen_ueberarbeitet.blend.016"
+    ]
+  },
+  {
+    "id": "llebeig",
+    "name": "Llebeig_Animationen_ueberarbeitet.blend",
+    "bytes": 3999416,
+    "sha256": "c6a8b323c64ab059cd55f666e8b7bf445328946f74c01eafbd79a16e9703bc36",
+    "parts": [
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.001",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.002",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.003",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.004",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.005",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.006",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.007",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.008",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.009",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.010",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.011",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.012",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.013",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.014",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.015",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.016",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.017",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.018",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.019",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.020",
+      "llebeig/parts/Llebeig_Animationen_ueberarbeitet.blend.021"
+    ]
+  }
+]</script>
+<script>
+'use strict';
+const base='https://raw.githubusercontent.com/turbidtunes/bastlerkiste-start/codex/garbi-llebeig-animationen-2026-11-03/inbox/garbi_llebeig_animationen/';
+const files=JSON.parse(document.getElementById('files').textContent);
+for(const f of files){
+ const section=document.createElement('section');section.className='card';
+ const name=f.id==='garbi'?'Garbi':'Llebeig';
+ section.innerHTML=`<h2>${name}</h2><p>16 Clips · ${(f.bytes/1e6).toFixed(1)} MB</p><button type="button" data-file="${f.id}">${name}.blend herunterladen</button><progress value="0" max="${f.parts.length}" aria-label="Downloadfortschritt"></progress><p class="status" role="status" aria-live="polite">Bereit zum Download</p>`;
+ document.getElementById('cards').append(section);
+ const button=section.querySelector('button'),progress=section.querySelector('progress'),status=section.querySelector('.status');
+ button.addEventListener('click',async()=>{
+  button.disabled=true;progress.value=0;status.textContent='Datei wird geladen …';
+  try{
+   const buffers=new Array(f.parts.length);let next=0,loaded=0;
+   async function worker(){while(next<f.parts.length){const i=next++;const response=await fetch(base+f.parts[i]);if(!response.ok)throw Error('HTTP '+response.status);buffers[i]=await response.arrayBuffer();progress.value=++loaded;status.textContent=Math.round(100*loaded/f.parts.length)+' % geladen';}}
+   await Promise.all(Array.from({length:4},worker));
+   const blob=new Blob(buffers,{type:'application/octet-stream'});
+   if(blob.size!==f.bytes)throw Error('Datei unvollständig');
+   status.textContent='Vollständigkeit wird geprüft …';
+   const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await blob.arrayBuffer())),v=>v.toString(16).padStart(2,'0')).join('');
+   if(hash!==f.sha256)throw Error('Prüfsumme stimmt nicht überein');
+   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=f.name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+   status.textContent='Geprüft – Download gestartet.';
+  }catch(error){status.textContent='Download fehlgeschlagen: '+error.message+'. Bitte erneut versuchen.';}
+  finally{button.disabled=false;}
+ });
+}
+</script></body></html>
